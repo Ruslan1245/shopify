@@ -697,6 +697,7 @@ button.button.add-to-cart-button.button.atc-added:after {
 }
 .vet-single-blog-container .detail_content span.article-author, .vet-single-blog-container .detail_content span.article-date {
     position: relative;
+    padding-left: 20px;
 }
 .vet-single-blog-container .detail_content span.article-date:after {
     content: "";
