@@ -792,6 +792,9 @@ button.button.add-to-cart-button.button.atc-added:after {
     padding: 8px 15px;
     font-size: 14px;
 }
+.page-class-collection .cleanest-kibbles__extras {
+    margin-top: 20px;
+}
 .page-class-collection .cleanest-kibbles__badge {
     margin-top: 0px;
     gap: 8px;
