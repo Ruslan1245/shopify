@@ -740,7 +740,7 @@ button.button.add-to-cart-button.button.atc-added:after {
 
 .nutram-blogs__slider::-webkit-scrollbar {
   height: 8px; 
-  background-color: #f0f0f0; 
+  background-color:rgba(240, 240, 240, 0); 
 
 }
 
