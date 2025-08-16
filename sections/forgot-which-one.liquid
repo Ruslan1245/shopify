@@ -1,0 +1,193 @@
+{% stylesheet %}
+/* ===== Custom Forgot Section (scoped) ===== */
+.custom-forgot-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  width: 100%;
+  font-family: inherit;
+  color: #fff;
+}
+
+/* Left: image */
+.custom-forgot-section .forgot-left {
+  flex: 1 1 50%;
+  position: relative;
+  min-height: 320px;
+}
+
+.custom-forgot-section .forgot-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Ensure correct image visibility */
+.custom-forgot-section .forgot-img--desktop {
+  display: block;
+}
+.custom-forgot-section .forgot-img--mobile {
+  display: none;
+}
+
+/* Right: blue background with content */
+.custom-forgot-section .forgot-right {
+  flex: 1 1 50%;
+  background: #4297cc; /* matches blue tone in screenshot */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px 60px;
+}
+
+.custom-forgot-section .forgot-heading {
+  font-size: 56px;
+  font-weight: 800;
+  margin-bottom: 14px;
+  line-height: 59px;
+}
+
+.custom-forgot-section .forgot-subtext {
+  font-size: 15px;
+  color: #e6f3fb;
+  margin-bottom: 26px;
+  max-width: 380px;
+}
+
+/* CTA Button */
+.custom-forgot-section .forgot-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  color: #1b3a57;
+  font-weight: 700;
+  font-size: 15px;
+  padding: 12px 24px;
+  border-radius: 9999px;
+  text-decoration: none;
+  position: relative;
+  transition: background .15s ease, transform .08s ease;
+}
+
+.custom-forgot-section .forgot-btn:hover {
+  background: #f0f0f0;
+  transform: translateY(-1px);
+}
+
+.custom-forgot-section .forgot-btn::after {
+  content: "";
+  background-image: url('https://cdn.shopify.com/s/files/1/0627/0422/2426/files/Vector_5c1622c0-29e6-402a-a815-8da37656e4fc.png?v=1755184216');
+  height: 15px;
+  width: 30px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .custom-forgot-section {
+    flex-direction: column;
+  }
+  .custom-forgot-section .forgot-left,
+  .custom-forgot-section .forgot-right {
+    flex: 1 1 100%;
+  }
+  .custom-forgot-section .forgot-right {
+    padding: 30px 24px;
+    text-align: center;
+    align-items: center;
+  }
+  .custom-forgot-section .forgot-subtext {
+    max-width: none;
+  }
+  /* Swap images on mobile */
+  .custom-forgot-section .forgot-img--desktop {
+    display: none;
+  }
+  .custom-forgot-section .forgot-img--mobile {
+    display: block;
+  }
+}
+{% endstylesheet %}
+
+
+<section class="custom-forgot-section">
+  <div class="forgot-left">
+  {% if section.settings.image != blank %}
+    <img
+      src="{{ section.settings.image | img_url: '1200x' }}"
+      alt="{{ section.settings.heading | escape }}"
+      class="forgot-img forgot-img--desktop">
+  {% endif %}
+
+  {% if section.settings.mobile_image != blank %}
+    <img
+      src="{{ section.settings.mobile_image | img_url: '800x' }}"
+      alt="{{ section.settings.heading | escape }}"
+      class="forgot-img forgot-img--mobile">
+  {% endif %}
+</div>
+
+  <div class="forgot-right">
+    {% if section.settings.heading != blank %}
+      <div class="forgot-heading">{{ section.settings.heading }}</div>
+    {% endif %}
+    {% if section.settings.subtext != blank %}
+      <div class="forgot-subtext">{{ section.settings.subtext }}</div>
+    {% endif %}
+    {% if section.settings.cta_text != blank and section.settings.cta_link != blank %}
+      <a href="{{ section.settings.cta_link }}" class="forgot-btn">{{ section.settings.cta_text }}</a>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Forgot Which One - Banner",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Left image",
+      "info": "Upload an image of the product/dog scene."
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Left image mobile",
+      "info": "Upload an image of the product/dog scene."
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Forgot Which One They Loved?"
+    },
+    {
+      "type": "textarea",
+      "id": "subtext",
+      "label": "Subtext",
+      "default": "Find your pet’s perfect match again in seconds with the Nutram Number quiz."
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "Button text",
+      "default": "Find It Again"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "Button link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Forgot Which One Banner",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,164 @@
+{% stylesheet %}
+.features-bar-section {
+  background-color: #D6EEF8;
+  border-bottom: 1px solid #29ABE2;
+}
+
+.features-bar {
+  padding: 6px 0;
+}
+
+.feature-item {
+  color: #1B3A57;
+  font-size: 14px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  position:relative;
+  width: fit-content;
+}
+
+.feature-item::before {
+	content: "";
+	height: 10px;
+	width: 10px;
+	display: block;
+	background-color: #4498CD;
+	border-radius: 50%;
+	position: absolute;
+	top: 50%;
+	left: -15%;
+	transform: translate(-50%,-50%);
+}
+
+.feature-item:first-child::before {
+  content:unset;
+}
+
+.feature-item:not(:last-child)::after {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background-color: #29ABE2;
+  border-radius: 50%;
+  display: inline-block;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.desktop-version { display: block; }
+.mobile-version { display: none; }
+
+@media (min-width: 1000px) {
+  .features-bar {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+    max-width: 950px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .features-bar .feature-item::after {
+    display: none;
+  }
+}
+
+@media (max-width: 1000px) {
+  .desktop-version { display: none; }
+  .mobile-version { display: block; }
+
+  .features-bar .swiper-slide {
+    flex-shrink: 0;
+    width: auto;
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .feature-item::before {
+    content:unset;
+  }
+
+}
+{% endstylesheet %}
+
+
+<section class="features-bar-section desktop-version">
+  <div class="section--page-width">
+    <div class="features-bar">
+      <div class="feature-item">Free Canada-Wide Shipping</div>
+      <div class="feature-item">100% Made in Canada</div>
+      <div class="feature-item">No Recalls Ever</div>
+      <div class="feature-item">Visible Results in 1 Day</div>
+    </div>
+  </div>
+</section>
+
+<section class="features-bar-section mobile-version">
+  <div class="section--page-width">
+    <div class="features-bar swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide feature-item">Free Canada-Wide Shipping</div>
+        <div class="swiper-slide feature-item">100% Made in Canada</div>
+        <div class="swiper-slide feature-item">No Recalls Ever</div>
+        <div class="swiper-slide feature-item">Visible Results in 1 Day</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  new Swiper(".mobile-version .features-bar", {
+    slidesPerView: 1,
+    spaceBetween: 10,
+    loop: true,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false
+    }
+  });
+});
+
+</script>
+
+
+{% schema %}
+{
+  "name": "Features Bar",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_mobile_slider",
+      "label": "Enable slider on mobile",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Feature text",
+          "default": "Free Canada-Wide Shipping"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 8,
+  "presets": [
+    {
+      "name": "Features Bar",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
+
+

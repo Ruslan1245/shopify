@@ -1,0 +1,187 @@
+{% stylesheet %}
+/* ==== Blog Grid Section ==== */
+.custom-blog-grid {
+  padding: 40px 20px;
+}
+
+.custom-blog-grid__wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.custom-blog-grid__item {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+}
+
+.custom-blog-grid__image {
+  position: relative;
+  overflow: hidden;
+}
+
+.custom-blog-grid__image img {
+  width: 100%;
+  display: block;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.custom-blog-grid__tag {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #00AEEF;
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.custom-blog-grid__content {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.custom-blog-grid__meta {
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 8px;
+}
+
+.custom-blog-grid__title {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.custom-blog-grid__readmore {
+  margin-top: auto;
+  font-size: 14px;
+  font-weight: 600;
+  color: #00AEEF;
+  text-decoration: none;
+}
+
+.custom-blog-grid__readmore:hover {
+  text-decoration: underline;
+}
+
+/* Pagination */
+.custom-blog-grid__pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.custom-blog-grid__pagination a,
+.custom-blog-grid__pagination span {
+  display: inline-block;
+  margin: 0 5px;
+  padding: 6px 10px;
+  border-radius: 4px;
+  background: #f5f5f5;
+  color: #333;
+  font-size: 14px;
+}
+
+.custom-blog-grid__pagination .active {
+  background: #00AEEF;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .custom-blog-grid__wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+{% endstylesheet %}
+
+<div class="custom-blog-grid">
+  {% assign blog_handle = section.settings.blog_handle %}
+  {% paginate blogs[blog_handle].articles by 6 %}
+    {% if blogs[blog_handle] and blogs[blog_handle].articles.size > 0 %}
+      <div class="custom-blog-grid__wrapper">
+        {% for article in blogs[blog_handle].articles %}
+          <div class="custom-blog-grid__item">
+            <div class="custom-blog-grid__image">
+              {% if article.image %}
+                <a href="{{ article.url }}">
+                  <img src="{{ article.image | img_url: '600x' }}" alt="{{ article.title }}">
+                </a>
+              {% endif %}
+              {% if article.tags.size > 0 %}
+                <div class="custom-blog-grid__tag">{{ article.tags.first }}</div>
+              {% endif %}
+            </div>
+            <div class="custom-blog-grid__content">
+              <div class="custom-blog-grid__meta">
+                {{ article.reading_time | default: 2 }} min read
+              </div>
+              <div class="custom-blog-grid__title">
+                <a href="{{ article.url }}">{{ article.title }}</a>
+              </div>
+              <a class="custom-blog-grid__readmore" href="{{ article.url }}">Read More &gt;</a>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <div class="custom-blog-grid__wrapper">
+        {% for i in (1..6) %}
+          <div class="custom-blog-grid__item">
+            <div class="custom-blog-grid__image">
+              <img src="https://via.placeholder.com/600x400?text=No+Image" alt="Placeholder">
+              <div class="custom-blog-grid__tag">Category</div>
+            </div>
+            <div class="custom-blog-grid__content">
+              <div class="custom-blog-grid__meta">0 min read</div>
+              <div class="custom-blog-grid__title">No Articles Found</div>
+              <a class="custom-blog-grid__readmore" href="#">Read More &gt;</a>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    <div class="custom-blog-grid__pagination">
+      {% if paginate.pages > 1 %}
+        {% for part in paginate.parts %}
+          {% if part.is_link %}
+            <a href="{{ part.url }}">{{ part.title }}</a>
+          {% else %}
+            <span class="{% if part.title == paginate.current_page %}active{% endif %}">{{ part.title }}</span>
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+    </div>
+  {% endpaginate %}
+</div>
+
+{% schema %}
+{
+  "name": "Custom Blog Grid",
+  "settings": [
+    {
+      "type": "blog",
+      "id": "blog_handle",
+      "label": "Select Blog"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Blog Grid",
+      "category": "Blog"
+    }
+  ]
+}
+{% endschema %}

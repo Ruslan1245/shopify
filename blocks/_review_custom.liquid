@@ -1,0 +1,176 @@
+{% liquid
+  assign block_settings = block.settings
+%}
+
+<div class="testimonial-block testimonial-block--{{ block.id }}" {{ block.shopify_attributes }}>
+  <div class="testimonial-card">
+    {%- if block_settings.image != blank -%}
+      <div class="testimonial-image-wrapper">
+        <img src="{{ block_settings.image | image_url: width: 200 }}" alt="{{ block_settings.name | escape }}" class="testimonial-image">
+      </div>
+    {%- endif -%}
+
+    <div class="testimonial-content">
+      <div class="testimonial-rating">
+        {% for i in (1..block_settings.stars) %}
+          <svg class="testimonial-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="{{ block_settings.star_color }}">
+            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.184 3.64a1 1 0 00.95.69h3.828c.969 0 1.371 1.24.588 1.81l-3.095 2.25a1 1 0 00-.364 1.118l1.184 3.64c.3.921-.755 1.688-1.54 1.118l-3.095-2.25a1 1 0 00-1.176 0l-3.095 2.25c-.785.57-1.84-.197-1.54-1.118l1.184-3.64a1 1 0 00-.364-1.118l-3.095-2.25c-.783-.57-.38-1.81.588-1.81h3.828a1 1 0 00.95-.69l1.184-3.64z" />
+          </svg>
+        {% endfor %}
+      </div>
+
+      <p class="testimonial-text">“{{ block_settings.text }}”</p>
+
+      <p class="testimonial-author">
+        <strong>{{ block_settings.name }}</strong>
+        {% if block_settings.verified %}
+          <span class="testimonial-verified">
+            <svg class="testimonial-verified-icon" xmlns="http://www.w3.org/2000/svg" fill="{{ block_settings.verified_color }}" viewBox="0 0 24 24">
+              <path d="M12 1.75l2.69 1.07 2.31-.92.92 2.31L19.25 7 21 9.31l-1.07 2.69.92 2.31-2.31.92-1.07 2.69L15.31 19 13 21l-2.69-1.07-2.31.92-.92-2.31L4.75 17 3 14.69l1.07-2.69-.92-2.31 2.31-.92L6.53 7 8.69 5.25 12 1.75zm-1.25 12.5l5.5-5.5-1.5-1.5-4 4-2-2-1.5 1.5 3.5 3.5z"/>
+            </svg>
+            <span>{{ block_settings.verified_text }}</span>
+          </span>
+        {% endif %}
+      </p>
+    </div>
+  </div>
+</div>
+
+{% stylesheet %}
+.testimonial-block {
+  width: 100%;
+  margin: var(--margin-lg) 0;
+}
+.testimonial-card {
+  display: flex;
+  align-items: flex-start;
+  background: {{ block_settings.bg_color }};
+  border-radius: 12px;
+  padding: 16px;
+  gap: 16px;
+}
+.testimonial-image-wrapper {
+  flex-shrink: 0;
+}
+.testimonial-image {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.testimonial-content {
+  flex: 1;
+}
+.testimonial-rating {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 6px;
+}
+.testimonial-star {
+  width: 18px;
+  height: 18px;
+}
+.testimonial-text {
+  font-size: 16px;
+  margin: 0 0 8px;
+  color: {{ block_settings.text_color }};
+}
+.testimonial-author {
+  font-size: 14px;
+  color: {{ block_settings.author_color }};
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.testimonial-verified {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: bold;
+}
+.testimonial-verified-icon {
+  width: 16px;
+  height: 16px;
+}
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Testimonial",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Customer Image"
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Testimonial Text",
+      "default": "After switching, Max’s coat is shinier and tummy trouble disappeared in two weeks!"
+    },
+    {
+      "type": "text",
+      "id": "name",
+      "label": "Customer Name",
+      "default": "John D."
+    },
+    {
+      "type": "checkbox",
+      "id": "verified",
+      "label": "Show Verified Badge",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "verified_text",
+      "label": "Verified Text",
+      "default": "VERIFIED CUSTOMER"
+    },
+    {
+      "type": "range",
+      "id": "stars",
+      "label": "Star Rating",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 5
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#F0F8FF"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#333333"
+    },
+    {
+      "type": "color",
+      "id": "author_color",
+      "label": "Author Text Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "star_color",
+      "label": "Star Color",
+      "default": "#FFD700"
+    },
+    {
+      "type": "color",
+      "id": "verified_color",
+      "label": "Verified Icon Color",
+      "default": "#1E90FF"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Customer Testimonial"
+    }
+  ]
+}
+{% endschema %}

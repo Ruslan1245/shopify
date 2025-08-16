@@ -1,0 +1,407 @@
+{% comment %}
+  Nutram Comparison Section
+  Usage: Add this as a section file in sections/nutram-comparison.liquid
+{% endcomment %}
+
+{% unless section.settings.main_title == blank and section.settings.sub_title == blank and section.blocks.size == 0 %}
+<div class="nutram-comparison-wrapper">
+  <div class="nutram-comparison-container">
+    <!-- Header -->
+    {% unless section.settings.main_title == blank and section.settings.sub_title == blank and section.settings.description == blank %}
+    <div class="nutram-comparison-header">
+      {% unless section.settings.main_title == blank %}
+        <h2 class="nutram-main-title">{{ section.settings.main_title | default: "A Clean-Label Solution," }}</h2>
+      {% endunless %}
+      {% unless section.settings.sub_title == blank %}
+        <h3 class="nutram-sub-title">{{ section.settings.sub_title | default: "Not Just Another Name" }}</h3>
+      {% endunless %}
+      {% unless section.settings.description == blank %}
+        <p class="nutram-description">{{ section.settings.description | default: "Here's what sets Nutram apart:" }}</p>
+      {% endunless %}
+    </div>
+    {% endunless %}
+
+    <!-- Comparison Chart -->
+    {% if section.blocks.size > 0 %}
+    <div class="nutram-comparison-chart">
+      <!-- Column Headers -->
+      <div class="nutram-chart-headers">
+        <div class="nutram-feature-header"></div>
+        <div class="nutram-brand-header nutram-brand-header--nutram">
+          {% unless section.settings.nutram_logo == blank %}
+            <img src="{{ section.settings.nutram_logo | img_url: 'master' }}" alt="Nutram" class="nutram-brand-logo">
+          {% else %}
+            <span class="nutram-brand-text">nutram</span>
+          {% endunless %}
+        </div>
+        <div class="nutram-brand-header nutram-brand-header--competitor">
+          {% unless section.settings.competitor_name == blank %}
+            <span class="nutram-competitor-text">{{ section.settings.competitor_name }}</span>
+          {% else %}
+            <span class="nutram-competitor-text">Mainstream Brands</span>
+          {% endunless %}
+        </div>
+      </div>
+
+      <!-- Feature Rows -->
+      {% for block in section.blocks %}
+        {% unless block.settings.feature_text == blank %}
+        <div class="nutram-feature-row" {{ block.shopify_attributes }}>
+          <div class="nutram-feature-label">
+            <div class="nutram-feature-icon">
+              {% if block.settings.image_icon ==  blank %}
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <circle cx="10" cy="10" r="8" stroke="#4A9EE7" stroke-width="2" fill="none"/>
+                  <path d="M7 10L9 12L13 8" stroke="#4A9EE7" stroke-width="2" fill="none"/>
+                </svg>
+              {% else %}
+                <img height="auto" width="auto" class="icon" src="{{ block.settings.image_icon | img_url:"master" }}">
+              {% endif %}
+            </div>
+            <span class="nutram-feature-text">{{ block.settings.feature_text }}</span>
+          </div>
+          
+          <div class="nutram-feature-status nutram-feature-status--nutram  {% if forloop.first %}nutram-index-first{% endif %}
+     {% if forloop.last %}nutram-index-last{% endif %}">
+            <div class="nutram-status-icon nutram-status-icon--check">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M13.5 4.5L6 12L2.5 8.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+          
+          <div class="nutram-feature-status nutram-feature-status--competitor">
+            <div class="nutram-status-icon nutram-status-icon--cross">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M12 4L4 12M4 4L12 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+        {% endunless %}
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</div>
+{% endunless %}
+
+<style>
+.nutram-comparison-wrapper {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  padding: 70px 20px;
+  min-height: 500px;
+}
+
+.nutram-feature-icon .icon{
+  max-width: 32px;
+}
+
+.nutram-comparison-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.nutram-comparison-header {
+  margin-bottom: 40px;
+}
+
+.nutram-main-title {
+  font-size: 56px;
+  font-weight: 600;
+  color: #4498CD;
+  margin: 0;
+  line-height: 0.8;
+  text-transform: capitalize;
+}
+
+.nutram-sub-title {
+  font-size: 56px;
+  font-weight: 600;
+  color: #4498CD;
+  margin: 0 0 16px 0;
+  line-height: 1.2;
+  text-transform: capitalize;
+}
+
+.nutram-description {
+  font-size: 18px;
+  color: #353535;
+  margin: 0;
+  font-weight: 400;
+}
+
+.nutram-comparison-chart {
+  border-radius: 12px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.nutram-chart-headers {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.nutram-feature-header {
+  padding: 20px;
+}
+
+.nutram-brand-header {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  text-align: center;
+}
+
+.nutram-feature-status.nutram-feature-status--nutram.nutram-index-first {
+	margin-top: -10px;
+	border-radius: 8px 8px 0px 0px;
+}
+
+.nutram-brand-header--nutram {
+  color: white;
+}
+
+.nutram-brand-header--competitor {
+  color: #353535;
+}
+
+.nutram-brand-text {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: white;
+  text-transform: lowercase;
+}
+
+.nutram-brand-logo {
+  max-height: 32px;
+  width: auto;
+}
+
+.nutram-competitor-text {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.nutram-feature-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  min-height: 60px;
+}
+
+.nutram-feature-row:last-child {
+  border-bottom: none;
+}
+
+.nutram-feature-label {
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+  background-color: #fff;
+}
+
+.nutram-feature-icon {
+  flex-shrink: 0;
+}
+
+.nutram-feature-text {
+  font-size: 0.95rem;
+  color: #334155;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.nutram-feature-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+      background-color: #fff;
+}
+
+.nutram-feature-status--nutram {
+  background: #4498CD;
+}
+/* Middle column in the first row */
+.nutram-feature-row:first-child .nutram-feature-status--nutram {
+  margin-top: -10px;
+  border-radius: 8px 8px 0 0; /* Top corners rounded */
+}
+
+/* Middle column in the last row */
+.nutram-feature-row:last-child .nutram-feature-status--nutram {
+  margin-bottom: -10px;
+  border-radius: 0 0 8px 8px; /* Bottom corners rounded */
+}
+.nutram-feature-row:last-child .nutram-feature-status--nutram{
+  margin-top: -10px;
+  border-radius: 0 0 8px 8px;
+}
+
+.nutram-status-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nutram-status-icon--check {
+  background: #2FD358;
+}
+
+.nutram-status-icon--cross {
+  background:#D73324;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .nutram-comparison-wrapper {
+    padding: 40px 15px;
+  }
+  
+  .nutram-main-title,
+  .nutram-sub-title {
+    font-size: 1.75rem;
+  }
+  
+  .nutram-comparison-chart {
+    max-width: 100%;
+  }
+  
+  .nutram-chart-headers,
+  .nutram-feature-row {
+    grid-template-columns: 1.8fr 1fr 1fr;
+  }
+  
+  .nutram-feature-label {
+    padding: 12px 15px;
+  }
+  
+  .nutram-feature-text {
+    font-size: 0.85rem;
+  }
+  
+  .nutram-competitor-text {
+    font-size: 0.8rem;
+  }
+  
+  .nutram-brand-header {
+    padding: 15px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nutram-feature-label {
+    gap: 8px;
+  }
+  
+  .nutram-feature-text {
+    font-size: 0.8rem;
+  }
+  
+  .nutram-status-icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+</style>
+
+{% schema %}
+{
+  "name": "Nutram Comparison",
+  "settings": [
+    {
+      "type": "text",
+      "id": "main_title",
+      "label": "Main Title",
+      "default": "A Clean-Label Solution,"
+    },
+    {
+      "type": "text",
+      "id": "sub_title", 
+      "label": "Sub Title",
+      "default": "Not Just Another Name"
+    },
+    {
+      "type": "text",
+      "id": "description",
+      "label": "Description",
+      "default": "Here's what sets Nutram apart:"
+    },
+    {
+      "type": "image_picker",
+      "id": "nutram_logo",
+      "label": "Nutram Logo"
+    },
+    {
+      "type": "text",
+      "id": "competitor_name",
+      "label": "Competitor Name",
+      "default": "Mainstream Brands"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature Comparison",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image_icon",
+          "label": "Icon",
+        },
+        {
+          "type": "text",
+          "id": "feature_text",
+          "label": "Feature Text",
+          "placeholder": "e.g., Proudly Made in Canada"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Nutram Comparison",
+      "blocks": [
+        {
+          "type": "feature",
+          "settings": {
+            "feature_text": "Proudly Made in Canada"
+          }
+        },
+        {
+          "type": "feature", 
+          "settings": {
+            "feature_text": "Transparent Ingredients List"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "feature_text": "No Recalls, Ever!"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "feature_text": "Focused on Digestion"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "feature_text": "Farm-to-Bowl Sourcing"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

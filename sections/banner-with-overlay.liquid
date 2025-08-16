@@ -1,0 +1,599 @@
+{% comment %}
+  CTA Banner Section with Overlay
+  Usage: Add this as a section file in sections/cta-banner.liquid
+{% endcomment %}
+
+{% unless section.settings.main_title == blank and section.settings.sub_title == blank and section.settings.button_text == blank %}
+<div class="cta-banner-wrapper">
+  <!-- Background Image -->
+  {% unless section.settings.background_image == blank %}
+  <div class="cta-banner-background">
+    <img src="{{ section.settings.background_image | img_url: '1920x600' }}" alt="{{ section.settings.main_title }}" class="cta-bg-image">
+  </div>
+  {% endunless %}
+  
+  <!-- Overlay -->
+  {% unless section.settings.overlay_opacity == 0 %}
+  <div class="cta-banner-overlay" style="
+    background-color: {{ section.settings.overlay_color | default: '#4A9EE7' }};
+    opacity: {{ section.settings.overlay_opacity | default: 0.85 | divided_by: 100.0 }};
+  "></div>
+  {% endunless %}
+  
+  <div class="cta-banner-container">
+    <div class="cta-banner-content">
+      <!-- Main Content -->
+      <div class="cta-banner-main">
+        {% unless section.settings.main_title == blank %}
+        <h2 class="cta-banner-title">{{ section.settings.main_title | default: "Ready to try" }}</h2>
+        {% endunless %}
+        
+        {% unless section.settings.sub_title == blank %}
+        <h3 class="cta-banner-subtitle">{{ section.settings.sub_title | default: "Canada's Cleanest Kibble?" }}</h3>
+        {% endunless %}
+        
+        <!-- Feature Points -->
+        {% if section.blocks.size > 0 %}
+        <div class="cta-banner-features">
+          {% for block in section.blocks %}
+            {% unless block.settings.feature_text == blank %}
+            <div class="cta-banner-feature" {{ block.shopify_attributes }}>
+              <div class="cta-feature-icon">
+                <img height="auto" width="auto" class="badge" src="https://cdn.shopify.com/s/files/1/0627/0422/2426/files/Vector_cac5e893-b1ab-4fda-b2fb-afa87647457b.png?v=1755252462">
+              </div>
+              <span class="cta-feature-text">{{ block.settings.feature_text }}</span>
+            </div>
+            {% endunless %}
+          {% endfor %}
+        </div>
+        {% endif %}
+        
+        <!-- CTA Button -->
+        {% unless section.settings.button_text == blank %}
+        <div class="cta-banner-button-wrapper">
+          <a href="{{ section.settings.button_url | default: '#' }}" class="cta-banner-button" style="
+            background-color: {{ section.settings.button_bg_color | default: '#FFA500' }};
+            color: {{ section.settings.button_text_color | default: '#333333' }};
+          ">
+            {{ section.settings.button_text | default: "Shop Now" }}
+          </a>
+        </div>
+        {% endunless %}
+      </div>
+      
+      <!-- Testimonial Card -->
+      {% unless section.settings.testimonial_text == blank %}
+      <div class="cta-banner-testimonial">
+        <div class="cta-testimonial-card">
+          {% unless section.settings.testimonial_image == blank %}
+          <div class="cta-testimonial-image">
+            <img src="{{ section.settings.testimonial_image | img_url: 'master' }}" alt="Customer" class="cta-customer-image">
+          </div>
+          {% endunless %}
+          
+          <div class="cta-testimonial-content">
+            <!-- Stars -->
+            <div class="cta-testimonial-stars">
+              {% assign rating = section.settings.testimonial_rating | default: 5 %}
+              {% for i in (1..5) %}
+                {% if i <= rating %}
+                  <svg class="cta-star cta-star--filled" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                    <path d="M6 0.75L7.326 3.882L10.875 4.383L8.438 6.882L9.152 10.383L6 8.618L2.848 10.383L3.562 6.882L1.125 4.383L4.674 3.882L6 0.75Z" fill="#FFD700"/>
+                  </svg>
+                {% else %}
+                  <svg class="cta-star cta-star--empty" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                    <path d="M6 0.75L7.326 3.882L10.875 4.383L8.438 6.882L9.152 10.383L6 8.618L2.848 10.383L3.562 6.882L1.125 4.383L4.674 3.882L6 0.75Z" fill="#E5E7EB"/>
+                  </svg>
+                {% endif %}
+              {% endfor %}
+            </div>
+            
+            <!-- Testimonial Text -->
+            <p class="cta-testimonial-text">{{ section.settings.testimonial_text }}</p>
+            
+            <!-- Customer Info -->
+            <div class="cta-testimonial-author">
+              {% unless section.settings.customer_name == blank %}
+                <span class="cta-customer-name">{{ section.settings.customer_name }}</span>
+              {% endunless %}
+              {% unless section.settings.customer_badge == blank %}
+                <span class="cta-customer-badge">
+                  <img height="auto" width="auto" class="badge" src="https://cdn.shopify.com/s/files/1/0627/0422/2426/files/Vector_cac5e893-b1ab-4fda-b2fb-afa87647457b.png?v=1755252462">
+                  {{ section.settings.customer_badge | default: "VERIFIED CUSTOMER" }}
+                </span>
+              {% endunless %}
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endunless %}
+    </div>
+  </div>
+</div>
+{% endunless %}
+
+<style>
+.cta-banner-wrapper {
+  position: relative;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: {{ section.settings.fallback_bg_color | default: '#4A9EE7' }};
+}
+
+.cta-feature-icon .badge {
+	height: 17px;
+}
+
+.cta-customer-badge .badge {
+	height: 13px;
+	width: auto;
+}
+
+.cta-banner-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.cta-bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.cta-banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.cta-banner-container {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+.cta-banner-content {
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+	justify-content: center;
+}
+
+.cta-feature-text {
+	color: #fff;
+}
+
+.cta-banner-main {
+  text-align: left;
+}
+
+.cta-banner-title {
+	font-size: 72px;
+	font-weight: 600;
+	color: #ffffff;
+	margin: 0 0 8px 0;
+	line-height: 1.2;
+	text-align: center;
+  text-transform:capitalize;
+}
+
+.cta-banner-subtitle {
+  font-size: 72px;
+	font-weight: 600;
+	color: #ffffff;
+  margin: 0 0 32px 0;
+  line-height: 1.2;
+  text-align: center;
+  text-transform:capitalize;
+}
+
+.cta-banner-features {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 24px;
+
+	max-width: 1000px;
+	margin: 0 auto;
+  	margin-bottom: 32px;
+}
+
+.cta-banner-feature {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  min-width: 200px;
+}
+
+.cta-feature-icon {
+  flex-shrink: 0;
+}
+
+.cta-testimonial-text {
+	font-size: 13px;
+	color: #fff;
+	line-height: 1.5;
+	margin: 0 0 2px 0;
+}
+
+.cta-banner-testimonial .cta-testimonial-content {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.cta-testimonial-content .cta-testimonial-text {
+	color: #fff;
+	font-size: 13px;
+}
+
+.cta-banner-button-wrapper {
+  margin-bottom: 20px;
+}
+
+.cta-banner-button::after {
+	content: "";
+	background-image: url('https://cdn.shopify.com/s/files/1/0627/0422/2426/files/Vector_5c1622c0-29e6-402a-a815-8da37656e4fc.png?v=1755184216');
+	height: 15px;
+	width: 30px;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.cta-banner-button {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+  position:relative;
+	padding: 14px 32px;
+	border-radius: 50px;
+	font-size: 1rem;
+	font-weight: 600;
+	text-decoration: none;
+	transition: all 0.3s ease;
+	box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+	width: 100%;
+	max-width: 400px;
+	margin: 0 auto;
+  padding-right:1rem;
+	justify-content: space-between;
+}
+
+.cta-banner-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 12px -1px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button-arrow {
+  transition: transform 0.3s ease;
+}
+
+.cta-banner-button:hover .cta-button-arrow {
+  transform: translateX(4px);
+}
+
+.cta-banner-testimonial {
+  display: flex;
+  justify-content: center;
+}
+
+.cta-testimonial-card {
+	background: rgba(255, 255, 255, 0.22);
+	backdrop-filter: blur(10px);
+	border-radius: 8px;
+	padding: 4px;
+	display: flex;
+	gap: 12px;
+	max-width: 360px;
+}
+
+.cta-testimonial-image {
+  flex-shrink: 0;
+}
+
+.cta-customer-image {
+	width: 96px;
+	height: 100%;
+	border-radius: 8px;
+	object-fit: cover;
+	max-width: 96px;
+}
+
+.cta-testimonial-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.cta-testimonial-stars {
+  display: flex;
+  gap: 2px;
+}
+
+.cta-testimonial-text {
+  font-size: 14px;
+  color: #374151;
+  line-height: 1.5;
+  margin: 0 0 2px 0;
+}
+
+.cta-testimonial-author {
+	display: flex;
+	flex-direction: row;
+	gap: 15px;
+	align-content: center;
+}
+
+.cta-customer-name {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.cta-customer-badge {
+	font-size: 0.7rem;
+	font-weight: 600;
+	color: #fff;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	display: flex;
+	gap: 3px;
+	align-items: center;
+}
+
+/* Mobile Responsive */
+@media (max-width: 968px) {
+  .cta-banner-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    text-align: center;
+  }
+  
+  .cta-banner-main {
+    text-align: center;
+  }
+  
+  .cta-banner-features {
+    justify-content: center;
+  }
+  
+  .cta-banner-feature {
+    min-width: auto;
+    flex: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .cta-banner-container {
+    padding: 40px 15px;
+  }
+  
+  .cta-banner-title,
+  .cta-banner-subtitle {
+    font-size: 2rem;
+  }
+  
+  .cta-banner-features {
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+  }
+  
+  .cta-banner-feature {
+    justify-content: center;
+  }
+  
+  .cta-testimonial-card {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .cta-banner-title,
+  .cta-banner-subtitle {
+    font-size: 1.75rem;
+  }
+  
+  .cta-testimonial-card {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+  
+  .cta-feature-text {
+    font-size: 0.85rem;
+  }
+}
+</style>
+
+{% schema %}
+{
+  "name": "CTA Banner with Overlay",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Background & Overlay"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "color",
+      "id": "fallback_bg_color",
+      "label": "Fallback Background Color",
+      "default": "#4A9EE7",
+      "info": "Used when no background image is set"
+    },
+    {
+      "type": "color",
+      "id": "overlay_color",
+      "label": "Overlay Color",
+      "default": "#4A9EE7"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "label": "Overlay Opacity (%)",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 85
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "main_title",
+      "label": "Main Title",
+      "default": "Ready to try"
+    },
+    {
+      "type": "text",
+      "id": "sub_title",
+      "label": "Sub Title",
+      "default": "Canada's Cleanest Kibble?"
+    },
+    {
+      "type": "header",
+      "content": "Text Colors"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "Subtitle Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "features_color",
+      "label": "Features Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Shop Now"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button URL"
+    },
+    {
+      "type": "color",
+      "id": "button_bg_color",
+      "label": "Button Background Color",
+      "default": "#FFA500"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button Text Color",
+      "default": "#333333"
+    },
+    {
+      "type": "header",
+      "content": "Testimonial"
+    },
+    {
+      "type": "image_picker",
+      "id": "testimonial_image",
+      "label": "Customer Image"
+    },
+    {
+      "type": "range",
+      "id": "testimonial_rating",
+      "label": "Star Rating",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 5
+    },
+    { 
+      "type": "textarea",
+      "id": "testimonial_text",
+      "label": "Testimonial Text",
+      "placeholder": "Customer review text..."
+    },
+    {
+      "type": "text",
+      "id": "customer_name",
+      "label": "Customer Name",
+      "placeholder": "JOHN D."
+    },
+    {
+      "type": "text",
+      "id": "customer_badge",
+      "label": "Customer Badge",
+      "default": "VERIFIED CUSTOMER"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature Point",
+      "settings": [
+        {
+          "type": "text",
+          "id": "feature_text",
+          "label": "Feature Text",
+          "placeholder": "e.g., Better digestion, more energy, happier bellies!"
+        }
+      ]
+    } 
+  ],
+  "presets": [
+    {
+      "name": "CTA Banner with Overlay",
+      "blocks": [
+        {
+          "type": "feature",
+          "settings": {
+            "feature_text": "Better digestion, more energy, happier bellies!"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "feature_text": "100% Clean ingredients, no recalls ever"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "feature_text": "Holistic nutrition, for happier pets"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

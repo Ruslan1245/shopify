@@ -1,0 +1,483 @@
+<div class="pet-testimonials-wrapper">
+  <div class="pet-testimonials-container">
+
+    {% unless section.settings.main_title == blank and section.settings.subtitle == blank %}
+    <div class="pet-testimonials-header">
+      {% unless section.settings.main_title == blank %}
+        <h2 class="pet-testimonials-title">{{ section.settings.main_title }}</h2>
+      {% endunless %}
+      {% unless section.settings.subtitle == blank %}
+        <p class="pet-testimonials-subtitle">{{ section.settings.subtitle }}</p>
+      {% endunless %}
+    </div>
+    {% endunless %}
+
+    {% if section.blocks.size > 0 %}
+    <div class="pet-testimonials-scroll-container">
+
+      <!-- Row 1 - scroll left -->
+      <marquee behavior="scroll" direction="left" scrollamount="5">
+        <div class="sliderMarquee">
+        {% for block in section.blocks %}
+          {% unless block.settings.review_text == blank %}
+          <div class="pet-testimonial-card" {{ block.shopify_attributes }}>
+            {% unless block.settings.pet_image == blank %}
+            <div class="pet-testimonial-image">
+              <img src="{{ block.settings.pet_image | img_url: 'master' }}" alt="{{ block.settings.reviewer_name | default: 'Pet' }}" class="pet-image">
+            </div>
+            {% endunless %}
+
+            <div class="pet-testimonial-content">
+              <div class="pet-testimonial-stars">
+                {% assign rating = block.settings.star_rating | default: 5 %}
+                {% for i in (1..5) %}
+                  {% if i <= rating %}
+                    <svg class="pet-star pet-star--filled" width="16" height="16" viewBox="0 0 16 16"><path d="M8 1L9.854 5.146L14.618 5.854L11.309 9.146L12.708 13.854L8 11.618L3.292 13.854L4.691 9.146L1.382 5.854L6.146 5.146L8 1Z" fill="#FFD700"/></svg>
+                  {% else %}
+                    <svg class="pet-star pet-star--empty" width="16" height="16" viewBox="0 0 16 16"><path d="M8 1L9.854 5.146L14.618 5.854L11.309 9.146L12.708 13.854L8 11.618L3.292 13.854L4.691 9.146L1.382 5.854L6.146 5.146L8 1Z" fill="#E5E7EB"/></svg>
+                  {% endif %}
+                {% endfor %}
+              </div>
+              <p class="pet-testimonial-text">{{ block.settings.review_text }}</p>
+              <div class="pet-testimonial-reviewer">
+                <span class="pet-reviewer-name">{{ block.settings.reviewer_name }}</span>
+                <span class="pet-customer-badge">{{ block.settings.customer_badge | default: "VERIFIED CUSTOMER" }}</span>
+              </div>
+            </div>
+          </div>
+          {% endunless %}
+        {% endfor %}
+        </div>
+      </marquee>
+
+      <!-- Row 2 - scroll right -->
+      <marquee behavior="scroll" direction="right" scrollamount="5">
+        <div class="sliderMarquee">
+        {% for block in section.blocks %}
+          {% unless block.settings.review_text == blank %}
+          <div class="pet-testimonial-card" {{ block.shopify_attributes }}>
+            {% unless block.settings.pet_image == blank %}
+            <div class="pet-testimonial-image">
+              <img src="{{ block.settings.pet_image | img_url: '80x80' }}" alt="{{ block.settings.reviewer_name | default: 'Pet' }}" class="pet-image">
+            </div>
+            {% endunless %}
+
+            <div class="pet-testimonial-content">
+              <div class="pet-testimonial-stars">
+                {% assign rating = block.settings.star_rating | default: 5 %}
+                {% for i in (1..5) %}
+                  {% if i <= rating %}
+                    <svg class="pet-star pet-star--filled" width="16" height="16" viewBox="0 0 16 16"><path d="M8 1L9.854 5.146L14.618 5.854L11.309 9.146L12.708 13.854L8 11.618L3.292 13.854L4.691 9.146L1.382 5.854L6.146 5.146L8 1Z" fill="#FFD700"/></svg>
+                  {% else %}
+                    <svg class="pet-star pet-star--empty" width="16" height="16" viewBox="0 0 16 16"><path d="M8 1L9.854 5.146L14.618 5.854L11.309 9.146L12.708 13.854L8 11.618L3.292 13.854L4.691 9.146L1.382 5.854L6.146 5.146L8 1Z" fill="#E5E7EB"/></svg>
+                  {% endif %}
+                {% endfor %}
+              </div>
+              <p class="pet-testimonial-text">{{ block.settings.review_text }}</p>
+              <div class="pet-testimonial-reviewer">
+                <span class="pet-reviewer-name">{{ block.settings.reviewer_name }}</span>
+                <span class="pet-customer-badge">{{ block.settings.customer_badge | default: "VERIFIED CUSTOMER" }}</span>
+              </div>
+            </div>
+          </div>
+          {% endunless %}
+        {% endfor %}
+        </div>
+      </marquee>
+
+    </div>
+    {% endif %}
+  </div>
+</div>
+
+<style>
+.pet-testimonials-wrapper {
+  background: #f8fafc;
+  padding: 40px 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.pet-testimonials-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle, #4A9EE7 1px, transparent 1px);
+  background-size: 20px 20px;
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+.pet-testimonials-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.pet-testimonials-header {
+  text-align: center;
+  padding: 30px;
+  border-radius: 8px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0px;
+}
+
+.pet-testimonials-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #4A9EE7;
+  margin: 0 0 4px 0;
+  line-height: 1.2;
+}
+
+.pet-testimonials-subtitle {
+  font-size: 1rem;
+  color: #64748b;
+  margin: 0;
+  font-weight: 400;
+}
+
+.pet-testimonials-scroll-container {
+  position: relative;
+  padding: 30px 0;
+  padding-top:unset;
+}
+
+.pet-testimonials-scroll {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 10px 0;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.pet-testimonials-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+
+.pet-testimonials-scroll::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 4px;
+}
+
+.pet-testimonials-scroll::-webkit-scrollbar-thumb {
+  background: #4A9EE7;
+  border-radius: 4px;
+}
+
+.sliderMarquee {
+	display: flex;
+	gap: 15px;
+	margin-top: 15px;
+}
+
+.pet-testimonials-scroll::-webkit-scrollbar-thumb:hover {
+  background: #3b82c7;
+}
+
+.pet-testimonial-card {
+  background: #4498CD1A;
+  border-radius: 8px;
+  padding: 4px;
+  min-width: 320px;
+  max-width: 350px;
+  flex-shrink: 0;
+  display: flex;
+  gap: 15px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pet-testimonial-image {
+  flex-shrink: 0;
+}
+
+.pet-image {
+	width: 96px;
+	height: 100%;
+	border-radius: 6px;
+	object-fit: cover;
+}
+
+.pet-testimonial-content {
+	flex: 1;
+	min-width: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.pet-testimonial-stars {
+  display: flex;
+  gap: 2px;
+  margin-bottom: 4px;
+}
+
+.pet-star--filled {
+  color: #FFD700;
+}
+
+.pet-star--empty {
+  color: #E5E7EB;
+}
+
+.pet-testimonial-text {
+  font-size: 0.9rem;
+  color: #374151;
+  line-height: 1.5;
+  margin: 0 0 4px 0;
+  font-weight: 400;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.pet-testimonial-reviewer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+
+.pet-reviewer-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #1f2937;
+  text-transform: uppercase;
+}
+
+.pet-customer-badge {
+	font-size: 0.7rem;
+	font-weight: 600;
+	color: #4A9EE7;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	/* background: rgba(74, 158, 231, 0.1); */
+	padding: 2px 6px;
+	border-radius: 3px;
+	/* border: 1px solid rgba(74, 158, 231, 0.2); */
+	display: flex;
+	align-items: center;
+	gap: 4px;
+}
+
+.pet-customer-badge::before {
+  content: '';
+  background-image:url('https://cdn.shopify.com/s/files/1/0627/0422/2426/files/Vector_68249d17-0684-487f-afc6-754aa8c89aea.png?v=1755184762');
+  font-weight: bold;
+  height:15px;
+  width:15px;
+  background-size: contain;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .pet-testimonials-wrapper {
+    padding: 30px 0;
+  }
+  
+  .pet-testimonials-container {
+    padding: 0 15px;
+  }
+  
+  .pet-testimonials-header {
+    padding: 20px;
+    margin-bottom: 30px;
+  }
+  
+  .pet-testimonials-title {
+    font-size: 2rem;
+  }
+  
+  .pet-testimonial-card {
+    min-width: 280px;
+    max-width: 300px;
+    padding: 15px;
+    gap: 12px;
+  }
+  
+  .pet-image {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .pet-testimonial-text {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .pet-testimonials-title {
+    font-size: 1.75rem;
+  }
+  
+  .pet-testimonials-header {
+    padding: 15px;
+  }
+  
+  .pet-testimonial-card {
+    min-width: 250px;
+    max-width: 270px;
+    padding: 12px;
+  }
+  
+  .pet-testimonials-scroll {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+/* Animation for infinite scroll effect */
+@media (min-width: 1200px) {
+  .pet-testimonials-scroll {
+    animation: scroll-testimonials 60s linear infinite;
+  }
+  
+  .pet-testimonials-scroll:hover {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes scroll-testimonials {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media (min-width: 1200px) {
+  .pet-testimonials-scroll.scroll-left {
+    animation: scroll-left 60s linear infinite;
+  }
+  .pet-testimonials-scroll.scroll-right {
+    animation: scroll-right 60s linear infinite;
+  }
+  .pet-testimonials-scroll:hover {
+    animation-play-state: paused;
+  }
+}
+
+
+</style>
+
+{% schema %}
+{
+  "name": "Pet Parents Testimonials",
+  "settings": [
+    {
+      "type": "text",
+      "id": "main_title",
+      "label": "Main Title",
+      "default": "What Real Pet Parents Are Saying"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Hear from people who care about their pets, like you."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Customer Testimonial",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "pet_image",
+          "label": "Pet Image"
+        },
+        {
+          "type": "range",
+          "id": "star_rating",
+          "label": "Star Rating",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "default": 5
+        },
+        {
+          "type": "textarea",
+          "id": "review_text",
+          "label": "Review Text",
+          "placeholder": "Enter the customer review here..."
+        },
+        {
+          "type": "text",
+          "id": "reviewer_name",
+          "label": "Reviewer Name",
+          "placeholder": "Customer Name"
+        },
+        {
+          "type": "text",
+          "id": "customer_badge",
+          "label": "Customer Badge",
+          "default": "VERIFIED CUSTOMER",
+          "info": "Text that appears next to customer name"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Pet Parents Testimonials",
+      "blocks": [
+        {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": 5,
+            "review_text": "After switching, Max's coat is shinier and tummy trouble disappeared! In less weeks.",
+            "reviewer_name": "JOHN D.",
+            "customer_badge": "VERIFIED CUSTOMER"
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": 5,
+            "review_text": "After switching, Max's coat is shinier and tummy trouble disappeared! In less weeks.",
+            "reviewer_name": "JOHN D.",
+            "customer_badge": "VERIFIED CUSTOMER"
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": 5,
+            "review_text": "After switching, Max's coat is shinier and tummy trouble disappeared! In less weeks.",
+            "reviewer_name": "JOHN D.",
+            "customer_badge": "VERIFIED CUSTOMER"
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": 5,
+            "review_text": "After switching, Max's coat is shinier and tummy trouble disappeared! In less weeks.",
+            "reviewer_name": "JOHN D.",
+            "customer_badge": "VERIFIED CUSTOMER"
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": 5,
+            "review_text": "After switching, Max's coat is shinier and tummy trouble disappeared! In less weeks.",
+            "reviewer_name": "JOHN D.",
+            "customer_badge": "VERIFIED CUSTOMER"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

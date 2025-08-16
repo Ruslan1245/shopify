@@ -1,0 +1,364 @@
+<!-- sections/vet-single-blog.liquid -->
+<style>
+  .vet-single-blog-container {
+    max-width: 100%;
+    margin: 0 auto;
+   /*background: #fff;*/
+      background-color: #f8f8f8;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  }
+
+  /* Hero Section */
+  .vet-single-hero {
+    position: relative;
+    height: {{ section.settings.vet_hero_height }}px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: linear-gradient(135deg, {{ section.settings.vet_hero_color_start }} 0%, {{ section.settings.vet_hero_color_end }} 100%);
+  }
+
+  {% if section.settings.vet_hero_image %}
+  .vet-single-hero {
+    background-image: linear-gradient(135deg, {{ section.settings.vet_hero_color_start | color_modify: 'alpha', 0.7 }} 0%, {{ section.settings.vet_hero_color_end | color_modify: 'alpha', 0.7 }} 100%), url('{{ section.settings.vet_hero_image | img_url: '1200x' }}');
+    background-size: cover;
+    background-position: center;
+  }
+  {% endif %}
+
+  .vet-single-hero-overlay {
+    position: absolute; top:0; left:0; right:0; bottom:0;
+    background: rgba(0,0,0,{{ section.settings.vet_hero_overlay_opacity | divided_by: 100.0 }});
+    z-index: 1;
+  }
+
+  .vet-single-hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: #fff;
+    max-width: 700px;
+    padding: 0 20px;
+  }
+
+  .vet-single-hero-title {
+    font-size: {{ section.settings.vet_hero_title_size }}px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  }
+
+  .vet-single-hero-subtitle {
+    font-size: {{ section.settings.vet_hero_subtitle_size }}px;
+    font-weight: 300;
+    opacity: 0.95;
+  }
+
+  /* Main Content + Sidebar */
+  .vet-single-content-wrapper {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .vet-single-blog-content {
+    background: #f8f8f8;
+    padding: 0px 30px 30px;
+    border-radius: 8px;
+    {% comment %} box-shadow: 0 2px 10px rgba(0,0,0,0.08); {% endcomment %}
+  }
+
+  /* Sidebar */
+  .vet-single-sidebar {
+    position: sticky;
+    top: 20px;
+    height: fit-content;
+  }
+
+  .vet-single-sidebar-section {
+    background: #fff;
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  }
+
+  .vet-single-sidebar-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+
+  .vet-single-related-post {
+    display: flex;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #f0f0f0;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .vet-single-related-post:hover {
+    background-color: #f8f9fa;
+    /*border-radius: 6px;
+    padding: 10px;
+    margin: 5px -10px 15px;*/
+  }
+
+  .vet-single-post-thumb {
+    width: 60px;
+    height: 60px;
+    border-radius: 6px;
+    object-fit: cover;
+    margin-right: 15px;
+    flex-shrink: 0;
+  }
+
+  .vet-single-post-info h4 {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 105%;
+    margin-bottom: 5px;
+    color: #4498CD;
+    text-transform: capitalize;
+  }
+.vet-single-post-info span.number_read {
+    font-size: 14px;
+    line-height: 125%;
+}
+a.vet-single-related-post:hover {
+   /* padding: unset !important;
+    margin-bottom: 15px !important;
+    padding-bottom: 15px !important;
+    padding-left: 10px !important;*/
+}
+  .vet-single-post-meta {
+    font-size: 0.8rem;
+    color: #888;
+  }
+   .vet-single-blog-content span, .vet-single-blog-content p {
+      color: #353535;
+      font-size: 18px;
+      line-height: 125%;
+  }
+   .vet-single-blog-content h2 span, .vet-single-blog-content h2 {
+  color: #4498CD;
+      font-size: 40px;
+      line-height: 90% !important;
+   }
+   h3.vet-single-sidebar-title {
+      font-size: 24px;
+      line-height: 90%;
+      text-transform: capitalize;
+  }
+  section.related-blogs-section .page-width {
+    max-width: 1440px;
+    margin: auto;
+    padding: 30px 20px;
+}
+.vet-single-blog-container .vet-single-content-wrapper {
+    padding: 60px 20px;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+.related-blog-content .related-blogs-title {
+    font-size: 32px;
+    line-height: 90%;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.related-blog-content .related-blog-meta {
+    font-size: 14px;
+    line-height: 125%;
+    color: #2F2F2CBF;;
+}
+.related-blog-content .related-blog-readmore {
+    font-size: 16px;
+    line-height: 128%;
+    font-weight: 500 !important;
+    text-decoration: none;
+    color: #2F2F2CBF;
+}
+.related-blog-content .related-blog-title {
+    font-size: 18px;
+    line-height: 125%;
+    color: #353535;
+}
+/*.vet-single-related-post:hover {
+    background-color: #f8f9fa;
+    border-radius: 6px;
+    padding: 0px 0px 10px !important;
+    margin: initial;
+}*/
+  /* Responsive */
+  @media (max-width: 768px) {
+    .vet-single-hero-title {
+      font-size: {{ section.settings.vet_hero_title_size | minus: 10 }}px;
+    }
+
+    .vet-single-content-wrapper {
+      grid-template-columns: 1fr;
+      padding: 50px 20px;
+      gap: 25px;
+    }
+
+    .vet-single-sidebar {
+      position: static;
+      order: -1;
+    }
+    .vet-single-blog-content {
+    padding: 0px 00px 30px;
+  }
+  .related-blogs-grid {
+    grid-template-columns: repeat(1, 1fr);
+}
+.vet-single-blog-container .vet-single-hero-content h1.vet-single-hero-title {
+    font-size: 48px;
+    line-height: 90%;
+}
+.vet-single-blog-content span, .vet-single-blog-content p {
+    font-size: 16px;
+    line-height: 125%;
+}
+.vet-single-blog-content h2 span, .vet-single-blog-content h2 {
+    font-size: 32px;
+    line-height: 90% !important;
+}
+  }
+</style>
+
+<div class="vet-single-blog-container">
+  <!-- Hero Section -->
+  <section class="vet-single-hero">
+    <div class="vet-single-hero-overlay"></div>
+    <div class="vet-single-hero-content">
+      {% if article.tags.size > 0 %}
+        <h6 class="tag">{{ article.tags.first }}</h6>
+      {% endif %}
+      <h1 class="vet-single-hero-title">{{ article.title }}</h1>
+      {% if article.excerpt %}
+        <p class="vet-single-hero-subtitle">{{ article.excerpt }}</p>
+      {% endif %}
+      <div class="detail_content">
+        <span class="article-author">{{ article.author }}</span>
+        <span class="article-date">{{ article.published_at | date: '%b %d, %Y' }}</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <div class="vet-single-content-wrapper">
+    <!-- Blog Content -->
+    <article class="vet-single-blog-content">
+      {{ article.content }}
+    </article>
+
+    <!-- Sidebar -->
+    <aside class="vet-single-sidebar">
+      <div class="vet-single-sidebar-section">
+        <h3 class="vet-single-sidebar-title">{{ section.settings.vet_sidebar_title }}</h3>
+
+        {% assign related_articles = '' %}
+
+        {% for tag in article.tags %}
+          <div class="vet-single-tag-group">
+            {% for a in blog.articles %}
+              {% if a.id != article.id and a.tags contains tag %}
+                {% unless related_articles contains a.id %}
+                  {% assign related_articles = related_articles | append: a.id | append: ',' %}
+                  <a href="{{ a.url }}" class="vet-single-related-post">
+                    {% if a.image %}
+                      <img src="{{ a.image | img_url: '100x100' }}" alt="{{ a.title }}" class="vet-single-post-thumb">
+                    {% else %}
+                      <div
+                        class="vet-single-post-thumb"
+                        style="background:#f0f0f0;display:flex;align-items:center;justify-content:center;color:#999;font-size:12px;"
+                      >
+                        No Image
+                      </div>
+                    {% endif %}
+                    <div class="vet-single-post-info">
+                      <h4>{{ a.title | truncate: 50 }}</h4>
+                      {% comment %}<span class="vet-single-post-meta">{{ a.published_at | date: '%b %d, %Y' }}</span>{% endcomment %}
+                      <span class="number_read">3 mins to read</span>
+                    </div>
+                  </a>
+                {% endunless %}
+              {% endif %}
+            {% endfor %}
+          </div>
+        {% endfor %}
+      </div>
+    </aside>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Vet Single Blog Article",
+  "settings": [
+    { "type": "image_picker", "id": "vet_hero_image", "label": "Hero Background Image" },
+    {
+      "type": "range",
+      "id": "vet_hero_height",
+      "label": "Hero Height",
+      "min": 300,
+      "max": 600,
+      "step": 50,
+      "default": 400
+    },
+    { "type": "color", "id": "vet_hero_color_start", "label": "Hero Gradient Start Color", "default": "#4a90e2" },
+    { "type": "color", "id": "vet_hero_color_end", "label": "Hero Gradient End Color", "default": "#357abd" },
+    {
+      "type": "range",
+      "id": "vet_hero_overlay_opacity",
+      "label": "Overlay Opacity (%)",
+      "min": 0,
+      "max": 80,
+      "step": 10,
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "vet_hero_title_size",
+      "label": "Hero Title Font Size",
+      "min": 24,
+      "max": 48,
+      "step": 2,
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "vet_hero_subtitle_size",
+      "label": "Hero Subtitle Font Size",
+      "min": 14,
+      "max": 24,
+      "step": 1,
+      "default": 18
+    },
+    { "type": "text", "id": "vet_sidebar_title", "label": "Sidebar Title" },
+    {
+      "type": "range",
+      "id": "vet_related_count",
+      "label": "Number of Related Articles",
+      "min": 3,
+      "max": 8,
+      "step": 1,
+      "default": 4
+    }
+  ],
+  "presets": [
+    {
+      "name": "Vet Single Blog Article",
+      "category": "Blog",
+      "settings": {
+        "vet_sidebar_title": "Related Articles"
+      }
+    }
+  ]
+}
+{% endschema %}

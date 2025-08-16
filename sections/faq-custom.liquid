@@ -1,0 +1,155 @@
+<!-- sections/faq-section.liquid -->
+<section class="faq-section">
+  <div class="faq-container">
+    <div class="faq-left">
+      <h2>{{ section.settings.heading }}</h2>
+      <p>{{ section.settings.subheading }}</p>
+    </div>
+    <div class="faq-right">
+      {% for block in section.blocks %}
+        <details class="faq-item">
+          <summary>
+            <span>{{ block.settings.question }}</span>
+            <img
+              width="auto"
+              height="auto"
+              class="icon"
+              src="https://cdn.shopify.com/s/files/1/0627/0422/2426/files/Vector_e2ceaa5b-d6c4-4c1a-84c7-98dd14f9ac4d.png?v=1755195289"
+            >
+          </summary>
+          <div class="faq-answer">
+            {{ block.settings.answer }}
+          </div>
+        </details>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<style>
+      .faq-section {
+        padding: 70px 20px;
+        background: #fff;
+      }
+      .faq-item .icon {
+    transition: transform 0.3s ease;
+    transform: rotate(0deg); /* Down arrow by default */
+  }
+
+  .faq-item[open] .icon {
+    transform: rotate(180deg); /* Up arrow when open */
+  }
+      .faq-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        align-items: flex-start;
+      }
+      .faq-section .icon{
+        height: 20px;
+      width: 20px;
+    }
+      .faq-left h2 {
+    	font-size: 56px;
+    	color: #4A9EE7;
+    	margin-bottom: 10px;
+    	font-weight: 600;
+    }
+      .faq-left p {
+        color: #555;
+        font-size: 1rem;
+      }
+      .faq-right {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .faq-item {
+        border-bottom: 1px solid #ddd;
+        padding: 15px 0;
+      }
+      .faq-item summary {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        font-weight: bold;
+        color: #4498CD;
+        font-size: 18px;
+      }
+      .faq-item summary::-webkit-details-marker {
+        display: none;
+      }
+      .faq-arrow {
+        transition: transform 0.3s ease;
+      }
+      .faq-item[open] .faq-arrow {
+        transform: rotate(180deg);
+      }
+    .faq-answer {
+    	margin-top: 10px;
+    	color: #353535;
+    	line-height: 1.5;
+    	font-size: 18px;
+    }
+    @media (max-width: 900px) {
+      .faq-left h2 {
+        font-size: 27px;
+      }
+    }
+      @media (max-width: 768px) {
+        .faq-container {
+          grid-template-columns: 1fr;
+        }
+      }
+</style>
+
+{% schema %}
+{
+  "name": "FAQ Section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Frequently Asked Questions"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "We're always happy to help."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq_item",
+      "name": "FAQ Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "default": "Sample Question"
+        },
+        {
+          "type": "textarea",
+          "id": "answer",
+          "label": "Answer",
+          "default": "This is a sample answer."
+        }
+      ]
+    }
+  ],
+  "max_blocks": 10,
+  "presets": [
+    {
+      "name": "FAQ Section",
+      "category": "Custom",
+      "blocks": [{ "type": "faq_item" }, { "type": "faq_item" }, { "type": "faq_item" }]
+    }
+  ]
+}
+{% endschema %}

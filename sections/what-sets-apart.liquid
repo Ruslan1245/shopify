@@ -1,0 +1,344 @@
+<section class="what-sets-apart">
+  <div class="page-width">
+    {% if section.settings.heading != blank %}
+      <h2 class="wsa-heading">{{ section.settings.heading }}</h2>
+    {% endif %}
+    {% if section.settings.subheading != blank %}
+      <p class="wsa-subheading">{{ section.settings.subheading }}</p>
+    {% endif %}
+
+    <div class="wsa-items">
+      {% for block in section.blocks %}
+        <div class="wsa-item">
+          <div class="wsa-image-wrapper">
+            {% if block.settings.image != blank %}
+              <img
+                class="wsa-image wsa-image-desktop"
+                src="{{ block.settings.image | image_url: width: 800 }}"
+                alt="{{ block.settings.title }}"
+              >
+            {% endif %}
+            {% if block.settings.image_mobile != blank %}
+              <img
+                class="wsa-image wsa-image-mobile"
+                src="{{ block.settings.image_mobile | image_url: width: 600 }}"
+                alt="{{ block.settings.title }}"
+              >
+            {% endif %}
+          </div>
+          <div class="wsa-text">
+            <h3 class="wsa-title">{{ block.settings.title }}</h3>
+            <p class="wsa-desc">{{ block.settings.text }}</p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    <div class="wsa-cta">
+      {% if section.settings.button_text != blank %}
+        <a href="{{ section.settings.button_link }}" class="wsa-btn">
+          {{ section.settings.button_text }}
+        </a>
+      {% endif %}
+      {% if section.settings.review_text != blank %}
+        <div class="wsa-review">
+          <div class="star">
+            <svg class="testimonial-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#ffd700">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.184 3.64a1 1 0 00.95.69h3.828c.969 0 1.371 1.24.588 1.81l-3.095 2.25a1 1 0 00-.364 1.118l1.184 3.64c.3.921-.755 1.688-1.54 1.118l-3.095-2.25a1 1 0 00-1.176 0l-3.095 2.25c-.785.57-1.84-.197-1.54-1.118l1.184-3.64a1 1 0 00-.364-1.118l-3.095-2.25c-.783-.57-.38-1.81.588-1.81h3.828a1 1 0 00.95-.69l1.184-3.64z"></path>
+            </svg>
+            <svg class="testimonial-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#ffd700">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.184 3.64a1 1 0 00.95.69h3.828c.969 0 1.371 1.24.588 1.81l-3.095 2.25a1 1 0 00-.364 1.118l1.184 3.64c.3.921-.755 1.688-1.54 1.118l-3.095-2.25a1 1 0 00-1.176 0l-3.095 2.25c-.785.57-1.84-.197-1.54-1.118l1.184-3.64a1 1 0 00-.364-1.118l-3.095-2.25c-.783-.57-.38-1.81.588-1.81h3.828a1 1 0 00.95-.69l1.184-3.64z"></path>
+            </svg>
+            <svg class="testimonial-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#ffd700">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.184 3.64a1 1 0 00.95.69h3.828c.969 0 1.371 1.24.588 1.81l-3.095 2.25a1 1 0 00-.364 1.118l1.184 3.64c.3.921-.755 1.688-1.54 1.118l-3.095-2.25a1 1 0 00-1.176 0l-3.095 2.25c-.785.57-1.84-.197-1.54-1.118l1.184-3.64a1 1 0 00-.364-1.118l-3.095-2.25c-.783-.57-.38-1.81.588-1.81h3.828a1 1 0 00.95-.69l1.184-3.64z"></path>
+            </svg>
+            <svg class="testimonial-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#ffd700">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.184 3.64a1 1 0 00.95.69h3.828c.969 0 1.371 1.24.588 1.81l-3.095 2.25a1 1 0 00-.364 1.118l1.184 3.64c.3.921-.755 1.688-1.54 1.118l-3.095-2.25a1 1 0 00-1.176 0l-3.095 2.25c-.785.57-1.84-.197-1.54-1.118l1.184-3.64a1 1 0 00-.364-1.118l-3.095-2.25c-.783-.57-.38-1.81.588-1.81h3.828a1 1 0 00.95-.69l1.184-3.64z"></path>
+            </svg>
+            <svg class="testimonial-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#ffd700">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.184 3.64a1 1 0 00.95.69h3.828c.969 0 1.371 1.24.588 1.81l-3.095 2.25a1 1 0 00-.364 1.118l1.184 3.64c.3.921-.755 1.688-1.54 1.118l-3.095-2.25a1 1 0 00-1.176 0l-3.095 2.25c-.785.57-1.84-.197-1.54-1.118l1.184-3.64a1 1 0 00-.364-1.118l-3.095-2.25c-.783-.57-.38-1.81.588-1.81h3.828a1 1 0 00.95-.69l1.184-3.64z"></path>
+            </svg>
+          </div>
+          {{ section.settings.review_text }}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "What Sets Us Apart",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "What Sets Us Apart"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Because every detail matters."
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Get Mine Now"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "text",
+      "id": "review_text",
+      "label": "Review Text",
+      "default": "⭐ 4.9/5 Loved by thousands of pet parents"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Desktop Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Mobile Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Feature Title"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Description",
+          "default": "Feature description goes here."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "What Sets Us Apart",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+  .what-sets-apart {
+    background: #e6eef4;
+    text-align: center;
+    padding: 60px 20px;
+  }
+  .what-sets-apart .wsa-heading {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  .what-sets-apart .wsa-subheading {
+    font-size: 16px;
+    margin-bottom: 40px;
+    color: #555;
+  }
+  .what-sets-apart .wsa-items {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+  }
+  .what-sets-apart .wsa-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+  }
+  .what-sets-apart .wsa-image-wrapper {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  .what-sets-apart .wsa-image {
+    width: 100%;
+    border-radius: 12px;
+  }
+  .wsa-image-mobile {
+    display: none;
+  }
+  .what-sets-apart .wsa-title {
+        font-size: 24px;
+    line-height: 90%;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #0073e6;
+    text-transform: capitalize;
+  }
+  .what-sets-apart .wsa-desc {
+    font-size: 15px;
+    color: #444;
+  }
+  .what-sets-apart .wsa-cta {
+    margin-top: 30px;
+  }
+  .what-sets-apart .wsa-btn {
+    gap: 8px;
+    background-color: #F8C933;
+    padding: 12px 25px;
+    color: #353535;
+    font-weight: 600;
+    border-radius: 9999px;
+    text-decoration: none;
+    max-width: 400px;
+    width: 100%;
+    font-size: 20px;
+    line-height: 125%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    position: relative;
+    padding-right: 1rem;
+}
+.what-sets-apart a.wsa-btn:after {
+    content: "";
+    background-image: url(/cdn/shop/files/Vector_5c1622c0-29e6-402a-a815-8da37656e4fc.png?v=1755184216);
+    height: 15px;
+    width: 30px;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+  .what-sets-apart .wsa-btn:hover {
+    background: #ffcc00;
+  }
+  .what-sets-apart .wsa-review {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #333;
+  }
+.what-sets-apart .wsa-heading {
+    font-size: 56px;
+    line-height: 90%;
+    color: #4498CD;
+}
+.what-sets-apart .wsa-subheading {
+    font-size: 18px;
+    line-height: 125%;
+    color: #353535;
+}
+section.what-sets-apart .wsa-items .wsa-item .wsa-image-wrapper:after
+ {
+    background: linear-gradient(90deg, #e6eef400  , #e6eef4 92.15%);
+    position: absolute;
+    z-index: 1;
+    content: "";
+    right: 0;
+    left: unset;
+    width: 100%;
+    height: 100%;
+    top: 0;
+}
+section.what-sets-apart .wsa-items .wsa-item:nth-child(even) .wsa-image-wrapper:after
+ {
+    background: linear-gradient(90deg, #e6eef4, #e6eef400 92.15%);
+    position: absolute;
+    z-index: 1;
+    content: "";
+    right: 0;
+    left: unset;
+    width: 100%;
+    height: 100%;
+    top: 0;
+}
+.what-sets-apart .wsa-item:nth-child(even) {
+    flex-direction: row-reverse !important;
+}
+.what-sets-apart .wsa-image {
+    width: 100%;
+    border-radius: 12px;
+    max-height: 240px;
+    height: 100%;
+    object-fit: cover;
+}
+.what-sets-apart .wsa-review .star {
+    display: flex;
+    justify-content: center;
+}
+.what-sets-apart .wsa-review {
+    display: flex;
+    justify-content: center;
+    column-gap: 5px;
+}
+.single-product-collection span.add-to-cart-text__content span.atc-price {
+    display: none;
+}
+  /* Responsive */
+  @media (min-width: 768px) {
+    .what-sets-apart .wsa-items {
+      flex-direction: column;
+    }
+    .what-sets-apart .wsa-item {
+      flex-direction: row;
+      gap: 20px;
+    }
+    .what-sets-apart .wsa-image-wrapper {
+      flex: 1;
+    }
+    .what-sets-apart .wsa-text {
+      flex: 1;
+    }
+    .wsa-image-desktop { display: block; }
+    .wsa-image-mobile { display: none; }
+  }
+  @media (max-width: 767px) {
+    .wsa-image-desktop { display: none; }
+    .wsa-image-mobile { display: block; }
+
+    .what-sets-apart .wsa-item:nth-child(even) {
+    flex-direction: column;
+}
+section.what-sets-apart .wsa-items .wsa-item .wsa-image-wrapper:after {
+    background: linear-gradient(180deg, #e6eef400, #e6eef4 92.15%);
+  }
+  section.what-sets-apart .wsa-items .wsa-item:nth-child(even) .wsa-image-wrapper:after {
+    background: linear-gradient(180deg, #e6eef400, #e6eef4 92.15%);
+}
+.what-sets-apart .wsa-item:nth-child(even) {
+    flex-direction: column !important;
+}
+.what-sets-apart .wsa-heading {
+    font-size: 32px;
+    line-height: 90%;
+}
+.what-sets-apart .wsa-text
+ {
+    text-align: center;
+}
+.what-sets-apart .wsa-desc {
+    font-size: 16px;
+    line-height: 128%;
+    color: #000000;
+}
+.what-sets-apart .wsa-review {
+    font-size: 12px;
+}
+.what-sets-apart .wsa-btn
+ {
+    font-size: 18px;
+    line-height: 125%;
+}
+  }
+{% endstylesheet %}

@@ -1,0 +1,159 @@
+{% stylesheet %}
+/* ===== Our Awards Section (Scoped) ===== */
+.our-awards-section {
+  text-align: center;
+  padding: 50px 20px;
+  background: #fff;
+}
+
+.our-awards-section__heading {
+  font-size: 56px;
+  line-height: 90%;
+  font-weight: 700;
+  color: #4498CD;
+  margin-bottom: 8px;
+}
+
+.our-awards-section__subheading {
+  font-size: 18px;
+  line-height: 125%;
+  color: #353535;
+  font-weight: 500;
+  padding-top: 10px;
+  max-width: 700px;
+  margin: 0 auto 40px;
+}
+
+.our-awards-section__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.our-awards-section__item {
+  text-align: center;
+}
+
+.our-awards-section__image {
+  /* max-width: 150px;
+  margin: 0 auto 15px; */
+  margin: 0 auto 15px;
+    width: 200px;
+    display: flex;
+    height: auto;
+    align-items: center;
+    min-height: 240px;
+}
+
+.our-awards-section__image img {
+  width: 100%;
+  height: auto;
+}
+
+.our-awards-section__title {
+  font-size: 24px;
+  line-height: 90%;
+  font-weight: 700;
+  color: #4498CD;
+  margin-bottom: 6px;
+}
+
+.our-awards-section__desc {
+  font-size: 16px;
+  color: #353535;
+  line-height: 128%;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .our-awards-section__heading {
+    font-size: 32px;
+    line-height: 90%;
+  }
+  .our-awards-section__subheading {
+    padding-top: 10px;
+}
+.our-awards-section__image {
+    min-height: auto;
+}
+}
+{% endstylesheet %}
+
+<div class="our-awards-section">
+  {% if section.settings.heading != blank %}
+    <h2 class="our-awards-section__heading">{{ section.settings.heading }}</h2>
+  {% endif %}
+  {% if section.settings.subheading != blank %}
+    <p class="our-awards-section__subheading">{{ section.settings.subheading }}</p>
+  {% endif %}
+
+  <div class="our-awards-section__grid">
+    {% for block in section.blocks %}
+      <div class="our-awards-section__item">
+        {% if block.settings.image != blank %}
+          <div class="our-awards-section__image">
+            <img src="{{ block.settings.image | img_url: '300x' }}" alt="{{ block.settings.title | escape }}">
+          </div>
+        {% endif %}
+        {% if block.settings.title != blank %}
+          <h3 class="our-awards-section__title">{{ block.settings.title }}</h3>
+        {% endif %}
+        {% if block.settings.desc != blank %}
+          <p class="our-awards-section__desc">{{ block.settings.desc }}</p>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Our Awards Section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Our Awards"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Our unique approach to nutrition and our innovative products..."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "award",
+      "name": "Award",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Award Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Award Title"
+        },
+        {
+          "type": "textarea",
+          "id": "desc",
+          "label": "Award Description"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 8,
+  "presets": [
+    {
+      "name": "Our Awards Section",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
