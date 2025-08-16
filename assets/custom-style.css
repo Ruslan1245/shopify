@@ -770,6 +770,12 @@ button.button.add-to-cart-button.button.atc-added:after {
     left: 0px;
     top: 33%;
 }
+.nutram-blogs__content h3 {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 125%;
+    color: #353535;
+}
 @media(max-width:767px){
     .product-information {
     padding: 20px 15px 40px !important;
