@@ -815,6 +815,9 @@ button.button.add-to-cart-button.button.atc-added:after {
     font-size: 14px;
     line-height: 128%;
 }
+.page-class-collection #ResultsList product-price span.price {
+    font-size: 16px;
+}
     .product-information {
     padding: 20px 15px 40px !important;
 }
