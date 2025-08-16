@@ -789,7 +789,7 @@ button.button.add-to-cart-button.button.atc-added:after {
 .cleanest-kibbles__badge {
     margin-top: 0px;
     gap: 8px;
-    font-size: 0.9rem;
+    font-size: 16px;
 }
     .product-information {
     padding: 20px 15px 40px !important;
