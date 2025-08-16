@@ -714,6 +714,9 @@ button.button.add-to-cart-button.button.atc-added:after {
     .product-information {
     padding: 20px 15px 40px !important;
 }
+.vet-single-blog-container .vet-single-hero-content .detail_content {
+    column-gap: 25px;
+}
 .product-information__grid.product-information--media-left {
     grid-template-columns: subgrid !important;
 }
