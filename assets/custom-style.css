@@ -731,6 +731,10 @@ button.button.add-to-cart-button.button.atc-added:after {
     line-height: 24px;
     font-weight: 600;
 }
+.page-class-collection .custom-forgot-section .forgot-subtext {
+    font-size: 18px !important;
+    line-height: 125%;
+}
 @media(max-width:767px){
     .product-information {
     padding: 20px 15px 40px !important;
