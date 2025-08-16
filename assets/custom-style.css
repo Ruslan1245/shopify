@@ -745,18 +745,15 @@ button.button.add-to-cart-button.button.atc-added:after {
 }
 
 .nutram-blogs__slider::-webkit-scrollbar-thumb {
-  background-color: #3086C8; 
+  background-color: #4498CD; 
   border-radius: 4px;
 }
-
 .nutram-blogs__slider::-webkit-scrollbar-thumb:hover {
-  background-color: #24679a; 
+  background-color: #4498CD; 
 }
-
-
 .nutram-blogs__slider {
   scrollbar-width: thin; 
-  scrollbar-color: #3086C8 #f0f0f0;
+  scrollbar-color: #4498CD #f0f0f0;
 }
 .nutram-blogs__slider::-webkit-scrollbar-track {
   background: transparent;
