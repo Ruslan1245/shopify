@@ -762,6 +762,14 @@ button.button.add-to-cart-button.button.atc-added:after {
     overflow-x: visible;
     padding: 0px 20px;
 }
+.page-class-collection .nutram-blogs__nav--next {
+    right: 0px;
+    top: 33%;
+}
+.page-class-collection .nutram-blogs__nav--prev {
+    left: 0px;
+    top: 33%;
+}
 @media(max-width:767px){
     .product-information {
     padding: 20px 15px 40px !important;
