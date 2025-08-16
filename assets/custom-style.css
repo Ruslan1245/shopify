@@ -738,27 +738,30 @@ button.button.add-to-cart-button.button.atc-added:after {
 
 
 
-.nutram-blogs__slider::-webkit-scrollbar {
+.page-class-collection .nutram-blogs__slider::-webkit-scrollbar {
   height: 8px; 
   background-color:rgba(240, 240, 240, 0); 
 
 }
 
-.nutram-blogs__slider::-webkit-scrollbar-thumb {
+.page-class-collection .nutram-blogs__slider::-webkit-scrollbar-thumb {
   background-color: #4498CD; 
   border-radius: 4px;
 }
-.nutram-blogs__slider::-webkit-scrollbar-thumb:hover {
+.page-class-collection .nutram-blogs__slider::-webkit-scrollbar-thumb:hover {
   background-color: #4498CD; 
 }
-.nutram-blogs__slider {
+.page-class-collection .nutram-blogs__slider {
   scrollbar-width: thin; 
   scrollbar-color: #4498CD #f0f0f0;
 }
-.nutram-blogs__slider::-webkit-scrollbar-track {
+.page-class-collection .nutram-blogs__slider::-webkit-scrollbar-track {
   background: transparent;
 }
-
+.page-class-collection .nutram-blogs__slider {
+    overflow-x: visible;
+    padding: 0px 20px;
+}
 @media(max-width:767px){
     .product-information {
     padding: 20px 15px 40px !important;
