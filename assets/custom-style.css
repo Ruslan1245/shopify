@@ -683,6 +683,20 @@ button.button.add-to-cart-button.button:after {
 button.button.add-to-cart-button.button.atc-added:after {
     display: none;
 }
+.vet-single-blog-container .detail_content span.article-author:after {
+    content: "";
+    background-image: url(https://cdn.shopify.com/s/files/1/0627/0422/2426/files/Group_100.png?v=1755364288);
+    background-size: contain;
+    width: 15px;
+    height: 15px;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: -20px;
+    top: calc(50% - 7.5px);
+}
+.vet-single-blog-container .detail_content span.article-author, .vet-single-blog-container .detail_content span.article-date {
+    position: relative;
+}
 @media(max-width:767px){
     .product-information {
     padding: 20px 15px 40px !important;
