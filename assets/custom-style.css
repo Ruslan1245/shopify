@@ -787,6 +787,11 @@ button.button.add-to-cart-button.button.atc-added:after {
     flex-direction: column;
     padding-top: 18px;
 }
+.page-class-collection .cleanest-kibbles__cta {
+    margin-top: 5px;
+    padding: 8px 15px;
+    font-size: 14px;
+}
 .page-class-collection .cleanest-kibbles__badge {
     margin-top: 0px;
     gap: 8px;
