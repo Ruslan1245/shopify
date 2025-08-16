@@ -782,11 +782,11 @@ button.button.add-to-cart-button.button.atc-added:after {
     font-size: 48px;
     line-height: 90%;
 }
-    .cleanest-kibbles__extras_badge {
+   .page-class-collection .cleanest-kibbles__extras_badge {
     gap: 15px;
     flex-direction: column;
 }
-.cleanest-kibbles__badge {
+.page-class-collection .cleanest-kibbles__badge {
     margin-top: 0px;
     gap: 8px;
     font-size: 16px;
