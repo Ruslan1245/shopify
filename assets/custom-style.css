@@ -713,8 +713,9 @@ button.button.add-to-cart-button.button.atc-added:after {
 .page-class-collection .cleanest-kibbles__heading {
     font-size: 56px;
     line-height: 90%;
-    font-weight: bold;
+    font-weight: 600;
     margin-bottom: 0px;
+    text-transform: capitalize;
 }
 @media(max-width:767px){
     .product-information {
