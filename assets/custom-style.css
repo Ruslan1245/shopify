@@ -800,6 +800,10 @@ button.button.add-to-cart-button.button.atc-added:after {
     gap: 8px;
     font-size: 16px;
 }
+.page-class-collection #ResultsList .user-select-text p {
+    font-size: 16px;
+    line-height: 94% !important;
+}
     .product-information {
     padding: 20px 15px 40px !important;
 }
