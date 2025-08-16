@@ -753,7 +753,7 @@ button.button.add-to-cart-button.button.atc-added:after {
 }
 .page-class-collection .nutram-blogs__slider {
   scrollbar-width: thin; 
-  scrollbar-color:rgba(68, 153, 205, 0.02) #f0f0f0;
+  scrollbar-color: #4498CD;
 }
 .page-class-collection .nutram-blogs__slider::-webkit-scrollbar-track {
   background: transparent;
