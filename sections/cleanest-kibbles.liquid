@@ -30,7 +30,7 @@
 
     <div class="cleanest-kibbles__features">
       {% for block in section.blocks %}
-        {% if block.type == 'feature' %}
+        {% if block.type == 'feature' and block.settings.icon != blank and block.settings.text != blank %}
           <div class="cleanest-kibbles__feature">
             {% if block.settings.icon != blank %}
               <img src="{{ block.settings.icon | img_url: '50x50' }}" alt="icon">
@@ -193,10 +193,21 @@
   z-index: 2;
 }
 
+.cleanest-kibbles__extras {
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+	flex-wrap: wrap;
+}
+
+.cleanest-kibbles__extras .cleanest-kibbles__cta:first-child{
+  background-color: #fcd900;
+}
+
 .cleanest-kibbles__heading {
   font-size: 2rem;
   font-weight: bold;
-  margin-bottom: 20px;
+  margin-bottom: 0px;
 }
 
 .cleanest-kibbles__features {
@@ -204,7 +215,6 @@
   justify-content: center;
   flex-wrap: wrap;
   gap: 20px;
-  margin-bottom: 25px;
 }
 
 .cleanest-kibbles__feature {
@@ -224,7 +234,6 @@
   justify-content: center;
   flex-wrap: wrap;
   gap: 10px;
-  margin-bottom: 20px;
 }
 
 .cleanest-kibbles__filter-btn {
@@ -246,7 +255,8 @@
   display: inline-block;
   margin-top: 20px;
   padding: 12px 25px;
-  background: #fcd900;
+  font-size: 14px;
+  background: #fff;
   color: #000;
   font-weight: bold;
   border-radius: 30px;
@@ -270,9 +280,68 @@
   display: none;
 }
 
+.section.product-grid-container {
+	--page-margin: 0px;
+  padding: 0px;
+}
+
+.section.product-grid-container .facets-block-wrapper{
+  background-color: #4498CD1A;
+  padding: 0px 40px;
+}
+
+#ResultsList{
+  padding: 30px 40px;
+}
+
+#ResultsList button.add-to-cart-button{
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	position: relative;
+	padding: 14px 32px;
+	padding-right: 32px;
+	border-radius: 50px;
+	font-size: 1rem;
+	font-weight: 600;
+	text-decoration: none;
+	transition: all 0.3s ease;
+	box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+	width: 100%;
+	max-width: 400px;
+	margin: 0 auto;
+	padding-right: 1rem;
+	justify-content: space-between;
+	background-color: #f8c933;
+	color: #333333;
+}
+
+#ResultsList rte-formatter p {
+	margin: 4px 0px;
+	color: #353535;
+	font-size: 16px;
+}
+
+#ResultsList product-price {
+	padding: 10px 0px;
+	color: #353535;
+}
+
+#ResultsList .user-select-text p {
+	color: #4498CD;
+	font-size: 24px;
+	font-weight: 600;
+	line-height: 26px;
+	max-width: 280px;
+	margin-bottom: 10px;
+}
+
+#ResultsList .add-to-cart-text .add-to-cart-icon{
+  display:none;
+}
 
 .cleanest-kibbles__badge img {
-  width: 18px;
-  height: 18px;
+  width: 14px;
+  height: 14px;
 }
 {% endstylesheet %}
