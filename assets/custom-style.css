@@ -807,9 +807,13 @@ button.button.add-to-cart-button.button.atc-added:after {
 .page-class-collection #ResultsList {
     padding: 30px 15px;
 }
-#ResultsList button.add-to-cart-button {
+.page-class-collection #ResultsList button.add-to-cart-button {
     padding: 14px 15px;
     font-size: 14px;
+}
+.page-class-collection #ResultsList rte-formatter p {
+    font-size: 14px;
+    line-height: 128%;
 }
     .product-information {
     padding: 20px 15px 40px !important;
