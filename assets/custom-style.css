@@ -776,11 +776,21 @@ button.button.add-to-cart-button.button.atc-added:after {
     line-height: 125%;
     color: #353535;
 }
-.page-class-collection .cleanest-kibbles__heading {
+
+@media(max-width:767px){
+    .page-class-collection .cleanest-kibbles__heading {
     font-size: 48px;
     line-height: 90%;
 }
-@media(max-width:767px){
+    .cleanest-kibbles__extras_badge {
+    gap: 15px;
+    flex-direction: column;
+}
+.cleanest-kibbles__badge {
+    margin-top: 0px;
+    gap: 8px;
+    font-size: 0.9rem;
+}
     .product-information {
     padding: 20px 15px 40px !important;
 }
