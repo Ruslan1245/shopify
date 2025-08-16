@@ -155,7 +155,8 @@ margin-bottom: 0px;
 }
 .vet-single-blog-container .vet-single-hero-content .detail_content {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    column-gap: 50px;
 }
 /* homepage mobile responsive */
 @media(max-width:767px){
