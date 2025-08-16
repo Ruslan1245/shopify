@@ -783,8 +783,9 @@ button.button.add-to-cart-button.button.atc-added:after {
     line-height: 90%;
 }
    .page-class-collection .cleanest-kibbles__extras_badge {
-    gap: 15px;
+    gap: 6px;
     flex-direction: column;
+    padding-top: 18px;
 }
 .page-class-collection .cleanest-kibbles__badge {
     margin-top: 0px;
