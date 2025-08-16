@@ -710,6 +710,12 @@ button.button.add-to-cart-button.button.atc-added:after {
     left: 0px;
     top: calc(50% - 7.5px);
 }
+.page-class-collection .cleanest-kibbles__heading {
+    font-size: 56px;
+    line-height: 90%;
+    font-weight: bold;
+    margin-bottom: 0px;
+}
 @media(max-width:767px){
     .product-information {
     padding: 20px 15px 40px !important;
