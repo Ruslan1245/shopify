@@ -692,7 +692,7 @@ button.button.add-to-cart-button.button.atc-added:after {
     height: 15px;
     background-repeat: no-repeat;
     position: absolute;
-    left: -20px;
+    left: 0px;
     top: calc(50% - 7.5px);
 }
 .vet-single-blog-container .detail_content span.article-author, .vet-single-blog-container .detail_content span.article-date {
@@ -707,7 +707,7 @@ button.button.add-to-cart-button.button.atc-added:after {
     height: 15px;
     background-repeat: no-repeat;
     position: absolute;
-    left: -20px;
+    left: 0px;
     top: calc(50% - 7.5px);
 }
 @media(max-width:767px){
