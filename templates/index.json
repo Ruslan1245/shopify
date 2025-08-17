@@ -1136,6 +1136,7 @@
       "type": "forgot-which-one",
       "name": "Forgot Which One Banner",
       "settings": {
+        "image": "shopify://shop_images/Image_Placeholder_2d442e35-e6e3-428a-8604-de5122bdde01.png",
         "heading": "Forgot Which One They Loved?",
         "subtext": "Find your pet’s perfect match again in seconds with the Nutram Number quiz.",
         "cta_text": "Find It Again",
@@ -1162,6 +1163,7 @@
         "feature_zBYHjq": {
           "type": "feature",
           "settings": {
+            "image_icon": "shopify://shop_images/Group_87_bc1bb9f0-be15-42d4-b2b1-37808fcd9bdc.png",
             "feature_text": "No Recalls, Ever!"
           }
         },
@@ -1175,6 +1177,7 @@
         "feature_hk37Ry": {
           "type": "feature",
           "settings": {
+            "image_icon": "shopify://shop_images/Group_88_ca20ced1-0c7b-4fdc-8067-7acde8ea7347.png",
             "feature_text": "Farm-to-Bowl Sourcing"
           }
         }
@@ -1218,6 +1221,7 @@
         "testimonial_gD3hzW": {
           "type": "testimonial",
           "settings": {
+            "pet_image": "shopify://shop_images/PFP_Placeholder_bb2a039f-1c10-4305-bee0-345a3d64faf1.png",
             "star_rating": 5,
             "review_text": "After switching, Max's coat is shinier and tummy trouble disappeared! In less weeks.",
             "reviewer_name": "JOHN D.",
@@ -1227,6 +1231,7 @@
         "testimonial_r3Ny3e": {
           "type": "testimonial",
           "settings": {
+            "pet_image": "shopify://shop_images/PFP_Placeholder_bb2a039f-1c10-4305-bee0-345a3d64faf1.png",
             "star_rating": 5,
             "review_text": "After switching, Max's coat is shinier and tummy trouble disappeared! In less weeks.",
             "reviewer_name": "JOHN D.",
@@ -1236,6 +1241,7 @@
         "testimonial_EAaWwz": {
           "type": "testimonial",
           "settings": {
+            "pet_image": "shopify://shop_images/PFP_Placeholder_bb2a039f-1c10-4305-bee0-345a3d64faf1.png",
             "star_rating": 5,
             "review_text": "After switching, Max's coat is shinier and tummy trouble disappeared! In less weeks.",
             "reviewer_name": "JOHN D.",
@@ -1245,6 +1251,7 @@
         "testimonial_tPiTXy": {
           "type": "testimonial",
           "settings": {
+            "pet_image": "shopify://shop_images/PFP_Placeholder_bb2a039f-1c10-4305-bee0-345a3d64faf1.png",
             "star_rating": 5,
             "review_text": "After switching, Max's coat is shinier and tummy trouble disappeared! In less weeks.",
             "reviewer_name": "JOHN D.",
@@ -1254,6 +1261,7 @@
         "testimonial_wfztyR": {
           "type": "testimonial",
           "settings": {
+            "pet_image": "shopify://shop_images/PFP_Placeholder_bb2a039f-1c10-4305-bee0-345a3d64faf1.png",
             "star_rating": 5,
             "review_text": "After switching, Max's coat is shinier and tummy trouble disappeared! In less weeks.",
             "reviewer_name": "JOHN D.",
@@ -1263,6 +1271,7 @@
         "testimonial_hHJmAD": {
           "type": "testimonial",
           "settings": {
+            "pet_image": "shopify://shop_images/PFP_Placeholder_bb2a039f-1c10-4305-bee0-345a3d64faf1.png",
             "star_rating": 5,
             "review_text": "After switching, Max's coat is shinier and tummy trouble disappeared! In less weeks.",
             "reviewer_name": "JOHN D.",
@@ -1272,6 +1281,7 @@
         "testimonial_8mDQ3j": {
           "type": "testimonial",
           "settings": {
+            "pet_image": "shopify://shop_images/PFP_Placeholder_bb2a039f-1c10-4305-bee0-345a3d64faf1.png",
             "star_rating": 5,
             "review_text": "After switching, Max's coat is shinier and tummy trouble disappeared! In less weeks.",
             "reviewer_name": "JOHN D.",
@@ -1281,6 +1291,7 @@
         "testimonial_9fPt8K": {
           "type": "testimonial",
           "settings": {
+            "pet_image": "shopify://shop_images/PFP_Placeholder_bb2a039f-1c10-4305-bee0-345a3d64faf1.png",
             "star_rating": 5,
             "review_text": "",
             "reviewer_name": "",
@@ -1290,6 +1301,7 @@
         "testimonial_Dah9fA": {
           "type": "testimonial",
           "settings": {
+            "pet_image": "shopify://shop_images/PFP_Placeholder_bb2a039f-1c10-4305-bee0-345a3d64faf1.png",
             "star_rating": 5,
             "review_text": "",
             "reviewer_name": "",
@@ -1299,6 +1311,7 @@
         "testimonial_yYndc4": {
           "type": "testimonial",
           "settings": {
+            "pet_image": "shopify://shop_images/PFP_Placeholder_bb2a039f-1c10-4305-bee0-345a3d64faf1.png",
             "star_rating": 5,
             "review_text": "",
             "reviewer_name": "",
@@ -1308,6 +1321,7 @@
         "testimonial_QPKYCm": {
           "type": "testimonial",
           "settings": {
+            "pet_image": "shopify://shop_images/PFP_Placeholder_bb2a039f-1c10-4305-bee0-345a3d64faf1.png",
             "star_rating": 5,
             "review_text": "",
             "reviewer_name": "",
@@ -1317,6 +1331,7 @@
         "testimonial_jyexT6": {
           "type": "testimonial",
           "settings": {
+            "pet_image": "shopify://shop_images/PFP_Placeholder_bb2a039f-1c10-4305-bee0-345a3d64faf1.png",
             "star_rating": 5,
             "review_text": "",
             "reviewer_name": "",
@@ -1748,6 +1763,7 @@
         "button_url": "",
         "button_bg_color": "#f8c933",
         "button_text_color": "#333333",
+        "testimonial_image": "shopify://shop_images/PFP_Placeholder_bb2a039f-1c10-4305-bee0-345a3d64faf1.png",
         "testimonial_rating": 5,
         "testimonial_text": "“After switching, Max’s coat is shinier and tummy trouble disappeared in two weeks!”",
         "customer_name": "John D.",
