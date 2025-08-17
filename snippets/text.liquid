@@ -74,11 +74,8 @@
 
   {{ block.shopify_attributes }}
 {% endcapture %}
-{% liquid
-  # {{ attributes }} must be on the immediate HTML parent of the text to preserve
-  # the click-to-edit connection in the theme editor. Any break between the text,
-  # including if-statements, will break the connection.
 
+{% liquid
   assign element = 'div'
   if is_rte
     assign element = 'rte-formatter'
@@ -87,14 +84,11 @@
 
 {% if fallback_text != blank and plain_text == blank %}
   <div {{ attributes }}>
-    {{ fallback_text }}
+    <p>{{ fallback_text }}</p>
   </div>
 {% elsif plain_text != blank %}
   <{{ element }} {{ attributes }}>
-    {% comment %}
-      Using plain_text so truncation and stripping are applied properly.
-    {% endcomment %}
-    {{ plain_text }}
+    <p>{{ plain_text }}</p>
   </{{ element }}>
 {% endif %}
 
@@ -140,7 +134,6 @@
 
   .text-block:not(.text-block--full-width).rte,
   .text-block:not(.text-block--full-width).paragraph {
-    /* Safari doesn't support pretty, so fallback to balance */
     text-wrap: balance;
     text-wrap: pretty;
   }
@@ -149,7 +142,6 @@
     text-wrap: balance;
   }
 
-  /* Hide underline unless text is using paragraph styles. */
   .text-block:is(.h1, .h2, .h3, .h4, .h5, .h6) a {
     text-decoration-color: transparent;
   }
@@ -210,8 +202,6 @@
   .text-block--background {
     background-color: var(--text-background-color);
     border-radius: var(--text-corner-radius);
-
-    /* To avoid text being cropped when using a border radius we add a minimum padding. */
     padding-block-start: max(var(--text-padding), var(--padding-block-start, 0));
     padding-block-end: max(var(--text-padding), var(--padding-block-end, 0));
     padding-inline-start: max(var(--text-padding), var(--padding-inline-start, 0));
