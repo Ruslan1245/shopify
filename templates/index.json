@@ -719,6 +719,7 @@
         "step_Fpc6wq": {
           "type": "step",
           "settings": {
+            "image": "shopify://shop_images/Vector.png",
             "title": "Choose Their Formula",
             "text": "Tailored to size, age & sensitivities, no generic blends here."
           }
@@ -726,6 +727,7 @@
         "step_3VUtkY": {
           "type": "step",
           "settings": {
+            "image": "shopify://shop_images/Vector_62c25724-5952-4638-b214-21ac657a4629.png",
             "title": "Delivered Monthly",
             "text": "Made in Canada. Always fresh. Right to your door."
           }
@@ -733,6 +735,7 @@
         "step_kUbzjU": {
           "type": "step",
           "settings": {
+            "image": "shopify://shop_images/Vector_fc23f109-207b-4324-aec9-82a1714f801e.png",
             "title": "Health You Can See",
             "text": "Bloat down and energy up within days."
           }
@@ -782,6 +785,7 @@
       "name": "Custom Hero Banner",
       "settings": {
         "custom_class": "canada-clean-kibble",
+        "hero_image": "shopify://shop_images/Image_Placeholder.png",
         "subtitle": "",
         "title": "Let’s Find Your Pet’s Perfect Formula",
         "content": "<p>Take the 60-second quiz to find the best Nutram formula based on your pet’s size, sensitivities, and gut health needs.<br/><br/></p>",
@@ -859,6 +863,7 @@
             "product_list_button_iGbVht": {
               "type": "_product-list-button",
               "name": "t:names.product_list_button",
+              "disabled": true,
               "settings": {
                 "label": "View all",
                 "open_in_new_tab": false,
@@ -1108,7 +1113,7 @@
         "button1_link": "#",
         "button2_text": "For dogs",
         "button2_link": "#",
-        "collection": "newcollection",
+        "collection": "dry-food",
         "layout_type": "grid",
         "carousel_on_mobile": false,
         "max_products": 3,
