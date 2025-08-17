@@ -557,6 +557,8 @@
         "feature_8N6W6x": {
           "type": "feature",
           "settings": {
+            "image": "shopify://shop_images/Image_Placeholder_11d37d07-791a-4a1b-a51a-f5e4ec572ac2.png",
+            "image_mobile": "shopify://shop_images/Image_Placeholder_11d37d07-791a-4a1b-a51a-f5e4ec572ac2.png",
             "title": "Tailored for Every Pet",
             "text": "Crafted in our own Ontario facility for complete quality control and trusted sourcing."
           }
