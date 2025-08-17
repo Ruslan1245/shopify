@@ -48,6 +48,8 @@
   endcapture
 %}
 
+{{ plain_text }}
+
 {% capture attributes %}
   class="{{ class }} spacing-style text-block text-block--{{ block.id }} {{ block_settings.type_preset }}
     {{ text_block_classes }}
@@ -68,7 +70,7 @@
     {% endif %}
   "
 
-  {{ block.shopify_attributes }} dddsdsdsd
+  {{ block.shopify_attributes }}
 {% endcapture %}
 {% liquid
   # {{ attributes }} must be on the immediate HTML parent of the text to preserve
