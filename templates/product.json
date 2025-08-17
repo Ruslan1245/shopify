@@ -539,6 +539,8 @@
         "feature_A3tRpq": {
           "type": "feature",
           "settings": {
+            "image": "shopify://shop_images/Image_Placeholder_9da37055-ef2b-4d54-b4eb-7da871381623.png",
+            "image_mobile": "shopify://shop_images/Image_Placeholder_9da37055-ef2b-4d54-b4eb-7da871381623.png",
             "title": "Made in Canada",
             "text": "Crafted in our own Ontario facility for complete quality control and trusted sourcing."
           }
@@ -546,6 +548,8 @@
         "feature_kYCyrd": {
           "type": "feature",
           "settings": {
+            "image": "shopify://shop_images/Image_Placeholder_71723bec-a750-4db0-b763-09ef49ed4917.png",
+            "image_mobile": "shopify://shop_images/Image_Placeholder_71723bec-a750-4db0-b763-09ef49ed4917.png",
             "title": "Holistic, Natural Nutrition",
             "text": "Formulated by in-house experts using real ingredients — no fillers, by-products, or artificial additives."
           }
