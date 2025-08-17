@@ -107,21 +107,18 @@
         "badge_f7XVVH": {
           "type": "badge",
           "settings": {
-            "badge_icon": "shopify://shop_images/Vector_cac5e893-b1ab-4fda-b2fb-afa87647457b.png",
             "text": "More energy & less bloating"
           }
         },
         "badge_QYCDeQ": {
           "type": "badge",
           "settings": {
-            "badge_icon": "shopify://shop_images/Vector_cac5e893-b1ab-4fda-b2fb-afa87647457b.png",
             "text": "Clean ingredients, zero recalls"
           }
         },
         "badge_zhbABp": {
           "type": "badge",
           "settings": {
-            "badge_icon": "shopify://shop_images/Vector_cac5e893-b1ab-4fda-b2fb-afa87647457b.png",
             "text": "Holistic science for happy pets"
           }
         },
@@ -486,8 +483,8 @@
       "type": "forgot-which-one",
       "name": "Forgot Which One Banner",
       "settings": {
-        "image": "shopify://shop_images/Image_Placeholder_42e1d37d-cc58-44ec-b878-00f9d561adec.png",
-        "mobile_image": "shopify://shop_images/Image_Placeholder_8fc09834-10f5-48e4-bf17-f3d7e552ad47.png",
+        "image": "shopify://shop_images/Image_Placeholder_88ddb337-9401-4297-9d22-ca8de435badb.png",
+        "mobile_image": "shopify://shop_images/Image_Placeholder_88ddb337-9401-4297-9d22-ca8de435badb.png",
         "heading": "Not Sure Which Recipe Fits Best?",
         "subtext": "Every dog is different. Take our quick quiz to find their perfect match. It’s fast, easy, and kinda fun.",
         "cta_text": "Find My Match",
@@ -500,7 +497,6 @@
         "testimonial_9PeTiJ": {
           "type": "testimonial",
           "settings": {
-            "pet_image": "shopify://shop_images/PFP_Placeholder_b8d6023a-9497-4cd5-a9ed-c59e394d4372.png",
             "star_rating": 5,
             "review_text": "After switching, Max's coat is shinier and tummy trouble disappeared! In less weeks.",
             "reviewer_name": "JOHN D.",
