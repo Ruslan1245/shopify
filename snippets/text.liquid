@@ -48,9 +48,10 @@
   endcapture
 %}
 
-{% if block.settings.truncate == true %}
-  {% assign plain_text = plain_text | truncate : 60%}
+{% if block.settings.truncate %}
+  {% assign plain_text = plain_text | truncate: 60 %}
 {% endif %}
+
 {% capture attributes %}
   class="{{ class }} spacing-style text-block text-block--{{ block.id }} {{ block_settings.type_preset }}
     {{ text_block_classes }}
@@ -91,9 +92,9 @@
 {% elsif plain_text != blank %}
   <{{ element }} {{ attributes }}>
     {% comment %}
-      Not using block_settings.text here because live replacement in editor doesn't work as well.
+      Using plain_text so truncation and stripping are applied properly.
     {% endcomment %}
-    {{ block.settings.text }}
+    {{ plain_text }}
   </{{ element }}>
 {% endif %}
 
