@@ -40,6 +40,7 @@
       "settings": {
         "custom_class": "",
         "hero_image": "shopify://shop_images/Group_50.png",
+        "mobile_hero_image": "shopify://shop_images/Group_50.png",
         "subtitle": "4.8/5 loved by thousands of pet parents",
         "title": "Canada’s Cleanest Kibble",
         "content": "",
