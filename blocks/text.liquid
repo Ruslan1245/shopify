@@ -1,7 +1,7 @@
 
 
 {% render 'text', block: block %}
-asdfasd
+
 
 {% schema %}
 {
@@ -13,6 +13,11 @@ asdfasd
       "id": "text",
       "label": "t:settings.text",
       "default": "t:html_defaults.share_information_about_your"
+    },
+    {
+      "type": "checkbox",
+      "id": "truncate",
+      "label": "Text truncate"
     },
     {
       "type": "header",
