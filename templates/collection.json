@@ -349,7 +349,7 @@
                       "type": "text",
                       "name": "t:names.text",
                       "settings": {
-                        "text": "<p>Chicken Meal and Salmon Meal Recipe</p>",
+                        "text": "{{ closest.product.description }}",
                         "width": "fit-content",
                         "max_width": "normal",
                         "alignment": "left",
