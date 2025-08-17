@@ -63,7 +63,7 @@
           "name": "t:names.menu",
           "settings": {
             "menu": "footer",
-            "heading": "Product",
+            "heading": "Products",
             "menu_spacing": 12,
             "show_as_accordion": false,
             "accordion_icon": "caret",
