@@ -160,6 +160,7 @@
       "name": "t:names.footer",
       "settings": {
         "content_direction": "row",
+        "bottomImage": "shopify://shop_images/Group_46.png",
         "copyright": "2025 © Nutram Pet Products. All Rights Reserved.",
         "vertical_on_mobile": true,
         "horizontal_alignment": "center",
