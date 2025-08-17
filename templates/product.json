@@ -1,1 +1,1390 @@
-{"sections":{"main":{"type":"product-information","blocks":{"media-gallery":{"type":"_product-media-gallery","static":true,"settings":{"media_presentation":"carousel","media_columns":"two","image_gap":0,"large_first_image":true,"icons_style":"arrows_large","slideshow_controls_style":"thumbnails","slideshow_mobile_controls_style":"hint","thumbnail_position":"bottom","thumbnail_width":48,"aspect_ratio":"1","constrain_to_viewport":false,"media_fit":"cover","media_radius":0,"extend_media":true,"zoom":true,"video_loop":true,"hide_variants":false,"padding-block-start":0,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{}},"product-details":{"type":"_product-details","static":true,"settings":{"width":"fill","custom_width":100,"width_mobile":"fill","custom_width_mobile":100,"height":"fit","details_position":"flex-start","gap":24,"sticky_details_desktop":true,"inherit_color_scheme":true,"color_scheme":"scheme-3","background_media":"none","video_position":"cover","background_image_position":"cover","border":"none","border_width":1,"border_opacity":100,"border_radius":0,"padding-block-start":48,"padding-block-end":48,"padding-inline-start":0,"padding-inline-end":0},"blocks":{"custom_review_wgGbwa":{"type":"_custom_review","name":"Star Rating Section","settings":{"rating_suffix":"<p>4.8\/5 loved by thousands of pet parents<\/p>"},"blocks":{}},"group":{"type":"group","name":"Header","settings":{"link":"","open_in_new_tab":false,"content_direction":"column","vertical_on_mobile":true,"horizontal_alignment":"flex-start","vertical_alignment":"center","align_baseline":false,"horizontal_alignment_flex_direction_column":"flex-start","vertical_alignment_flex_direction_column":"center","gap":12,"width":"fill","custom_width":100,"width_mobile":"fill","custom_width_mobile":100,"height":"fit","custom_height":100,"inherit_color_scheme":true,"color_scheme":"","background_media":"none","video_position":"cover","background_image_position":"cover","border":"none","border_width":1,"border_opacity":100,"border_radius":0,"placeholder":"","toggle_overlay":false,"overlay_color":"#00000026","overlay_style":"solid","gradient_direction":"to top","padding-block-start":0,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{"text_xrnftG":{"type":"text","name":"Product title","settings":{"text":"<h1>{{ closest.product.title }}<\/h1>","width":"100%","max_width":"normal","alignment":"left","type_preset":"h3","font":"var(--font-primary--family)","font_size":"","line_height":"normal","letter_spacing":"normal","case":"none","wrap":"pretty","color":"","background":false,"background_color":"#00000026","corner_radius":0,"padding-block-start":0,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{}},"text_tBB88A":{"type":"text","name":"t:names.heading","settings":{"text":"<h2>Chicken Meal and Salmon Meal Recipe<\/h2>","width":"fit-content","max_width":"normal","alignment":"left","type_preset":"h6","font":"var(--font-body--family)","font_size":"1rem","line_height":"normal","letter_spacing":"normal","case":"none","wrap":"pretty","color":"var(--color-foreground)","background":false,"background_color":"#00000026","corner_radius":0,"padding-block-start":0,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{}},"group_8B3NLh":{"type":"group","name":"Price & Rating","settings":{"link":"","open_in_new_tab":false,"content_direction":"row","vertical_on_mobile":true,"horizontal_alignment":"flex-start","vertical_alignment":"center","align_baseline":false,"horizontal_alignment_flex_direction_column":"flex-start","vertical_alignment_flex_direction_column":"center","gap":24,"width":"fill","custom_width":100,"width_mobile":"fill","custom_width_mobile":100,"height":"fit","custom_height":100,"inherit_color_scheme":true,"color_scheme":"","background_media":"none","video_position":"cover","background_image_position":"cover","border":"none","border_width":1,"border_opacity":100,"border_radius":0,"placeholder":"","toggle_overlay":false,"overlay_color":"#00000026","overlay_style":"solid","gradient_direction":"to top","padding-block-start":0,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{"price_97GqNF":{"type":"price","settings":{"show_sale_price_first":true,"show_installments":true,"show_tax_info":false,"type_preset":"paragraph","width":"100%","alignment":"left","font":"var(--font-body--family)","font_size":"1rem","line_height":"normal","letter_spacing":"normal","case":"none","color":"var(--color-foreground)","padding-block-start":4,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{}},"review_QhdEwM":{"type":"review","settings":{"stars_style":"shaded","show_number":true,"rating_color":"primary","type_preset":"paragraph","alignment":"left"},"blocks":{}}},"block_order":["price_97GqNF","review_QhdEwM"]}},"block_order":["text_xrnftG","text_tBB88A","group_8B3NLh"]},"variant_picker":{"type":"variant-picker","settings":{"variant_style":"buttons","show_swatches":true,"alignment":"left","padding-block-start":0,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{}},"buy_buttons":{"type":"buy-buttons","settings":{"stacking":false,"show_pickup_availability":false,"padding-block-start":0,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{"quantity":{"type":"quantity","disabled":true,"static":true,"settings":{},"blocks":{}},"add-to-cart":{"type":"add-to-cart","name":"Shop Now","static":true,"settings":{"style_class":"button"},"blocks":{}},"accelerated-checkout":{"type":"accelerated-checkout","disabled":true,"static":true,"settings":{},"blocks":{}}},"block_order":[]},"review_custom_z8jGr6":{"type":"_review_custom","name":"Customer Testimonial","settings":{"image":"shopify:\/\/shop_images\/Rectangle42_e30c5a5e-d0f9-43ff-9cf7-d744ce873d9f.png","text":"After switching, Max’s coat is shinier and tummy trouble disappeared in two weeks!","name":"John D.","verified":true,"verified_text":"VERIFIED CUSTOMER","stars":5,"bg_color":"#f0f8ff","text_color":"#333333","author_color":"#000000","star_color":"#ffd700","verified_color":"#1e90ff"},"blocks":{}},"accordion_RTB3UQ":{"type":"accordion","name":"t:names.accordion","settings":{"icon":"caret","dividers":true,"type_preset":"h6","inherit_color_scheme":true,"color_scheme":"","border":"none","border_width":1,"border_opacity":100,"border_radius":0,"padding-block-start":0,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{"accordion_row_zY4nmR":{"type":"_accordion-row","settings":{"heading":"Return policy","open_by_default":true,"icon":"none","width":20},"blocks":{"text_KXCQBU":{"type":"text","settings":{"text":"<p>Our goal is for every customer to be totally satisfied with their purchase. If this isn't the case, let us know and we'll do our best to work with you to make it right.<\/p>","width":"100%","max_width":"normal","alignment":"left","type_preset":"rte","font":"var(--font-body--family)","font_size":"1rem","line_height":"normal","letter_spacing":"normal","case":"none","wrap":"pretty","color":"var(--color-foreground)","background":false,"background_color":"#00000026","corner_radius":0,"padding-block-start":0,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{}}},"block_order":["text_KXCQBU"]},"accordion_row_jLfMfn":{"type":"_accordion-row","settings":{"heading":"Shipping","open_by_default":false,"icon":"none","width":20},"blocks":{"text_zaQYJg":{"type":"text","settings":{"text":"<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.<\/p>","width":"100%","max_width":"normal","alignment":"left","type_preset":"rte","font":"var(--font-body--family)","font_size":"1rem","line_height":"normal","letter_spacing":"normal","case":"none","wrap":"pretty","color":"var(--color-foreground)","background":false,"background_color":"#00000026","corner_radius":0,"padding-block-start":0,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{}}},"block_order":["text_zaQYJg"]},"accordion_row_metY6q":{"type":"_accordion-row","settings":{"heading":"Manufacturing","open_by_default":false,"icon":"none","width":20},"blocks":{"text_M34KmW":{"type":"text","settings":{"text":"<p>Our products are manufactured both locally and globally. We carefully select our manufacturing partners to ensure our products are high quality and a fair value.<\/p>","width":"100%","max_width":"normal","alignment":"left","type_preset":"rte","font":"var(--font-body--family)","font_size":"1rem","line_height":"normal","letter_spacing":"normal","case":"none","wrap":"pretty","color":"var(--color-foreground)","background":false,"background_color":"#00000026","corner_radius":0,"padding-block-start":0,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{}}},"block_order":["text_M34KmW"]}},"block_order":["accordion_row_zY4nmR","accordion_row_jLfMfn","accordion_row_metY6q"]}},"block_order":["custom_review_wgGbwa","group","variant_picker","buy_buttons","review_custom_z8jGr6","accordion_RTB3UQ"]}},"settings":{"content_width":"content-center-aligned","desktop_media_position":"left","equal_columns":false,"limit_details_width":true,"gap":48,"color_scheme":"scheme-4","padding-block-start":0,"padding-block-end":0}},"step_section_rYTg9y":{"type":"step-section","blocks":{"step_wD9dgY":{"type":"step","settings":{"image":"shopify:\/\/shop_images\/Vector_ff0e1e02-9993-4e67-9821-fc7943cf0097.png","title":"Choose Their Formula","text":"Tailored to size, age & sensitivities, no generic blends here."}},"step_t7fXU4":{"type":"step","settings":{"image":"shopify:\/\/shop_images\/Vector_4b148660-67a2-4e74-b206-3da91faf703a.png","title":"Delivered Monthly","text":"Made in Canada. Always fresh. Right to your door."}},"step_Fi3bbK":{"type":"step","settings":{"image":"shopify:\/\/shop_images\/Vector_99b266d5-26b6-45e6-a497-50befdea2213.png","title":"Health You Can See","text":"Bloat down and energy up within days."}}},"block_order":["step_wD9dgY","step_t7fXU4","step_Fi3bbK"],"name":"Custom Steps Section","settings":{"heading":"Whole-Food Nutrition In 3 Simple Steps","subtitle":"Clean kibbles, for results you can see and your pet can feel.","button_text":"Shop Best Sellers","button_link":"","rating_text":"4.8\/5 Loved by thousands of pet parents"}},"what_sets_apart_iB3enb":{"type":"what-sets-apart","blocks":{"feature_A3tRpq":{"type":"feature","settings":{"image":"shopify:\/\/shop_images\/394764c5bc61f90946db96a17d4d618e803b98fd_1.jpg","image_mobile":"shopify:\/\/shop_images\/394764c5bc61f90946db96a17d4d618e803b98fd_1.jpg","title":"Made in Canada","text":"Crafted in our own Ontario facility for complete quality control and trusted sourcing."}},"feature_kYCyrd":{"type":"feature","settings":{"image":"shopify:\/\/shop_images\/57474c26734ff96135748dd04cee08cbecb51770.jpg","image_mobile":"shopify:\/\/shop_images\/57474c26734ff96135748dd04cee08cbecb51770.jpg","title":"Holistic, Natural Nutrition","text":"Formulated by in-house experts using real ingredients — no fillers, by-products, or artificial additives."}},"feature_8N6W6x":{"type":"feature","settings":{"image":"shopify:\/\/shop_images\/e1c4b6d92f82b173213179193a84df506196ca70.jpg","image_mobile":"shopify:\/\/shop_images\/e1c4b6d92f82b173213179193a84df506196ca70.jpg","title":"Tailored for Every Pet","text":"Crafted in our own Ontario facility for complete quality control and trusted sourcing."}}},"block_order":["feature_A3tRpq","feature_kYCyrd","feature_8N6W6x"],"name":"What Sets Us Apart","settings":{"heading":"What Sets Us Apart","subheading":"Because every detail matters.","button_text":"Get Mine Now","button_link":"","review_text":"4.9\/5 Loved by thousands of pet parents"}},"testimonial_6URAbM":{"type":"testimonial","blocks":{"testimonial_UccwFD":{"type":"testimonial","settings":{"pet_image":"shopify:\/\/shop_images\/PFP_Placeholder_b8d6023a-9497-4cd5-a9ed-c59e394d4372.png","star_rating":5,"review_text":"After switching, Max's coat is shinier and tummy trouble disappeared! In less weeks.","reviewer_name":"JOHN D.","customer_badge":"VERIFIED CUSTOMER"}},"testimonial_wPUXeC":{"type":"testimonial","settings":{"star_rating":5,"review_text":"After switching, Max's coat is shinier and tummy trouble disappeared! In less weeks.","reviewer_name":"JOHN D.","customer_badge":"VERIFIED CUSTOMER"}},"testimonial_HgBp9T":{"type":"testimonial","settings":{"star_rating":5,"review_text":"After switching, Max's coat is shinier and tummy trouble disappeared! In less weeks.","reviewer_name":"JOHN D.","customer_badge":"VERIFIED CUSTOMER"}},"testimonial_JdNtFt":{"type":"testimonial","settings":{"star_rating":5,"review_text":"After switching, Max's coat is shinier and tummy trouble disappeared! In less weeks.","reviewer_name":"JOHN D.","customer_badge":"VERIFIED CUSTOMER"}},"testimonial_h6bREm":{"type":"testimonial","settings":{"star_rating":5,"review_text":"After switching, Max's coat is shinier and tummy trouble disappeared! In less weeks.","reviewer_name":"JOHN D.","customer_badge":"VERIFIED CUSTOMER"}},"testimonial_nPXewi":{"type":"testimonial","settings":{"star_rating":5,"review_text":"After switching, Max's coat is shinier and tummy trouble disappeared! In less weeks.","reviewer_name":"JOHN D.","customer_badge":"VERIFIED CUSTOMER"}},"testimonial_rGK9aA":{"type":"testimonial","settings":{"star_rating":5,"review_text":"After switching, Max's coat is shinier and tummy trouble disappeared! In less weeks.","reviewer_name":"JOHN D.","customer_badge":"VERIFIED CUSTOMER"}},"testimonial_MWqiqB":{"type":"testimonial","settings":{"star_rating":5,"review_text":"","reviewer_name":"","customer_badge":"VERIFIED CUSTOMER"}},"testimonial_qchHqt":{"type":"testimonial","settings":{"star_rating":5,"review_text":"","reviewer_name":"","customer_badge":"VERIFIED CUSTOMER"}},"testimonial_fqErEM":{"type":"testimonial","settings":{"star_rating":5,"review_text":"","reviewer_name":"","customer_badge":"VERIFIED CUSTOMER"}},"testimonial_Xh6q8K":{"type":"testimonial","settings":{"star_rating":5,"review_text":"","reviewer_name":"","customer_badge":"VERIFIED CUSTOMER"}},"testimonial_PcmgzT":{"type":"testimonial","settings":{"star_rating":5,"review_text":"","reviewer_name":"","customer_badge":"VERIFIED CUSTOMER"}}},"block_order":["testimonial_UccwFD","testimonial_wPUXeC","testimonial_HgBp9T","testimonial_JdNtFt","testimonial_h6bREm","testimonial_nPXewi","testimonial_rGK9aA","testimonial_MWqiqB","testimonial_qchHqt","testimonial_fqErEM","testimonial_Xh6q8K","testimonial_PcmgzT"],"name":"Pet Parents Testimonials","settings":{"main_title":"What Real Pet Parents Are Saying","subtitle":"Hear from people who care about their pets, like you."}},"comparision_table_6Ki9pf":{"type":"comparision-table","blocks":{"feature_NewxMx":{"type":"feature","settings":{"image_icon":"shopify:\/\/shop_images\/Group_86.png","feature_text":"Proudly Made in Canada"}},"feature_z9FWHJ":{"type":"feature","settings":{"image_icon":"shopify:\/\/shop_images\/Group_87.png","feature_text":"Transparent Ingredients List"}},"feature_CDME6E":{"type":"feature","settings":{"image_icon":"shopify:\/\/shop_images\/Group_87_f14d6b75-f65a-4fd2-805b-546b804bf10d.png","feature_text":"No Recalls, Ever!"}},"feature_kp7RzV":{"type":"feature","settings":{"image_icon":"shopify:\/\/shop_images\/Group_88.png","feature_text":"Focused on Digestion"}},"feature_rbaMgY":{"type":"feature","settings":{"image_icon":"shopify:\/\/shop_images\/Group_88_94d423c7-ce21-4670-82c0-eb8e5abc6082.png","feature_text":"Farm-to-Bowl Sourcing"}}},"block_order":["feature_NewxMx","feature_z9FWHJ","feature_CDME6E","feature_kp7RzV","feature_rbaMgY"],"name":"Nutram Comparison","settings":{"main_title":"A Clean-Label Solution,","sub_title":"Not Just Another Name","description":"Here's what sets Nutram apart:","nutram_logo":"shopify:\/\/shop_images\/Nutram_logo_blue_HQ_1.png","competitor_name":"Mainstream Brands"}},"faq_custom_EE898E":{"type":"faq-custom","blocks":{"faq_item_NNDyyr":{"type":"faq_item","settings":{"question":"Sample Question","answer":"This is a sample answer."}},"faq_item_atjYBe":{"type":"faq_item","settings":{"question":"Sample Question","answer":"This is a sample answer."}},"faq_item_Dth3kp":{"type":"faq_item","settings":{"question":"Sample Question","answer":"This is a sample answer."}}},"block_order":["faq_item_NNDyyr","faq_item_atjYBe","faq_item_Dth3kp"],"name":"FAQ Section","settings":{"heading":"Frequently Asked Questions","subheading":"We're always happy to help."}},"product-recommendations":{"type":"product-recommendations","blocks":{"header":{"type":"text","name":"t:names.header","settings":{"text":"<h3>Goes well with...<\/h3>","width":"fit-content","max_width":"normal","alignment":"left","type_preset":"h2","font":"var(--font-primary--family)","font_size":"","line_height":"normal","letter_spacing":"normal","case":"none","wrap":"pretty","color":"","background":false,"background_color":"#00000026","corner_radius":0,"padding-block-start":0,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{}},"static-product-card":{"type":"_product-card","name":"t:names.product_card","static":true,"settings":{"product_card_gap":2,"inherit_color_scheme":true,"color_scheme":"","border":"none","border_width":1,"border_opacity":100,"border_radius":0,"padding-block-start":0,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{"card-gallery":{"type":"_product-card-gallery","name":"t:names.product_card_media","settings":{"image_ratio":"portrait","border":"none","border_width":1,"border_opacity":100,"border_radius":0,"padding-block-start":0,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{}},"group":{"type":"_product-card-group","settings":{"link":"","open_in_new_tab":false,"content_direction":"column","vertical_on_mobile":false,"horizontal_alignment":"space-between","vertical_alignment":"flex-start","align_baseline":false,"horizontal_alignment_flex_direction_column":"flex-start","vertical_alignment_flex_direction_column":"flex-start","gap":4,"width":"fill","custom_width":35,"width_mobile":"fill","custom_width_mobile":43,"height":"fit","custom_height":100,"inherit_color_scheme":true,"color_scheme":"","background_media":"none","video_position":"cover","background_image_position":"cover","border":"none","border_width":1,"border_opacity":100,"border_radius":0,"toggle_overlay":false,"overlay_color":"#00000026","overlay_style":"solid","gradient_direction":"to top","padding-block-start":0,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{"group_jUd9Ly":{"type":"_product-card-group","name":"t:names.group","settings":{"link":"","open_in_new_tab":false,"content_direction":"column","vertical_on_mobile":true,"horizontal_alignment":"flex-start","vertical_alignment":"center","align_baseline":false,"horizontal_alignment_flex_direction_column":"flex-start","vertical_alignment_flex_direction_column":"flex-start","gap":4,"width":"fill","custom_width":40,"width_mobile":"fit-content","custom_width_mobile":20,"height":"fit","custom_height":100,"inherit_color_scheme":true,"color_scheme":"","background_media":"none","video_position":"cover","background_image_position":"cover","border":"none","border_width":1,"border_opacity":100,"border_radius":0,"toggle_overlay":false,"overlay_color":"#00000026","overlay_style":"solid","gradient_direction":"to top","padding-block-start":8,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{"product_title_d368TL":{"type":"product-title","name":"t:names.product_title","settings":{"width":"fit-content","max_width":"normal","alignment":"left","type_preset":"h5","font":"var(--font-body--family)","font_size":"1rem","line_height":"normal","letter_spacing":"normal","case":"none","wrap":"pretty","color":"var(--color-foreground)","background":false,"background_color":"#00000026","corner_radius":0,"padding-block-start":0,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{}},"price_jKmnBC":{"type":"price","settings":{"show_sale_price_first":true,"show_installments":false,"show_tax_info":false,"type_preset":"h6","width":"100%","alignment":"left","font":"var(--font-body--family)","font_size":"1rem","line_height":"normal","letter_spacing":"normal","case":"none","color":"var(--color-foreground)","padding-block-start":0,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{}}},"block_order":["product_title_d368TL","price_jKmnBC"]},"swatches":{"type":"swatches","settings":{"product_swatches_alignment":"flex-start","product_swatches_alignment_mobile":"flex-start","hide_padding":false,"product_swatches_padding_top":4,"product_swatches_padding_bottom":10,"product_swatches_padding_left":0,"product_swatches_padding_right":0},"blocks":{}}},"block_order":["group_jUd9Ly","swatches"]}},"block_order":["card-gallery","group"]}},"block_order":["header"],"disabled":true,"settings":{"product":"{{ closest.product }}","recommendation_type":"related","layout_type":"grid","carousel_on_mobile":false,"max_products":4,"columns":4,"mobile_columns":"2","columns_gap":12,"rows_gap":12,"icons_style":"arrow","icons_shape":"none","section_width":"page-width","gap":24,"color_scheme":"scheme-1","padding-block-start":24,"padding-block-end":24}},"collection_links_9Pc4EL":{"type":"collection-links","blocks":{"link":{"type":"_collection-link","static":true,"settings":{"show_count":true},"blocks":{"title":{"type":"_inline-collection-title","static":true,"settings":{"font":"var(--font-body--family)","weight":"","line_height":"normal","letter_spacing":"normal","case":"none"},"blocks":{}},"image":{"type":"_image","static":true,"settings":{"height":"medium","ratio":"square","border_radius":0},"blocks":{}}},"block_order":[]}},"disabled":true,"name":"t:names.collection_links_text","settings":{"collection_list":[],"layout":"text","section_width":"page-width","alignment":"left","image_position":"right","color_scheme":"scheme-5","padding-block-start":60,"padding-block-end":60}},"product_list_PMAr7G":{"type":"product-list","blocks":{"static-header":{"type":"_product-list-content","name":"t:names.header","static":true,"settings":{"content_direction":"column","vertical_on_mobile":false,"horizontal_alignment":"center","vertical_alignment":"flex-end","align_baseline":true,"horizontal_alignment_flex_direction_column":"flex-start","vertical_alignment_flex_direction_column":"center","gap":12,"width":"fill","custom_width":100,"width_mobile":"fill","custom_width_mobile":100,"height":"fit","custom_height":100,"inherit_color_scheme":true,"color_scheme":"","background_media":"none","video_position":"cover","background_image_position":"cover","border":"none","border_width":1,"border_opacity":100,"border_radius":0,"padding-block-start":0,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{"product_list_text_htwBUy":{"type":"_product-list-text","name":"t:names.collection_title","settings":{"text":"<h3>Our Most-Loved Products<\/h3>","width":"100%","max_width":"normal","alignment":"center","type_preset":"rte","font":"var(--font-body--family)","font_size":"1rem","line_height":"normal","letter_spacing":"normal","case":"none","wrap":"pretty","color":"var(--color-foreground)","background":false,"background_color":"#00000026","corner_radius":0,"padding-block-start":0,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{}},"product_list_button_jqarhp":{"type":"_product-list-button","name":"t:names.product_list_button","settings":{"label":"View all","open_in_new_tab":false,"style_class":"link","width":"fit-content","custom_width":100,"width_mobile":"fit-content","custom_width_mobile":100},"blocks":{}},"text_BUF7x8":{"type":"text","name":"t:names.text","settings":{"text":"<p>Everyday wellness, for sensitive tummies and picky eaters alike.<\/p>","width":"100%","max_width":"normal","alignment":"center","type_preset":"h6","font":"var(--font-body--family)","font_size":"1rem","line_height":"normal","letter_spacing":"normal","case":"none","wrap":"pretty","color":"var(--color-foreground)","background":false,"background_color":"#00000026","corner_radius":0,"padding-block-start":0,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{}}},"block_order":["product_list_text_htwBUy","product_list_button_jqarhp","text_BUF7x8"]},"static-product-card":{"type":"_product-card","name":"t:names.product_card","static":true,"settings":{"product_card_gap":4,"inherit_color_scheme":true,"color_scheme":"","border":"none","border_width":1,"border_opacity":100,"border_radius":0,"padding-block-start":8,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{"product_card_gallery_RpU3CY":{"type":"_product-card-gallery","name":"t:names.product_card_media","settings":{"image_ratio":"portrait","border":"solid","border_width":1,"border_opacity":100,"border_radius":0,"padding-block-start":0,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{}},"product_title_GwTjij":{"type":"product-title","name":"t:names.product_title","settings":{"width":"fit-content","max_width":"normal","alignment":"left","type_preset":"rte","font":"var(--font-body--family)","font_size":"1rem","line_height":"normal","letter_spacing":"normal","case":"none","wrap":"pretty","color":"var(--color-foreground)","background":false,"background_color":"#00000026","corner_radius":0,"padding-block-start":4,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{}},"text_WabJJA":{"type":"text","name":"t:names.text","settings":{"text":"<p>Chicken Meal and Salmon Meal Recipe<\/p>","width":"fit-content","max_width":"normal","alignment":"left","type_preset":"rte","font":"var(--font-body--family)","font_size":"1rem","line_height":"normal","letter_spacing":"normal","case":"none","wrap":"pretty","color":"var(--color-foreground)","background":false,"background_color":"#00000026","corner_radius":0,"padding-block-start":0,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{}},"price_VUzU7e":{"type":"price","name":"t:names.product_price","settings":{"show_sale_price_first":true,"show_installments":false,"show_tax_info":false,"type_preset":"h6","width":"100%","alignment":"left","font":"var(--font-body--family)","font_size":"1rem","line_height":"normal","letter_spacing":"normal","case":"none","color":"var(--color-foreground)","padding-block-start":0,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{}},"buy_buttons_aTGGei":{"type":"buy-buttons","name":"t:names.product_buy_buttons","settings":{"stacking":false,"show_pickup_availability":true,"padding-block-start":0,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{"quantity":{"type":"quantity","disabled":true,"static":true,"settings":{},"blocks":{}},"add-to-cart":{"type":"add-to-cart","static":true,"settings":{"style_class":"button-secondary"},"blocks":{}},"accelerated-checkout":{"type":"accelerated-checkout","disabled":true,"static":true,"settings":{},"blocks":{}}},"block_order":[]}},"block_order":["product_card_gallery_RpU3CY","product_title_GwTjij","text_WabJJA","price_VUzU7e","buy_buttons_aTGGei"]}},"name":"t:names.products_carousel","settings":{"custom_class":"home-feature-collection single-product-collection","button1_text":"For Cats","button1_image":"shopify:\/\/shop_images\/Screenshot_2025-08-15_202612.png","button1_link":"","button2_text":"For Dogs","button2_image":"shopify:\/\/shop_images\/Screenshot_2025-08-15_202725.png","button2_link":"","collection":"frontpage","layout_type":"carousel","carousel_on_mobile":false,"max_products":16,"columns":4,"mobile_columns":"2","mobile_card_size":"60cqw","columns_gap":8,"rows_gap":24,"icons_style":"arrow","icons_shape":"circle","section_width":"page-width","horizontal_alignment":"flex-start","gap":28,"color_scheme":"scheme-e00e94c2-fb8b-4b40-83c8-ba651b6224bb","padding-block-start":48,"padding-block-end":80}}},"order":["main","step_section_rYTg9y","what_sets_apart_iB3enb","testimonial_6URAbM","comparision_table_6Ki9pf","faq_custom_EE898E","product-recommendations","collection_links_9Pc4EL","product_list_PMAr7G"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "product-information",
+      "blocks": {
+        "media-gallery": {
+          "type": "_product-media-gallery",
+          "static": true,
+          "settings": {
+            "media_presentation": "carousel",
+            "media_columns": "two",
+            "image_gap": 0,
+            "large_first_image": true,
+            "icons_style": "arrows_large",
+            "slideshow_controls_style": "thumbnails",
+            "slideshow_mobile_controls_style": "hint",
+            "thumbnail_position": "bottom",
+            "thumbnail_width": 48,
+            "aspect_ratio": "1",
+            "constrain_to_viewport": false,
+            "media_fit": "cover",
+            "media_radius": 0,
+            "extend_media": true,
+            "zoom": true,
+            "video_loop": true,
+            "hide_variants": false,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "product-details": {
+          "type": "_product-details",
+          "static": true,
+          "settings": {
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "details_position": "flex-start",
+            "gap": 24,
+            "sticky_details_desktop": true,
+            "inherit_color_scheme": true,
+            "color_scheme": "scheme-3",
+            "background_media": "none",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "padding-block-start": 48,
+            "padding-block-end": 48,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "custom_review_wgGbwa": {
+              "type": "_custom_review",
+              "name": "Star Rating Section",
+              "settings": {
+                "rating_suffix": "<p>4.8/5 loved by thousands of pet parents</p>"
+              },
+              "blocks": {}
+            },
+            "group": {
+              "type": "group",
+              "name": "Header",
+              "settings": {
+                "link": "",
+                "open_in_new_tab": false,
+                "content_direction": "column",
+                "vertical_on_mobile": true,
+                "horizontal_alignment": "flex-start",
+                "vertical_alignment": "center",
+                "align_baseline": false,
+                "horizontal_alignment_flex_direction_column": "flex-start",
+                "vertical_alignment_flex_direction_column": "center",
+                "gap": 12,
+                "width": "fill",
+                "custom_width": 100,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fit",
+                "custom_height": 100,
+                "inherit_color_scheme": true,
+                "color_scheme": "",
+                "background_media": "none",
+                "video_position": "cover",
+                "background_image_position": "cover",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "placeholder": "",
+                "toggle_overlay": false,
+                "overlay_color": "#00000026",
+                "overlay_style": "solid",
+                "gradient_direction": "to top",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "text_xrnftG": {
+                  "type": "text",
+                  "name": "Product title",
+                  "settings": {
+                    "text": "<h1>{{ closest.product.title }}</h1>",
+                    "truncate": false,
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "h3",
+                    "font": "var(--font-primary--family)",
+                    "font_size": "",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                },
+                "text_tBB88A": {
+                  "type": "text",
+                  "name": "t:names.heading",
+                  "settings": {
+                    "text": "<h2>Chicken Meal and Salmon Meal Recipe</h2>",
+                    "truncate": false,
+                    "width": "fit-content",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "h6",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                },
+                "group_8B3NLh": {
+                  "type": "group",
+                  "name": "Price & Rating",
+                  "settings": {
+                    "link": "",
+                    "open_in_new_tab": false,
+                    "content_direction": "row",
+                    "vertical_on_mobile": true,
+                    "horizontal_alignment": "flex-start",
+                    "vertical_alignment": "center",
+                    "align_baseline": false,
+                    "horizontal_alignment_flex_direction_column": "flex-start",
+                    "vertical_alignment_flex_direction_column": "center",
+                    "gap": 24,
+                    "width": "fill",
+                    "custom_width": 100,
+                    "width_mobile": "fill",
+                    "custom_width_mobile": 100,
+                    "height": "fit",
+                    "custom_height": 100,
+                    "inherit_color_scheme": true,
+                    "color_scheme": "",
+                    "background_media": "none",
+                    "video_position": "cover",
+                    "background_image_position": "cover",
+                    "border": "none",
+                    "border_width": 1,
+                    "border_opacity": 100,
+                    "border_radius": 0,
+                    "placeholder": "",
+                    "toggle_overlay": false,
+                    "overlay_color": "#00000026",
+                    "overlay_style": "solid",
+                    "gradient_direction": "to top",
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {
+                    "price_97GqNF": {
+                      "type": "price",
+                      "settings": {
+                        "show_sale_price_first": true,
+                        "show_installments": true,
+                        "show_tax_info": false,
+                        "type_preset": "paragraph",
+                        "width": "100%",
+                        "alignment": "left",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "color": "var(--color-foreground)",
+                        "padding-block-start": 4,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    },
+                    "review_QhdEwM": {
+                      "type": "review",
+                      "settings": {
+                        "stars_style": "shaded",
+                        "show_number": true,
+                        "rating_color": "primary",
+                        "type_preset": "paragraph",
+                        "alignment": "left"
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "price_97GqNF",
+                    "review_QhdEwM"
+                  ]
+                }
+              },
+              "block_order": [
+                "text_xrnftG",
+                "text_tBB88A",
+                "group_8B3NLh"
+              ]
+            },
+            "variant_picker": {
+              "type": "variant-picker",
+              "settings": {
+                "variant_style": "buttons",
+                "show_swatches": true,
+                "alignment": "left",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "buy_buttons": {
+              "type": "buy-buttons",
+              "settings": {
+                "stacking": false,
+                "show_pickup_availability": false,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "quantity": {
+                  "type": "quantity",
+                  "disabled": true,
+                  "static": true,
+                  "settings": {},
+                  "blocks": {}
+                },
+                "add-to-cart": {
+                  "type": "add-to-cart",
+                  "name": "Shop Now",
+                  "static": true,
+                  "settings": {
+                    "style_class": "button"
+                  },
+                  "blocks": {}
+                },
+                "accelerated-checkout": {
+                  "type": "accelerated-checkout",
+                  "disabled": true,
+                  "static": true,
+                  "settings": {},
+                  "blocks": {}
+                }
+              },
+              "block_order": []
+            },
+            "review_custom_z8jGr6": {
+              "type": "_review_custom",
+              "name": "Customer Testimonial",
+              "settings": {
+                "image": "shopify://shop_images/PFP_Placeholder_f2665ab2-ee62-4c9c-8c2f-4af6f955c529.png",
+                "text": "After switching, Max’s coat is shinier and tummy trouble disappeared in two weeks!",
+                "name": "John D.",
+                "verified": true,
+                "verified_text": "VERIFIED CUSTOMER",
+                "stars": 5,
+                "bg_color": "#f0f8ff",
+                "text_color": "#333333",
+                "author_color": "#000000",
+                "star_color": "#ffd700",
+                "verified_color": "#1e90ff"
+              },
+              "blocks": {}
+            },
+            "accordion_RTB3UQ": {
+              "type": "accordion",
+              "name": "t:names.accordion",
+              "settings": {
+                "icon": "caret",
+                "dividers": true,
+                "type_preset": "h6",
+                "inherit_color_scheme": true,
+                "color_scheme": "",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "accordion_row_zY4nmR": {
+                  "type": "_accordion-row",
+                  "settings": {
+                    "heading": "Return policy",
+                    "open_by_default": true,
+                    "icon": "none",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_KXCQBU": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>Our goal is for every customer to be totally satisfied with their purchase. If this isn't the case, let us know and we'll do our best to work with you to make it right.</p>",
+                        "truncate": false,
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_KXCQBU"
+                  ]
+                },
+                "accordion_row_jLfMfn": {
+                  "type": "_accordion-row",
+                  "settings": {
+                    "heading": "Shipping",
+                    "open_by_default": false,
+                    "icon": "none",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_zaQYJg": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>",
+                        "truncate": false,
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_zaQYJg"
+                  ]
+                },
+                "accordion_row_metY6q": {
+                  "type": "_accordion-row",
+                  "settings": {
+                    "heading": "Manufacturing",
+                    "open_by_default": false,
+                    "icon": "none",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_M34KmW": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>Our products are manufactured both locally and globally. We carefully select our manufacturing partners to ensure our products are high quality and a fair value.</p>",
+                        "truncate": false,
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_M34KmW"
+                  ]
+                }
+              },
+              "block_order": [
+                "accordion_row_zY4nmR",
+                "accordion_row_jLfMfn",
+                "accordion_row_metY6q"
+              ]
+            }
+          },
+          "block_order": [
+            "custom_review_wgGbwa",
+            "group",
+            "variant_picker",
+            "buy_buttons",
+            "review_custom_z8jGr6",
+            "accordion_RTB3UQ"
+          ]
+        }
+      },
+      "settings": {
+        "content_width": "content-center-aligned",
+        "desktop_media_position": "left",
+        "equal_columns": false,
+        "limit_details_width": true,
+        "gap": 48,
+        "color_scheme": "scheme-4",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
+    },
+    "step_section_rYTg9y": {
+      "type": "step-section",
+      "blocks": {
+        "step_wD9dgY": {
+          "type": "step",
+          "settings": {
+            "title": "Choose Their Formula",
+            "text": "Tailored to size, age & sensitivities, no generic blends here."
+          }
+        },
+        "step_t7fXU4": {
+          "type": "step",
+          "settings": {
+            "title": "Delivered Monthly",
+            "text": "Made in Canada. Always fresh. Right to your door."
+          }
+        },
+        "step_Fi3bbK": {
+          "type": "step",
+          "settings": {
+            "title": "Health You Can See",
+            "text": "Bloat down and energy up within days."
+          }
+        }
+      },
+      "block_order": [
+        "step_wD9dgY",
+        "step_t7fXU4",
+        "step_Fi3bbK"
+      ],
+      "name": "Custom Steps Section",
+      "settings": {
+        "heading": "Whole-Food Nutrition In 3 Simple Steps",
+        "subtitle": "Clean kibbles, for results you can see and your pet can feel.",
+        "button_text": "Shop Best Sellers",
+        "button_link": "",
+        "rating_text": "4.8/5 Loved by thousands of pet parents"
+      }
+    },
+    "what_sets_apart_iB3enb": {
+      "type": "what-sets-apart",
+      "blocks": {
+        "feature_A3tRpq": {
+          "type": "feature",
+          "settings": {
+            "title": "Made in Canada",
+            "text": "Crafted in our own Ontario facility for complete quality control and trusted sourcing."
+          }
+        },
+        "feature_kYCyrd": {
+          "type": "feature",
+          "settings": {
+            "title": "Holistic, Natural Nutrition",
+            "text": "Formulated by in-house experts using real ingredients — no fillers, by-products, or artificial additives."
+          }
+        },
+        "feature_8N6W6x": {
+          "type": "feature",
+          "settings": {
+            "title": "Tailored for Every Pet",
+            "text": "Crafted in our own Ontario facility for complete quality control and trusted sourcing."
+          }
+        }
+      },
+      "block_order": [
+        "feature_A3tRpq",
+        "feature_kYCyrd",
+        "feature_8N6W6x"
+      ],
+      "name": "What Sets Us Apart",
+      "settings": {
+        "heading": "What Sets Us Apart",
+        "subheading": "Because every detail matters.",
+        "button_text": "Get Mine Now",
+        "button_link": "",
+        "review_text": "4.9/5 Loved by thousands of pet parents"
+      }
+    },
+    "testimonial_6URAbM": {
+      "type": "testimonial",
+      "blocks": {
+        "testimonial_UccwFD": {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": 5,
+            "review_text": "After switching, Max's coat is shinier and tummy trouble disappeared! In less weeks.",
+            "reviewer_name": "JOHN D.",
+            "customer_badge": "VERIFIED CUSTOMER"
+          }
+        },
+        "testimonial_wPUXeC": {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": 5,
+            "review_text": "After switching, Max's coat is shinier and tummy trouble disappeared! In less weeks.",
+            "reviewer_name": "JOHN D.",
+            "customer_badge": "VERIFIED CUSTOMER"
+          }
+        },
+        "testimonial_HgBp9T": {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": 5,
+            "review_text": "After switching, Max's coat is shinier and tummy trouble disappeared! In less weeks.",
+            "reviewer_name": "JOHN D.",
+            "customer_badge": "VERIFIED CUSTOMER"
+          }
+        },
+        "testimonial_JdNtFt": {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": 5,
+            "review_text": "After switching, Max's coat is shinier and tummy trouble disappeared! In less weeks.",
+            "reviewer_name": "JOHN D.",
+            "customer_badge": "VERIFIED CUSTOMER"
+          }
+        },
+        "testimonial_h6bREm": {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": 5,
+            "review_text": "After switching, Max's coat is shinier and tummy trouble disappeared! In less weeks.",
+            "reviewer_name": "JOHN D.",
+            "customer_badge": "VERIFIED CUSTOMER"
+          }
+        },
+        "testimonial_nPXewi": {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": 5,
+            "review_text": "After switching, Max's coat is shinier and tummy trouble disappeared! In less weeks.",
+            "reviewer_name": "JOHN D.",
+            "customer_badge": "VERIFIED CUSTOMER"
+          }
+        },
+        "testimonial_rGK9aA": {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": 5,
+            "review_text": "After switching, Max's coat is shinier and tummy trouble disappeared! In less weeks.",
+            "reviewer_name": "JOHN D.",
+            "customer_badge": "VERIFIED CUSTOMER"
+          }
+        },
+        "testimonial_MWqiqB": {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": 5,
+            "review_text": "",
+            "reviewer_name": "",
+            "customer_badge": "VERIFIED CUSTOMER"
+          }
+        },
+        "testimonial_qchHqt": {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": 5,
+            "review_text": "",
+            "reviewer_name": "",
+            "customer_badge": "VERIFIED CUSTOMER"
+          }
+        },
+        "testimonial_fqErEM": {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": 5,
+            "review_text": "",
+            "reviewer_name": "",
+            "customer_badge": "VERIFIED CUSTOMER"
+          }
+        },
+        "testimonial_Xh6q8K": {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": 5,
+            "review_text": "",
+            "reviewer_name": "",
+            "customer_badge": "VERIFIED CUSTOMER"
+          }
+        },
+        "testimonial_PcmgzT": {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": 5,
+            "review_text": "",
+            "reviewer_name": "",
+            "customer_badge": "VERIFIED CUSTOMER"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_UccwFD",
+        "testimonial_wPUXeC",
+        "testimonial_HgBp9T",
+        "testimonial_JdNtFt",
+        "testimonial_h6bREm",
+        "testimonial_nPXewi",
+        "testimonial_rGK9aA",
+        "testimonial_MWqiqB",
+        "testimonial_qchHqt",
+        "testimonial_fqErEM",
+        "testimonial_Xh6q8K",
+        "testimonial_PcmgzT"
+      ],
+      "name": "Pet Parents Testimonials",
+      "settings": {
+        "main_title": "What Real Pet Parents Are Saying",
+        "subtitle": "Hear from people who care about their pets, like you."
+      }
+    },
+    "comparision_table_6Ki9pf": {
+      "type": "comparision-table",
+      "blocks": {
+        "feature_NewxMx": {
+          "type": "feature",
+          "settings": {
+            "image_icon": "shopify://shop_images/Group_86.png",
+            "feature_text": "Proudly Made in Canada"
+          }
+        },
+        "feature_z9FWHJ": {
+          "type": "feature",
+          "settings": {
+            "image_icon": "shopify://shop_images/Group_87.png",
+            "feature_text": "Transparent Ingredients List"
+          }
+        },
+        "feature_CDME6E": {
+          "type": "feature",
+          "settings": {
+            "feature_text": "No Recalls, Ever!"
+          }
+        },
+        "feature_kp7RzV": {
+          "type": "feature",
+          "settings": {
+            "image_icon": "shopify://shop_images/Group_88.png",
+            "feature_text": "Focused on Digestion"
+          }
+        },
+        "feature_rbaMgY": {
+          "type": "feature",
+          "settings": {
+            "feature_text": "Farm-to-Bowl Sourcing"
+          }
+        }
+      },
+      "block_order": [
+        "feature_NewxMx",
+        "feature_z9FWHJ",
+        "feature_CDME6E",
+        "feature_kp7RzV",
+        "feature_rbaMgY"
+      ],
+      "name": "Nutram Comparison",
+      "settings": {
+        "main_title": "A Clean-Label Solution,",
+        "sub_title": "Not Just Another Name",
+        "description": "Here's what sets Nutram apart:",
+        "nutram_logo": "shopify://shop_images/Nutram_logo_blue_HQ_1.png",
+        "competitor_name": "Mainstream Brands"
+      }
+    },
+    "faq_custom_EE898E": {
+      "type": "faq-custom",
+      "blocks": {
+        "faq_item_NNDyyr": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Sample Question",
+            "answer": "This is a sample answer."
+          }
+        },
+        "faq_item_atjYBe": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Sample Question",
+            "answer": "This is a sample answer."
+          }
+        },
+        "faq_item_Dth3kp": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Sample Question",
+            "answer": "This is a sample answer."
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_NNDyyr",
+        "faq_item_atjYBe",
+        "faq_item_Dth3kp"
+      ],
+      "name": "FAQ Section",
+      "settings": {
+        "heading": "Frequently Asked Questions",
+        "subheading": "We're always happy to help."
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "blocks": {
+        "header": {
+          "type": "text",
+          "name": "t:names.header",
+          "settings": {
+            "text": "<h3>Goes well with...</h3>",
+            "truncate": false,
+            "width": "fit-content",
+            "max_width": "normal",
+            "alignment": "left",
+            "type_preset": "h2",
+            "font": "var(--font-primary--family)",
+            "font_size": "",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "static-product-card": {
+          "type": "_product-card",
+          "name": "t:names.product_card",
+          "static": true,
+          "settings": {
+            "product_card_gap": 2,
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "card-gallery": {
+              "type": "_product-card-gallery",
+              "name": "t:names.product_card_media",
+              "settings": {
+                "image_ratio": "portrait",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "group": {
+              "type": "_product-card-group",
+              "settings": {
+                "link": "",
+                "open_in_new_tab": false,
+                "content_direction": "column",
+                "vertical_on_mobile": false,
+                "horizontal_alignment": "space-between",
+                "vertical_alignment": "flex-start",
+                "align_baseline": false,
+                "horizontal_alignment_flex_direction_column": "flex-start",
+                "vertical_alignment_flex_direction_column": "flex-start",
+                "gap": 4,
+                "width": "fill",
+                "custom_width": 35,
+                "width_mobile": "fill",
+                "custom_width_mobile": 43,
+                "height": "fit",
+                "custom_height": 100,
+                "inherit_color_scheme": true,
+                "color_scheme": "",
+                "background_media": "none",
+                "video_position": "cover",
+                "background_image_position": "cover",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "toggle_overlay": false,
+                "overlay_color": "#00000026",
+                "overlay_style": "solid",
+                "gradient_direction": "to top",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "group_jUd9Ly": {
+                  "type": "_product-card-group",
+                  "name": "t:names.group",
+                  "settings": {
+                    "link": "",
+                    "open_in_new_tab": false,
+                    "content_direction": "column",
+                    "vertical_on_mobile": true,
+                    "horizontal_alignment": "flex-start",
+                    "vertical_alignment": "center",
+                    "align_baseline": false,
+                    "horizontal_alignment_flex_direction_column": "flex-start",
+                    "vertical_alignment_flex_direction_column": "flex-start",
+                    "gap": 4,
+                    "width": "fill",
+                    "custom_width": 40,
+                    "width_mobile": "fit-content",
+                    "custom_width_mobile": 20,
+                    "height": "fit",
+                    "custom_height": 100,
+                    "inherit_color_scheme": true,
+                    "color_scheme": "",
+                    "background_media": "none",
+                    "video_position": "cover",
+                    "background_image_position": "cover",
+                    "border": "none",
+                    "border_width": 1,
+                    "border_opacity": 100,
+                    "border_radius": 0,
+                    "toggle_overlay": false,
+                    "overlay_color": "#00000026",
+                    "overlay_style": "solid",
+                    "gradient_direction": "to top",
+                    "padding-block-start": 8,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {
+                    "product_title_d368TL": {
+                      "type": "product-title",
+                      "name": "t:names.product_title",
+                      "settings": {
+                        "width": "fit-content",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "h5",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    },
+                    "price_jKmnBC": {
+                      "type": "price",
+                      "settings": {
+                        "show_sale_price_first": true,
+                        "show_installments": false,
+                        "show_tax_info": false,
+                        "type_preset": "h6",
+                        "width": "100%",
+                        "alignment": "left",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "color": "var(--color-foreground)",
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "product_title_d368TL",
+                    "price_jKmnBC"
+                  ]
+                },
+                "swatches": {
+                  "type": "swatches",
+                  "settings": {
+                    "product_swatches_alignment": "flex-start",
+                    "product_swatches_alignment_mobile": "flex-start",
+                    "hide_padding": false,
+                    "product_swatches_padding_top": 4,
+                    "product_swatches_padding_bottom": 10,
+                    "product_swatches_padding_left": 0,
+                    "product_swatches_padding_right": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "group_jUd9Ly",
+                "swatches"
+              ]
+            }
+          },
+          "block_order": [
+            "card-gallery",
+            "group"
+          ]
+        }
+      },
+      "block_order": [
+        "header"
+      ],
+      "disabled": true,
+      "settings": {
+        "product": "{{ closest.product }}",
+        "recommendation_type": "related",
+        "layout_type": "grid",
+        "carousel_on_mobile": false,
+        "max_products": 4,
+        "columns": 4,
+        "mobile_columns": "2",
+        "columns_gap": 12,
+        "rows_gap": 12,
+        "icons_style": "arrow",
+        "icons_shape": "none",
+        "section_width": "page-width",
+        "gap": 24,
+        "color_scheme": "scheme-1",
+        "padding-block-start": 24,
+        "padding-block-end": 24
+      }
+    },
+    "collection_links_9Pc4EL": {
+      "type": "collection-links",
+      "blocks": {
+        "link": {
+          "type": "_collection-link",
+          "static": true,
+          "settings": {
+            "show_count": true
+          },
+          "blocks": {
+            "title": {
+              "type": "_inline-collection-title",
+              "static": true,
+              "settings": {
+                "font": "var(--font-body--family)",
+                "weight": "",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none"
+              },
+              "blocks": {}
+            },
+            "image": {
+              "type": "_image",
+              "static": true,
+              "settings": {
+                "height": "medium",
+                "ratio": "square",
+                "border_radius": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": []
+        }
+      },
+      "disabled": true,
+      "name": "t:names.collection_links_text",
+      "settings": {
+        "collection_list": [],
+        "layout": "text",
+        "section_width": "page-width",
+        "alignment": "left",
+        "image_position": "right",
+        "color_scheme": "scheme-5",
+        "padding-block-start": 60,
+        "padding-block-end": 60
+      }
+    },
+    "product_list_PMAr7G": {
+      "type": "product-list",
+      "blocks": {
+        "static-header": {
+          "type": "_product-list-content",
+          "name": "t:names.header",
+          "static": true,
+          "settings": {
+            "content_direction": "column",
+            "vertical_on_mobile": false,
+            "horizontal_alignment": "center",
+            "vertical_alignment": "flex-end",
+            "align_baseline": true,
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 12,
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "custom_height": 100,
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "background_media": "none",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "product_list_text_htwBUy": {
+              "type": "_product-list-text",
+              "name": "t:names.collection_title",
+              "settings": {
+                "text": "<h3>Our Most-Loved Products</h3>",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "center",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "product_list_button_jqarhp": {
+              "type": "_product-list-button",
+              "name": "t:names.product_list_button",
+              "settings": {
+                "label": "View all",
+                "open_in_new_tab": false,
+                "style_class": "link",
+                "width": "fit-content",
+                "custom_width": 100,
+                "width_mobile": "fit-content",
+                "custom_width_mobile": 100
+              },
+              "blocks": {}
+            },
+            "text_BUF7x8": {
+              "type": "text",
+              "name": "t:names.text",
+              "settings": {
+                "text": "<p>Everyday wellness, for sensitive tummies and picky eaters alike.</p>",
+                "truncate": false,
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "center",
+                "type_preset": "h6",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "product_list_text_htwBUy",
+            "product_list_button_jqarhp",
+            "text_BUF7x8"
+          ]
+        },
+        "static-product-card": {
+          "type": "_product-card",
+          "name": "t:names.product_card",
+          "static": true,
+          "settings": {
+            "product_card_gap": 4,
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "padding-block-start": 8,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "product_card_gallery_RpU3CY": {
+              "type": "_product-card-gallery",
+              "name": "t:names.product_card_media",
+              "settings": {
+                "image_ratio": "portrait",
+                "border": "solid",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "product_title_GwTjij": {
+              "type": "product-title",
+              "name": "t:names.product_title",
+              "settings": {
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 4,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "text_WabJJA": {
+              "type": "text",
+              "name": "t:names.text",
+              "settings": {
+                "text": "<p>Chicken Meal and Salmon Meal Recipe</p>",
+                "truncate": false,
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "price_VUzU7e": {
+              "type": "price",
+              "name": "t:names.product_price",
+              "settings": {
+                "show_sale_price_first": true,
+                "show_installments": false,
+                "show_tax_info": false,
+                "type_preset": "h6",
+                "width": "100%",
+                "alignment": "left",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "color": "var(--color-foreground)",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "buy_buttons_aTGGei": {
+              "type": "buy-buttons",
+              "name": "t:names.product_buy_buttons",
+              "settings": {
+                "stacking": false,
+                "show_pickup_availability": true,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "quantity": {
+                  "type": "quantity",
+                  "disabled": true,
+                  "static": true,
+                  "settings": {},
+                  "blocks": {}
+                },
+                "add-to-cart": {
+                  "type": "add-to-cart",
+                  "static": true,
+                  "settings": {
+                    "style_class": "button-secondary"
+                  },
+                  "blocks": {}
+                },
+                "accelerated-checkout": {
+                  "type": "accelerated-checkout",
+                  "disabled": true,
+                  "static": true,
+                  "settings": {},
+                  "blocks": {}
+                }
+              },
+              "block_order": []
+            }
+          },
+          "block_order": [
+            "product_card_gallery_RpU3CY",
+            "product_title_GwTjij",
+            "text_WabJJA",
+            "price_VUzU7e",
+            "buy_buttons_aTGGei"
+          ]
+        }
+      },
+      "name": "t:names.products_carousel",
+      "settings": {
+        "custom_class": "home-feature-collection single-product-collection",
+        "button1_text": "For Cats",
+        "button1_link": "",
+        "button2_text": "For Dogs",
+        "button2_link": "",
+        "collection": "frontpage",
+        "layout_type": "carousel",
+        "carousel_on_mobile": false,
+        "max_products": 16,
+        "columns": 4,
+        "mobile_columns": "2",
+        "mobile_card_size": "60cqw",
+        "columns_gap": 8,
+        "rows_gap": 24,
+        "icons_style": "arrow",
+        "icons_shape": "circle",
+        "section_width": "page-width",
+        "horizontal_alignment": "flex-start",
+        "gap": 28,
+        "color_scheme": "scheme-e00e94c2-fb8b-4b40-83c8-ba651b6224bb",
+        "padding-block-start": 48,
+        "padding-block-end": 80
+      }
+    }
+  },
+  "order": [
+    "main",
+    "step_section_rYTg9y",
+    "what_sets_apart_iB3enb",
+    "testimonial_6URAbM",
+    "comparision_table_6Ki9pf",
+    "faq_custom_EE898E",
+    "product-recommendations",
+    "collection_links_9Pc4EL",
+    "product_list_PMAr7G"
+  ]
+}
