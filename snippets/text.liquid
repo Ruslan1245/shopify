@@ -48,8 +48,9 @@
   endcapture
 %}
 
-{{ plain_text }}
-
+{% if block.settings.truncate == true %}
+  {% assign plain_text = plain_text | truncate : 60%}
+{% endif %}
 {% capture attributes %}
   class="{{ class }} spacing-style text-block text-block--{{ block.id }} {{ block_settings.type_preset }}
     {{ text_block_classes }}
