@@ -846,6 +846,7 @@
         "static-product-card": {
           "type": "_product-card",
           "name": "t:names.product_card",
+          "disabled": true,
           "static": true,
           "settings": {
             "product_card_gap": 2,
@@ -1146,7 +1147,7 @@
               "type": "_product-list-text",
               "name": "t:names.collection_title",
               "settings": {
-                "text": "<h3>Our Most-Loved Products</h3>",
+                "text": "<h3>Related Products</h3>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "center",
@@ -1186,7 +1187,7 @@
               "type": "text",
               "name": "t:names.text",
               "settings": {
-                "text": "<p>Everyday wellness, for sensitive tummies and picky eaters alike.</p>",
+                "text": "<p>Find wht's best for you.</p>",
                 "truncate": false,
                 "width": "100%",
                 "max_width": "normal",
@@ -1379,7 +1380,7 @@
         "button1_link": "",
         "button2_text": "For Dogs",
         "button2_link": "",
-        "collection": "frontpage",
+        "collection": "all-cats",
         "layout_type": "carousel",
         "carousel_on_mobile": false,
         "max_products": 16,
