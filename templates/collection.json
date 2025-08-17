@@ -107,18 +107,21 @@
         "badge_f7XVVH": {
           "type": "badge",
           "settings": {
+            "badge_icon": "shopify://shop_images/Vector_c83083ae-0a61-474b-adc1-4ecec2eb8b34.png",
             "text": "More energy & less bloating"
           }
         },
         "badge_QYCDeQ": {
           "type": "badge",
           "settings": {
+            "badge_icon": "shopify://shop_images/Vector_c83083ae-0a61-474b-adc1-4ecec2eb8b34.png",
             "text": "Clean ingredients, zero recalls"
           }
         },
         "badge_zhbABp": {
           "type": "badge",
           "settings": {
+            "badge_icon": "shopify://shop_images/Vector_c83083ae-0a61-474b-adc1-4ecec2eb8b34.png",
             "text": "Holistic science for happy pets"
           }
         },
@@ -178,7 +181,7 @@
       ],
       "name": "Cleanest Kibbles",
       "settings": {
-        "heading": "",
+        "heading": "Canada's Cleanest Kibbles",
         "overlay_enable": true,
         "overlay_color": "#3086c8",
         "overlay_opacity": 40
