@@ -692,9 +692,11 @@
       "settings": {
         "custom_class": "home-feature-collection",
         "button1_text": "For Cats",
-        "button1_link": "",
+        "button1_image": "shopify://shop_images/Screenshot_2025-08-15_202725.png",
+        "button1_link": "#",
         "button2_text": "For Dogs",
-        "button2_link": "",
+        "button2_image": "shopify://shop_images/Screenshot_2025-08-15_202612.png",
+        "button2_link": "#",
         "collection": "all-cats",
         "layout_type": "carousel",
         "carousel_on_mobile": false,
