@@ -185,7 +185,7 @@ section.custom-hero-section.mobile-version {
 }
 .custom-hero-section .hero-features li { 
         display: flex;
-        justify-content: center;
+        /* justify-content: center; */
 }
 .custom-hero-section .hero-features {
     padding-top: 15px !important;
