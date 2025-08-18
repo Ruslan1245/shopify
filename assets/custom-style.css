@@ -806,6 +806,12 @@ button.button.add-to-cart-button.button.atc-added:after {
 .home-feature-collection .product-card__content, ui-test-product-list .product-card__content {
     padding-bottom: 40px;
 }
+.resource-list__carousel .buy-buttons-block
+ {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
 @media(max-width:767px){
     .page-class-collection .cleanest-kibbles__heading {
     font-size: 48px;
