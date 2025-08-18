@@ -776,11 +776,42 @@ button.button.add-to-cart-button.button.atc-added:after {
     line-height: 125%;
     color: #353535;
 }
-
+#ResultsList .user-select-text p {
+	color: #4498CD;
+	font-size: 24px;
+	font-weight: 600;
+	line-height: 26px;
+	max-width: 280px;
+	margin-bottom: 10px;
+	text-transform: capitalize;
+	height: 42px;
+}
+/*.home-feature-collection .group-block .group-block-content .text-block p:first-child {
+    color: #4498CD;
+    font-size: 56px !important;
+    font-weight: 600;
+    text-transform: capitalize;
+}*/
+.home-feature-collection h3 {
+    color: #4498CD;
+    font-size: 56px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
 @media(max-width:767px){
     .page-class-collection .cleanest-kibbles__heading {
     font-size: 48px;
     line-height: 90%;
+}
+ ResultsList .user-select-text p {
+	color: #4498CD;
+	font-size: 24px;
+	font-weight: 600;
+	line-height: 26px;
+	max-width: 280px;
+	margin-bottom: 10px;
+	text-transform: capitalize;
+	height: 22px;
 }
    .page-class-collection .cleanest-kibbles__extras_badge {
     gap: 6px;
