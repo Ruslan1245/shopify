@@ -39,6 +39,11 @@
     line-height: 125%;
 }
 
+.home-feature-collection.newhomecustom .product-card__content{
+    display: flex;
+  justify-content: space-between;
+}
+
 .home-feature-collection .add-to-cart-text .add-to-cart-icon{
     display:none;
 }
