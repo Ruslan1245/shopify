@@ -48,6 +48,10 @@
     display:none;
 }
 
+.home-feature-collection quick-add-component .quick-add__button .add-to-cart-icon {
+    display:block;
+}
+
 .home-feature-collection rte-formatter p {
     font-size: 16px !important;
     line-height: 128%;
