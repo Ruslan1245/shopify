@@ -697,7 +697,7 @@
         "button2_text": "For Dogs",
         "button2_image": "shopify://shop_images/Screenshot_2025-08-15_202612.png",
         "button2_link": "#",
-        "collection": "all-cats",
+        "collection": "frontpage",
         "layout_type": "carousel",
         "carousel_on_mobile": false,
         "max_products": 16,
