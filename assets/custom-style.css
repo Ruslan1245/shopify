@@ -839,6 +839,10 @@ button.button.add-to-cart-button.button.atc-added:after {
     footer .text-block{
         order:2;
     }
+
+    footer accordion-custom{
+        order:3;
+    }
        
     .page-class-collection .cleanest-kibbles__heading {
     font-size: 48px;
