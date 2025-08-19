@@ -38,6 +38,11 @@
     font-size: 18px !important;
     line-height: 125%;
 }
+
+.home-feature-collection .add-to-cart-text .add-to-cart-icon{
+    display:none;
+}
+
 .home-feature-collection rte-formatter p {
     font-size: 16px !important;
     line-height: 128%;
