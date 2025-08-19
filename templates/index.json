@@ -1112,7 +1112,7 @@
         "button1_link": "#",
         "button2_text": "For dogs",
         "button2_link": "#",
-        "collection": "newcollection",
+        "collection": "grain-free-1",
         "layout_type": "grid",
         "carousel_on_mobile": false,
         "max_products": 3,
@@ -1135,6 +1135,7 @@
       "type": "forgot-which-one",
       "name": "Forgot Which One Banner",
       "settings": {
+        "image": "shopify://shop_images/Image_Placeholder_11d37d07-791a-4a1b-a51a-f5e4ec572ac2.png",
         "heading": "Forgot Which One They Loved?",
         "subtext": "Find your pet’s perfect match again in seconds with the Nutram Number quiz.",
         "cta_text": "Find It Again",
