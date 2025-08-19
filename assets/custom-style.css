@@ -831,6 +831,14 @@ button.button.add-to-cart-button.button.atc-added:after {
         font-size: 32px !important;
         line-height: 90%;
     }
+
+    footer .image-block{
+        order:1;
+    }
+
+    footer .text-block{
+        order:2;
+    }
        
     .page-class-collection .cleanest-kibbles__heading {
     font-size: 48px;
