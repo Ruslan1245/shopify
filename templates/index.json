@@ -692,9 +692,9 @@
       "settings": {
         "custom_class": "home-feature-collection",
         "button1_text": "For Cats",
-        "button1_link": "#",
+        "button1_link": "shopify://collections/adult-cat",
         "button2_text": "For Dogs",
-        "button2_link": "#",
+        "button2_link": "shopify://collections/adult-dog",
         "collection": "dry-food-cat",
         "layout_type": "carousel",
         "carousel_on_mobile": false,
