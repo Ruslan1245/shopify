@@ -728,6 +728,7 @@
         "step_3VUtkY": {
           "type": "step",
           "settings": {
+            "image": "shopify://shop_images/Vector_62c25724-5952-4638-b214-21ac657a4629.png",
             "title": "Delivered Monthly",
             "text": "Made in Canada. Always fresh. Right to your door."
           }
@@ -735,6 +736,7 @@
         "step_kUbzjU": {
           "type": "step",
           "settings": {
+            "image": "shopify://shop_images/Vector_fc23f109-207b-4324-aec9-82a1714f801e.png",
             "title": "Health You Can See",
             "text": "Bloat down and energy up within days."
           }
@@ -750,7 +752,7 @@
         "heading": "Whole-Food Nutrition In 3 Simple Steps",
         "subtitle": "Clean kibbles, for results you can see and your pet can feel.",
         "button_text": "Shop Best Sellers",
-        "button_link": "",
+        "button_link": "shopify://collections",
         "rating_text": "4.8/5 Loved by thousands of pet parents"
       }
     },
@@ -1135,7 +1137,7 @@
       "type": "forgot-which-one",
       "name": "Forgot Which One Banner",
       "settings": {
-        "image": "shopify://shop_images/Image_Placeholder_11d37d07-791a-4a1b-a51a-f5e4ec572ac2.png",
+        "image": "shopify://shop_images/Image_Placeholder_2d442e35-e6e3-428a-8604-de5122bdde01.png",
         "heading": "Forgot Which One They Loved?",
         "subtext": "Find your pet’s perfect match again in seconds with the Nutram Number quiz.",
         "cta_text": "Find It Again",
@@ -1162,6 +1164,7 @@
         "feature_zBYHjq": {
           "type": "feature",
           "settings": {
+            "image_icon": "shopify://shop_images/Group_87_bc1bb9f0-be15-42d4-b2b1-37808fcd9bdc.png",
             "feature_text": "No Recalls, Ever!"
           }
         },
@@ -1175,6 +1178,7 @@
         "feature_hk37Ry": {
           "type": "feature",
           "settings": {
+            "image_icon": "shopify://shop_images/Group_88_ca20ced1-0c7b-4fdc-8067-7acde8ea7347.png",
             "feature_text": "Farm-to-Bowl Sourcing"
           }
         }
@@ -1218,45 +1222,50 @@
         "testimonial_gD3hzW": {
           "type": "testimonial",
           "settings": {
+            "pet_image": "shopify://shop_images/instanav_cat_86a01b018d_bffe740c-75ed-4e01-ba98-28cf64c95dbe.jpg",
             "star_rating": 5,
-            "review_text": "After switching, Max's coat is shinier and tummy trouble disappeared! In less weeks.",
-            "reviewer_name": "JOHN D.",
+            "review_text": "My cats used to love this treat ... I say \"used to love\" because for over 2 months, I haven't been able to find it in stores at all! My local pet store orders it every week but never receives any. However, they do receive your other products. I also buy the I19 food. Hoping that this treat will be back in my local pet store very soon!",
+            "reviewer_name": "Manon",
             "customer_badge": "VERIFIED CUSTOMER"
           }
         },
         "testimonial_r3Ny3e": {
           "type": "testimonial",
           "settings": {
+            "pet_image": "shopify://shop_images/image_3.png",
             "star_rating": 5,
-            "review_text": "After switching, Max's coat is shinier and tummy trouble disappeared! In less weeks.",
-            "reviewer_name": "JOHN D.",
+            "review_text": "My cats love the catfood T24.",
+            "reviewer_name": "John Anderson",
             "customer_badge": "VERIFIED CUSTOMER"
           }
         },
         "testimonial_EAaWwz": {
           "type": "testimonial",
           "settings": {
+            "pet_image": "shopify://shop_images/4_10dc503992_046371fc-7346-411c-9d03-06dc2502d475.jpg",
             "star_rating": 5,
-            "review_text": "After switching, Max's coat is shinier and tummy trouble disappeared! In less weeks.",
-            "reviewer_name": "JOHN D.",
+            "review_text": "My new puppy Nala loves this food.",
+            "reviewer_name": "Pamela",
             "customer_badge": "VERIFIED CUSTOMER"
           }
         },
         "testimonial_tPiTXy": {
           "type": "testimonial",
           "settings": {
+            "pet_image": "shopify://shop_images/image_7.jpg",
             "star_rating": 5,
-            "review_text": "After switching, Max's coat is shinier and tummy trouble disappeared! In less weeks.",
-            "reviewer_name": "JOHN D.",
+            "review_text": "Our yellow lab Patsy loves to eat well. She adores TOTW but gained too much weight. We switched to Nutram and she loves it. Her coat is also so soft",
+            "reviewer_name": "Mitch",
             "customer_badge": "VERIFIED CUSTOMER"
           }
         },
         "testimonial_wfztyR": {
           "type": "testimonial",
           "settings": {
+            "pet_image": "shopify://shop_images/about_us_retriever_117826bad8-removebg-preview.png",
             "star_rating": 5,
-            "review_text": "After switching, Max's coat is shinier and tummy trouble disappeared! In less weeks.",
-            "reviewer_name": "JOHN D.",
+            "review_text": "Been feeding Nutram dog foods to my German Shepherds for years! My current German Shepherd adores this specific food! Totally recommend.",
+            "reviewer_name": "Lisa",
             "customer_badge": "VERIFIED CUSTOMER"
           }
         },
