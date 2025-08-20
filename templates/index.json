@@ -1138,6 +1138,7 @@
       "name": "Forgot Which One Banner",
       "settings": {
         "image": "shopify://shop_images/Image_Placeholder_2d442e35-e6e3-428a-8604-de5122bdde01.png",
+        "mobile_image": "shopify://shop_images/Image_Placeholder_b03d6594-509d-4095-be7c-50282d934d22.png",
         "heading": "Forgot Which One They Loved?",
         "subtext": "Find your pet’s perfect match again in seconds with the Nutram Number quiz.",
         "cta_text": "Find It Again",
