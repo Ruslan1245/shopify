@@ -1206,6 +1206,7 @@
       "settings": {
         "custom_class": "our-story_home",
         "hero_image": "shopify://shop_images/Image5_1.png",
+        "mobile_hero_image": "shopify://shop_images/Image4_1.png",
         "subtitle": "",
         "title": "Our Story",
         "content": "<p>We started Nutram because we couldn’t find pet food we’d trust ourselves. Too many fillers. Too many recalls. Not enough transparency.<br/><br/>So we built our own using Canadian ingredients, science-backed formulations, and absolutely no shortcuts. The result? Kibble that’s as honest as it is effective.</p>",
