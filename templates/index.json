@@ -1259,6 +1259,16 @@
             "customer_badge": "VERIFIED CUSTOMER"
           }
         },
+        "testimonial_9fPt8K": {
+          "type": "testimonial",
+          "settings": {
+            "pet_image": "shopify://shop_images/pexels-ingewallu-126407.jpg",
+            "star_rating": 5,
+            "review_text": "My cats love this taste! And I love the flaxseed, rich in Omega-3 fatty acids in it. All the ingredients sound so healthy for my cat's well-being. I love that this pet’s food is healing, wholesome, and nutritionally sound to keep my cats living a long healthy life!",
+            "reviewer_name": "Hope Ryckman",
+            "customer_badge": "VERIFIED CUSTOMER"
+          }
+        },
         "testimonial_wfztyR": {
           "type": "testimonial",
           "settings": {
@@ -1272,63 +1282,60 @@
         "testimonial_hHJmAD": {
           "type": "testimonial",
           "settings": {
+            "pet_image": "shopify://shop_images/image.jpg",
             "star_rating": 5,
-            "review_text": "After switching, Max's coat is shinier and tummy trouble disappeared! In less weeks.",
-            "reviewer_name": "JOHN D.",
+            "review_text": "My Golden Retriever had some food sensitivity issues. This food has changed his life!",
+            "reviewer_name": "Gracie Grace",
             "customer_badge": "VERIFIED CUSTOMER"
           }
         },
         "testimonial_8mDQ3j": {
           "type": "testimonial",
           "settings": {
+            "pet_image": "shopify://shop_images/pexels-tamba09-979247.jpg",
             "star_rating": 5,
-            "review_text": "After switching, Max's coat is shinier and tummy trouble disappeared! In less weeks.",
-            "reviewer_name": "JOHN D.",
-            "customer_badge": "VERIFIED CUSTOMER"
-          }
-        },
-        "testimonial_9fPt8K": {
-          "type": "testimonial",
-          "settings": {
-            "star_rating": 5,
-            "review_text": "",
-            "reviewer_name": "",
+            "review_text": "I have 3 cats, all of them rescues. This is the one dry cat food that they all love and agree on!!!",
+            "reviewer_name": "Nena Sinclair",
             "customer_badge": "VERIFIED CUSTOMER"
           }
         },
         "testimonial_Dah9fA": {
           "type": "testimonial",
           "settings": {
+            "pet_image": "shopify://shop_images/pexels-pixabay-248350.jpg",
             "star_rating": 5,
-            "review_text": "",
-            "reviewer_name": "",
+            "review_text": "Best food ever! My two cats love it! Thank you for keeping them happy and healthy",
+            "reviewer_name": "Alison Priddle",
             "customer_badge": "VERIFIED CUSTOMER"
           }
         },
         "testimonial_yYndc4": {
           "type": "testimonial",
           "settings": {
+            "pet_image": "shopify://shop_images/pexels-catscoming-978555.jpg",
             "star_rating": 5,
-            "review_text": "",
-            "reviewer_name": "",
+            "review_text": "My cats love this food. I have three cats of various ages who love this food and are extremely healthy.",
+            "reviewer_name": "Shannon L",
             "customer_badge": "VERIFIED CUSTOMER"
           }
         },
         "testimonial_QPKYCm": {
           "type": "testimonial",
           "settings": {
+            "pet_image": "shopify://shop_images/pexels-crina-doltu-490924-1202481.jpg",
             "star_rating": 5,
-            "review_text": "",
-            "reviewer_name": "",
+            "review_text": "MY OLDER CATS REALLY ENJOY THIS.",
+            "reviewer_name": "FRAN",
             "customer_badge": "VERIFIED CUSTOMER"
           }
         },
         "testimonial_jyexT6": {
           "type": "testimonial",
           "settings": {
+            "pet_image": "shopify://shop_images/pexels-hnoody93-58997.jpg",
             "star_rating": 5,
-            "review_text": "",
-            "reviewer_name": "",
+            "review_text": "My dog likes this product.",
+            "reviewer_name": "Gilles Bernatchez",
             "customer_badge": "VERIFIED CUSTOMER"
           }
         }
@@ -1338,10 +1345,10 @@
         "testimonial_r3Ny3e",
         "testimonial_EAaWwz",
         "testimonial_tPiTXy",
+        "testimonial_9fPt8K",
         "testimonial_wfztyR",
         "testimonial_hHJmAD",
         "testimonial_8mDQ3j",
-        "testimonial_9fPt8K",
         "testimonial_Dah9fA",
         "testimonial_yYndc4",
         "testimonial_QPKYCm",
