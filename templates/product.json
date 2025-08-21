@@ -309,7 +309,6 @@
               "type": "_review_custom",
               "name": "Customer Testimonial",
               "settings": {
-                "image": "shopify://shop_images/PFP_Placeholder_f2665ab2-ee62-4c9c-8c2f-4af6f955c529.png",
                 "text": "After switching, Max’s coat is shinier and tummy trouble disappeared in two weeks!",
                 "name": "John D.",
                 "verified": true,
@@ -505,7 +504,6 @@
         "step_t7fXU4": {
           "type": "step",
           "settings": {
-            "image": "shopify://shop_images/Vector_62c25724-5952-4638-b214-21ac657a4629.png",
             "title": "Delivered Monthly",
             "text": "Made in Canada. Always fresh. Right to your door."
           }
@@ -513,7 +511,6 @@
         "step_Fi3bbK": {
           "type": "step",
           "settings": {
-            "image": "shopify://shop_images/Vector_fc23f109-207b-4324-aec9-82a1714f801e.png",
             "title": "Health You Can See",
             "text": "Bloat down and energy up within days."
           }
@@ -539,8 +536,6 @@
         "feature_A3tRpq": {
           "type": "feature",
           "settings": {
-            "image": "shopify://shop_images/Image_Placeholder_9da37055-ef2b-4d54-b4eb-7da871381623.png",
-            "image_mobile": "shopify://shop_images/Image_Placeholder_f5b918e5-e64e-4c8b-af9b-3e4ce9e20fee.png",
             "title": "Made in Canada",
             "text": "Crafted in our own Ontario facility for complete quality control and trusted sourcing."
           }
@@ -548,8 +543,6 @@
         "feature_kYCyrd": {
           "type": "feature",
           "settings": {
-            "image": "shopify://shop_images/Image_Placeholder_71723bec-a750-4db0-b763-09ef49ed4917.png",
-            "image_mobile": "shopify://shop_images/Image_Placeholder_4f2e7140-cda3-4ba0-aae0-d2c28b825b85.png",
             "title": "Holistic, Natural Nutrition",
             "text": "Formulated by in-house experts using real ingredients — no fillers, by-products, or artificial additives."
           }
@@ -557,8 +550,6 @@
         "feature_8N6W6x": {
           "type": "feature",
           "settings": {
-            "image": "shopify://shop_images/Image_Placeholder_11d37d07-791a-4a1b-a51a-f5e4ec572ac2.png",
-            "image_mobile": "shopify://shop_images/Image_Placeholder_063a1a19-78d4-4a0d-a378-3c5a48185ace.png",
             "title": "Tailored for Every Pet",
             "text": "Crafted in our own Ontario facility for complete quality control and trusted sourcing."
           }
@@ -584,7 +575,6 @@
         "testimonial_UccwFD": {
           "type": "testimonial",
           "settings": {
-            "pet_image": "shopify://shop_images/PFP_Placeholder_bb2a039f-1c10-4305-bee0-345a3d64faf1.png",
             "star_rating": 5,
             "review_text": "After switching, Max's coat is shinier and tummy trouble disappeared! In less weeks.",
             "reviewer_name": "JOHN D.",
@@ -594,7 +584,6 @@
         "testimonial_wPUXeC": {
           "type": "testimonial",
           "settings": {
-            "pet_image": "shopify://shop_images/PFP_Placeholder_bb2a039f-1c10-4305-bee0-345a3d64faf1.png",
             "star_rating": 5,
             "review_text": "After switching, Max's coat is shinier and tummy trouble disappeared! In less weeks.",
             "reviewer_name": "JOHN D.",
@@ -604,7 +593,6 @@
         "testimonial_HgBp9T": {
           "type": "testimonial",
           "settings": {
-            "pet_image": "shopify://shop_images/PFP_Placeholder_bb2a039f-1c10-4305-bee0-345a3d64faf1.png",
             "star_rating": 5,
             "review_text": "After switching, Max's coat is shinier and tummy trouble disappeared! In less weeks.",
             "reviewer_name": "JOHN D.",
@@ -614,7 +602,6 @@
         "testimonial_JdNtFt": {
           "type": "testimonial",
           "settings": {
-            "pet_image": "shopify://shop_images/PFP_Placeholder_bb2a039f-1c10-4305-bee0-345a3d64faf1.png",
             "star_rating": 5,
             "review_text": "After switching, Max's coat is shinier and tummy trouble disappeared! In less weeks.",
             "reviewer_name": "JOHN D.",
@@ -624,7 +611,6 @@
         "testimonial_h6bREm": {
           "type": "testimonial",
           "settings": {
-            "pet_image": "shopify://shop_images/PFP_Placeholder_bb2a039f-1c10-4305-bee0-345a3d64faf1.png",
             "star_rating": 5,
             "review_text": "After switching, Max's coat is shinier and tummy trouble disappeared! In less weeks.",
             "reviewer_name": "JOHN D.",
@@ -634,7 +620,6 @@
         "testimonial_nPXewi": {
           "type": "testimonial",
           "settings": {
-            "pet_image": "shopify://shop_images/PFP_Placeholder_bb2a039f-1c10-4305-bee0-345a3d64faf1.png",
             "star_rating": 5,
             "review_text": "After switching, Max's coat is shinier and tummy trouble disappeared! In less weeks.",
             "reviewer_name": "JOHN D.",
@@ -644,7 +629,6 @@
         "testimonial_rGK9aA": {
           "type": "testimonial",
           "settings": {
-            "pet_image": "shopify://shop_images/PFP_Placeholder_bb2a039f-1c10-4305-bee0-345a3d64faf1.png",
             "star_rating": 5,
             "review_text": "After switching, Max's coat is shinier and tummy trouble disappeared! In less weeks.",
             "reviewer_name": "JOHN D.",
@@ -654,7 +638,6 @@
         "testimonial_MWqiqB": {
           "type": "testimonial",
           "settings": {
-            "pet_image": "shopify://shop_images/PFP_Placeholder_bb2a039f-1c10-4305-bee0-345a3d64faf1.png",
             "star_rating": 5,
             "review_text": "",
             "reviewer_name": "",
@@ -664,7 +647,6 @@
         "testimonial_qchHqt": {
           "type": "testimonial",
           "settings": {
-            "pet_image": "shopify://shop_images/PFP_Placeholder_bb2a039f-1c10-4305-bee0-345a3d64faf1.png",
             "star_rating": 5,
             "review_text": "",
             "reviewer_name": "",
@@ -674,7 +656,6 @@
         "testimonial_fqErEM": {
           "type": "testimonial",
           "settings": {
-            "pet_image": "shopify://shop_images/PFP_Placeholder_bb2a039f-1c10-4305-bee0-345a3d64faf1.png",
             "star_rating": 5,
             "review_text": "",
             "reviewer_name": "",
@@ -684,7 +665,6 @@
         "testimonial_Xh6q8K": {
           "type": "testimonial",
           "settings": {
-            "pet_image": "shopify://shop_images/PFP_Placeholder_bb2a039f-1c10-4305-bee0-345a3d64faf1.png",
             "star_rating": 5,
             "review_text": "",
             "reviewer_name": "",
@@ -694,7 +674,6 @@
         "testimonial_PcmgzT": {
           "type": "testimonial",
           "settings": {
-            "pet_image": "shopify://shop_images/PFP_Placeholder_bb2a039f-1c10-4305-bee0-345a3d64faf1.png",
             "star_rating": 5,
             "review_text": "",
             "reviewer_name": "",
@@ -742,7 +721,6 @@
         "feature_CDME6E": {
           "type": "feature",
           "settings": {
-            "image_icon": "shopify://shop_images/Group_87_bc1bb9f0-be15-42d4-b2b1-37808fcd9bdc.png",
             "feature_text": "No Recalls, Ever!"
           }
         },
@@ -756,7 +734,6 @@
         "feature_rbaMgY": {
           "type": "feature",
           "settings": {
-            "image_icon": "shopify://shop_images/Group_88_ca20ced1-0c7b-4fdc-8067-7acde8ea7347.png",
             "feature_text": "Farm-to-Bowl Sourcing"
           }
         }
@@ -1398,6 +1375,45 @@
         "padding-block-start": 48,
         "padding-block-end": 80
       }
+    },
+    "top_slider_nndKwD": {
+      "type": "top-slider",
+      "blocks": {
+        "feature_NmzTd7": {
+          "type": "feature",
+          "settings": {
+            "text": "Free Canada-Wide Shipping"
+          }
+        },
+        "feature_9FXL77": {
+          "type": "feature",
+          "settings": {
+            "text": "Free Canada-Wide Shipping"
+          }
+        },
+        "feature_BKfr7A": {
+          "type": "feature",
+          "settings": {
+            "text": "Free Canada-Wide Shipping"
+          }
+        },
+        "feature_8AiRgV": {
+          "type": "feature",
+          "settings": {
+            "text": "Free Canada-Wide Shipping"
+          }
+        }
+      },
+      "block_order": [
+        "feature_NmzTd7",
+        "feature_9FXL77",
+        "feature_BKfr7A",
+        "feature_8AiRgV"
+      ],
+      "name": "Features Bar",
+      "settings": {
+        "enable_mobile_slider": true
+      }
     }
   },
   "order": [
@@ -1409,6 +1425,7 @@
     "faq_custom_EE898E",
     "product-recommendations",
     "collection_links_9Pc4EL",
-    "product_list_PMAr7G"
+    "product_list_PMAr7G",
+    "top_slider_nndKwD"
   ]
 }
