@@ -847,7 +847,7 @@ button.button.add-to-cart-button.button.atc-added:after {
     #ResultsList .user-select-text p {
         color: #4498cd;
         max-width: 280px;
-        height: 23px;
+        min-height: 38px;
     }
        
     .page-class-collection .cleanest-kibbles__heading {
