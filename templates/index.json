@@ -728,7 +728,6 @@
         "step_3VUtkY": {
           "type": "step",
           "settings": {
-            "image": "shopify://shop_images/Vector_62c25724-5952-4638-b214-21ac657a4629.png",
             "title": "Delivered Monthly",
             "text": "Made in Canada. Always fresh. Right to your door."
           }
@@ -736,7 +735,6 @@
         "step_kUbzjU": {
           "type": "step",
           "settings": {
-            "image": "shopify://shop_images/Vector_fc23f109-207b-4324-aec9-82a1714f801e.png",
             "title": "Health You Can See",
             "text": "Bloat down and energy up within days."
           }
@@ -1110,10 +1108,10 @@
       "name": "t:names.products_carousel",
       "settings": {
         "custom_class": "home-feature-collection newhomecustom",
-        "button1_text": "For cats",
-        "button1_link": "#",
-        "button2_text": "For dogs",
-        "button2_link": "#",
+        "button1_text": "",
+        "button1_link": "",
+        "button2_text": "",
+        "button2_link": "",
         "collection": "grain-free-1",
         "layout_type": "grid",
         "carousel_on_mobile": false,
@@ -1137,8 +1135,6 @@
       "type": "forgot-which-one",
       "name": "Forgot Which One Banner",
       "settings": {
-        "image": "shopify://shop_images/Image_Placeholder_2d442e35-e6e3-428a-8604-de5122bdde01.png",
-        "mobile_image": "shopify://shop_images/Image_Placeholder_b03d6594-509d-4095-be7c-50282d934d22.png",
         "heading": "Forgot Which One They Loved?",
         "subtext": "Find your pet’s perfect match again in seconds with the Nutram Number quiz.",
         "cta_text": "Find It Again",
@@ -1165,7 +1161,6 @@
         "feature_zBYHjq": {
           "type": "feature",
           "settings": {
-            "image_icon": "shopify://shop_images/Group_87_bc1bb9f0-be15-42d4-b2b1-37808fcd9bdc.png",
             "feature_text": "No Recalls, Ever!"
           }
         },
@@ -1179,7 +1174,6 @@
         "feature_hk37Ry": {
           "type": "feature",
           "settings": {
-            "image_icon": "shopify://shop_images/Group_88_ca20ced1-0c7b-4fdc-8067-7acde8ea7347.png",
             "feature_text": "Farm-to-Bowl Sourcing"
           }
         }
@@ -1224,7 +1218,6 @@
         "testimonial_gD3hzW": {
           "type": "testimonial",
           "settings": {
-            "pet_image": "shopify://shop_images/instanav_cat_86a01b018d_bffe740c-75ed-4e01-ba98-28cf64c95dbe.jpg",
             "star_rating": 5,
             "review_text": "My cats used to love this treat ... I say \"used to love\" because for over 2 months, I haven't been able to find it in stores at all! My local pet store orders it every week but never receives any. However, they do receive your other products. I also buy the I19 food. Hoping that this treat will be back in my local pet store very soon!",
             "reviewer_name": "Manon",
@@ -1234,7 +1227,6 @@
         "testimonial_r3Ny3e": {
           "type": "testimonial",
           "settings": {
-            "pet_image": "shopify://shop_images/image_3.png",
             "star_rating": 5,
             "review_text": "My cats love the catfood T24.",
             "reviewer_name": "John Anderson",
@@ -1244,7 +1236,6 @@
         "testimonial_EAaWwz": {
           "type": "testimonial",
           "settings": {
-            "pet_image": "shopify://shop_images/4_10dc503992_046371fc-7346-411c-9d03-06dc2502d475.jpg",
             "star_rating": 5,
             "review_text": "My new puppy Nala loves this food.",
             "reviewer_name": "Pamela",
@@ -1254,7 +1245,6 @@
         "testimonial_tPiTXy": {
           "type": "testimonial",
           "settings": {
-            "pet_image": "shopify://shop_images/image_7.jpg",
             "star_rating": 5,
             "review_text": "Our yellow lab Patsy loves to eat well. She adores TOTW but gained too much weight. We switched to Nutram and she loves it. Her coat is also so soft",
             "reviewer_name": "Mitch",
@@ -1264,7 +1254,6 @@
         "testimonial_9fPt8K": {
           "type": "testimonial",
           "settings": {
-            "pet_image": "shopify://shop_images/pexels-ingewallu-126407.jpg",
             "star_rating": 5,
             "review_text": "My cats love this taste! And I love the flaxseed, rich in Omega-3 fatty acids in it. All the ingredients sound so healthy for my cat's well-being. I love that this pet’s food is healing, wholesome, and nutritionally sound to keep my cats living a long healthy life!",
             "reviewer_name": "Hope Ryckman",
@@ -1274,7 +1263,6 @@
         "testimonial_wfztyR": {
           "type": "testimonial",
           "settings": {
-            "pet_image": "shopify://shop_images/about_us_retriever_117826bad8-removebg-preview.png",
             "star_rating": 5,
             "review_text": "Been feeding Nutram dog foods to my German Shepherds for years! My current German Shepherd adores this specific food! Totally recommend.",
             "reviewer_name": "Lisa",
@@ -1284,7 +1272,6 @@
         "testimonial_hHJmAD": {
           "type": "testimonial",
           "settings": {
-            "pet_image": "shopify://shop_images/image.jpg",
             "star_rating": 5,
             "review_text": "My Golden Retriever had some food sensitivity issues. This food has changed his life!",
             "reviewer_name": "Gracie Grace",
@@ -1294,7 +1281,6 @@
         "testimonial_8mDQ3j": {
           "type": "testimonial",
           "settings": {
-            "pet_image": "shopify://shop_images/pexels-tamba09-979247.jpg",
             "star_rating": 5,
             "review_text": "I have 3 cats, all of them rescues. This is the one dry cat food that they all love and agree on!!!",
             "reviewer_name": "Nena Sinclair",
@@ -1304,7 +1290,6 @@
         "testimonial_Dah9fA": {
           "type": "testimonial",
           "settings": {
-            "pet_image": "shopify://shop_images/pexels-pixabay-248350.jpg",
             "star_rating": 5,
             "review_text": "Best food ever! My two cats love it! Thank you for keeping them happy and healthy",
             "reviewer_name": "Alison Priddle",
@@ -1314,7 +1299,6 @@
         "testimonial_yYndc4": {
           "type": "testimonial",
           "settings": {
-            "pet_image": "shopify://shop_images/pexels-catscoming-978555.jpg",
             "star_rating": 5,
             "review_text": "My cats love this food. I have three cats of various ages who love this food and are extremely healthy.",
             "reviewer_name": "Shannon L",
@@ -1324,7 +1308,6 @@
         "testimonial_QPKYCm": {
           "type": "testimonial",
           "settings": {
-            "pet_image": "shopify://shop_images/pexels-crina-doltu-490924-1202481.jpg",
             "star_rating": 5,
             "review_text": "MY OLDER CATS REALLY ENJOY THIS.",
             "reviewer_name": "FRAN",
@@ -1334,7 +1317,6 @@
         "testimonial_jyexT6": {
           "type": "testimonial",
           "settings": {
-            "pet_image": "shopify://shop_images/pexels-hnoody93-58997.jpg",
             "star_rating": 5,
             "review_text": "My dog likes this product.",
             "reviewer_name": "Gilles Bernatchez",
@@ -1766,7 +1748,6 @@
         "button_url": "shopify://collections",
         "button_bg_color": "#f8c933",
         "button_text_color": "#333333",
-        "testimonial_image": "shopify://shop_images/pexels-mali-225406.jpg",
         "testimonial_rating": 5,
         "testimonial_text": "“My cat loves this and I am happy because he is then eating healthy food.”",
         "customer_name": "Kathleen B",
