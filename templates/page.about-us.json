@@ -18,6 +18,7 @@
           "disabled": true,
           "settings": {
             "text": "<h1>{{ closest.page.title }}</h1>",
+            "truncate": false,
             "width": "100%",
             "max_width": "normal",
             "alignment": "left",
@@ -62,12 +63,12 @@
       "type": "about-nutram",
       "name": "About Nutram Section",
       "settings": {
-        "bg_image": "shopify://shop_images/0a82e70785b483ff91766da49c8db9aba255f2f7_1.jpg",
+        "bg_image": "shopify://shop_images/pexels-hnoody93-58997.jpg",
         "overlay_color": "#00000030",
         "heading": "About Nutram",
         "subtext": "Trusted in over 30 countries worldwide, Nutram recipes represent the finest Canadian quality through many decades of pet nutrition excellence.",
+        "video": "shopify://files/videos/NON_ Oui.mp4",
         "below_text": "<p>Nutram is a 100% Canadian, family-owned pet wellness company with a holistic approach to pet nutrition. Nutram’s team of in-house Certified Nutritionists and Holistic Experts craft each recipe to maximize nutrient absorption. Through sound scientific principles and natural ingredients, your pet will receive all of the benefits of each ingredient, as nature intended.</p>",
-        "fsicon": "shopify://shop_images/Vector_14a9d9e1-9dd5-40fb-803b-e412a54c2bbc.png",
         "fs_heading": "Food Safety at Nutram",
         "fs_text": "At Nutram, we prioritize providing your pet with the highest quality, nutrient-dense food made in a safe environment. We understand that you want the best for your pets, and we are committed to earning your trust with our food choices. Our recipes are trusted in over 30 countries worldwide.\n\nOur privately-owned manufacturing facility was the first pet food manufacturer in Canada to obtain the British Retail Consortium (BRC) certification in 2012. The BRC is one of the highest pet food quality assurance certifications available. It is designed to ensure manufacturers implement good practices and strong quality management systems.",
         "fs_list": "<h3>Our BRC certification means we have complete transparency in all aspects of production, including:</h3><ul><li>Supplier and Ingredient Traceability: We can trace each ingredient back to its source and track which recipe it's used in and where that recipe is shipped.</li><li>Strict Hygiene Standards: We maintain strict hygiene protocols for anyone who comes into contact with our products during production.</li><li>Product Safety: We have a meticulous approach to preventing contamination, including enforcing strict rules on materials allowed on the production floor.<br/><br/><br/><br/></li></ul>"
@@ -87,7 +88,6 @@
         "award_VjapRV": {
           "type": "award",
           "settings": {
-            "image": "shopify://shop_images/image_7.png",
             "title": "Pet Product News",
             "desc": "Pet Product News has awarded Nutram with their 2016 “Inventory Essentials” award, making Nutram one of the must-stock products of 2016."
           }
@@ -95,7 +95,6 @@
         "award_HRxUh8": {
           "type": "award",
           "settings": {
-            "image": "shopify://shop_images/image_8_0787e89e-7385-4a4c-bca9-0b9798e0242c.png",
             "title": "The Whole Dog Journal",
             "desc": "The Whole Dog Journal editorial team ranks only the very best, and most nutritious food for dogs. It’s truly an honor for Nutram to be ranked on their 2016, 2017, 2018, 2019, 2020 and 2021 list of Approved Dry Dog Foods."
           }
@@ -126,8 +125,6 @@
       "name": "Custom Hero Banner",
       "settings": {
         "custom_class": "canada-clean-kibble about-us-page-sectionmain",
-        "hero_image": "shopify://shop_images/Image_Placeholder_c9ad2337-e6a9-483e-9538-7b72c0dc75d7.png",
-        "mobile_hero_image": "shopify://shop_images/Image_Placeholder_613086fe-0f85-41c2-845d-626fc330ae2e.png",
         "subtitle": "",
         "title": "Our Commitment to You",
         "content": "<h3>August 29, 2017</h3><p>Dear Nutram Pet Specialty Retailer,<br/><br/>Nutram is a 100% Canadian, family-owned pet food company, with headquarters and production facilities in Elmira, Ontario, Canada. Since our conception in 1993, Nutram has chosen to partner exclusively with Canadian pet specialty retailers to deliver super-premium, Canadian-made recipes to Canadian pet parents.<br/><br/>As a small company from humble beginnings, we understand the importance of supporting our local Canadian partners, including our farmers, our distributors, and most importantly our pet specialty retailers. We are grateful for nearly 25 years of collectively serving the pet specialty industry, and are committed to continually serving the Canadian consumer with excellent pet nutrition.<br/><br/>We understand that while some of our competitors are now venturing into other retail channels in Canada, please rest assured the Nutram remains 100% committed to servicing only the Canadian Pet Specialty market with our super-premium, natural and holistic Nutram brand.<br/><br/>Sincerely,</p><h4>Eric Puim,<br/>General Manager / VP Sales<br/>Nutram Pet Products Inc.<br/><br/></h4>",
@@ -233,7 +230,6 @@
         "button_url": "",
         "button_bg_color": "#f8c933",
         "button_text_color": "#333333",
-        "testimonial_image": "shopify://shop_images/PFP_Placeholder_b8d6023a-9497-4cd5-a9ed-c59e394d4372.png",
         "testimonial_rating": 5,
         "testimonial_text": "“After switching, Max’s coat is shinier and tummy trouble disappeared in two weeks!”",
         "customer_name": "John D.",
