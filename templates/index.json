@@ -729,6 +729,7 @@
         "step_3VUtkY": {
           "type": "step",
           "settings": {
+            "image": "shopify://shop_images/Vector_62c25724-5952-4638-b214-21ac657a4629.png",
             "title": "Delivered Monthly",
             "text": "Made in Canada. Always fresh. Right to your door."
           }
@@ -736,6 +737,7 @@
         "step_kUbzjU": {
           "type": "step",
           "settings": {
+            "image": "shopify://shop_images/Vector_fc23f109-207b-4324-aec9-82a1714f801e.png",
             "title": "Health You Can See",
             "text": "Bloat down and energy up within days."
           }
@@ -1136,6 +1138,8 @@
       "type": "forgot-which-one",
       "name": "Forgot Which One Banner",
       "settings": {
+        "image": "shopify://shop_images/Image_Placeholder_2d442e35-e6e3-428a-8604-de5122bdde01.png",
+        "mobile_image": "shopify://shop_images/Image_Placeholder_b03d6594-509d-4095-be7c-50282d934d22.png",
         "heading": "Forgot Which One They Loved?",
         "subtext": "Find your pet’s perfect match again in seconds with the Nutram Number quiz.",
         "cta_text": "Find It Again",
@@ -1162,6 +1166,7 @@
         "feature_zBYHjq": {
           "type": "feature",
           "settings": {
+            "image_icon": "shopify://shop_images/Group_87_bc1bb9f0-be15-42d4-b2b1-37808fcd9bdc.png",
             "feature_text": "No Recalls, Ever!"
           }
         },
@@ -1175,6 +1180,7 @@
         "feature_hk37Ry": {
           "type": "feature",
           "settings": {
+            "image_icon": "shopify://shop_images/Group_88_ca20ced1-0c7b-4fdc-8067-7acde8ea7347.png",
             "feature_text": "Farm-to-Bowl Sourcing"
           }
         }
@@ -1737,6 +1743,7 @@
       ],
       "name": "CTA Banner with Overlay",
       "settings": {
+        "background_image": "shopify://shop_images/160f936fac8a3509a4997f3ba92f947e889f5fc9.jpg",
         "fallback_bg_color": "#4a9ee7",
         "overlay_color": "#4a9ee7",
         "overlay_opacity": 85,
@@ -1749,6 +1756,7 @@
         "button_url": "shopify://collections",
         "button_bg_color": "#f8c933",
         "button_text_color": "#333333",
+        "testimonial_image": "shopify://shop_images/pexels-mali-225406.jpg",
         "testimonial_rating": 5,
         "testimonial_text": "“My cat loves this and I am happy because he is then eating healthy food.”",
         "customer_name": "Kathleen B",
