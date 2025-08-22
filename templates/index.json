@@ -696,7 +696,7 @@
         "button1_link": "shopify://collections/adult-cat",
         "button2_text": "For Dogs",
         "button2_link": "shopify://collections/adult-dog",
-        "collection": "adult-cat",
+        "collection": "all-cats",
         "layout_type": "carousel",
         "carousel_on_mobile": false,
         "max_products": 16,
