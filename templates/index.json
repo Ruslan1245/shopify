@@ -15,19 +15,22 @@
         "feature_YpkLzW": {
           "type": "feature",
           "settings": {
-            "feature_text": "<p>Visible digestive improvements, fast</p>"
+            "feature_text": "<p>Visible digestive improvements, fast</p>",
+            "icon_image": "shopify://shop_images/Vector_6b2e525e-dbf2-4e22-bd82-495a47e38211.png"
           }
         },
         "feature_xYGDTM": {
           "type": "feature",
           "settings": {
-            "feature_text": "<p>Clean-label recipes, never recalled</p>"
+            "feature_text": "<p>Clean-label recipes, never recalled</p>",
+            "icon_image": "shopify://shop_images/Vector_eeb6b58e-752b-49bf-94ad-a7e7e36b6eb9.png"
           }
         },
         "feature_WY74kF": {
           "type": "feature",
           "settings": {
-            "feature_text": "<p>Holistic nutrition, for happier pets</p>"
+            "feature_text": "<p>Holistic nutrition, for happier pets</p>",
+            "icon_image": "shopify://shop_images/Vector_3d5311f1-6e90-4939-8dec-8780b4529b88.png"
           }
         }
       },
@@ -1135,7 +1138,6 @@
       "type": "forgot-which-one",
       "name": "Forgot Which One Banner",
       "settings": {
-        "mobile_image": "shopify://shop_images/Image_Placeholder_b03d6594-509d-4095-be7c-50282d934d22.png",
         "heading": "Forgot Which One They Loved?",
         "subtext": "Find your pet’s perfect match again in seconds with the Nutram Number quiz.",
         "cta_text": "Find It Again",
