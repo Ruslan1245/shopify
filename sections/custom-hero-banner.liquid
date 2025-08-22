@@ -52,16 +52,7 @@ background-color: #e5edf3;
   color: #333;
 }
 
-.custom-hero-section .hero-features li::before {
-  content: '';
-  width: 16px;
-  height: 16px;
-  background: url('https://cdn.shopify.com/s/files/1/0627/0422/2426/files/Vector.png?v=1755106804');
-  position: absolute;
-  left: 0;
-  top: 3px;
-  background-size: contain;
-}
+
 
 .custom-hero-section .hero-buttons {
   display: flex;
@@ -286,10 +277,23 @@ background-color: #e5edf3;
       <ul class="hero-features">
         {% for block in section.blocks %}
           {% if block.type == 'feature' and block.settings.feature_text != blank %}
-            <li>{{ block.settings.feature_text }}</li>
+            <style>
+              .custom-hero-section .hero-features li.feature-{{ block.id }}::before {
+                content: '';
+                width: 16px;
+                height: 16px;
+                background: url('{{ block.settings.icon_image | image_url: width: 32 }}');
+                position: absolute;
+                left: 0;
+                top: 3px;
+                background-size: contain;
+              }
+            </style>
+            <li class="feature-{{ block.id }}">{{ block.settings.feature_text }}</li>
           {% endif %}
         {% endfor %}
       </ul>
+
     {% endif %}
 
     {% if section.settings.btn_cat_text != blank and section.settings.btn_cat_url != blank or section.settings.btn_dog_text != blank and section.settings.btn_dog_url != blank %}
