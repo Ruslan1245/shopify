@@ -58,476 +58,197 @@
         "padding-block-end": 60
       }
     },
-    "section_HE8WM6": {
-      "type": "section",
+    "about_nutram_LaXb6N": {
+      "type": "about-nutram",
+      "name": "About Nutram Section",
+      "settings": {
+        "bg_image": "shopify://shop_images/0a82e70785b483ff91766da49c8db9aba255f2f7_1.jpg",
+        "overlay_color": "#00000030",
+        "heading": "About Nutram",
+        "subtext": "Trusted in over 30 countries worldwide, Nutram recipes represent the finest Canadian quality through many decades of pet nutrition excellence.",
+        "video": "shopify://files/videos/NON_ Oui.mp4",
+        "below_text": "<p>Nutram is a 100% Canadian, family-owned pet wellness company with a holistic approach to pet nutrition. Nutram’s team of in-house Certified Nutritionists and Holistic Experts craft each recipe to maximize nutrient absorption. Through sound scientific principles and natural ingredients, your pet will receive all of the benefits of each ingredient, as nature intended.</p>",
+        "fsicon": "shopify://shop_images/Vector_14a9d9e1-9dd5-40fb-803b-e412a54c2bbc.png",
+        "fs_heading": "Food Safety at Nutram",
+        "fs_text": "At Nutram, we prioritize providing your pet with the highest quality, nutrient-dense food made in a safe environment. We understand that you want the best for your pets, and we are committed to earning your trust with our food choices. Our recipes are trusted in over 30 countries worldwide.\n\nOur privately-owned manufacturing facility was the first pet food manufacturer in Canada to obtain the British Retail Consortium (BRC) certification in 2012. The BRC is one of the highest pet food quality assurance certifications available. It is designed to ensure manufacturers implement good practices and strong quality management systems.",
+        "fs_list": "<h3>Our BRC certification means we have complete transparency in all aspects of production, including:</h3><ul><li>Supplier and Ingredient Traceability: We can trace each ingredient back to its source and track which recipe it's used in and where that recipe is shipped.</li><li>Strict Hygiene Standards: We maintain strict hygiene protocols for anyone who comes into contact with our products during production.</li><li>Product Safety: We have a meticulous approach to preventing contamination, including enforcing strict rules on materials allowed on the production floor.<br/><br/><br/><br/></li></ul>"
+      }
+    },
+    "our_awards_section_8NKPBA": {
+      "type": "our-awards-section",
       "blocks": {
-        "image_hCmaJn": {
-          "type": "image",
-          "name": "t:names.image",
+        "award_BVVxhR": {
+          "type": "award",
           "settings": {
-            "image": "shopify://shop_images/Screenshot_2025-08-13_124623-removebg-preview.png",
-            "link": "",
-            "image_ratio": "adapt",
-            "width": "fill",
-            "custom_width": 100,
-            "width_mobile": "fill",
-            "custom_width_mobile": 100,
-            "height": "fit",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
+            "image": "shopify://shop_images/image_6.png",
+            "title": "Pet Business",
+            "desc": "Pet Business has honoured Nutram as one of the most exciting and innovative products in the pet industry with their 2016 “Industry Recognition Award”"
+          }
         },
-        "ai_gen_block_80638c6_Q9acdA": {
-          "type": "ai_gen_block_80638c6",
+        "award_VjapRV": {
+          "type": "award",
           "settings": {
-            "alignment": "center",
-            "mobile_layout": "wrap",
-            "button_spacing": 8,
-            "section_padding": 20,
-            "background_color": "rgba(0,0,0,0)",
-            "button_background_color": "#faf7f7",
-            "button_text_color": "#000000",
-            "button_border_color": "#000f9f",
-            "button_hover_background_color": "#f7c932",
-            "button_hover_text_color": "#ffffff",
-            "button_hover_border_color": "#000000",
-            "button_border_width": 0,
-            "button_border_radius": 17,
-            "button_font_size": 12,
-            "button_font_weight": "700",
-            "button_1_text": "All Recipes",
-            "button_1_link": "shopify://collections/all-products",
-            "button_2_text": "puppy",
-            "button_2_link": "",
-            "button_3_text": "Adult",
-            "button_3_link": "",
-            "button_4_text": "Senior",
-            "button_4_link": "",
-            "button_5_text": "Large breed",
-            "button_5_link": "",
-            "button_6_text": "Small Breed",
-            "button_6_link": ""
-          },
-          "blocks": {}
+            "image": "shopify://shop_images/image_7.png",
+            "title": "Pet Product News",
+            "desc": "Pet Product News has awarded Nutram with their 2016 “Inventory Essentials” award, making Nutram one of the must-stock products of 2016."
+          }
+        },
+        "award_HRxUh8": {
+          "type": "award",
+          "settings": {
+            "image": "shopify://shop_images/image_8_0787e89e-7385-4a4c-bca9-0b9798e0242c.png",
+            "title": "The Whole Dog Journal",
+            "desc": "The Whole Dog Journal editorial team ranks only the very best, and most nutritious food for dogs. It’s truly an honor for Nutram to be ranked on their 2016, 2017, 2018, 2019, 2020 and 2021 list of Approved Dry Dog Foods."
+          }
+        },
+        "award_fzrPBJ": {
+          "type": "award",
+          "settings": {
+            "image": "shopify://shop_images/image_8.png",
+            "title": "Animal Wellness Magazine",
+            "desc": "Animal Wellness Magazine has recognized Nutram as having superior quality in promoting the wellness of animals within the all-natural and holistic product line category and is their product pick for volume 18, issue 3."
+          }
         }
       },
       "block_order": [
-        "image_hCmaJn",
-        "ai_gen_block_80638c6_Q9acdA"
+        "award_BVVxhR",
+        "award_VjapRV",
+        "award_HRxUh8",
+        "award_fzrPBJ"
       ],
-      "custom_css": [
-        "div buttons {width: 50px; height: 20px; background: green;}"
-      ],
-      "name": "t:names.custom_section",
+      "name": "Our Awards Section",
       "settings": {
-        "content_direction": "column",
-        "vertical_on_mobile": true,
-        "horizontal_alignment": "flex-start",
-        "vertical_alignment": "center",
-        "align_baseline": false,
-        "horizontal_alignment_flex_direction_column": "center",
-        "vertical_alignment_flex_direction_column": "center",
-        "gap": 25,
-        "section_width": "page-width",
-        "section_height": "small",
-        "section_height_custom": 50,
-        "color_scheme": "",
-        "background_media": "image",
-        "video_position": "cover",
-        "background_image": "shopify://shop_images/036b1ec4ce87beecd5e385b206f3e47688a07bd6.png",
-        "background_image_position": "cover",
-        "border": "none",
-        "border_width": 1,
-        "border_opacity": 100,
-        "border_radius": 0,
-        "toggle_overlay": true,
-        "overlay_color": "#a5cded",
-        "overlay_style": "gradient",
-        "gradient_direction": "to top",
-        "padding-block-start": 0,
-        "padding-block-end": 0
+        "heading": "Our Awards",
+        "subheading": "Our unique approach to nutrition and our innovative products, centered around Optimum Combinations™, have helped us to win some of the industry's most sought after awards and commendations."
       }
     },
-    "product_list_NG9eRF": {
-      "type": "product-list",
-      "blocks": {
-        "static-header": {
-          "type": "_product-list-content",
-          "name": "t:names.header",
-          "static": true,
-          "settings": {
-            "content_direction": "row",
-            "vertical_on_mobile": false,
-            "horizontal_alignment": "space-between",
-            "vertical_alignment": "flex-end",
-            "align_baseline": true,
-            "horizontal_alignment_flex_direction_column": "flex-start",
-            "vertical_alignment_flex_direction_column": "center",
-            "gap": 12,
-            "width": "fill",
-            "custom_width": 100,
-            "width_mobile": "fill",
-            "custom_width_mobile": 100,
-            "height": "fit",
-            "custom_height": 100,
-            "inherit_color_scheme": true,
-            "color_scheme": "",
-            "background_media": "none",
-            "video_position": "cover",
-            "background_image_position": "cover",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "product_list_text_PPX4tQ": {
-              "type": "_product-list-text",
-              "name": "t:names.collection_title",
-              "settings": {
-                "text": "<h3>{{ closest.collection.title }}</h3>",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "rte",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "product_list_button_h4jYCK": {
-              "type": "_product-list-button",
-              "name": "t:names.product_list_button",
-              "settings": {
-                "label": "View all",
-                "open_in_new_tab": false,
-                "style_class": "link",
-                "width": "fit-content",
-                "custom_width": 100,
-                "width_mobile": "fit-content",
-                "custom_width_mobile": 100
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "product_list_text_PPX4tQ",
-            "product_list_button_h4jYCK"
-          ]
-        },
-        "static-product-card": {
-          "type": "_product-card",
-          "name": "t:names.product_card",
-          "static": true,
-          "settings": {
-            "product_card_gap": 4,
-            "inherit_color_scheme": true,
-            "color_scheme": "",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "product_card_gallery_yNdJMw": {
-              "type": "_product-card-gallery",
-              "name": "t:names.product_card_media",
-              "settings": {
-                "image_ratio": "square",
-                "border": "none",
-                "border_width": 1,
-                "border_opacity": 100,
-                "border_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "product_title_w9kCVd": {
-              "type": "product-title",
-              "name": "t:names.product_title",
-              "settings": {
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "rte",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 4,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "price_DfKiMH": {
-              "type": "price",
-              "name": "t:names.product_price",
-              "settings": {
-                "show_sale_price_first": true,
-                "show_installments": false,
-                "show_tax_info": false,
-                "type_preset": "h6",
-                "width": "100%",
-                "alignment": "left",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "color": "var(--color-foreground)",
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "buy_buttons_NfAxYa": {
-              "type": "buy-buttons",
-              "name": "t:names.product_buy_buttons",
-              "settings": {
-                "stacking": false,
-                "show_pickup_availability": true,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {
-                "quantity": {
-                  "type": "quantity",
-                  "disabled": true,
-                  "static": true,
-                  "settings": {},
-                  "blocks": {}
-                },
-                "add-to-cart": {
-                  "type": "add-to-cart",
-                  "disabled": true,
-                  "static": true,
-                  "settings": {
-                    "style_class": "button-secondary"
-                  },
-                  "blocks": {}
-                },
-                "accelerated-checkout": {
-                  "type": "accelerated-checkout",
-                  "static": true,
-                  "settings": {},
-                  "blocks": {}
-                }
-              },
-              "block_order": []
-            }
-          },
-          "block_order": [
-            "product_card_gallery_yNdJMw",
-            "product_title_w9kCVd",
-            "price_DfKiMH",
-            "buy_buttons_NfAxYa"
-          ]
-        }
-      },
-      "custom_css": [
-        "div button {width: 230px; height: 30px; border-radius: 30px;}"
-      ],
-      "name": "t:names.products_grid",
+    "custom_hero_banner_EGRrRG": {
+      "type": "custom-hero-banner",
+      "name": "Custom Hero Banner",
       "settings": {
-        "collection": "all-products",
-        "layout_type": "grid",
-        "carousel_on_mobile": false,
-        "max_products": 8,
-        "columns": 4,
-        "mobile_columns": "2",
-        "mobile_card_size": "60cqw",
-        "columns_gap": 8,
-        "rows_gap": 24,
-        "icons_style": "arrow",
-        "icons_shape": "none",
-        "section_width": "page-width",
-        "horizontal_alignment": "flex-start",
-        "gap": 28,
-        "color_scheme": "scheme-e00e94c2-fb8b-4b40-83c8-ba651b6224bb",
-        "padding-block-start": 48,
-        "padding-block-end": 48
+        "custom_class": "canada-clean-kibble about-us-page-sectionmain",
+        "hero_image": "shopify://shop_images/Image_Placeholder_c9ad2337-e6a9-483e-9538-7b72c0dc75d7.png",
+        "mobile_hero_image": "shopify://shop_images/Image_Placeholder_613086fe-0f85-41c2-845d-626fc330ae2e.png",
+        "subtitle": "",
+        "title": "Our Commitment to You",
+        "content": "<h3>August 29, 2017</h3><p>Dear Nutram Pet Specialty Retailer,<br/><br/>Nutram is a 100% Canadian, family-owned pet food company, with headquarters and production facilities in Elmira, Ontario, Canada. Since our conception in 1993, Nutram has chosen to partner exclusively with Canadian pet specialty retailers to deliver super-premium, Canadian-made recipes to Canadian pet parents.<br/><br/>As a small company from humble beginnings, we understand the importance of supporting our local Canadian partners, including our farmers, our distributors, and most importantly our pet specialty retailers. We are grateful for nearly 25 years of collectively serving the pet specialty industry, and are committed to continually serving the Canadian consumer with excellent pet nutrition.<br/><br/>We understand that while some of our competitors are now venturing into other retail channels in Canada, please rest assured the Nutram remains 100% committed to servicing only the Canadian Pet Specialty market with our super-premium, natural and holistic Nutram brand.<br/><br/>Sincerely,</p><h4>Eric Puim,<br/>General Manager / VP Sales<br/>Nutram Pet Products Inc.<br/><br/></h4>",
+        "btn_cat_url": "",
+        "btn_cat_text": "Shop For Cats",
+        "btn_dog_url": "",
+        "btn_dog_text": "",
+        "review_text": "",
+        "review_name": ""
       }
     },
-    "section_W9Vbfb": {
-      "type": "section",
+    "faq_custom_FaHqdL": {
+      "type": "faq-custom",
       "blocks": {
-        "text_yMMjr6": {
-          "type": "text",
-          "name": "t:names.heading",
+        "faq_item_kgJedY": {
+          "type": "faq_item",
           "settings": {
-            "text": "<h2>Not Sure Which</h2>",
-            "width": "100%",
-            "max_width": "normal",
-            "alignment": "right",
-            "type_preset": "rte",
-            "font": "var(--font-body--family)",
-            "font_size": "1rem",
-            "line_height": "normal",
-            "letter_spacing": "normal",
-            "case": "none",
-            "wrap": "pretty",
-            "color": "var(--color-foreground)",
-            "background": false,
-            "background_color": "#00000026",
-            "corner_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
+            "question": "Sample Question",
+            "answer": "This is a sample answer."
+          }
         },
-        "text_kUjUEB": {
-          "type": "text",
-          "name": "t:names.heading",
+        "faq_item_96NypQ": {
+          "type": "faq_item",
           "settings": {
-            "text": "<h2>Recipe Fits Best?</h2>",
-            "width": "100%",
-            "max_width": "normal",
-            "alignment": "right",
-            "type_preset": "rte",
-            "font": "var(--font-body--family)",
-            "font_size": "1rem",
-            "line_height": "normal",
-            "letter_spacing": "normal",
-            "case": "none",
-            "wrap": "pretty",
-            "color": "var(--color-foreground)",
-            "background": false,
-            "background_color": "#00000026",
-            "corner_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
+            "question": "Sample Question",
+            "answer": "This is a sample answer."
+          }
         },
-        "text_37pJhq": {
-          "type": "text",
-          "name": "t:names.text",
+        "faq_item_Ezmp3k": {
+          "type": "faq_item",
           "settings": {
-            "text": "<p>Every dog different, Take our quick quiz to find their perfect match, It's fast, easy, kinda fun.</p>",
-            "width": "100%",
-            "max_width": "normal",
-            "alignment": "right",
-            "type_preset": "rte",
-            "font": "var(--font-body--family)",
-            "font_size": "1rem",
-            "line_height": "normal",
-            "letter_spacing": "normal",
-            "case": "none",
-            "wrap": "pretty",
-            "color": "var(--color-foreground)",
-            "background": false,
-            "background_color": "#00000026",
-            "corner_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
+            "question": "Sample Question",
+            "answer": "This is a sample answer."
+          }
         },
-        "button_8FAVkT": {
-          "type": "button",
-          "name": "t:names.button",
+        "faq_item_xkA9V9": {
+          "type": "faq_item",
           "settings": {
-            "label": "Find My Match",
-            "link": "shopify://collections/all",
-            "open_in_new_tab": false,
-            "style_class": "button",
-            "width": "custom",
-            "custom_width": 30,
-            "width_mobile": "custom",
-            "custom_width_mobile": 25
-          },
-          "blocks": {}
+            "question": "Sample Question",
+            "answer": "This is a sample answer."
+          }
+        },
+        "faq_item_YxHChW": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Sample Question",
+            "answer": "This is a sample answer."
+          }
         }
       },
       "block_order": [
-        "text_yMMjr6",
-        "text_kUjUEB",
-        "text_37pJhq",
-        "button_8FAVkT"
+        "faq_item_kgJedY",
+        "faq_item_96NypQ",
+        "faq_item_Ezmp3k",
+        "faq_item_xkA9V9",
+        "faq_item_YxHChW"
       ],
-      "name": "t:names.custom_section",
+      "name": "FAQ Section",
       "settings": {
-        "content_direction": "column",
-        "vertical_on_mobile": true,
-        "horizontal_alignment": "flex-start",
-        "vertical_alignment": "center",
-        "align_baseline": false,
-        "horizontal_alignment_flex_direction_column": "flex-end",
-        "vertical_alignment_flex_direction_column": "center",
-        "gap": 15,
-        "section_width": "page-width",
-        "section_height": "small",
-        "section_height_custom": 30,
-        "color_scheme": "scheme-65f1b589-31c4-439b-a46b-9e628d63d330",
-        "background_media": "image",
-        "video_position": "cover",
-        "background_image": "shopify://shop_images/20250813_1400_image.png",
-        "background_image_position": "cover",
-        "border": "none",
-        "border_width": 1,
-        "border_opacity": 100,
-        "border_radius": 0,
-        "toggle_overlay": false,
-        "overlay_color": "#00000026",
-        "overlay_style": "solid",
-        "gradient_direction": "to top",
-        "padding-block-start": 0,
-        "padding-block-end": 25
+        "heading": "Questions? We’ve Got Answers",
+        "subheading": "Everything you need to know."
+      }
+    },
+    "banner_with_overlay_EXqyWt": {
+      "type": "banner-with-overlay",
+      "blocks": {
+        "feature_a7raRm": {
+          "type": "feature",
+          "settings": {
+            "feature_text": "More energy & less bloating"
+          }
+        },
+        "feature_ATWaxD": {
+          "type": "feature",
+          "settings": {
+            "feature_text": "Clean ingredients, zero recalls"
+          }
+        },
+        "feature_dCdmKg": {
+          "type": "feature",
+          "settings": {
+            "feature_text": "Holistic science for happy pets"
+          }
+        }
+      },
+      "block_order": [
+        "feature_a7raRm",
+        "feature_ATWaxD",
+        "feature_dCdmKg"
+      ],
+      "name": "CTA Banner with Overlay",
+      "settings": {
+        "background_image": "shopify://shop_images/160f936fac8a3509a4997f3ba92f947e889f5fc9.jpg",
+        "fallback_bg_color": "#4a9ee7",
+        "overlay_color": "#4a9ee7",
+        "overlay_opacity": 85,
+        "main_title": "Ready to try",
+        "sub_title": "Canada's Cleanest Kibble?",
+        "title_color": "#ffffff",
+        "subtitle_color": "#ffffff",
+        "features_color": "#ffffff",
+        "button_text": "Shop Now",
+        "button_url": "",
+        "button_bg_color": "#f8c933",
+        "button_text_color": "#333333",
+        "testimonial_image": "shopify://shop_images/PFP_Placeholder_b8d6023a-9497-4cd5-a9ed-c59e394d4372.png",
+        "testimonial_rating": 5,
+        "testimonial_text": "“After switching, Max’s coat is shinier and tummy trouble disappeared in two weeks!”",
+        "customer_name": "John D.",
+        "customer_badge": "VERIFIED CUSTOMER"
       }
     }
   },
   "order": [
     "main",
-    "section_HE8WM6",
-    "product_list_NG9eRF",
-    "section_W9Vbfb"
+    "about_nutram_LaXb6N",
+    "our_awards_section_8NKPBA",
+    "custom_hero_banner_EGRrRG",
+    "faq_custom_FaHqdL",
+    "banner_with_overlay_EXqyWt"
   ]
 }
+
