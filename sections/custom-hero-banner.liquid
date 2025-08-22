@@ -364,10 +364,22 @@ background-color: #e5edf3;
     {% endif %}
 
     {% if section.blocks.size > 0 %}
-      <ul class="hero-features">
+       <ul class="hero-features">
         {% for block in section.blocks %}
           {% if block.type == 'feature' and block.settings.feature_text != blank %}
-            <li>{{ block.settings.feature_text }}</li>
+            <style>
+              .custom-hero-section .hero-features li.feature-{{ block.id }}::before {
+                content: '';
+                width: 16px;
+                height: 16px;
+                background: url('{{ block.settings.icon_image | image_url: width: 32 }}');
+                position: absolute;
+                left: 0;
+                top: 3px;
+                background-size: contain;
+              }
+            </style>
+            <li class="feature-{{ block.id }}">{{ block.settings.feature_text }}</li>
           {% endif %}
         {% endfor %}
       </ul>
