@@ -16,21 +16,19 @@
           "type": "feature",
           "settings": {
             "feature_text": "<p>Visible digestive improvements, fast</p>",
-            "icon_image": "shopify://shop_images/Vector_6b2e525e-dbf2-4e22-bd82-495a47e38211.png"
+            "icon_image": "shopify://shop_images/Vector_1.png"
           }
         },
         "feature_xYGDTM": {
           "type": "feature",
           "settings": {
-            "feature_text": "<p>Clean-label recipes, never recalled</p>",
-            "icon_image": "shopify://shop_images/Vector_eeb6b58e-752b-49bf-94ad-a7e7e36b6eb9.png"
+            "feature_text": "<p>Clean-label recipes, never recalled</p>"
           }
         },
         "feature_WY74kF": {
           "type": "feature",
           "settings": {
-            "feature_text": "<p>Holistic nutrition, for happier pets</p>",
-            "icon_image": "shopify://shop_images/Vector_3d5311f1-6e90-4939-8dec-8780b4529b88.png"
+            "feature_text": "<p>Holistic nutrition, for happier pets</p>"
           }
         }
       },
