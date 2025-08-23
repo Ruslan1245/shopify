@@ -98,11 +98,48 @@
         "section_padding": 40,
         "max_width": 800
       }
+    },
+    "contact_info_fbfHVd": {
+      "type": "contact-info",
+      "blocks": {
+        "contact_item_EEzXnC": {
+          "type": "contact_item",
+          "settings": {
+            "heading": "Call Us",
+            "text": "+1 519-669-6240"
+          }
+        },
+        "contact_item_UF4diq": {
+          "type": "contact_item",
+          "settings": {
+            "heading": "Email Us",
+            "text": "info@nutram.com"
+          }
+        },
+        "contact_item_9R67B7": {
+          "type": "contact_item",
+          "settings": {
+            "heading": "Social Media",
+            "text": "@nutram"
+          }
+        }
+      },
+      "block_order": [
+        "contact_item_EEzXnC",
+        "contact_item_UF4diq",
+        "contact_item_9R67B7"
+      ],
+      "name": "Custom Contact Info",
+      "settings": {
+        "title": "Get In Touch Via...",
+        "subtitle": "Call Us, Mail Us, Or Join Our Socials"
+      }
     }
   },
   "order": [
     "main",
     "contact_banner_6NWUqG",
-    "custom_contact_form_Bm3W6c"
+    "custom_contact_form_Bm3W6c",
+    "contact_info_fbfHVd"
   ]
 }
