@@ -88,14 +88,12 @@
           </div>
 
           {% assign cart_total = cart.original_total_price | divided_by: 100 %}
-          {{ cart_total }} {{ settings.free_shipping_threshold }}
-{% assign threshold = settings.free_shipping_threshold %}
 
 <div class="free-shipping-message">
   {% if cart_total >= threshold %}
-    <p>{{ section.settings.above_message }}</p>
+    <p>{{ settings.above_message }}</p>
   {% else %}
-    <p>{{ section.settings.below_message }}</p>
+    <p>{{ settings.below_message }}</p>
   {% endif %}
 </div>
 
