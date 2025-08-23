@@ -87,7 +87,16 @@
             </button>
           </div>
 
-          {{- cart.original_total_price | money -}}
+          {% assign cart_total = cart.total_price | divided_by: 100 %}
+{% assign threshold = section.settings.free_shipping_threshold %}
+
+<div class="free-shipping-message">
+  {% if cart_total >= threshold %}
+    <p>{{ section.settings.above_message }}</p>
+  {% else %}
+    <p>{{ section.settings.below_message }}</p>
+  {% endif %}
+</div>
 
           <div
             class="cart-drawer__content motion-reduce"
