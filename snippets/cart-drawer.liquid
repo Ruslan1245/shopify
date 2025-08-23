@@ -88,6 +88,7 @@
           </div>
 
           {% assign cart_total = cart.original_total_price | divided_by: 100 %}
+          {{ cart_total }} {{ settings.free_shipping_threshold }}
 {% assign threshold = settings.free_shipping_threshold %}
 
 <div class="free-shipping-message">
