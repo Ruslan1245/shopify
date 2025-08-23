@@ -1,5 +1,5 @@
 {% style %}
-    .contact-banner {
+  .contact-banner {
     position: relative;
     width: 100%;
     overflow: hidden;
@@ -29,27 +29,84 @@
     text-align: center;
     padding: 20px;
     max-width: 900px;
+    margin: 0 auto;
   }
 
   .contact-banner__content--left {
     text-align: left;
+    margin-left: 5%;
   }
 
   .contact-banner__content--right {
     text-align: right;
+    margin-right: 5%;
   }
 
   .contact-banner__heading {
-    font-size: 32px;
+    font-size: 36px;
     font-weight: 700;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    line-height: 1.2;
   }
 
   .contact-banner__subheading {
-    font-size: 16px;
-    line-height: 1.5;
+    font-size: 18px;
+    line-height: 1.6;
+  }
+
+  /* --------------------
+     Responsive Styles
+  -------------------- */
+  @media (max-width: 991px) {
+    .contact-banner__heading {
+      font-size: 30px;
+    }
+    .contact-banner__subheading {
+      font-size: 16px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .contact-banner__heading {
+      font-size: 26px;
+    }
+    .contact-banner__subheading {
+      font-size: 15px;
+    }
+    .contact-banner__content--left,
+    .contact-banner__content--right {
+      text-align: center;
+      margin: 0 auto;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .contact-banner__heading {
+      font-size: 22px;
+    }
+    .contact-banner__subheading {
+      font-size: 14px;
+      line-height: 1.5;
+    }
   }
 {% endstyle %}
+
+<section class="contact-banner">
+  <div
+    class="contact-banner__background"
+    style="background-image: url('{{ section.settings.background_image | img_url: 'master' }}'); height: {{ section.settings.section_height }}px;"
+  >
+    <div
+      class="contact-banner__overlay"
+      style="background-color: {{ section.settings.overlay_color }}; opacity: {{ section.settings.overlay_opacity | divided_by: 100.0 }};"
+    ></div>
+
+    <div class="contact-banner__content contact-banner__content--{{ section.settings.text_alignment }}">
+      <h2 class="contact-banner__heading">{{ section.settings.heading }}</h2>
+      <p class="contact-banner__subheading">{{ section.settings.subheading }}</p>
+    </div>
+  </div>
+</section>
 
 {% schema %}
 {
@@ -117,20 +174,3 @@
   ]
 }
 {% endschema %}
-
-<section class="contact-banner">
-  <div
-    class="contact-banner__background"
-    style="background-image: url('{{ section.settings.background_image | img_url: 'master' }}'); height: {{ section.settings.section_height }}px;"
-  >
-    <div
-      class="contact-banner__overlay"
-      style="background-color: {{ section.settings.overlay_color }}; opacity: {{ section.settings.overlay_opacity | divided_by: 100.0 }};"
-    ></div>
-
-    <div class="contact-banner__content contact-banner__content--{{ section.settings.text_alignment }}">
-      <h2 class="contact-banner__heading">{{ section.settings.heading }}</h2>
-      <p class="contact-banner__subheading">{{ section.settings.subheading }}</p>
-    </div>
-  </div>
-</section>
