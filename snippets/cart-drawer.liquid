@@ -231,3 +231,28 @@
     z-index: 1;
   }
 {% endstylesheet %}
+
+
+<script>
+
+  <script>
+document.addEventListener("DOMContentLoaded", function() {
+  const progressBar = document.querySelector(".free-shipping-progress");
+  const truckIcon = document.querySelector(".free-shipping-icon");
+
+  // Shopify liquid variables
+  const cartTotal = {{ cart.original_total_price | divided_by: 100 }};
+  const threshold = {{ settings.free_shipping_threshold }};
+
+  let progress = (cartTotal / threshold) * 100;
+  if (progress > 100) progress = 100;
+
+  // Set progress bar width
+  progressBar.style.width = progress + "%";
+
+  // Move truck icon along the bar
+  truckIcon.style.left = progress + "%";
+});
+</script>
+
+</script>
