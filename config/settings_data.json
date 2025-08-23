@@ -55,6 +55,7 @@
     "product_title_case": "default",
     "cart_price_font": "secondary",
     "auto_open_cart_drawer": true,
+    "free_shipping_threshold": 200,
     "icon_stroke": "default",
     "input_border_width": 2,
     "inputs_border_radius": 0,
