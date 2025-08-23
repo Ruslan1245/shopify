@@ -1791,6 +1791,24 @@
         "default": true
       },
       {
+        "type": "text",
+        "id": "below_message",
+        "label": "Message for below free shipping",
+        "default": "Add more items to get free shipping on orders over $55."
+      },
+      {
+        "type": "text",
+        "id": "above_message",
+        "label": "Message for above free shipping",
+        "default": "Congratulations! You qualify for free shipping."
+      },
+      {
+        "type": "number",
+        "id": "free_shipping_threshold",
+        "label": "Free Shipping Threshold",
+        "default": 55
+      },
+      {
         "type": "checkbox",
         "id": "show_accelerated_checkout_buttons",
         "label": "t:settings.checkout_buttons",
