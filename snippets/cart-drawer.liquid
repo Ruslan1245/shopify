@@ -8,6 +8,51 @@
   @param {string} [settings.drawer_color_scheme] - The color scheme for the drawer.
 {%- enddoc -%}
 
+{% style %}
+  .free-shipping-wrapper {
+  margin: 15px 0;
+  padding: 15px;
+  background: #f8f8f8;
+  border-radius: 12px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.free-shipping-bar {
+  position: relative;
+  height: 14px;
+  background: #e5e5e5;
+  border-radius: 50px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.free-shipping-progress {
+  height: 100%;
+  background: linear-gradient(90deg, #3bb54a, #4caf50);
+  width: 0%;
+  border-radius: 50px;
+  transition: width 0.5s ease;
+}
+
+.free-shipping-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  font-size: 18px;
+}
+
+.free-shipping-message {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  margin: 0;
+}
+
+{% endstyle %}
+
+
 <script
   src="{{ 'cart-drawer.js' | asset_url }}"
   type="module"
@@ -87,88 +132,22 @@
             </button>
           </div>
 
-{% assign cart_total = cart.original_total_price | divided_by: 100 %}
-{% assign threshold = settings.free_shipping_threshold %}
-{% assign percentage = cart_total | times: 100 | divided_by: threshold %}
+          <div class="free-shipping-wrapper">
+            <div class="free-shipping-bar">
+              <div class="free-shipping-progress"></div>
+              <div class="free-shipping-icon">🚚</div>
+            </div>
+            <p class="free-shipping-message">
+              {% assign cart_total = cart.original_total_price | divided_by: 100 %}
+              {% assign threshold = settings.free_shipping_threshold %}
 
-<div class="free-shipping-wrapper">
-  <div class="free-shipping-message">
-    {% if cart_total >= threshold %}
-      <p class="message success">{{ settings.above_message }}</p>
-    {% else %}
-      <p class="message warning">{{ settings.below_message | replace: '55', threshold }}</p>
-    {% endif %}
-  </div>
-
-  <!-- Progress bar -->
-  <div class="progress-bar">
-    <div 
-      class="progress-fill {% if cart_total >= threshold %}full{% endif %}" 
-      style="width: {{ percentage | at_most: 100 }}%;">
-    </div>
-  </div>
-
-  <!-- Amount needed -->
-  {% if cart_total < threshold %}
-    {% assign remaining = threshold | minus: cart_total %}
-    <p class="remaining-text">You're only ${{ remaining }} away from Free Shipping!</p>
-  {% endif %}
-</div>
-
-<style>
-.free-shipping-wrapper {
-  background: #f4f9f4;
-  border: 1px solid #d6e9d6;
-  border-radius: 12px;
-  padding: 15px;
-  text-align: center;
-  max-width: 400px;
-  margin: 15px auto;
-  font-family: Arial, sans-serif;
-}
-
-.free-shipping-message .message {
-  font-size: 14px;
-  margin-bottom: 8px;
-}
-
-.free-shipping-message .success {
-  color: #2e7d32;
-  font-weight: 600;
-}
-
-.free-shipping-message .warning {
-  color: #d17c00;
-  font-weight: 600;
-}
-
-.progress-bar {
-  width: 100%;
-  background: #e6e6e6;
-  height: 10px;
-  border-radius: 8px;
-  overflow: hidden;
-  margin: 10px 0;
-}
-
-.progress-fill {
-  background: linear-gradient(90deg, #4caf50, #81c784);
-  height: 100%;
-  transition: width 0.3s ease;
-}
-
-.progress-fill.full {
-  background: linear-gradient(90deg, #2e7d32, #4caf50);
-}
-
-.remaining-text {
-  font-size: 13px;
-  color: #555;
-  margin-top: 6px;
-}
-</style>
-
-
+              {% if cart_total >= threshold %}
+                {{ settings.above_message }}
+              {% else %}
+                {{ settings.below_message }}
+              {% endif %}
+            </p>
+          </div>
 
           <div
             class="cart-drawer__content motion-reduce"
