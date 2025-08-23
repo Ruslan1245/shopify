@@ -1,0 +1,166 @@
+{% style %}
+.custom-contact-form {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.custom-contact-form__title {
+  font-size: 28px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #1a1a1a;
+}
+
+.custom-contact-form form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.custom-contact-form input,
+.custom-contact-form textarea {
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: 25px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.custom-contact-form input:focus,
+.custom-contact-form textarea:focus {
+  border-color: #4498cd;
+}
+
+.custom-contact-form__half {
+  flex: 1 1 48%;
+}
+
+.custom-contact-form__full {
+  flex: 1 1 100%;
+}
+
+.custom-contact-form__checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 10px 0 20px;
+  font-size: 14px;
+}
+
+.custom-contact-form__checkbox svg {
+  width: 14px;
+  height: 14px;
+}
+
+.custom-contact-form button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #ffc107;
+  color: #000;
+  border: none;
+  border-radius: 25px;
+  padding: 14px 30px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.custom-contact-form button:hover {
+  background: #e6a900;
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+  .custom-contact-form__half {
+    flex: 1 1 100%;
+  }
+  .custom-contact-form__title {
+    font-size: 22px;
+  }
+}
+{% endstyle %}
+
+<section class="custom-contact-form">
+  {% if section.settings.heading != blank %}
+    <h2 class="custom-contact-form__title">{{ section.settings.heading }}</h2>
+  {% endif %}
+
+  {% form 'contact', id: 'custom_contact_form' %}
+    <div class="custom-contact-form__half">
+      <input type="text" name="contact[first_name]" placeholder="First Name" required>
+    </div>
+    <div class="custom-contact-form__half">
+      <input type="text" name="contact[last_name]" placeholder="Last Name" required>
+    </div>
+    <div class="custom-contact-form__full">
+      <input type="email" name="contact[email]" placeholder="Email Address" required>
+    </div>
+    <div class="custom-contact-form__full">
+      <input type="tel" name="contact[phone]" placeholder="Phone Number">
+    </div>
+    <div class="custom-contact-form__full">
+      <textarea name="contact[body]" rows="4" placeholder="How can we help?"></textarea>
+    </div>
+
+    <div class="custom-contact-form__checkbox">
+      <input type="checkbox" id="terms_checkbox" required>
+      <label for="terms_checkbox">{{ section.settings.terms_text }}</label>
+      <span>🔒 {{ section.settings.secure_text }}</span>
+    </div>
+
+    <div class="custom-contact-form__full">
+      <button type="submit">
+        {{ section.settings.button_text }}
+        <span>→</span>
+      </button>
+    </div>
+  {% endform %}
+</section>
+
+{% schema %}
+{
+  "name": "Custom Contact Form",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Form Heading",
+      "default": "Fill In The Form Below"
+    },
+    {
+      "type": "text",
+      "id": "terms_text",
+      "label": "Terms Checkbox Text",
+      "default": "I accept the terms & conditions"
+    },
+    {
+      "type": "text",
+      "id": "secure_text",
+      "label": "Secure Details Text",
+      "default": "Your details are secure with us"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Get Started Today"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Contact Form",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
