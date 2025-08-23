@@ -4,8 +4,6 @@
   margin: 0 auto;
   padding: 40px 20px;
   background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
 }
 
 .custom-contact-form__title {
@@ -13,7 +11,8 @@
   font-weight: 700;
   text-align: center;
   margin-bottom: 30px;
-  color: #1a1a1a;
+  color: #0066cc; /* Blue heading */
+  text-decoration: underline;
 }
 
 .custom-contact-form form {
@@ -26,16 +25,16 @@
 .custom-contact-form textarea {
   width: 100%;
   padding: 14px 18px;
-  border-radius: 25px;
+  border-radius: 999px; /* pill style */
   border: 1px solid #ddd;
   font-size: 16px;
   outline: none;
-  transition: 0.3s;
+  transition: border-color 0.3s;
 }
 
 .custom-contact-form input:focus,
 .custom-contact-form textarea:focus {
-  border-color: #4498cd;
+  border-color: #0066cc;
 }
 
 .custom-contact-form__half {
@@ -52,6 +51,13 @@
   gap: 8px;
   margin: 10px 0 20px;
   font-size: 14px;
+  flex-wrap: wrap;
+}
+
+.custom-contact-form__checkbox span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
 
 .custom-contact-form__checkbox svg {
@@ -64,15 +70,15 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
-  background: #ffc107;
+  background: #ffc107; /* Yellow button */
   color: #000;
   border: none;
-  border-radius: 25px;
+  border-radius: 999px; /* pill button */
   padding: 14px 30px;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
-  transition: 0.3s;
+  transition: background 0.3s;
 }
 
 .custom-contact-form button:hover {

@@ -71,10 +71,21 @@
         "text_alignment": "center",
         "section_height": 400
       }
+    },
+    "custom_contact_form_Bm3W6c": {
+      "type": "custom-contact-form",
+      "name": "Custom Contact Form",
+      "settings": {
+        "heading": "Fill In The Form Below",
+        "terms_text": "I accept the terms & conditions",
+        "secure_text": "Your details are secure with us",
+        "button_text": "Get Started Today"
+      }
     }
   },
   "order": [
     "main",
-    "contact_banner_6NWUqG"
+    "contact_banner_6NWUqG",
+    "custom_contact_form_Bm3W6c"
   ]
 }
