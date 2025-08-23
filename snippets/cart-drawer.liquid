@@ -87,7 +87,81 @@
             </button>
           </div>
 
-          
+          {% assign cart_total = cart.original_total_price | divided_by: 100 %}
+{% assign threshold = settings.free_shipping_threshold %}
+{% assign remaining = threshold | minus: cart_total %}
+
+<div class="free-shipping-bar">
+  <div class="free-shipping-icon">
+    🚚
+  </div>
+  <div class="free-shipping-content">
+    {% if cart_total >= threshold %}
+      <p class="shipping-message">{{ settings.above_message }}</p>
+    {% else %}
+      <p class="shipping-message">
+        {{ settings.below_message }} 
+        You are only <strong>${{ remaining }}</strong> away!
+      </p>
+    {% endif %}
+
+    <div class="shipping-progress">
+      <div 
+        class="shipping-progress-fill" 
+        style="width: {{ cart_total | times: 100 | divided_by: threshold | at_most: 100 }}%;">
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.free-shipping-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #f4f8ff;
+  border: 1px solid #e2e6ef;
+  padding: 14px 18px;
+  border-radius: 10px;
+  margin: 15px 0;
+  font-family: Arial, sans-serif;
+}
+
+.free-shipping-icon {
+  font-size: 28px;
+}
+
+.free-shipping-content {
+  flex: 1;
+}
+
+.shipping-message {
+  margin: 0 0 6px 0;
+  font-size: 14px;
+  color: #333;
+}
+
+.shipping-message strong {
+  color: #007bff;
+}
+
+.shipping-progress {
+  background: #e5eaf0;
+  height: 8px;
+  border-radius: 6px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.shipping-progress-fill {
+  background: linear-gradient(90deg, #4caf50, #81c784);
+  height: 100%;
+  width: 0%;
+  transition: width 0.4s ease-in-out;
+  border-radius: 6px;
+}
+</style>
+
 
           <div
             class="cart-drawer__content motion-reduce"
