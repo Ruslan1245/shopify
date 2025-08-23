@@ -14,6 +14,56 @@
   fetchpriority="low"
 ></script>
 
+<style>
+  .free-shipping-wrapper {
+    background: #eaf6ff;
+    border-radius: 8px;
+    padding: 16px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    margin: 20px 0;
+  }
+
+  .shipping-message {
+    font-size: 16px;
+    font-weight: bold;
+    color: #1d74d6;
+    margin-bottom: 12px;
+  }
+
+  .shipping-message strong {
+    color: #e53935;
+  }
+
+  .shipping-progress {
+    background: #cce5ff;
+    height: 14px;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .shipping-progress-fill {
+    background: #2a8edb;
+    height: 100%;
+    border-radius: 8px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    transition: width 0.4s ease-in-out;
+    position: relative;
+  }
+
+  .shipping-truck {
+    background: #fff;
+    border-radius: 50%;
+    padding: 6px;
+    font-size: 16px;
+    margin-right: -10px; /* overlaps outside like in screenshot */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  }
+</style>
+
 <cart-drawer-component
   class="cart-drawer"
   {{ block.shopify_attributes }}
@@ -88,77 +138,27 @@
           </div>
 
           {% assign cart_total = cart.original_total_price | divided_by: 100 %}
-{% assign threshold = settings.free_shipping_threshold %}
-{% assign remaining = threshold | minus: cart_total %}
+          {% assign threshold = settings.free_shipping_threshold %}
+          {% assign remaining = threshold | minus: cart_total %}
 
-<div class="free-shipping-wrapper">
-  <p class="shipping-message">
-    {% if cart_total >= threshold %}
-      {{ settings.above_message }}
-    {% else %}
-      {{ settings.below_message }} You are only <strong>${{ remaining }}</strong> away!
-    {% endif %}
-  </p>
+          <div class="free-shipping-wrapper">
+            <p class="shipping-message">
+              {% if cart_total >= threshold %}
+                {{ settings.above_message }}
+              {% else %}
+                {{ settings.below_message }} You are only <strong>${{ remaining }}</strong> away!
+              {% endif %}
+            </p>
 
-  <div class="shipping-progress">
-    <div 
-      class="shipping-progress-fill" 
-      style="width: {{ cart_total | times: 100 | divided_by: threshold | at_most: 100 }}%;">
-      <div class="shipping-truck">🚚</div>
-    </div>
-  </div>
-</div>
-
-<style>
-.free-shipping-wrapper {
-  background: #eaf6ff;
-  border-radius: 8px;
-  padding: 16px;
-  text-align: center;
-  font-family: Arial, sans-serif;
-  margin: 20px 0;
-}
-
-.shipping-message {
-  font-size: 16px;
-  font-weight: bold;
-  color: #1d74d6;
-  margin-bottom: 12px;
-}
-
-.shipping-message strong {
-  color: #e53935;
-}
-
-.shipping-progress {
-  background: #cce5ff;
-  height: 14px;
-  border-radius: 8px;
-  position: relative;
-  overflow: hidden;
-}
-
-.shipping-progress-fill {
-  background: #2a8edb;
-  height: 100%;
-  border-radius: 8px;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  transition: width 0.4s ease-in-out;
-  position: relative;
-}
-
-.shipping-truck {
-  background: #fff;
-  border-radius: 50%;
-  padding: 6px;
-  font-size: 16px;
-  margin-right: -10px; /* overlaps outside like in screenshot */
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-}
-</style>
-
+            <div class="shipping-progress">
+              <div
+                class="shipping-progress-fill"
+                style="width: {{ cart_total | times: 100 | divided_by: threshold | at_most: 100 }}%;"
+              >
+                <div class="shipping-truck">🚚</div>
+              </div>
+            </div>
+          </div>
 
           <div
             class="cart-drawer__content motion-reduce"
