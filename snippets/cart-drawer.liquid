@@ -91,74 +91,71 @@
 {% assign threshold = settings.free_shipping_threshold %}
 {% assign remaining = threshold | minus: cart_total %}
 
-<div class="free-shipping-bar">
-  <div class="free-shipping-icon">
-    🚚
-  </div>
-  <div class="free-shipping-content">
+<div class="free-shipping-wrapper">
+  <p class="shipping-message">
     {% if cart_total >= threshold %}
-      <p class="shipping-message">{{ settings.above_message }}</p>
+      {{ settings.above_message }}
     {% else %}
-      <p class="shipping-message">
-        {{ settings.below_message }} 
-        You are only <strong>${{ remaining }}</strong> away!
-      </p>
+      {{ settings.below_message }} You are only <strong>${{ remaining }}</strong> away!
     {% endif %}
+  </p>
 
-    <div class="shipping-progress">
-      <div 
-        class="shipping-progress-fill" 
-        style="width: {{ cart_total | times: 100 | divided_by: threshold | at_most: 100 }}%;">
-      </div>
+  <div class="shipping-progress">
+    <div 
+      class="shipping-progress-fill" 
+      style="width: {{ cart_total | times: 100 | divided_by: threshold | at_most: 100 }}%;">
+      <div class="shipping-truck">🚚</div>
     </div>
   </div>
 </div>
 
 <style>
-.free-shipping-bar {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  background: #f4f8ff;
-  border: 1px solid #e2e6ef;
-  padding: 14px 18px;
-  border-radius: 10px;
-  margin: 15px 0;
+.free-shipping-wrapper {
+  background: #eaf6ff;
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
   font-family: Arial, sans-serif;
-}
-
-.free-shipping-icon {
-  font-size: 28px;
-}
-
-.free-shipping-content {
-  flex: 1;
+  margin: 20px 0;
 }
 
 .shipping-message {
-  margin: 0 0 6px 0;
-  font-size: 14px;
-  color: #333;
+  font-size: 16px;
+  font-weight: bold;
+  color: #1d74d6;
+  margin-bottom: 12px;
 }
 
 .shipping-message strong {
-  color: #007bff;
+  color: #e53935;
 }
 
 .shipping-progress {
-  background: #e5eaf0;
-  height: 8px;
-  border-radius: 6px;
+  background: #cce5ff;
+  height: 14px;
+  border-radius: 8px;
+  position: relative;
   overflow: hidden;
-  width: 100%;
 }
 
 .shipping-progress-fill {
-  background: linear-gradient(90deg, #4caf50, #81c784);
+  background: #2a8edb;
   height: 100%;
-  width: 0%;
+  border-radius: 8px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
   transition: width 0.4s ease-in-out;
-  border-radius: 6px;
+  position: relative;
+}
+
+.shipping-truck {
+  background: #fff;
+  border-radius: 50%;
+  padding: 6px;
+  font-size: 16px;
+  margin-right: -10px; /* overlaps outside like in screenshot */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
 </style>
 
