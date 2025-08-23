@@ -1,1 +1,502 @@
-{"sections":{"section":{"type":"main-blog-post","blocks":{"blog-post-title":{"type":"text","name":"Title","static":true,"settings":{"text":"<h1>{{ article.title }}<\/h1>","width":"100%","max_width":"normal","alignment":"center","type_preset":"h2","font":"var(--font-body--family)","font_size":"1rem","line_height":"normal","letter_spacing":"normal","case":"none","wrap":"pretty","color":"var(--color-foreground)","background":false,"background_color":"#00000026","corner_radius":0,"padding-block-start":0,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{}},"blog-post-details":{"type":"_blog-post-info-text","name":"Details","static":true,"settings":{"show_date":true,"show_author":false,"type_preset":"","alignment":"center","show_alignment":true,"padding-block-start":24,"padding-block-end":0},"blocks":{}},"blog-post-image":{"type":"_blog-post-featured-image","static":true,"settings":{"image_ratio":"adapt","width":"fill","custom_width":100,"width_mobile":"fill","custom_width_mobile":100,"height":"fit","border":"none","border_width":1,"border_opacity":100,"border_radius":0,"padding-block-start":0,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{}},"blog-post-content":{"type":"_blog-post-content","static":true,"settings":{},"blocks":{}}},"disabled":true,"settings":{"content_direction":"column","gap":32,"color_scheme":"scheme-1","padding-block-start":40,"padding-block-end":60}},"custom_blog_article_aRJxPc":{"type":"custom-blog-article","name":"Vet Single Blog Article","settings":{"vet_hero_image":"shopify:\/\/shop_images\/65f70eb30dac2650ba9cc9d66d41542037a4e346_1.jpg","vet_hero_height":400,"vet_hero_color_start":"#4a90e2","vet_hero_color_end":"#357abd","vet_hero_overlay_opacity":10,"vet_hero_title_size":40,"vet_hero_subtitle_size":18,"vet_sidebar_title":"Related Articles","vet_related_count":4}},"related_blog_9UGLch":{"type":"related_blog","name":"Related Blogs","settings":{"heading":"Related Blogs","blog":"news","limit":3}},"custom_hero_banner_FX3qzg":{"type":"custom-hero-banner","blocks":{"feature_WqMRLK":{"type":"feature","settings":{"feature_text":"<p>Tailored to your pet’s size, age & sensitivities<\/p>"}},"feature_Cy9GGN":{"type":"feature","settings":{"feature_text":"<p>Backed by our Digestive Wellness System™<br\/><\/p>"}},"feature_pTcQYf":{"type":"feature","settings":{"feature_text":"<p>No fillers, no guesswork, just real results<br\/><\/p>"}}},"block_order":["feature_WqMRLK","feature_Cy9GGN","feature_pTcQYf"],"name":"Custom Hero Banner","settings":{"custom_class":"canada-clean-kibble","hero_image":"shopify:\/\/shop_images\/Image_Placeholder_682258fc-0aa0-40ca-896a-cbb987d57960.png","mobile_hero_image":"shopify:\/\/shop_images\/Image_Placeholder_613086fe-0f85-41c2-845d-626fc330ae2e.png","subtitle":"","title":"Find Your Pet’s Perfect Formula","content":"<p>Take our 60-second quiz and get a personalized kibble recommendation backed by science and clean ingredients.<\/p><p><\/p>","btn_cat_url":"#","btn_cat_text":"Take the Quiz","btn_dog_url":"","btn_dog_text":"Shop For Dogs","review_text":"","review_name":""}},"product_list_BGtygy":{"type":"product-list","blocks":{"static-header":{"type":"_product-list-content","name":"t:names.header","static":true,"settings":{"content_direction":"column","vertical_on_mobile":false,"horizontal_alignment":"center","vertical_alignment":"flex-end","align_baseline":true,"horizontal_alignment_flex_direction_column":"center","vertical_alignment_flex_direction_column":"center","gap":13,"width":"custom","custom_width":100,"width_mobile":"custom","custom_width_mobile":100,"height":"custom","custom_height":100,"inherit_color_scheme":true,"color_scheme":"","background_media":"none","video_position":"cover","background_image_position":"cover","border":"none","border_width":1,"border_opacity":100,"border_radius":0,"padding-block-start":0,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{"product_list_text_BFdffc":{"type":"_product-list-text","name":"t:names.collection_title","settings":{"text":"<h3>Shop by health goal<\/h3>","width":"100%","max_width":"normal","alignment":"center","type_preset":"rte","font":"var(--font-body--family)","font_size":"1rem","line_height":"normal","letter_spacing":"normal","case":"none","wrap":"pretty","color":"var(--color-foreground)","background":false,"background_color":"#00000026","corner_radius":0,"padding-block-start":0,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{}},"product_list_button_xc9XPL":{"type":"_product-list-button","name":"t:names.product_list_button","settings":{"label":"View all","open_in_new_tab":false,"style_class":"link","width":"fit-content","custom_width":100,"width_mobile":"fit-content","custom_width_mobile":100},"blocks":{}},"text_jhXhGg":{"type":"text","name":"t:names.text","settings":{"text":"<p>See our full range.<\/p>","width":"100%","max_width":"normal","alignment":"center","type_preset":"h6","font":"var(--font-body--family)","font_size":"1rem","line_height":"normal","letter_spacing":"normal","case":"none","wrap":"pretty","color":"var(--color-foreground)","background":false,"background_color":"#00000026","corner_radius":0,"padding-block-start":0,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{}}},"block_order":["product_list_text_BFdffc","product_list_button_xc9XPL","text_jhXhGg"]},"static-product-card":{"type":"_product-card","name":"t:names.product_card","static":true,"settings":{"product_card_gap":4,"inherit_color_scheme":true,"color_scheme":"","border":"none","border_width":1,"border_opacity":100,"border_radius":0,"padding-block-start":8,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{"product_card_gallery_DKcxfm":{"type":"_product-card-gallery","name":"t:names.product_card_media","settings":{"image_ratio":"square","border":"none","border_width":1,"border_opacity":100,"border_radius":0,"padding-block-start":0,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{}},"product_title_QJnqFE":{"type":"product-title","name":"t:names.product_title","settings":{"width":"100%","max_width":"normal","alignment":"center","type_preset":"h4","font":"var(--font-body--family)","font_size":"1rem","line_height":"normal","letter_spacing":"normal","case":"none","wrap":"pretty","color":"var(--color-primary)","background":false,"background_color":"#00000026","corner_radius":0,"padding-block-start":4,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":79},"blocks":{}},"price_MEJX8P":{"type":"price","name":"t:names.product_price","disabled":true,"settings":{"show_sale_price_first":true,"show_installments":false,"show_tax_info":false,"type_preset":"h6","width":"100%","alignment":"left","font":"var(--font-body--family)","font_size":"1rem","line_height":"normal","letter_spacing":"normal","case":"none","color":"var(--color-foreground)","padding-block-start":0,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{}},"text_nwKDVU":{"type":"text","name":"t:names.text","settings":{"text":"<p>Natural and holistic nutrition that supports special pet wellness needs. For pets who require additional care, we offer solutions to address sensitive, weight control and indoor lifestyle.<\/p>","width":"fit-content","max_width":"normal","alignment":"left","type_preset":"rte","font":"var(--font-body--family)","font_size":"1rem","line_height":"normal","letter_spacing":"normal","case":"none","wrap":"pretty","color":"var(--color-foreground)","background":false,"background_color":"#00000026","corner_radius":0,"padding-block-start":0,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{}},"buy_buttons_CCFPgB":{"type":"buy-buttons","name":"t:names.product_buy_buttons","disabled":true,"settings":{"stacking":false,"show_pickup_availability":true,"padding-block-start":0,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":0},"blocks":{"quantity":{"type":"quantity","disabled":true,"static":true,"settings":{},"blocks":{}},"add-to-cart":{"type":"add-to-cart","disabled":true,"static":true,"settings":{"style_class":"button-secondary"},"blocks":{}},"accelerated-checkout":{"type":"accelerated-checkout","disabled":true,"static":true,"settings":{},"blocks":{}}},"block_order":[]},"buy_buttons_3ANRgh":{"type":"buy-buttons","name":"t:names.product_buy_buttons","settings":{"stacking":false,"show_pickup_availability":true,"padding-block-start":0,"padding-block-end":0,"padding-inline-start":0,"padding-inline-end":9},"blocks":{"quantity":{"type":"quantity","disabled":true,"static":true,"settings":{},"blocks":{}},"add-to-cart":{"type":"add-to-cart","disabled":true,"static":true,"settings":{"style_class":"button-secondary"},"blocks":{}},"accelerated-checkout":{"type":"accelerated-checkout","static":true,"settings":{},"blocks":{}}},"block_order":[]}},"block_order":["product_card_gallery_DKcxfm","product_title_QJnqFE","price_MEJX8P","text_nwKDVU","buy_buttons_CCFPgB","buy_buttons_3ANRgh"]}},"name":"t:names.products_carousel","settings":{"custom_class":"home-feature-collection newhomecustom","button1_text":"For cats","button1_image":"shopify:\/\/shop_images\/Screenshot_2025-08-15_202612.png","button1_link":"#","button2_text":"For dogs","button2_image":"shopify:\/\/shop_images\/Screenshot_2025-08-15_202725.png","button2_link":"#","collection":"newcollection","layout_type":"grid","carousel_on_mobile":false,"max_products":3,"columns":3,"mobile_columns":"2","mobile_card_size":"60cqw","columns_gap":44,"rows_gap":23,"icons_style":"arrow","icons_shape":"circle","section_width":"page-width","horizontal_alignment":"center","gap":28,"color_scheme":"scheme-e00e94c2-fb8b-4b40-83c8-ba651b6224bb","padding-block-start":70,"padding-block-end":70}}},"order":["section","custom_blog_article_aRJxPc","related_blog_9UGLch","custom_hero_banner_FX3qzg","product_list_BGtygy"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "section": {
+      "type": "main-blog-post",
+      "blocks": {
+        "blog-post-title": {
+          "type": "text",
+          "name": "Title",
+          "static": true,
+          "settings": {
+            "text": "<h1>{{ article.title }}</h1>",
+            "truncate": false,
+            "width": "100%",
+            "max_width": "normal",
+            "alignment": "center",
+            "type_preset": "h2",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "blog-post-details": {
+          "type": "_blog-post-info-text",
+          "name": "Details",
+          "static": true,
+          "settings": {
+            "show_date": true,
+            "show_author": false,
+            "type_preset": "",
+            "alignment": "center",
+            "show_alignment": true,
+            "padding-block-start": 24,
+            "padding-block-end": 0
+          },
+          "blocks": {}
+        },
+        "blog-post-image": {
+          "type": "_blog-post-featured-image",
+          "static": true,
+          "settings": {
+            "image_ratio": "adapt",
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "blog-post-content": {
+          "type": "_blog-post-content",
+          "static": true,
+          "settings": {},
+          "blocks": {}
+        }
+      },
+      "disabled": true,
+      "settings": {
+        "content_direction": "column",
+        "gap": 32,
+        "color_scheme": "scheme-1",
+        "padding-block-start": 40,
+        "padding-block-end": 60
+      }
+    },
+    "custom_blog_article_aRJxPc": {
+      "type": "custom-blog-article",
+      "name": "Vet Single Blog Article",
+      "settings": {
+        "vet_hero_image": "shopify://shop_images/pexels-mali-225406.jpg",
+        "vet_hero_height": 400,
+        "vet_hero_color_start": "#4a90e2",
+        "vet_hero_color_end": "#357abd",
+        "vet_hero_overlay_opacity": 10,
+        "vet_hero_title_size": 40,
+        "vet_hero_subtitle_size": 18,
+        "vet_sidebar_title": "Related Articles",
+        "vet_related_count": 4
+      }
+    },
+    "related_blog_9UGLch": {
+      "type": "related_blog",
+      "name": "Related Blogs",
+      "settings": {
+        "heading": "Related Blogs",
+        "blog": "news",
+        "limit": 3
+      }
+    },
+    "custom_hero_banner_FX3qzg": {
+      "type": "custom-hero-banner",
+      "blocks": {
+        "feature_WqMRLK": {
+          "type": "feature",
+          "settings": {
+            "feature_text": "<p>Tailored to your pet’s size, age & sensitivities</p>"
+          }
+        },
+        "feature_Cy9GGN": {
+          "type": "feature",
+          "settings": {
+            "feature_text": "<p>Backed by our Digestive Wellness System™<br/></p>"
+          }
+        },
+        "feature_pTcQYf": {
+          "type": "feature",
+          "settings": {
+            "feature_text": "<p>No fillers, no guesswork, just real results<br/></p>"
+          }
+        }
+      },
+      "block_order": [
+        "feature_WqMRLK",
+        "feature_Cy9GGN",
+        "feature_pTcQYf"
+      ],
+      "name": "Custom Hero Banner",
+      "settings": {
+        "custom_class": "canada-clean-kibble",
+        "subtitle": "",
+        "title": "Find Your Pet’s Perfect Formula",
+        "content": "<p>Take our 60-second quiz and get a personalized kibble recommendation backed by science and clean ingredients.</p><p></p>",
+        "btn_cat_url": "#",
+        "btn_cat_text": "Take the Quiz",
+        "btn_dog_url": "",
+        "btn_dog_text": "Shop For Dogs",
+        "review_text": "",
+        "review_name": ""
+      }
+    },
+    "product_list_BGtygy": {
+      "type": "product-list",
+      "blocks": {
+        "static-header": {
+          "type": "_product-list-content",
+          "name": "t:names.header",
+          "static": true,
+          "settings": {
+            "content_direction": "column",
+            "vertical_on_mobile": false,
+            "horizontal_alignment": "center",
+            "vertical_alignment": "flex-end",
+            "align_baseline": true,
+            "horizontal_alignment_flex_direction_column": "center",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 13,
+            "width": "custom",
+            "custom_width": 100,
+            "width_mobile": "custom",
+            "custom_width_mobile": 100,
+            "height": "custom",
+            "custom_height": 100,
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "background_media": "none",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "product_list_text_BFdffc": {
+              "type": "_product-list-text",
+              "name": "t:names.collection_title",
+              "settings": {
+                "text": "<h3>Shop by health goal</h3>",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "center",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "product_list_button_xc9XPL": {
+              "type": "_product-list-button",
+              "name": "t:names.product_list_button",
+              "settings": {
+                "label": "View all",
+                "open_in_new_tab": false,
+                "style_class": "link",
+                "width": "fit-content",
+                "custom_width": 100,
+                "width_mobile": "fit-content",
+                "custom_width_mobile": 100
+              },
+              "blocks": {}
+            },
+            "text_jhXhGg": {
+              "type": "text",
+              "name": "t:names.text",
+              "settings": {
+                "text": "<p>See our full range.</p>",
+                "truncate": false,
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "center",
+                "type_preset": "h6",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "product_list_text_BFdffc",
+            "product_list_button_xc9XPL",
+            "text_jhXhGg"
+          ]
+        },
+        "static-product-card": {
+          "type": "_product-card",
+          "name": "t:names.product_card",
+          "static": true,
+          "settings": {
+            "product_card_gap": 4,
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "padding-block-start": 8,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "product_card_gallery_DKcxfm": {
+              "type": "_product-card-gallery",
+              "name": "t:names.product_card_media",
+              "settings": {
+                "image_ratio": "square",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "product_title_QJnqFE": {
+              "type": "product-title",
+              "name": "t:names.product_title",
+              "settings": {
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "center",
+                "type_preset": "h4",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-primary)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 4,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 79
+              },
+              "blocks": {}
+            },
+            "price_MEJX8P": {
+              "type": "price",
+              "name": "t:names.product_price",
+              "disabled": true,
+              "settings": {
+                "show_sale_price_first": true,
+                "show_installments": false,
+                "show_tax_info": false,
+                "type_preset": "h6",
+                "width": "100%",
+                "alignment": "left",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "color": "var(--color-foreground)",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "text_nwKDVU": {
+              "type": "text",
+              "name": "t:names.text",
+              "settings": {
+                "text": "<p>Natural and holistic nutrition that supports special pet wellness needs. For pets who require additional care, we offer solutions to address sensitive, weight control and indoor lifestyle.</p>",
+                "truncate": false,
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "buy_buttons_CCFPgB": {
+              "type": "buy-buttons",
+              "name": "t:names.product_buy_buttons",
+              "disabled": true,
+              "settings": {
+                "stacking": false,
+                "show_pickup_availability": true,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "quantity": {
+                  "type": "quantity",
+                  "disabled": true,
+                  "static": true,
+                  "settings": {},
+                  "blocks": {}
+                },
+                "add-to-cart": {
+                  "type": "add-to-cart",
+                  "disabled": true,
+                  "static": true,
+                  "settings": {
+                    "style_class": "button-secondary"
+                  },
+                  "blocks": {}
+                },
+                "accelerated-checkout": {
+                  "type": "accelerated-checkout",
+                  "disabled": true,
+                  "static": true,
+                  "settings": {},
+                  "blocks": {}
+                }
+              },
+              "block_order": []
+            },
+            "buy_buttons_3ANRgh": {
+              "type": "buy-buttons",
+              "name": "t:names.product_buy_buttons",
+              "settings": {
+                "stacking": false,
+                "show_pickup_availability": true,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 9
+              },
+              "blocks": {
+                "quantity": {
+                  "type": "quantity",
+                  "disabled": true,
+                  "static": true,
+                  "settings": {},
+                  "blocks": {}
+                },
+                "add-to-cart": {
+                  "type": "add-to-cart",
+                  "disabled": true,
+                  "static": true,
+                  "settings": {
+                    "style_class": "button-secondary"
+                  },
+                  "blocks": {}
+                },
+                "accelerated-checkout": {
+                  "type": "accelerated-checkout",
+                  "static": true,
+                  "settings": {},
+                  "blocks": {}
+                }
+              },
+              "block_order": []
+            }
+          },
+          "block_order": [
+            "product_card_gallery_DKcxfm",
+            "product_title_QJnqFE",
+            "price_MEJX8P",
+            "text_nwKDVU",
+            "buy_buttons_CCFPgB",
+            "buy_buttons_3ANRgh"
+          ]
+        }
+      },
+      "name": "t:names.products_carousel",
+      "settings": {
+        "custom_class": "home-feature-collection newhomecustom",
+        "button1_text": "For cats",
+        "button1_link": "#",
+        "button2_text": "For dogs",
+        "button2_link": "#",
+        "collection": "all-dogs",
+        "layout_type": "grid",
+        "carousel_on_mobile": false,
+        "max_products": 3,
+        "columns": 3,
+        "mobile_columns": "2",
+        "mobile_card_size": "60cqw",
+        "columns_gap": 44,
+        "rows_gap": 23,
+        "icons_style": "arrow",
+        "icons_shape": "circle",
+        "section_width": "page-width",
+        "horizontal_alignment": "center",
+        "gap": 28,
+        "color_scheme": "scheme-e00e94c2-fb8b-4b40-83c8-ba651b6224bb",
+        "padding-block-start": 70,
+        "padding-block-end": 70
+      }
+    }
+  },
+  "order": [
+    "section",
+    "custom_blog_article_aRJxPc",
+    "related_blog_9UGLch",
+    "custom_hero_banner_FX3qzg",
+    "product_list_BGtygy"
+  ]
+}
