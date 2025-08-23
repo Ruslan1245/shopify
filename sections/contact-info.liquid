@@ -1,0 +1,170 @@
+{% style %}
+.custom-contact-info {
+  background: #fff;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.custom-contact-info__title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #0066cc;
+  margin-bottom: 8px;
+}
+
+.custom-contact-info__subtitle {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+.custom-contact-info__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.custom-contact-info__item {
+  text-align: center;
+}
+
+.custom-contact-info__icon {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 15px;
+}
+
+.custom-contact-info__icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.custom-contact-info__heading {
+  font-size: 18px;
+  font-weight: 600;
+  color: #0066cc;
+  margin-bottom: 5px;
+}
+
+.custom-contact-info__text {
+  font-size: 15px;
+  color: #222;
+}
+
+@media (max-width: 767px) {
+  .custom-contact-info__grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .custom-contact-info__title {
+    font-size: 24px;
+  }
+}
+{% endstyle %}
+
+<section class="custom-contact-info">
+  {% if section.settings.title != blank %}
+    <h2 class="custom-contact-info__title">{{ section.settings.title }}</h2>
+  {% endif %}
+
+  {% if section.settings.subtitle != blank %}
+    <p class="custom-contact-info__subtitle">{{ section.settings.subtitle }}</p>
+  {% endif %}
+
+  <div class="custom-contact-info__grid">
+    {% for block in section.blocks %}
+      <div class="custom-contact-info__item">
+        {% if block.settings.icon != blank %}
+          <div class="custom-contact-info__icon">
+            <img src="{{ block.settings.icon | img_url: '100x100' }}" alt="{{ block.settings.heading }}">
+          </div>
+        {% endif %}
+
+        {% if block.settings.heading != blank %}
+          <h3 class="custom-contact-info__heading">{{ block.settings.heading }}</h3>
+        {% endif %}
+
+        {% if block.settings.text != blank %}
+          <p class="custom-contact-info__text">{{ block.settings.text }}</p>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Custom Contact Info",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Main Heading",
+      "default": "Get In Touch Via..."
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subheading",
+      "default": "Call Us, Mail Us, Or Join Our Socials"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "contact_item",
+      "name": "Contact Item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Call Us"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "+1 519-669-6240"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Contact Info",
+      "category": "Custom",
+      "blocks": [
+        {
+          "type": "contact_item",
+          "settings": {
+            "heading": "Call Us",
+            "text": "+1 519-669-6240"
+          }
+        },
+        {
+          "type": "contact_item",
+          "settings": {
+            "heading": "Email Us",
+            "text": "info@nutram.com"
+          }
+        },
+        {
+          "type": "contact_item",
+          "settings": {
+            "heading": "Social Media",
+            "text": "@nutram"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
