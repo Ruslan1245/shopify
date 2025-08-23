@@ -58,9 +58,23 @@
         "padding-block-start": 60,
         "padding-block-end": 60
       }
+    },
+    "contact_banner_6NWUqG": {
+      "type": "contact-banner",
+      "name": "Contact Banner",
+      "settings": {
+        "background_image": "shopify://shop_images/394764c5bc61f90946db96a17d4d618e803b98fd_1.jpg",
+        "overlay_color": "#060649",
+        "overlay_opacity": 25,
+        "heading": "Contact Us",
+        "subheading": "Trusted in over 30 countries worldwide, Nutram recipes represent the finest Canadian quality through many decades of pet nutrition excellence.",
+        "text_alignment": "center",
+        "section_height": 400
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "contact_banner_6NWUqG"
   ]
 }
