@@ -77,9 +77,26 @@
       "name": "Custom Contact Form",
       "settings": {
         "heading": "Fill In The Form Below",
+        "heading_color": "#0066cc",
+        "heading_underline": true,
+        "heading_size": 28,
+        "heading_size_mobile": 22,
+        "background_color": "#ffffff",
+        "input_bg": "#ffffff",
+        "input_text": "#000000",
+        "input_border": "#dddddd",
+        "input_focus": "#0066cc",
+        "input_radius": 40,
+        "checkbox_text": "#000000",
         "terms_text": "I accept the terms & conditions",
         "secure_text": "Your details are secure with us",
-        "button_text": "Get Started Today"
+        "button_text": "Get Started Today",
+        "button_bg": "#ffc107",
+        "button_hover": "#e6a900",
+        "button_text_color": "#000000",
+        "button_radius": 30,
+        "section_padding": 40,
+        "max_width": 800
       }
     }
   },
