@@ -76,7 +76,6 @@
           {%- render 'submenu-font-styles', settings: block_settings %}
         "
       >
-        sdfsdf
         <ul
           class="menu-drawer__menu has-submenu"
           role="list"
@@ -93,6 +92,7 @@
                 style="--menu-drawer-animation-index: {{ animation_index }};"
                 class="{%- if block_settings.drawer_accordion -%}menu-drawer__list-item--deep{%- else -%}menu-drawer__list-item--flat{%- endif -%}{% if block_settings.drawer_dividers %} menu-drawer__list-item--divider{% endif %}"
               >
+                sdfsdf
                 {% if block_settings.drawer_accordion and link.links != blank %}
                   {%- comment -%}
                     Accordion for links with children, in menus with fewer than 3 levels of links
