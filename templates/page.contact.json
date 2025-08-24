@@ -105,6 +105,7 @@
         "contact_item_EEzXnC": {
           "type": "contact_item",
           "settings": {
+            "icon": "shopify://shop_images/Group.png",
             "heading": "Call Us",
             "text": "+1 519-669-6240"
           }
@@ -112,6 +113,7 @@
         "contact_item_UF4diq": {
           "type": "contact_item",
           "settings": {
+            "icon": "shopify://shop_images/fi_2165061.png",
             "heading": "Email Us",
             "text": "info@nutram.com"
           }
@@ -119,6 +121,7 @@
         "contact_item_9R67B7": {
           "type": "contact_item",
           "settings": {
+            "icon": "shopify://shop_images/web_13982337_1.png",
             "heading": "Social Media",
             "text": "@nutram"
           }
