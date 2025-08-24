@@ -12,6 +12,8 @@
 {%- enddoc -%}
 
 {% style %}
+
+@media(max-width:810px){
   .nutram-mega-wrap {
     display: flex;
     flex-direction: column;
@@ -85,6 +87,11 @@
     color: #555;
   }
 
+  .menu-drawer:has(details[open]) {
+    overflow: initial;
+    overflow-y: scroll;
+}
+
   /* CTA Section */
   .nutram-mega-image {
     width: 100%;
@@ -120,7 +127,7 @@
     text-decoration: none;
     font-weight: 500;
   }
-
+}
 
 {% endstyle %}
 
