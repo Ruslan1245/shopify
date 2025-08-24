@@ -439,24 +439,40 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    new Swiper('.upsell-swiper', {
-      slidesPerView: 1.2,
-      spaceBetween: 20,
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      breakpoints: {
-        480: {
-          slidesPerView: 1.5,
+    let upsellSwiper;
+
+    function initUpsellSwiper() {
+      if (upsellSwiper && !upsellSwiper.destroyed && upsellSwiper.slides.length > 0) {
+        return;
+      }
+      if (upsellSwiper && upsellSwiper.destroyed !== true) {
+        upsellSwiper.destroy(true, true);
+      }
+
+      upsellSwiper = new Swiper('.upsell-swiper', {
+        slidesPerView: 1.2,
+        spaceBetween: 20,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
         },
-        768: {
-          slidesPerView: 2.2,
+        breakpoints: {
+          480: {
+            slidesPerView: 1,
+          },
+          768: {
+            slidesPerView: 1.5,
+          },
+          1024: {
+            slidesPerView: 2,
+          },
         },
-        1024: {
-          slidesPerView: 3,
-        },
-      },
-    });
+      });
+    }
+    initUpsellSwiper();
+    setInterval(() => {
+      initUpsellSwiper();
+    }, 2000);
   });
 </script>
+
