@@ -964,6 +964,9 @@ span.cart-discount__label {
  {
     background-color: #F8F8F8 !important;
 }
+.cart-drawer .dialog-drawer .free-shipping-wrapper {
+    margin: 20px 15px;
+}
 /* button.button.cart-items__remove span {
     padding-left: 20px;
 } */
