@@ -74,6 +74,7 @@
     },
     "custom_contact_form_Bm3W6c": {
       "type": "custom-contact-form",
+      "custom_css": [],
       "name": "Custom Contact Form",
       "settings": {
         "heading": "Fill In The Form Below",
