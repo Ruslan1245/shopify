@@ -914,6 +914,12 @@ span.cart-discount__label {
     line-height: 90%;
     text-transform: capitalize;
 }
+.cart-drawer .dialog-drawer .upsell-wrapper .product-rating {
+    color: #353535;
+    font-size: 12px;
+    margin-top: 6px;
+    line-height: 120%;
+}
 /* button.button.cart-items__remove span {
     padding-left: 20px;
 } */
