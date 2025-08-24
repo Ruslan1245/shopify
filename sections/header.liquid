@@ -433,28 +433,48 @@
     <script>
       document.addEventListener('DOMContentLoaded', function () {
         const menuItems = document.querySelectorAll('.main__menu_listed');
+
         menuItems.forEach((item) => {
           const dataId = item.getAttribute('data-id');
           const target = document.querySelector(`[data-val="${dataId}"]`);
           if (!target) return;
-          let isOverTarget = false;
+
+          let hovering = false;
+
+          function activate() {
+            target.classList.add('active');
+          }
+
+          function deactivate() {
+            if (!hovering) {
+              target.classList.remove('active');
+            }
+          }
+
           item.addEventListener('mouseenter', () => {
-            target.classList.add('active');
+            hovering = true;
+            activate();
           });
-          item.addEventListener('mouseleave', () => {
-            setTimeout(() => {
-              if (!isOverTarget) {
-                target.classList.remove('active');
-              }
-            }, 100);
+
+          item.addEventListener('mouseleave', (e) => {
+            const toElement = e.relatedTarget;
+            if (!target.contains(toElement)) {
+              hovering = false;
+              deactivate();
+            }
           });
+
           target.addEventListener('mouseenter', () => {
-            isOverTarget = true;
-            target.classList.add('active');
+            hovering = true;
+            activate();
           });
-          target.addEventListener('mouseleave', () => {
-            isOverTarget = false;
-            target.classList.remove('active');
+
+          target.addEventListener('mouseleave', (e) => {
+            const toElement = e.relatedTarget;
+            if (!item.contains(toElement)) {
+              hovering = false;
+              deactivate();
+            }
           });
         });
       });
