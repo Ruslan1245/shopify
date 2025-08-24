@@ -138,12 +138,49 @@
         "title": "Get In Touch Via...",
         "subtitle": "Call Us, Mail Us, Or Join Our Socials"
       }
+    },
+    "faq_custom_y69pKc": {
+      "type": "faq-custom",
+      "blocks": {
+        "faq_item_kY34xH": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Sample Question",
+            "answer": "This is a sample answer."
+          }
+        },
+        "faq_item_bbaxxN": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Sample Question",
+            "answer": "This is a sample answer."
+          }
+        },
+        "faq_item_VpcTka": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Sample Question",
+            "answer": "This is a sample answer."
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_kY34xH",
+        "faq_item_bbaxxN",
+        "faq_item_VpcTka"
+      ],
+      "name": "FAQ Section",
+      "settings": {
+        "heading": "Frequently Asked Questions",
+        "subheading": "We're always happy to help."
+      }
     }
   },
   "order": [
     "main",
     "contact_banner_6NWUqG",
     "custom_contact_form_Bm3W6c",
-    "contact_info_fbfHVd"
+    "contact_info_fbfHVd",
+    "faq_custom_y69pKc"
   ]
 }
