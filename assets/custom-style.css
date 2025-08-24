@@ -1033,6 +1033,13 @@ span.cart-discount__label {
  {
     margin-bottom: 0px !important;
 }
+.nutram-mega-product-title {
+    color: #4498cd;
+    font-size: 14px;
+    line-height: 90%;
+    text-transform: capitalize;
+    padding-top: 10px;
+}
 
     .home-feature-collection .group-block .group-block-content .text-block:first-child p {
         font-size: 32px !important;
