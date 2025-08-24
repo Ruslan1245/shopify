@@ -946,7 +946,8 @@ span.cart-discount__label {
     font-family: Outfit;
     font-weight: 400;
     line-height: 90%;
-    text-align: center;
+    text-align: left;
+
 }
 .cart-drawer .dialog-drawer a.button.cart-items__empty-button {
     background-color: #3086c8;
