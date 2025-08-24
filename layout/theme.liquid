@@ -78,16 +78,12 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    let upsellSwiper, upsellEmptySwiper;
+    let upsellSwiper = null;
+    let upsellEmptySwiper = null;
 
-    function initUpsellSwiper() {
-      if (
-        !upsellSwiper ||
-        upsellSwiper.destroyed ||
-        upsellSwiper.slides.length === 0
-      ) {
-        if (upsellSwiper) upsellSwiper.destroy(true, true);
-
+    function checkAndInitSwipers() {
+      // Init .upsell-swiper if not already set
+      if (!upsellSwiper && document.querySelector('.upsell-swiper')) {
         upsellSwiper = new Swiper('.upsell-swiper', {
           slidesPerView: 1.2,
           spaceBetween: 20,
@@ -108,16 +104,9 @@
           },
         });
       }
-    }
 
-    function initUpsellEmptySwiper() {
-      if (
-        !upsellEmptySwiper ||
-        upsellEmptySwiper.destroyed ||
-        upsellEmptySwiper.slides.length === 0
-      ) {
-        if (upsellEmptySwiper) upsellEmptySwiper.destroy(true, true);
-
+      // Init .upsell-swiper-empty if not already set
+      if (!upsellEmptySwiper && document.querySelector('.upsell-swiper-empty')) {
         upsellEmptySwiper = new Swiper('.upsell-swiper-empty', {
           slidesPerView: 1.2,
           spaceBetween: 20,
@@ -140,15 +129,8 @@
       }
     }
 
-    // Initial init
-    initUpsellSwiper();
-    initUpsellEmptySwiper();
-
-    // Recheck every 1 second
-    setInterval(() => {
-      initUpsellSwiper();
-      initUpsellEmptySwiper();
-    }, 1000);
+    // Check every 1 second
+    setInterval(checkAndInitSwipers, 1000);
   });
 </script>
 
