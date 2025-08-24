@@ -1019,6 +1019,10 @@ span.cart-discount__label {
     text-transform: capitalize;
     text-align: center;
 }
+.bottom_cart .safe_secure img {
+   width: 22px;
+   height: auto;
+}
 /* button.button.cart-items__remove span {
     padding-left: 20px;
 } */
