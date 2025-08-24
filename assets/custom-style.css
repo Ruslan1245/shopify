@@ -1047,6 +1047,9 @@ span.cart-discount__label {
         column-gap: 12px;
         grid-template-columns: repeat(2, 1fr);
     }
+    .menu-drawer li.menu-drawer__list-item--flat {
+    border-bottom: 1px solid #dcdcdc;
+}
    .menu-drawer .nutram-mega-left {
         display: flex;
         justify-content: space-between;
