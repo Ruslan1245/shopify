@@ -1,5 +1,5 @@
 <!-- sections/faq-section.liquid -->
-<section class="faq-section">
+<section class="faq-section {{ section.settings.custom_css_class | escape }}">
   <div class="faq-container">
     <div class="faq-left">
       <h2>{{ section.settings.heading }}</h2>
@@ -110,6 +110,11 @@
 {
   "name": "FAQ Section",
   "settings": [
+    {
+      "type": "text",
+      "id": "custom_css_class",
+      "label": "Custom CSS Class"
+    },
     {
       "type": "text",
       "id": "heading",
