@@ -826,6 +826,9 @@ button.button.add-to-cart-button.button.atc-added:after {
     position: absolute;
     bottom: 0;
 }
+.contact-faq-sec {
+    background-color: #F8F8F8;
+}
 @media(max-width:767px){
     .home-feature-collection .group-block .group-block-content .text-block:first-child p {
         font-size: 32px !important;
