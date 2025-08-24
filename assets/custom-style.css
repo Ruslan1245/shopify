@@ -1018,6 +1018,10 @@ span.cart-discount__label {
     line-height: 100%;
     text-transform: capitalize;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 6px;
 }
 .bottom_cart .safe_secure img {
    width: 22px;
