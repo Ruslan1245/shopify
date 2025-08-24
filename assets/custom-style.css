@@ -888,11 +888,13 @@ button.button.add-to-cart-button.button.atc-added:after {
     display: flex;
     width: 100%;
     align-items: center;
+    justify-content: right;
     height: auto;
     color: #6E6E6E;
     font-size: 12px;
     font-weight: 300;
     line-height: 100%;
+
 }
 .cart-drawer .dialog-drawer button#checkout {
     background-color: #3086C8;
