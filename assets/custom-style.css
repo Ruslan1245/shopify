@@ -960,6 +960,10 @@ span.cart-discount__label {
     background: #353535;
     border: 1px solid #353535;
 }
+.cart-drawer .dialog-drawer .cart-drawer__summary
+ {
+    background-color: #F8F8F8 !important;
+}
 /* button.button.cart-items__remove span {
     padding-left: 20px;
 } */
