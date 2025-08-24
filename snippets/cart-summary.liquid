@@ -70,16 +70,18 @@
         {{ total_price }}
       </text-component>
     </span>
-    {% comment %} {% if settings.show_installments %}
-      <span class="cart__summary-item cart__installments">
-        {% form 'cart', cart %}
-          {{ form | payment_terms }}
-        {% endform %}
-      </span>
-    {% endif %}
-    <div class="cart__summary-item tax-note cart-primary-typography">
-      {% render 'tax-info', has_discounts_enabled: settings.show_add_discount_code %}
-    </div> {% endcomment %}
+    {% comment %}
+      {% if settings.show_installments %}
+        <span class="cart__summary-item cart__installments">
+          {% form 'cart', cart %}
+            {{ form | payment_terms }}
+          {% endform %}
+        </span>
+      {% endif %}
+      <div class="cart__summary-item tax-note cart-primary-typography">
+        {% render 'tax-info', has_discounts_enabled: settings.show_add_discount_code %}
+      </div>
+    {% endcomment %}
   </div>
 </div>
 
@@ -97,7 +99,18 @@
     Proceed to checkout
   </button>
 
-  
+  <div style="text-align: center; margin-top: 20px;">
+    <div style="font-weight: bold; font-size: 16px; margin-bottom: 10px;">🔒 Safe & Secure Checkout</div>
+    <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
+      {% for type in shop.enabled_payment_types %}
+        <img
+          src="{{ type | payment_type_img_url }}"
+          alt="{{ type | capitalize }}"
+          style="height: 32px;"
+        >
+      {% endfor %}
+    </div>
+  </div>
 
   {% if additional_checkout_buttons and settings.show_accelerated_checkout_buttons %}
     <div class="additional-checkout-buttons additional-checkout-buttons--vertical">
