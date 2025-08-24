@@ -92,9 +92,8 @@
                 style="--menu-drawer-animation-index: {{ animation_index }};"
                 class="{%- if block_settings.drawer_accordion -%}menu-drawer__list-item--deep{%- else -%}menu-drawer__list-item--flat{%- endif -%}{% if block_settings.drawer_dividers %} menu-drawer__list-item--divider{% endif %}"
               >
-                {% if section.settings.menu_handle_set  == link.handle %}
-
-                   {% liquid
+                {% if section.settings.menu_handle_set == link.handle %}
+                  {% liquid
                     assign accordion_state = ''
                     if first_accordion_open == false and block_settings.drawer_accordion_expand_first
                       assign first_accordion_open = true
@@ -131,11 +130,81 @@
                         role="list"
                         tabindex="-1"
                       >
-                        asdasd
+                        <div class="nutram-mega-wrap" data-val="{{ section.settings.menu_handle_set }}">
+                          <div class="nutram-mega-left">
+                            {% if section.settings.menu_1 %}
+                              <div class="nutram-mega-group">
+                                <h4 class="nutram-mega-title">{{ section.settings.menu_1_heading }}</h4>
+                                <ul class="nutram-mega-list">
+                                  {% for link in linklists[section.settings.menu_1].links %}
+                                    <li>
+                                      <a href="{{ link.url }}">{{ link.title }}</a>
+                                    </li>
+                                  {% endfor %}
+                                </ul>
+                              </div>
+                            {% endif %}
+
+                            {% if section.settings.menu_2 %}
+                              <div class="nutram-mega-group">
+                                <h4 class="nutram-mega-title">{{ section.settings.menu_2_heading }}</h4>
+                                <ul class="nutram-mega-list">
+                                  {% for link in linklists[section.settings.menu_2].links %}
+                                    <li>
+                                      <a href="{{ link.url }}">{{ link.title }}</a>
+                                    </li>
+                                  {% endfor %}
+                                </ul>
+                              </div>
+                            {% endif %}
+                          </div>
+
+                          <div class="nutram-mega-center">
+                            {% assign collection = collections[section.settings.center_collection] %}
+                            {% if collection %}
+                              {% for product in collection.products limit: 3 %}
+                                <div class="nutram-mega-product">
+                                  <a href="{{ product.url }}">
+                                    <img
+                                      src="{{ product.featured_image | img_url: 'master' }}"
+                                      alt="{{ product.title }}"
+                                      class="nutram-mega-product-img"
+                                    >
+                                    <div class="nutram-mega-product-title">{{ product.title }}</div>
+                                    {% if product.description != blank %}
+                                      <div class="nutram-mega-product-desc">
+                                        {{ product.description | strip_html | truncate: 60 }}
+                                      </div>
+                                    {% endif %}
+                                  </a>
+                                </div>
+                              {% endfor %}
+                            {% endif %}
+                          </div>
+
+                          <div class="nutram-mega-right">
+                            {% if section.settings.side_image %}
+                              <img
+                                src="{{ section.settings.side_image | img_url: 'master' }}"
+                                alt="Promo Image"
+                                class="nutram-mega-image"
+                              >
+                            {% endif %}
+                            <div class="nutram-mega-cta">
+                              <h3 class="nutram-mega-cta-title">{{ section.settings.side_heading }}</h3>
+                              <p class="nutram-mega-cta-desc">{{ section.settings.side_content }}</p>
+                              {% if section.settings.button_link and section.settings.button_label %}
+                                <a href="{{ section.settings.button_link }}" class="nutram-mega-cta-btn">
+                                  {{- section.settings.button_label -}}
+                                </a>
+                              {% endif %}
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </details>
                   </accordion-custom>
-                  
+
                 {% elsif block_settings.drawer_accordion and link.links != blank %}
                   {%- comment -%}
                     Accordion for links with children, in menus with fewer than 3 levels of links
