@@ -1010,6 +1010,15 @@ span.cart-discount__label {
     justify-content: right;
     text-align: right;
 }
+.bottom_cart .safe_secure {
+    color: #353535;
+    font-family: Outfit;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 100%;
+    text-transform: capitalize;
+    text-align: center;
+}
 /* button.button.cart-items__remove span {
     padding-left: 20px;
 } */
