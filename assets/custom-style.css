@@ -1016,6 +1016,11 @@ span.cart-discount__label {
     /* .upsell-wrapper .swiper.upsell-swiper .swiper-wrapper .swiper-slide {
     width: 100% !important;
 } */
+
+.menu-drawer__menu .nutram-mega-wrap .nutram-mega-left h4.nutram-mega-title {
+    font-size: 15px;
+}
+
     .home-feature-collection .group-block .group-block-content .text-block:first-child p {
         font-size: 32px !important;
         line-height: 90%;
