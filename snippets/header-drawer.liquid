@@ -215,7 +215,7 @@
                   {%- comment -%}
                     Simple links for links with no children (regardless of accordion setting), in menus with fewer than 3 levels of links
                   {%- endcomment -%}
-                   asdas
+                   {{ section.settings.menu_handle_set }}
                   <a
                     id="HeaderDrawer-{{ link.handle }}"
                     href="{{ link.url }}"
