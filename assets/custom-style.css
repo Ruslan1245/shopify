@@ -989,6 +989,7 @@ span.cart-discount__label {
     width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 button.shopify-buy-button:after {
     content: "";
