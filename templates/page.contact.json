@@ -171,6 +171,7 @@
       ],
       "name": "FAQ Section",
       "settings": {
+        "custom_css_class": "contact-faq-sec",
         "heading": "Frequently Asked Questions",
         "subheading": "We're always happy to help."
       }
