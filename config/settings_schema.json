@@ -1809,6 +1809,23 @@
         "default": 55
       },
       {
+        "type": "text",
+        "id": "upsell_heading",
+        "label": "Upsell Heading",
+        "default": "You May Also Like To Add!"
+      },
+      {
+        "type": "product_list",
+        "id": "upsell_products",
+        "label": "Select Products to Upsell"
+      },
+      {
+        "type": "text",
+        "id": "upsell_button_text",
+        "label": "Button Text",
+        "default": "Shop Now"
+      },
+      {
         "type": "checkbox",
         "id": "show_accelerated_checkout_buttons",
         "label": "t:settings.checkout_buttons",
