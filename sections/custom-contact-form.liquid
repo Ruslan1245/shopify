@@ -163,7 +163,8 @@ div.shopify-section {
       <input type="tel" name="contact[phone]" placeholder="Phone Number">
     </div>
     <div class="custom-contact-form__full">
-      <textarea name="contact[body]" rows="4" placeholder="How can we help?"></textarea>
+      {% comment %} <textarea name="contact[body]" rows="4" placeholder="How can we help?"></textarea> {% endcomment %}
+      <input type="text" name="contact[body]" placeholder="How can we help?">
     </div>
 
     <div class="custom-contact-form__checkbox">
