@@ -1791,6 +1791,35 @@
         "default": true
       },
       {
+        "type": "header",
+        "content": "Cart empty"
+      },
+      {
+        "type": "text",
+        "id": "below_message_cart",
+        "label": "Message cart",
+      },
+      {
+        "type": "text",
+        "id": "first_btn_1",
+        "label": "First button text",
+      },
+      {
+        "type": "text",
+        "id": "first_btn_1_url",
+        "label": "First button url",
+      },
+      {
+        "type": "text",
+        "id": "second_btn_2",
+        "label": "Second button text",
+      },
+      {
+        "type": "text",
+        "id": "second_btn__url",
+        "label": "Second button url",
+      },
+      {
         "type": "text",
         "id": "below_message",
         "label": "Message for below free shipping",
