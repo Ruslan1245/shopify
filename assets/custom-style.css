@@ -1040,6 +1040,9 @@ span.cart-discount__label {
     text-transform: capitalize;
     padding-top: 10px;
 }
+.menu-drawer .menu-drawer__menu.details-content {
+    padding: 0px;
+}
 
     .home-feature-collection .group-block .group-block-content .text-block:first-child p {
         font-size: 32px !important;
