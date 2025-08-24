@@ -174,6 +174,54 @@
         "heading": "Frequently Asked Questions",
         "subheading": "We're always happy to help."
       }
+    },
+    "banner_with_overlay_ewhPKc": {
+      "type": "banner-with-overlay",
+      "blocks": {
+        "feature_DVhzDP": {
+          "type": "feature",
+          "settings": {
+            "feature_text": "Better digestion, more energy, happier bellies!"
+          }
+        },
+        "feature_4t6Fch": {
+          "type": "feature",
+          "settings": {
+            "feature_text": "100% Clean ingredients, no recalls ever"
+          }
+        },
+        "feature_knnP4K": {
+          "type": "feature",
+          "settings": {
+            "feature_text": "Holistic nutrition, for happier pets"
+          }
+        }
+      },
+      "block_order": [
+        "feature_DVhzDP",
+        "feature_4t6Fch",
+        "feature_knnP4K"
+      ],
+      "name": "CTA Banner with Overlay",
+      "settings": {
+        "background_image": "shopify://shop_images/160f936fac8a3509a4997f3ba92f947e889f5fc9.jpg",
+        "fallback_bg_color": "#4a9ee7",
+        "overlay_color": "#4a9ee7",
+        "overlay_opacity": 85,
+        "main_title": "Ready to try",
+        "sub_title": "Canada's Cleanest Kibble?",
+        "title_color": "#ffffff",
+        "subtitle_color": "#ffffff",
+        "features_color": "#ffffff",
+        "button_text": "Shop Now",
+        "button_url": "shopify://collections",
+        "button_bg_color": "#f8c933",
+        "button_text_color": "#333333",
+        "testimonial_rating": 5,
+        "testimonial_text": "“My cat loves this and I am happy because he is then eating healthy food.”",
+        "customer_name": "Kathleen B",
+        "customer_badge": "VERIFIED CUSTOMER"
+      }
     }
   },
   "order": [
@@ -181,6 +229,7 @@
     "contact_banner_6NWUqG",
     "custom_contact_form_Bm3W6c",
     "contact_info_fbfHVd",
-    "faq_custom_y69pKc"
+    "faq_custom_y69pKc",
+    "banner_with_overlay_ewhPKc"
   ]
 }
