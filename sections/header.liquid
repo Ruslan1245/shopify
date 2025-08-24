@@ -431,6 +431,36 @@
       }
     </style>
 
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const menuItems = document.querySelectorAll('.main__menu_listed');
+
+        menuItems.forEach((item) => {
+          const dataId = item.getAttribute('data-id');
+          const target = document.querySelector(`[data-val="${dataId}"]`);
+          if (!target) return;
+          let isOverTarget = false;
+          item.addEventListener('mouseenter', () => {
+            target.classList.add('active');
+          });
+          item.addEventListener('mouseleave', () => {
+            setTimeout(() => {
+              if (!isOverTarget) {
+                target.classList.remove('active');
+              }
+            }, 300);
+          });
+          target.addEventListener('mouseenter', () => {
+            isOverTarget = true;
+            target.classList.add('active');
+          });
+          target.addEventListener('mouseleave', () => {
+            isOverTarget = false;
+            target.classList.remove('active');
+          });
+        });
+      });
+    </script>
   {% endif %}
 </header-component>
 
