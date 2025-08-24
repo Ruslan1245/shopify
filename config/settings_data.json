@@ -57,6 +57,9 @@
     "auto_open_cart_drawer": true,
     "below_message_cart": "Explore Canada’s cleanest kibble",
     "first_btn_1": "For Cats",
+    "first_btn_1_url": "shopify://products/s1-nutram-sound-balanced-wellness-kitten-2",
+    "second_btn_2": "For Dogs",
+    "second_btn__url": "shopify://products/nutram-ideal-solution-support",
     "free_shipping_threshold": 200,
     "upsell_products": [
       "quiz",
