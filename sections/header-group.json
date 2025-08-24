@@ -58,6 +58,12 @@
           },
           "blocks": {}
         },
+        "mega-menu": {
+          "type": "mega-menu",
+          "static": true,
+          "settings": {},
+          "blocks": {}
+        },
         "header-menu": {
           "type": "_header-menu",
           "static": true,
