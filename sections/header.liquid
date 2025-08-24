@@ -430,55 +430,7 @@
         text-decoration: none;
       }
     </style>
-    <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        const menuItems = document.querySelectorAll('.main__menu_listed');
 
-        menuItems.forEach((item) => {
-          const dataId = item.getAttribute('data-id');
-          const target = document.querySelector(`[data-val="${dataId}"]`);
-          if (!target) return;
-
-          let hovering = false;
-
-          function activate() {
-            target.classList.add('active');
-          }
-
-          function deactivate() {
-            if (!hovering) {
-              target.classList.remove('active');
-            }
-          }
-
-          item.addEventListener('mouseenter', () => {
-            hovering = true;
-            activate();
-          });
-
-          item.addEventListener('mouseleave', (e) => {
-            const toElement = e.relatedTarget;
-            if (!target.contains(toElement)) {
-              hovering = false;
-              deactivate();
-            }
-          });
-
-          target.addEventListener('mouseenter', () => {
-            hovering = true;
-            activate();
-          });
-
-          target.addEventListener('mouseleave', (e) => {
-            const toElement = e.relatedTarget;
-            if (!item.contains(toElement)) {
-              hovering = false;
-              deactivate();
-            }
-          });
-        });
-      });
-    </script>
   {% endif %}
 </header-component>
 
