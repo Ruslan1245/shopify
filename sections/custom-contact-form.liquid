@@ -6,13 +6,23 @@
   background: {{ section.settings.background_color }};
 }
 
-.custom-contact-form__title {
+/* .custom-contact-form__title {
   font-size: {{ section.settings.heading_size }}px;
   font-weight: 700;
   text-align: center;
   margin-bottom: 30px;
   color: {{ section.settings.heading_color }};
   {% if section.settings.heading_underline %} text-decoration: underline; {% endif %}
+} */
+
+h2.custom-contact-form__title {
+    font-family: Outfit;
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size: 42px;
+    line-height: 34px;
+    text-align: center;
+    text-transform: capitalize;
 }
 
 .custom-contact-form form {
