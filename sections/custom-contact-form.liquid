@@ -110,6 +110,15 @@ h2.custom-contact-form__title {
 div.shopify-section {
     background-color: #F8F8F8;
 }
+.custom-contact-form button:after
+ {
+    content: "";
+    background-image: url(/cdn/shop/files/Vector_5c1622c0-29e6-402a-a815-8da37656e4fc.png?v=1755184216);
+    height: 15px;
+    width: 30px;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
 
 /* Responsive */
 @media (max-width: 767px) {
@@ -153,7 +162,7 @@ div.shopify-section {
     <div class="custom-contact-form__full">
       <button type="submit">
         {{ section.settings.button_text }}
-        <span>→</span>
+        {% comment %} <span>→</span> {% endcomment %}
       </button>
     </div>
   {% endform %}
