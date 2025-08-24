@@ -920,6 +920,12 @@ span.cart-discount__label {
     margin-top: 6px;
     line-height: 120%;
 }
+.cart-drawer .dialog-drawer .product-price {
+    color: #353535 !important;
+    font-size: 16px;
+    line-height: 125%;
+    letter-spacing: -0.2px;
+}
 /* button.button.cart-items__remove span {
     padding-left: 20px;
 } */
