@@ -847,6 +847,9 @@ button.button.add-to-cart-button.button.atc-added:after {
     text-transform: capitalize;
     color: #3086C8;
 }
+.cart-drawer .dialog-drawer .cart-items__quantity {
+    flex-direction: column;
+}
 @media(max-width:767px){
     .home-feature-collection .group-block .group-block-content .text-block:first-child p {
         font-size: 32px !important;
