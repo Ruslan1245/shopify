@@ -213,7 +213,6 @@
                 </p>
               {% endif %}
 
-              <div class="cart-drawer__heading h3 cart-drawer__heading--empty">
               <div class="cart-empty-box__buttons">
                 {% if settings.first_btn_1 and settings.first_btn_1_url %}
                   <a
@@ -268,7 +267,6 @@
                   </div>
                 </div>
               {% endif %}
-              </div>
 
             <div class="cart_bottom_custom">
               <a href="/collections/all">Explore All Products</a>
@@ -441,51 +439,24 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    let upsellSwiper;
-
-    function initUpsellSwiper() {
-      if (upsellSwiper) upsellSwiper.destroy(true, true);
-
-      upsellSwiper = new Swiper('.upsell-swiper', {
-        slidesPerView: 1.2,
-        spaceBetween: 20,
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
+    new Swiper('.upsell-swiper', {
+      slidesPerView: 1.2,
+      spaceBetween: 20,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      breakpoints: {
+        480: {
+          slidesPerView: 1.5,
         },
-        breakpoints: {
-          480: {
-            slidesPerView: 1,
-          },
-          768: {
-            slidesPerView: 1.2,
-          },
-          1024: {
-            slidesPerView: 2,
-          },
+        768: {
+          slidesPerView: 2.2,
         },
-      });
-    }
-
-    // Initial init
-    initUpsellSwiper();
-
-    // Optional: MutationObserver for DOM changes
-    const upsellContainer = document.querySelector('.upsell-swiper');
-    if (upsellContainer) {
-      const observer = new MutationObserver(() => {
-        initUpsellSwiper();
-      });
-
-      observer.observe(upsellContainer, { childList: true, subtree: true });
-    }
-
-    // Fallback: Check Swiper state every 5 seconds
-    setInterval(() => {
-      if (!upsellSwiper || upsellSwiper.destroyed || upsellSwiper.slides.length === 0) {
-        initUpsellSwiper();
-      }
-    }, 5000); // Adjust interval as needed
+        1024: {
+          slidesPerView: 3,
+        },
+      },
+    });
   });
 </script>
-
