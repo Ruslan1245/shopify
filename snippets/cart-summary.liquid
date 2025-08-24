@@ -99,14 +99,15 @@
     Proceed to checkout
   </button>
 
-  <div style="text-align: center; margin-top: 20px;">
-    <div style="font-weight: bold; font-size: 16px; margin-bottom: 10px;">🔒 Safe & Secure Checkout</div>
-    <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
+  <div class="bottom_cart">
+    <div class="safe_secure">🔒 Safe & Secure Checkout</div>
+    <div class="icons__payment">
       {% for type in shop.enabled_payment_types %}
         <img
           src="{{ type | payment_type_img_url }}"
           alt="{{ type | capitalize }}"
-          style="height: 32px;"
+          width="auto"
+          height="auto"
         >
       {% endfor %}
     </div>
