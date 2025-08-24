@@ -217,9 +217,10 @@
         "button_url": "shopify://collections",
         "button_bg_color": "#f8c933",
         "button_text_color": "#333333",
+        "testimonial_image": "shopify://shop_images/PFP_Placeholder_4c68d1a1-df3f-47f8-9892-130666fe6b7e.png",
         "testimonial_rating": 5,
-        "testimonial_text": "“My cat loves this and I am happy because he is then eating healthy food.”",
-        "customer_name": "Kathleen B",
+        "testimonial_text": "“After switching, Max’s coat is shinier and tummy trouble disappeared in two weeks!”",
+        "customer_name": "John D.",
         "customer_badge": "VERIFIED CUSTOMER"
       }
     }
