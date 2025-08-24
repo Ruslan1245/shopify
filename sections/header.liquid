@@ -1,5 +1,3 @@
-
-
 {% liquid
   assign order = 'logo,menu,localization,search,mobile_search,actions'
 
@@ -250,183 +248,184 @@
   {% endif %}
 
   <div class="nutram-mega-menu">
-  <div class="nutram-mega-menu__left">
-    {% if section.settings.menu_1 %}
-      <div class="nutram-mega-menu__menu-group">
-        <h4 class="nutram-mega-menu__menu-title">Lifestyle/Breed</h4>
-        <ul class="nutram-mega-menu__menu-list">
-          {% for link in linklists[section.settings.menu_1].links %}
-            <li><a href="{{ link.url }}">{{ link.title }}</a></li>
-          {% endfor %}
-        </ul>
-      </div>
-    {% endif %}
-
-    {% if section.settings.menu_2 %}
-      <div class="nutram-mega-menu__menu-group">
-        <h4 class="nutram-mega-menu__menu-title">Food Type</h4>
-        <ul class="nutram-mega-menu__menu-list">
-          {% for link in linklists[section.settings.menu_2].links %}
-            <li><a href="{{ link.url }}">{{ link.title }}</a></li>
-          {% endfor %}
-        </ul>
-      </div>
-    {% endif %}
-  </div>
-
-  <div class="nutram-mega-menu__center">
-    {% assign collection = collections[section.settings.center_collection] %}
-    {% if collection %}
-      {% for product in collection.products limit: 3 %}
-        <div class="nutram-mega-menu__product">
-          <a href="{{ product.url }}">
-            <img
-              src="{{ product.featured_image | img_url: 'master' }}"
-              alt="{{ product.title }}"
-              class="nutram-mega-menu__product-image"
-            >
-            <div class="nutram-mega-menu__product-title">{{ product.title }}</div>
-            {% if product.description != blank %}
-              <div class="nutram-mega-menu__product-description">
-                {{ product.description | strip_html | truncate: 60 }}
-              </div>
-            {% endif %}
-          </a>
+    <div class="nutram-mega-menu__left">
+      {% if section.settings.menu_1 %}
+        <div class="nutram-mega-menu__menu-group">
+          <h4 class="nutram-mega-menu__menu-title">{{section.settings.menu_1_heading}}</h4>
+          <ul class="nutram-mega-menu__menu-list">
+            {% for link in linklists[section.settings.menu_1].links %}
+              <li>
+                <a href="{{ link.url }}">{{ link.title }}</a>
+              </li>
+            {% endfor %}
+          </ul>
         </div>
-      {% endfor %}
-    {% endif %}
-  </div>
+      {% endif %}
 
-  <div class="nutram-mega-menu__right">
-    {% if section.settings.side_image %}
-      <img
-        src="{{ section.settings.side_image | img_url: 'master' }}"
-        alt="Promo Image"
-        class="nutram-mega-menu__cta-image"
-      >
-    {% endif %}
-    <div class="nutram-mega-menu__cta-text">
-      <h3 class="nutram-mega-menu__cta-heading">
-        {{ section.settings.side_heading }}
-      </h3>
-      <p class="nutram-mega-menu__cta-description">
-        {{ section.settings.side_content }}
-      </p>
-      {% if section.settings.button_link and section.settings.button_label %}
-        <a href="{{ section.settings.button_link }}" class="nutram-mega-menu__cta-button">
-          {{ section.settings.button_label }}
-        </a>
+      {% if section.settings.menu_2 %}
+        <div class="nutram-mega-menu__menu-group">
+          <h4 class="nutram-mega-menu__menu-title">{{section.settings.menu_2_heading}}</h4>
+          <ul class="nutram-mega-menu__menu-list">
+            {% for link in linklists[section.settings.menu_2].links %}
+              <li>
+                <a href="{{ link.url }}">{{ link.title }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
       {% endif %}
     </div>
+
+    <div class="nutram-mega-menu__center">
+      {% assign collection = collections[section.settings.center_collection] %}
+      {% if collection %}
+        {% for product in collection.products limit: 3 %}
+          <div class="nutram-mega-menu__product">
+            <a href="{{ product.url }}">
+              <img
+                src="{{ product.featured_image | img_url: 'master' }}"
+                alt="{{ product.title }}"
+                class="nutram-mega-menu__product-image"
+              >
+              <div class="nutram-mega-menu__product-title">{{ product.title }}</div>
+              {% if product.description != blank %}
+                <div class="nutram-mega-menu__product-description">
+                  {{ product.description | strip_html | truncate: 60 }}
+                </div>
+              {% endif %}
+            </a>
+          </div>
+        {% endfor %}
+      {% endif %}
+    </div>
+
+    <div class="nutram-mega-menu__right">
+      {% if section.settings.side_image %}
+        <img
+          src="{{ section.settings.side_image | img_url: 'master' }}"
+          alt="Promo Image"
+          class="nutram-mega-menu__cta-image"
+        >
+      {% endif %}
+      <div class="nutram-mega-menu__cta-text">
+        <h3 class="nutram-mega-menu__cta-heading">
+          {{ section.settings.side_heading }}
+        </h3>
+        <p class="nutram-mega-menu__cta-description">
+          {{ section.settings.side_content }}
+        </p>
+        {% if section.settings.button_link and section.settings.button_label %}
+          <a href="{{ section.settings.button_link }}" class="nutram-mega-menu__cta-button">
+            {{ section.settings.button_label }}
+          </a>
+        {% endif %}
+      </div>
+    </div>
   </div>
-</div>
 
-<style>
-.nutram-mega-menu {
-  display: flex;
-  gap: 20px;
-  background-color: #ffffff;
-}
+  <style>
+    .nutram-mega-menu {
+      display: flex;
+      gap: 20px;
+      background-color: #ffffff;
+    }
 
-.nutram-mega-menu__left,
-.nutram-mega-menu__center,
-.nutram-mega-menu__right {
-  flex: 1;
-}
+    .nutram-mega-menu__left,
+    .nutram-mega-menu__center,
+    .nutram-mega-menu__right {
+      flex: 1;
+    }
 
-.nutram-mega-menu__menu-title {
-  font-weight: 700;
-  color: #1d4e89;
-  margin-bottom: 10px;
-  font-size: 16px;
-}
+    .nutram-mega-menu__menu-title {
+      font-weight: 700;
+      color: #1d4e89;
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
 
-.nutram-mega-menu__menu-list {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 20px 0;
-}
+    .nutram-mega-menu__menu-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 20px 0;
+    }
 
-.nutram-mega-menu__menu-list li {
-  margin-bottom: 5px;
-}
+    .nutram-mega-menu__menu-list li {
+      margin-bottom: 5px;
+    }
 
-.nutram-mega-menu__menu-list a {
-  text-decoration: none;
-  color: #333;
-  font-size: 14px;
-}
+    .nutram-mega-menu__menu-list a {
+      text-decoration: none;
+      color: #333;
+      font-size: 14px;
+    }
 
-.nutram-mega-menu__center {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-}
+    .nutram-mega-menu__center {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
 
-.nutram-mega-menu__product {
-  text-align: center;
-  max-width: 120px;
-}
+    .nutram-mega-menu__product {
+      text-align: center;
+      max-width: 120px;
+    }
 
-.nutram-mega-menu__product-image {
-  width: 100%;
-  height: auto;
-  margin-bottom: 10px;
-}
+    .nutram-mega-menu__product-image {
+      width: 100%;
+      height: auto;
+      margin-bottom: 10px;
+    }
 
-.nutram-mega-menu__product-title {
-  font-weight: bold;
-  font-size: 14px;
-  margin-bottom: 5px;
-}
+    .nutram-mega-menu__product-title {
+      font-weight: bold;
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
 
-.nutram-mega-menu__product-description {
-  font-size: 12px;
-  color: #666;
-}
+    .nutram-mega-menu__product-description {
+      font-size: 12px;
+      color: #666;
+    }
 
-.nutram-mega-menu__right {
-  max-width: 250px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  background: #f2f7fb;
-  padding: 20px;
-  border-radius: 8px;
-}
+    .nutram-mega-menu__right {
+      max-width: 250px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      background: #f2f7fb;
+      padding: 20px;
+      border-radius: 8px;
+    }
 
-.nutram-mega-menu__cta-image {
-  width: 100%;
-  height: auto;
-  margin-bottom: 15px;
-}
+    .nutram-mega-menu__cta-image {
+      width: 100%;
+      height: auto;
+      margin-bottom: 15px;
+    }
 
-.nutram-mega-menu__cta-heading {
-  font-size: 16px;
-  font-weight: bold;
-  margin-bottom: 10px;
-  color: #1d4e89;
-}
+    .nutram-mega-menu__cta-heading {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #1d4e89;
+    }
 
-.nutram-mega-menu__cta-description {
-  font-size: 13px;
-  color: #333;
-  margin-bottom: 15px;
-}
+    .nutram-mega-menu__cta-description {
+      font-size: 13px;
+      color: #333;
+      margin-bottom: 15px;
+    }
 
-.nutram-mega-menu__cta-button {
-  background-color: #1d4e89;
-  color: white;
-  padding: 10px 16px;
-  font-size: 13px;
-  border-radius: 4px;
-  text-decoration: none;
-}
-</style>
-
-
+    .nutram-mega-menu__cta-button {
+      background-color: #1d4e89;
+      color: white;
+      padding: 10px 16px;
+      font-size: 13px;
+      border-radius: 4px;
+      text-decoration: none;
+    }
+  </style>
 </header-component>
-
 
 <script
   src="{{ 'header.js' | asset_url }}"
@@ -799,7 +798,6 @@
     }
   }
 {% endstylesheet %}
-
 
 {% schema %}
 {
@@ -1178,14 +1176,24 @@
       "default": "default",
       "visible_if": "{{ section.settings.enable_transparent_header_home }}"
     },
-     {
+    {
       "type": "header",
       "content": "Mega menu"
+    },
+    {
+      "type": "text",
+      "id": "menu_1_heading",
+      "label": "Left Menu - Heading"
     },
     {
       "type": "link_list",
       "id": "menu_1",
       "label": "Left Menu - Lifestyle/Breed"
+    },
+    {
+      "type": "text",
+      "id": "menu_2_heading",
+      "label": "Left Menu - Heading"
     },
     {
       "type": "link_list",
