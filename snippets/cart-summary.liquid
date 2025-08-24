@@ -59,7 +59,7 @@
       class="cart__summary-item cart__total"
       role="status"
     >
-      <span class="cart__total-label cart-primary-typography">{{ 'content.cart_estimated_total' | t }}</span>
+      <span class="cart__total-label cart-primary-typography">total</span>
       <text-component
         ref="cartTotal"
         value="{{ total_price | strip_html }}"
@@ -70,7 +70,7 @@
         {{ total_price }}
       </text-component>
     </span>
-    {% if settings.show_installments %}
+    {% comment %} {% if settings.show_installments %}
       <span class="cart__summary-item cart__installments">
         {% form 'cart', cart %}
           {{ form | payment_terms }}
@@ -79,7 +79,7 @@
     {% endif %}
     <div class="cart__summary-item tax-note cart-primary-typography">
       {% render 'tax-info', has_discounts_enabled: settings.show_add_discount_code %}
-    </div>
+    </div> {% endcomment %}
   </div>
 </div>
 
