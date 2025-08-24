@@ -630,7 +630,6 @@
           let isOverTarget = false;
           item.addEventListener('mouseenter', () => {
             target.classList.add('active');
-            alert('asdasd');
           });
           item.addEventListener('mouseleave', () => {
             setTimeout(() => {
@@ -639,6 +638,7 @@
               }
             }, 300);
           });
+          console.log(target);
           target.addEventListener('mouseenter', () => {
             isOverTarget = true;
             target.classList.add('active');
