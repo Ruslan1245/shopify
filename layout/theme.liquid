@@ -76,47 +76,81 @@
       {% render 'quick-add-modal' %}
     {% endif %}
 
-    <script>
+<script>
   document.addEventListener('DOMContentLoaded', function () {
-    new Swiper('.upsell-swiper', {
-      slidesPerView: 1.2,
-      spaceBetween: 20,
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      breakpoints: {
-        480: {
-          slidesPerView: 1,
-        },
-        768: {
-          slidesPerView: 1.3,
-        },
-        1024: {
-          slidesPerView: 2,
-        },
-      },
-    });
-    new Swiper('.upsell-swiper-empty', {
-      slidesPerView: 1.2,
-      spaceBetween: 20,
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      breakpoints: {
-        480: {
-          slidesPerView: 1,
-        },
-        768: {
-          slidesPerView: 1.3,
-        },
-        1024: {
-          slidesPerView: 2,
-        },
-      },
-    });
+    let upsellSwiper, upsellEmptySwiper;
+
+    function initUpsellSwiper() {
+      if (
+        !upsellSwiper ||
+        upsellSwiper.destroyed ||
+        upsellSwiper.slides.length === 0
+      ) {
+        if (upsellSwiper) upsellSwiper.destroy(true, true);
+
+        upsellSwiper = new Swiper('.upsell-swiper', {
+          slidesPerView: 1.2,
+          spaceBetween: 20,
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+          breakpoints: {
+            480: {
+              slidesPerView: 1,
+            },
+            768: {
+              slidesPerView: 1.3,
+            },
+            1024: {
+              slidesPerView: 2,
+            },
+          },
+        });
+      }
+    }
+
+    function initUpsellEmptySwiper() {
+      if (
+        !upsellEmptySwiper ||
+        upsellEmptySwiper.destroyed ||
+        upsellEmptySwiper.slides.length === 0
+      ) {
+        if (upsellEmptySwiper) upsellEmptySwiper.destroy(true, true);
+
+        upsellEmptySwiper = new Swiper('.upsell-swiper-empty', {
+          slidesPerView: 1.2,
+          spaceBetween: 20,
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+          breakpoints: {
+            480: {
+              slidesPerView: 1,
+            },
+            768: {
+              slidesPerView: 1.3,
+            },
+            1024: {
+              slidesPerView: 2,
+            },
+          },
+        });
+      }
+    }
+
+    // Initial init
+    initUpsellSwiper();
+    initUpsellEmptySwiper();
+
+    // Recheck every 1 second
+    setInterval(() => {
+      initUpsellSwiper();
+      initUpsellEmptySwiper();
+    }, 1000);
   });
 </script>
+
   </body>
 </html>
