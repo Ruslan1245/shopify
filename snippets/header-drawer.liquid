@@ -92,7 +92,9 @@
                 style="--menu-drawer-animation-index: {{ animation_index }};"
                 class="{%- if block_settings.drawer_accordion -%}menu-drawer__list-item--deep{%- else -%}menu-drawer__list-item--flat{%- endif -%}{% if block_settings.drawer_dividers %} menu-drawer__list-item--divider{% endif %}"
               >
-                {% if block_settings.drawer_accordion and link.links != blank %}
+                {% if section.settings.menu_handle_set  == link.handle %}
+                  sdfsdf
+                {% elsif block_settings.drawer_accordion and link.links != blank %}
                   {%- comment -%}
                     Accordion for links with children, in menus with fewer than 3 levels of links
                   {%- endcomment -%}
@@ -215,7 +217,6 @@
                   {%- comment -%}
                     Simple links for links with no children (regardless of accordion setting), in menus with fewer than 3 levels of links
                   {%- endcomment -%}
-                   {{ section.settings.menu_handle_set }}
                   <a
                     id="HeaderDrawer-{{ link.handle }}"
                     href="{{ link.url }}"
