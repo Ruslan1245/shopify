@@ -1811,13 +1811,19 @@
       {
         "type": "text",
         "id": "upsell_heading",
-        "label": "Upsell Heading",
+        "label": "Heading",
         "default": "You May Also Like To Add!"
       },
       {
         "type": "product_list",
         "id": "upsell_products",
-        "label": "Select Products to Upsell"
+        "label": "Upsell Products"
+      },
+      {
+        "type": "text",
+        "id": "upsell_message",
+        "label": "Message Above Button",
+        "default": "Limited stock available"
       },
       {
         "type": "text",
