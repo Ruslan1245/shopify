@@ -1020,6 +1020,11 @@ span.cart-discount__label {
 .menu-drawer__menu .nutram-mega-wrap .nutram-mega-left h4.nutram-mega-title {
     font-size: 15px;
 }
+.menu-drawer__menu .nutram-mega-wrap .nutram-mega-left ul.nutram-mega-list a
+ {
+    font-size: 16px;
+    line-height: 120%;
+}
 
     .home-feature-collection .group-block .group-block-content .text-block:first-child p {
         font-size: 32px !important;
