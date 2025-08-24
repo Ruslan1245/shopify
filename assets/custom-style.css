@@ -979,6 +979,9 @@ span.cart-discount__label {
 .upsell-wrapper .swiper.upsell-swiper .swiper-wrapper .swiper-slide {
     width: calc(50% - 10px) !important;
 }
+.upsell-wrapper .swiper.upsell-swiper .swiper-wrapper .swiper-slide .product-info {
+    text-align: left;
+}
 /* button.button.cart-items__remove span {
     padding-left: 20px;
 } */
