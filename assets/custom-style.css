@@ -857,6 +857,7 @@ button.button.add-to-cart-button.button.atc-added:after {
     font-size: 20px;
     text-align: left;
     line-height: 120%;
+    color: #353535;
 }
 @media(max-width:767px){
     .home-feature-collection .group-block .group-block-content .text-block:first-child p {
