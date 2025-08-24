@@ -204,10 +204,33 @@
             class="cart-drawer__content motion-reduce"
             aria-label="{{ 'accessibility.cart' | t }}"
           >
-            <span class="cart-drawer__heading h3 cart-drawer__heading--empty">
-              {{ 'content.your_cart_is_empty' | t }}
-            </span>
-            asdasd
+            <div class="cart-empty-box">
+  <div class="cart-empty-box__rating">
+    ⭐⭐⭐⭐⭐ <span>4.8/5 loved by thousands of pet parents</span>
+  </div>
+
+  <h2 class="cart-empty-box__heading">Your Cart Is Empty</h2>
+
+  {% if section.settings.below_message_cart %}
+    <p class="cart-empty-box__subtext">
+      {{ section.settings.below_message_cart }}
+    </p>
+  {% endif %}
+
+  <div class="cart-empty-box__buttons">
+    {% if section.settings.first_btn_1 and section.settings.first_btn_1_url %}
+      <a href="{{ section.settings.first_btn_1_url }}" class="cart-empty-box__button cart-empty-box__button--primary">
+        {{ section.settings.first_btn_1 }}
+      </a>
+    {% endif %}
+
+    {% if section.settings.second_btn_2 and section.settings.second_btn__url %}
+      <a href="{{ section.settings.second_btn__url }}" class="cart-empty-box__button cart-empty-box__button--secondary">
+        {{ section.settings.second_btn_2 }}
+      </a>
+    {% endif %}
+  </div>
+</div>
 
             <div class="cart-drawer__items">
               {% render 'cart-products' %}
