@@ -426,6 +426,47 @@
         text-decoration: none;
       }
     </style>
+    <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const menuItems = document.querySelectorAll('.main__menu_listed');
+
+    menuItems.forEach(item => {
+      const dataId = item.getAttribute('data-id');
+      const target = document.querySelector(`[data-val="${dataId}"]`);
+
+      if (!target) return;
+
+      let isOverTarget = false;
+
+      // Hover over menu item
+      item.addEventListener('mouseenter', () => {
+        target.classList.add('active');
+      });
+
+      // Leave menu item
+      item.addEventListener('mouseleave', () => {
+        setTimeout(() => {
+          if (!isOverTarget) {
+            target.classList.remove('active');
+          }
+        }, 100); // small delay to check if pointer goes to target
+      });
+
+      // Enter target element
+      target.addEventListener('mouseenter', () => {
+        isOverTarget = true;
+        target.classList.add('active');
+      });
+
+      // Leave target element
+      target.addEventListener('mouseleave', () => {
+        isOverTarget = false;
+        target.classList.remove('active');
+      });
+    });
+  });
+</script>
+
   {% endif %}
 </header-component>
 
