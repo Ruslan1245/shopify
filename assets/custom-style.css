@@ -1053,6 +1053,27 @@ span.cart-discount__label {
 .menu-drawer .menu-drawer__menu.details-content {
     padding: 0px;
 }
+a.nutram-mega-cta-btn
+ {
+    border-radius: 30px;
+    padding: 14px 30px;
+    width: 100%;
+    display: flex;
+    background-color: #4498CD;
+    justify-content: space-between;
+    align-items: center;
+}
+a.nutram-mega-cta-btn:after {
+    content: "";
+    background-image: url(https://cdn.shopify.com/s/files/1/0627/0422/2426/files/Vector_3.png?v=1756039423);
+    height: 15px;
+    width: 18px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: flex;
+    justify-content: right;
+    text-align: right;
+}
 
     .home-feature-collection .group-block .group-block-content .text-block:first-child p {
         font-size: 32px !important;
