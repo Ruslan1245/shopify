@@ -1040,9 +1040,15 @@ span.cart-discount__label {
     text-transform: capitalize;
     padding-top: 10px;
 }
-.nutram-mega-center {
+.menu-drawer .nutram-mega-center {
         display: flex;
         column-gap: 12px;
+    }
+  .menu-drawer  .nutram-mega-product-desc {
+        font-size: 12px;
+        color: #353535;
+        line-height: 90%;
+        padding-top: 2px;
     }
 .menu-drawer .menu-drawer__menu.details-content {
     padding: 0px;
