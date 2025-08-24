@@ -868,6 +868,16 @@ button.button.add-to-cart-button.button.atc-added:after {
 .cart-drawer .dialog-drawer .cart-items__quantity .quantity-selector.cart-primary-typography {
     flex: auto;
 }
+.cart-drawer .dialog-drawer .quantity-selector.cart-primary-typography button.quantity-minus
+ {
+    background-color: #4498CD1A;
+    border-radius: 25px 0px 0px 25px;
+}
+.cart-drawer .dialog-drawer .quantity-selector.cart-primary-typography .button.quantity-plus
+ {
+    background-color: #4498CD1A;
+    border-radius: 25px 0px 0px 25px;
+}
 @media(max-width:767px){
     .home-feature-collection .group-block .group-block-content .text-block:first-child p {
         font-size: 32px !important;
