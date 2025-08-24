@@ -28,8 +28,8 @@
       blocking="render"
       id="view-transition-render-blocker"
     >
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-      <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     {%- render 'meta-tags' -%}
     {%- render 'fonts' -%}
@@ -75,17 +75,16 @@
     {% if settings.quick_add or settings.mobile_quick_add %}
       {% render 'quick-add-modal' %}
     {% endif %}
-
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    let upsellDrawerSwiper = null;
+    let upsellSwiper = null;
+    let upsellEmptySwiper = null;
 
-    function initUpsellDrawerSwiper() {
-      const sliderEl = document.querySelector('.upsell-swiper-empty');
+    function initUpsellSwiper() {
+      const sliderEl = document.querySelector('.upsell-swiper');
+      if (!sliderEl || upsellSwiper) return;
 
-      if (!sliderEl || upsellDrawerSwiper) return;
-
-      upsellDrawerSwiper = new Swiper('.upsell-swiper-empty', {
+      upsellSwiper = new Swiper('.upsell-swiper', {
         slidesPerView: 1.2,
         spaceBetween: 20,
         navigation: {
@@ -93,15 +92,28 @@
           prevEl: '.swiper-button-prev',
         },
         breakpoints: {
-          480: {
-            slidesPerView: 1,
-          },
-          768: {
-            slidesPerView: 1.3,
-          },
-          1024: {
-            slidesPerView: 2,
-          },
+          480: { slidesPerView: 1 },
+          768: { slidesPerView: 1.3 },
+          1024: { slidesPerView: 2 },
+        },
+      });
+    }
+
+    function initUpsellEmptySwiper() {
+      const sliderEl = document.querySelector('.upsell-swiper-empty');
+      if (!sliderEl || upsellEmptySwiper) return;
+
+      upsellEmptySwiper = new Swiper('.upsell-swiper-empty', {
+        slidesPerView: 1.2,
+        spaceBetween: 20,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        breakpoints: {
+          480: { slidesPerView: 1 },
+          768: { slidesPerView: 1.3 },
+          1024: { slidesPerView: 2 },
         },
       });
     }
@@ -110,18 +122,15 @@
       const drawer = document.querySelector('.cart-drawer__dialog');
 
       if (drawer && drawer.hasAttribute('open')) {
-        if (!upsellDrawerSwiper) {
-          initUpsellDrawerSwiper();
-        }
+        if (!upsellSwiper) initUpsellSwiper();
+        if (!upsellEmptySwiper) initUpsellEmptySwiper();
       } else {
-        // Optional: reset swiper when drawer closes
-        upsellDrawerSwiper = null;
+        upsellSwiper = null;
+        upsellEmptySwiper = null;
       }
-    }, 1000); // checks every 1 second
+    }, 1000);
   });
 </script>
-
-
 
   </body>
 </html>
