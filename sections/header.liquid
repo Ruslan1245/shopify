@@ -625,11 +625,11 @@
 
         menuItems.forEach((item) => {
           const dataId = item.getAttribute('data-id');
-          console.log(dataId);
           const target = document.querySelector(`[data-val="${dataId}"]`);
           if (!target) return;
           let isOverTarget = false;
           item.addEventListener('mouseenter', () => {
+            console.log(target);
             target.classList.add('active');
           });
           item.addEventListener('mouseleave', () => {
