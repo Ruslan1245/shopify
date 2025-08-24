@@ -896,7 +896,7 @@ button.button.add-to-cart-button.button.atc-added:after {
     text-align: center;
     text-transform: capitalize;
 }
-.cart-drawer .dialog-drawer text-component.cart__total-value {
+.cart-drawer .dialog-drawer text-component.cart__total-value, .cart-drawer .dialog-drawer span.cart__total-label {
     font-size: 20px;
     line-height: 100%;
     color: #353535;
