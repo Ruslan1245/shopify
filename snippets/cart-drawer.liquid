@@ -182,7 +182,12 @@
       >
         {%- if cart.empty? -%}
           <div class="cart-drawer__header">
-            asdasd
+            <div class="cart__drawer__emptytop">
+              <div class="cart_icon"></div>
+              <div class="cart_content">
+                Your cart (0 Item)
+              </div>
+            </div>
             <button
               ref="closeButton"
               on:click="cart-drawer-component/close"
