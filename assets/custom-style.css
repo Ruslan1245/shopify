@@ -954,6 +954,12 @@ span.cart-discount__label {
     text-align: center;
     text-transform: capitalize;
 }
+.cart-drawer .dialog-drawer .upsell-wrapper .swiper-button-prev, .cart-drawer .dialog-drawer .upsell-wrapper .swiper-button-next
+ {
+    color: #fff;
+    background: #353535;
+    border: 1px solid #353535;
+}
 /* button.button.cart-items__remove span {
     padding-left: 20px;
 } */
