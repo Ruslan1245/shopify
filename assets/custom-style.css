@@ -839,6 +839,13 @@ button.button.add-to-cart-button.button.atc-added:after {
     text-transform: capitalize;
     color: #353535;
 }
+.cart-drawer .dialog-drawer p.shipping-message {
+    font-family: Outfit;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 140%;
+    text-transform: capitalize;
+}
 @media(max-width:767px){
     .home-feature-collection .group-block .group-block-content .text-block:first-child p {
         font-size: 32px !important;
