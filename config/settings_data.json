@@ -55,6 +55,8 @@
     "product_title_case": "default",
     "cart_price_font": "secondary",
     "auto_open_cart_drawer": true,
+    "below_message_cart": "Explore Canada’s cleanest kibble",
+    "first_btn_1": "For Cats",
     "free_shipping_threshold": 200,
     "upsell_products": [
       "quiz",

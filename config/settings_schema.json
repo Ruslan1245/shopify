@@ -1805,7 +1805,7 @@
         "label": "First button text",
       },
       {
-        "type": "text",
+        "type": "url",
         "id": "first_btn_1_url",
         "label": "First button url",
       },
@@ -1815,7 +1815,7 @@
         "label": "Second button text",
       },
       {
-        "type": "text",
+        "type": "url",
         "id": "second_btn__url",
         "label": "Second button url",
       },
