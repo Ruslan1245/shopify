@@ -879,12 +879,22 @@ button.button.add-to-cart-button.button.atc-added:after {
     background-color: #4498CD1A;
     border-radius: 0px 25px 25px 0px;
 }
-button.button.cart-items__remove {
+.cart-drawer .dialog-drawer button.button.cart-items__remove {
     flex-direction: row;
     display: flex;
     width: 100%;
     align-items: center;
     height: auto;
+}
+.cart-drawer .dialog-drawer button#checkout {
+    background-color: #3086C8;
+    border-radius: 100px;
+    font-size: 19px;
+    line-height: 120%;
+    font-family: Outfit;
+    font-weight: 700;
+    text-align: center;
+    text-transform: capitalize;
 }
 /* button.button.cart-items__remove span {
     padding-left: 20px;
