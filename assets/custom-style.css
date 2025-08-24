@@ -1041,8 +1041,11 @@ span.cart-discount__label {
     padding-top: 10px;
 }
 .menu-drawer .nutram-mega-center {
-        display: flex;
+        /* display: flex; */
         column-gap: 12px;
+        display: grid;
+        column-gap: 12px;
+        grid-template-columns: repeat(2, 1fr);
     }
   .menu-drawer  .nutram-mega-product-desc {
         font-size: 12px;
