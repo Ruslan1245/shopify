@@ -929,6 +929,7 @@ span.cart-discount__label {
     font-size: 16px;
     line-height: 125%;
     letter-spacing: -0.2px;
+    margin: 0px;
 }
 .cart-drawer .dialog-drawer span.cart-drawer__heading.cart-drawer__heading--empty {
     color: #3086C8;
