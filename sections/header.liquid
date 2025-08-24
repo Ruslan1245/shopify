@@ -249,6 +249,106 @@
     </div>
   {% endif %}
 
+  <div class="mega-menu">
+  <div class="mega-menu__left">
+    {% if section.settings.menu_1 %}
+      <div class="menu-group">
+        <h4>Lifestyle/Breed</h4>
+        <ul>
+          {% for link in linklists[section.settings.menu_1].links %}
+            <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
+    
+    {% if section.settings.menu_2 %}
+      <div class="menu-group">
+        <h4>Food Type</h4>
+        <ul>
+          {% for link in linklists[section.settings.menu_2].links %}
+            <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
+  </div>
+
+  <div class="mega-menu__center">
+    {% if section.settings.center_collection %}
+      {% assign collection = collections[section.settings.center_collection] %}
+      {% for product in collection.products limit: 3 %}
+        <div class="product-block">
+          <a href="{{ product.url }}">
+            <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}">
+            <h3>{{ product.title }}</h3>
+            {% if product.description != blank %}
+              <p>{{ product.description | strip_html | truncate: 100 }}</p>
+            {% endif %}
+          </a>
+        </div>
+      {% endfor %}
+    {% endif %}
+  </div>
+
+  <div class="mega-menu__right">
+    {% if section.settings.side_image %}
+      <img src="{{ section.settings.side_image | image_url: 'medium' }}" alt="Side Image">
+    {% endif %}
+    <div class="cta-content">
+      <h3>{{ section.settings.side_heading }}</h3>
+      <p>{{ section.settings.side_content }}</p>
+      {% if section.settings.button_link and section.settings.button_label %}
+        <a class="button" href="{{ section.settings.button_link }}">{{ section.settings.button_label }}</a>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<style>
+.mega-menu {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  gap: 20px;
+}
+.mega-menu__left, .mega-menu__center, .mega-menu__right {
+  flex: 1;
+}
+.menu-group h4 {
+  font-weight: bold;
+}
+.menu-group ul {
+  list-style: none;
+  padding: 0;
+}
+.menu-group li {
+  margin-bottom: 5px;
+}
+.product-block {
+  text-align: center;
+}
+.product-block img {
+  max-width: 100%;
+  height: auto;
+}
+.cta-content {
+  background: #f2f7fb;
+  padding: 20px;
+  border-radius: 8px;
+}
+.button {
+  display: inline-block;
+  padding: 10px 15px;
+  background: #007bff;
+  color: white;
+  text-decoration: none;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+</style>
+
+
 </header-component>
 
 
