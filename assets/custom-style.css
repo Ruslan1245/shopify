@@ -1006,9 +1006,9 @@ span.cart-discount__label {
     padding-left: 20px;
 } */
 @media(max-width:767px){
-    .upsell-wrapper .swiper.upsell-swiper .swiper-wrapper .swiper-slide {
+    /* .upsell-wrapper .swiper.upsell-swiper .swiper-wrapper .swiper-slide {
     width: 100% !important;
-}
+} */
     .home-feature-collection .group-block .group-block-content .text-block:first-child p {
         font-size: 32px !important;
         line-height: 90%;
