@@ -78,70 +78,49 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    let upsellSwiper = null;
-    let upsellEmptySwiper = null;
+    let upsellDrawerSwiper = null;
 
-    function checkAndInitSwipers() {
-      // Flag to stop interval once both sliders are initialized
-      let allSet = true;
+    function initUpsellDrawerSwiper() {
+      const sliderEl = document.querySelector('.upsell-swiper-empty');
 
-      // Check and init upsell-swiper
-      if (!upsellSwiper && document.querySelector('.upsell-swiper')) {
-        upsellSwiper = new Swiper('.upsell-swiper', {
-          slidesPerView: 1.2,
-          spaceBetween: 20,
-          navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
+      if (!sliderEl || upsellDrawerSwiper) return;
+
+      upsellDrawerSwiper = new Swiper('.upsell-swiper-empty', {
+        slidesPerView: 1.2,
+        spaceBetween: 20,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        breakpoints: {
+          480: {
+            slidesPerView: 1,
           },
-          breakpoints: {
-            480: {
-              slidesPerView: 1,
-            },
-            768: {
-              slidesPerView: 1.3,
-            },
-            1024: {
-              slidesPerView: 2,
-            },
+          768: {
+            slidesPerView: 1.3,
           },
-        });
-      }
-
-      if (!upsellSwiper) allSet = false;
-
-      // Check and init upsell-swiper-empty
-      if (!upsellEmptySwiper && document.querySelector('.upsell-swiper-empty')) {
-        upsellEmptySwiper = new Swiper('.upsell-swiper-empty', {
-          slidesPerView: 1.2,
-          spaceBetween: 20,
-          navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
+          1024: {
+            slidesPerView: 2,
           },
-          breakpoints: {
-            480: {
-              slidesPerView: 1,
-            },
-            768: {
-              slidesPerView: 1.3,
-            },
-            1024: {
-              slidesPerView: 2,
-            },
-          },
-        });
-      }
-
-      if (!upsellEmptySwiper) allSet = false;
-
-      // Stop interval when both are initialized
-      if (allSet) clearInterval(checkInterval);
+        },
+      });
     }
 
-    const checkInterval = setInterval(checkAndInitSwipers, 1000);
+    setInterval(() => {
+      const drawer = document.querySelector('.cart-drawer__dialog');
+
+      if (drawer && drawer.hasAttribute('open')) {
+        if (!upsellDrawerSwiper) {
+          initUpsellDrawerSwiper();
+        }
+      } else {
+        // Optional: reset swiper when drawer closes
+        upsellDrawerSwiper = null;
+      }
+    }, 1000); // checks every 1 second
   });
 </script>
+
 
 
   </body>
