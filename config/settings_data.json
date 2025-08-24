@@ -56,6 +56,11 @@
     "cart_price_font": "secondary",
     "auto_open_cart_drawer": true,
     "free_shipping_threshold": 200,
+    "upsell_products": [
+      "quiz",
+      "nutram-ideal-solution-support",
+      "nutram-sound-balancd-wellness"
+    ],
     "icon_stroke": "default",
     "input_border_width": 2,
     "inputs_border_radius": 0,
