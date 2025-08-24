@@ -620,50 +620,36 @@
     </style>
 
     <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const menuItems = document.querySelectorAll('.main__menu_listed');
+      document.addEventListener('DOMContentLoaded', function () {
+        const menuItems = document.querySelectorAll('.main__menu_listed');
 
-    menuItems.forEach((item) => {
-      const dataId = item.getAttribute('data-id');
-      const target = document.querySelector(`[data-val="${dataId}"]`);
-
-      if (!target) return;
-
-      let activeTimeout;
-
-      // Mouse enters menu item
-      item.addEventListener('mouseenter', () => {
-        clearTimeout(activeTimeout);
-        target.classList.add('active');
-      });
-
-      // Mouse leaves menu item
-      item.addEventListener('mouseleave', () => {
-        activeTimeout = setTimeout(() => {
-          if (!target.matches(':hover')) {
+        menuItems.forEach((item) => {
+          const dataId = item.getAttribute('data-id');
+          console.log(dataId);
+          const target = document.querySelector(`[data-val="${dataId}"]`);
+          if (!target) return;
+          let isOverTarget = false;
+          item.addEventListener('mouseenter', () => {
+            target.classList.add('active');
+          });
+          item.addEventListener('mouseleave', () => {
+            setTimeout(() => {
+              if (!isOverTarget) {
+                target.classList.remove('active');
+              }
+            }, 300);
+          });
+          target.addEventListener('mouseenter', () => {
+            isOverTarget = true;
+            target.classList.add('active');
+          });
+          target.addEventListener('mouseleave', () => {
+            isOverTarget = false;
             target.classList.remove('active');
-          }
-        }, 200);
+          });
+        });
       });
-
-      // Mouse enters target
-      target.addEventListener('mouseenter', () => {
-        clearTimeout(activeTimeout);
-        target.classList.add('active');
-      });
-
-      // Mouse leaves target
-      target.addEventListener('mouseleave', () => {
-        activeTimeout = setTimeout(() => {
-          if (!item.matches(':hover')) {
-            target.classList.remove('active');
-          }
-        }, 200);
-      });
-    });
-  });
-</script>
-
+    </script> 
   {% endif %}
 </header-component>
 
