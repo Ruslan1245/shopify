@@ -985,6 +985,11 @@ span.cart-discount__label {
 .upsell-wrapper .swiper.upsell-swiper .swiper-wrapper .swiper-slide .product-info button.shopify-buy-button {
     width: 100%;
 }
+.upsell-wrapper .swiper.upsell-swiper .swiper-wrapper .swiper-slide .product-info button.shopify-buy-button {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
 button.shopify-buy-button:after {
     content: "";
     background-image: url(/cdn/shop/files/Vector_5c1622c0-29e6-402a-a815-8da37656e4fc.png?v=1755184216);
