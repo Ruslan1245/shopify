@@ -82,7 +82,10 @@
     let upsellEmptySwiper = null;
 
     function checkAndInitSwipers() {
-      // Init .upsell-swiper if not already set
+      // Flag to stop interval once both sliders are initialized
+      let allSet = true;
+
+      // Check and init upsell-swiper
       if (!upsellSwiper && document.querySelector('.upsell-swiper')) {
         upsellSwiper = new Swiper('.upsell-swiper', {
           slidesPerView: 1.2,
@@ -105,7 +108,9 @@
         });
       }
 
-      // Init .upsell-swiper-empty if not already set
+      if (!upsellSwiper) allSet = false;
+
+      // Check and init upsell-swiper-empty
       if (!upsellEmptySwiper && document.querySelector('.upsell-swiper-empty')) {
         upsellEmptySwiper = new Swiper('.upsell-swiper-empty', {
           slidesPerView: 1.2,
@@ -127,12 +132,17 @@
           },
         });
       }
+
+      if (!upsellEmptySwiper) allSet = false;
+
+      // Stop interval when both are initialized
+      if (allSet) clearInterval(checkInterval);
     }
 
-    // Check every 1 second
-    setInterval(checkAndInitSwipers, 1000);
+    const checkInterval = setInterval(checkAndInitSwipers, 1000);
   });
 </script>
+
 
   </body>
 </html>
