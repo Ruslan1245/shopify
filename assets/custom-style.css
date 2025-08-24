@@ -878,6 +878,10 @@ button.button.add-to-cart-button.button.atc-added:after {
     background-color: #4498CD1A;
     border-radius: 0px 25px 25px 0px;
 }
+button.button.cart-items__remove {
+    flex-direction: row;
+    display: flex;
+}
 @media(max-width:767px){
     .home-feature-collection .group-block .group-block-content .text-block:first-child p {
         font-size: 32px !important;
