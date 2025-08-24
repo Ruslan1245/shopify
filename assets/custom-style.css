@@ -896,6 +896,13 @@ button.button.add-to-cart-button.button.atc-added:after {
     text-align: center;
     text-transform: capitalize;
 }
+.cart-drawer .dialog-drawer text-component.cart__total-value {
+    font-size: 20px;
+    line-height: 100%;
+    color: #353535;
+    font-family: outfit;
+    font-weight: 500;
+}
 /* button.button.cart-items__remove span {
     padding-left: 20px;
 } */
