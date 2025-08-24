@@ -204,7 +204,7 @@
       ],
       "name": "CTA Banner with Overlay",
       "settings": {
-        "background_image": "shopify://shop_images/160f936fac8a3509a4997f3ba92f947e889f5fc9.jpg",
+        "background_image": "shopify://shop_images/c15da58cd2593ee29d3f7d9c89a3a2665e713b7a.jpg",
         "fallback_bg_color": "#4a9ee7",
         "overlay_color": "#4a9ee7",
         "overlay_opacity": 85,
