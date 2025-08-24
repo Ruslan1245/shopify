@@ -882,6 +882,8 @@ button.button.cart-items__remove {
     flex-direction: row;
     display: flex;
     width: 100%;
+    align-items: center;
+    height: auto;
 }
 /* button.button.cart-items__remove span {
     padding-left: 20px;
