@@ -1165,6 +1165,7 @@
         "feature_zBYHjq": {
           "type": "feature",
           "settings": {
+            "image_icon": "shopify://shop_images/Group_87_bc1bb9f0-be15-42d4-b2b1-37808fcd9bdc.png",
             "feature_text": "No Recalls, Ever!"
           }
         },
@@ -1178,6 +1179,7 @@
         "feature_hk37Ry": {
           "type": "feature",
           "settings": {
+            "image_icon": "shopify://shop_images/Group_88_ca20ced1-0c7b-4fdc-8067-7acde8ea7347.png",
             "feature_text": "Farm-to-Bowl Sourcing"
           }
         }
