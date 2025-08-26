@@ -1756,6 +1756,7 @@
         "button_url": "shopify://collections",
         "button_bg_color": "#f8c933",
         "button_text_color": "#333333",
+        "testimonial_image": "shopify://shop_images/pexels-crina-doltu-490924-1202481.jpg",
         "testimonial_rating": 5,
         "testimonial_text": "“My cat loves this and I am happy because he is then eating healthy food.”",
         "customer_name": "Kathleen B",
