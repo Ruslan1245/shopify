@@ -1224,6 +1224,7 @@
         "testimonial_gD3hzW": {
           "type": "testimonial",
           "settings": {
+            "pet_image": "shopify://shop_images/pexels-hnoody93-58997.jpg",
             "star_rating": 5,
             "review_text": "My cats used to love this treat ... I say \"used to love\" because for over 2 months, I haven't been able to find it in stores at all! My local pet store orders it every week but never receives any. However, they do receive your other products. I also buy the I19 food. Hoping that this treat will be back in my local pet store very soon!",
             "reviewer_name": "Manon",
@@ -1233,6 +1234,7 @@
         "testimonial_r3Ny3e": {
           "type": "testimonial",
           "settings": {
+            "pet_image": "shopify://shop_images/pexels-catscoming-978555.jpg",
             "star_rating": 5,
             "review_text": "My cats love the catfood T24.",
             "reviewer_name": "John Anderson",
