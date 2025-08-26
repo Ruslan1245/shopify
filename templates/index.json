@@ -695,7 +695,7 @@
         "button1_link": "shopify://collections/all-dogs",
         "button2_text": "For Dogs",
         "button2_link": "shopify://collections/dry-food-cat",
-        "collection": "frontpage",
+        "collection": "all-dogs",
         "layout_type": "carousel",
         "carousel_on_mobile": false,
         "max_products": 16,
