@@ -692,10 +692,10 @@
       "settings": {
         "custom_class": "home-feature-collection",
         "button1_text": "For Cats",
-        "button1_link": "shopify://collections/adult-cat",
+        "button1_link": "shopify://collections/all-dogs",
         "button2_text": "For Dogs",
         "button2_link": "shopify://collections/dry-food-cat",
-        "collection": "frontpage",
+        "collection": "all-dogs",
         "layout_type": "carousel",
         "carousel_on_mobile": false,
         "max_products": 16,
