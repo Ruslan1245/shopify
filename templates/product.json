@@ -584,8 +584,8 @@
           "type": "testimonial",
           "settings": {
             "star_rating": 5,
-            "review_text": "After switching, Max's coat is shinier and tummy trouble disappeared! In less weeks.",
-            "reviewer_name": "JOHN D.",
+            "review_text": "I have 3 cats, all of them rescues. This is the one dry cat food that they all love and agree on!!!",
+            "reviewer_name": "Nena Sinclair",
             "customer_badge": "VERIFIED CUSTOMER"
           }
         },
@@ -593,8 +593,8 @@
           "type": "testimonial",
           "settings": {
             "star_rating": 5,
-            "review_text": "After switching, Max's coat is shinier and tummy trouble disappeared! In less weeks.",
-            "reviewer_name": "JOHN D.",
+            "review_text": "Tibi adores this food. He had crystals in his urine and has almost none since he started eating this food. I am very satisfied with the result.",
+            "reviewer_name": "Diane D",
             "customer_badge": "VERIFIED CUSTOMER"
           }
         },
@@ -602,8 +602,8 @@
           "type": "testimonial",
           "settings": {
             "star_rating": 5,
-            "review_text": "After switching, Max's coat is shinier and tummy trouble disappeared! In less weeks.",
-            "reviewer_name": "JOHN D.",
+            "review_text": "My Golden Retriever had some food sensitivity issues. This food has changed his life!",
+            "reviewer_name": "Gracie Grace",
             "customer_badge": "VERIFIED CUSTOMER"
           }
         },
@@ -611,8 +611,8 @@
           "type": "testimonial",
           "settings": {
             "star_rating": 5,
-            "review_text": "After switching, Max's coat is shinier and tummy trouble disappeared! In less weeks.",
-            "reviewer_name": "JOHN D.",
+            "review_text": "Best food ever! My two cats love it! Thank you for keeping them happy and healthy.",
+            "reviewer_name": "Alison Priddle",
             "customer_badge": "VERIFIED CUSTOMER"
           }
         },
@@ -620,8 +620,17 @@
           "type": "testimonial",
           "settings": {
             "star_rating": 5,
-            "review_text": "After switching, Max's coat is shinier and tummy trouble disappeared! In less weeks.",
-            "reviewer_name": "JOHN D.",
+            "review_text": "My finicky cat loves this!",
+            "reviewer_name": "Mary A Berg",
+            "customer_badge": "VERIFIED CUSTOMER"
+          }
+        },
+        "testimonial_W494Mg": {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": 5,
+            "review_text": "My cats love this food. I have three cats of various ages who love this food and are extremely healthy.",
+            "reviewer_name": "Shannon L",
             "customer_badge": "VERIFIED CUSTOMER"
           }
         },
@@ -629,8 +638,8 @@
           "type": "testimonial",
           "settings": {
             "star_rating": 5,
-            "review_text": "After switching, Max's coat is shinier and tummy trouble disappeared! In less weeks.",
-            "reviewer_name": "JOHN D.",
+            "review_text": "My cat loves this food and he is a picky eater! He’s stayed a great weight and healthy!",
+            "reviewer_name": "Claudia Torres",
             "customer_badge": "VERIFIED CUSTOMER"
           }
         },
@@ -647,8 +656,8 @@
           "type": "testimonial",
           "settings": {
             "star_rating": 5,
-            "review_text": "",
-            "reviewer_name": "",
+            "review_text": "My cats love this product and I feel good about giving it to them.",
+            "reviewer_name": "William Stewart",
             "customer_badge": "VERIFIED CUSTOMER"
           }
         },
@@ -656,8 +665,8 @@
           "type": "testimonial",
           "settings": {
             "star_rating": 5,
-            "review_text": "",
-            "reviewer_name": "",
+            "review_text": "Nutram Sound Balanced Wellness Adult & Senior Cat food is awesome. Cats love it. My senior girl Honey did.",
+            "reviewer_name": "Joanne Liwery",
             "customer_badge": "VERIFIED CUSTOMER"
           }
         },
@@ -665,8 +674,8 @@
           "type": "testimonial",
           "settings": {
             "star_rating": 5,
-            "review_text": "",
-            "reviewer_name": "",
+            "review_text": "Mes 3 chats l’adorent",
+            "reviewer_name": "Isabelle",
             "customer_badge": "VERIFIED CUSTOMER"
           }
         },
@@ -674,8 +683,8 @@
           "type": "testimonial",
           "settings": {
             "star_rating": 5,
-            "review_text": "",
-            "reviewer_name": "",
+            "review_text": "My Beanie Boo is always happy to know that it's time to eat her S5 recipe!",
+            "reviewer_name": "Beanie Boo",
             "customer_badge": "VERIFIED CUSTOMER"
           }
         },
@@ -683,8 +692,8 @@
           "type": "testimonial",
           "settings": {
             "star_rating": 5,
-            "review_text": "",
-            "reviewer_name": "",
+            "review_text": "My very finicky Maine Coon absolutely loves this and comes running when it hears the bag opening!!",
+            "reviewer_name": "Jan Vaughan",
             "customer_badge": "VERIFIED CUSTOMER"
           }
         }
@@ -695,6 +704,7 @@
         "testimonial_HgBp9T",
         "testimonial_JdNtFt",
         "testimonial_h6bREm",
+        "testimonial_W494Mg",
         "testimonial_nPXewi",
         "testimonial_rGK9aA",
         "testimonial_MWqiqB",
