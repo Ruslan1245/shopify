@@ -1044,7 +1044,7 @@ span.cart-discount__label {
 
 .sorting-filter__select-wrapper {
     background-color: #fff;
-    border-radius: 30px;
+    border-radius: 30px !important;
     text-align: center;
     display: flex;
     justify-content: center;
@@ -1056,7 +1056,7 @@ span.cart-discount__label {
     justify-content: flex-start;
     width: fit-content;
     font-size: 10px;
-    width: 73px;
+    width: 73px !important;
 }
 
 .cleanest-kibbles__extras {
