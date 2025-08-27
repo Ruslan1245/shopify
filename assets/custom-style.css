@@ -1042,6 +1042,22 @@ span.cart-discount__label {
     background-color: #4498CD1A;
 }
 
+.sorting-filter__select-wrapper {
+    background-color: #fff;
+    border-radius: 30px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.sorting-filter__select-wrapper select {
+    text-align: center;
+    display: flex;
+    justify-content: flex-start;
+    width: fit-content;
+    font-size: 16px;
+}
+
 .cleanest-kibbles__extras {
     display: flex;
     flex-wrap: nowrap;
