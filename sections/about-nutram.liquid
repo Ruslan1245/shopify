@@ -305,11 +305,11 @@
       {% endif %}
 
       {% if section.settings.fs_list != blank %}
-        <div>
+        <ul>
           {% for item in section.settings.fs_list %}
-            <div>{{ item }}</div>
+            <li>{{ item }}</li>
           {% endfor %}
-        </div>
+        </ul>
       {% endif %}
     </div>
   </div>
