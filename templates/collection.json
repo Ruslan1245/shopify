@@ -486,6 +486,8 @@
       "type": "forgot-which-one",
       "name": "Forgot Which One Banner",
       "settings": {
+        "image": "shopify://shop_images/Image_Placeholder_88ddb337-9401-4297-9d22-ca8de435badb.png",
+        "mobile_image": "shopify://shop_images/Image_Placeholder_eaffae51-4ee2-4c30-a254-0b4ec495fbff.png",
         "heading": "Not Sure Which Recipe Fits Best?",
         "subtext": "Every dog is different. Take our quick quiz to find their perfect match. It’s fast, easy, and kinda fun.",
         "cta_text": "Find My Match",
@@ -499,8 +501,8 @@
           "type": "testimonial",
           "settings": {
             "star_rating": 5,
-            "review_text": "After switching, Max's coat is shinier and tummy trouble disappeared! In less weeks.",
-            "reviewer_name": "JOHN D.",
+            "review_text": "It’s hard to find something that my senior cat will eat. She’s very fussy and may have the beginnings of kidney disease. This blend is perfect for her.",
+            "reviewer_name": "Joanne Elforf",
             "customer_badge": "VERIFIED CUSTOMER"
           }
         },
@@ -508,8 +510,8 @@
           "type": "testimonial",
           "settings": {
             "star_rating": 5,
-            "review_text": "After switching, Max's coat is shinier and tummy trouble disappeared! In less weeks.",
-            "reviewer_name": "JOHN D.",
+            "review_text": "My dog likes this product.",
+            "reviewer_name": "Gilles Bernatchez",
             "customer_badge": "VERIFIED CUSTOMER"
           }
         },
@@ -517,8 +519,8 @@
           "type": "testimonial",
           "settings": {
             "star_rating": 5,
-            "review_text": "After switching, Max's coat is shinier and tummy trouble disappeared! In less weeks.",
-            "reviewer_name": "JOHN D.",
+            "review_text": "My cat loves this and I am happy because he is then eating healthy food.",
+            "reviewer_name": "Kathleen B",
             "customer_badge": "VERIFIED CUSTOMER"
           }
         },
@@ -526,8 +528,8 @@
           "type": "testimonial",
           "settings": {
             "star_rating": 5,
-            "review_text": "After switching, Max's coat is shinier and tummy trouble disappeared! In less weeks.",
-            "reviewer_name": "JOHN D.",
+            "review_text": "Great product! Will buy again:)",
+            "reviewer_name": "Jillian",
             "customer_badge": "VERIFIED CUSTOMER"
           }
         },
@@ -535,8 +537,8 @@
           "type": "testimonial",
           "settings": {
             "star_rating": 5,
-            "review_text": "After switching, Max's coat is shinier and tummy trouble disappeared! In less weeks.",
-            "reviewer_name": "JOHN D.",
+            "review_text": "Love this balanced nutrition for my cat...her name is Kitten and she loves it too❤️",
+            "reviewer_name": "Lana Miller",
             "customer_badge": "VERIFIED CUSTOMER"
           }
         },
@@ -544,8 +546,8 @@
           "type": "testimonial",
           "settings": {
             "star_rating": 5,
-            "review_text": "After switching, Max's coat is shinier and tummy trouble disappeared! In less weeks.",
-            "reviewer_name": "JOHN D.",
+            "review_text": "This is an amazing dog food if you don't like grains in your dog's food. It was my choice for our senior dog.",
+            "reviewer_name": "Dian Anderson",
             "customer_badge": "VERIFIED CUSTOMER"
           }
         },
@@ -553,8 +555,8 @@
           "type": "testimonial",
           "settings": {
             "star_rating": 5,
-            "review_text": "After switching, Max's coat is shinier and tummy trouble disappeared! In less weeks.",
-            "reviewer_name": "JOHN D.",
+            "review_text": "Highly recommend for any dog with food issues, worked wonderfully for our golden doodles",
+            "reviewer_name": "Diane",
             "customer_badge": "VERIFIED CUSTOMER"
           }
         },
@@ -562,8 +564,8 @@
           "type": "testimonial",
           "settings": {
             "star_rating": 5,
-            "review_text": "",
-            "reviewer_name": "",
+            "review_text": "Our new puppy just loves this food. He thinks it's a treat.",
+            "reviewer_name": "Dian Anderson",
             "customer_badge": "VERIFIED CUSTOMER"
           }
         },
@@ -571,8 +573,8 @@
           "type": "testimonial",
           "settings": {
             "star_rating": 5,
-            "review_text": "",
-            "reviewer_name": "",
+            "review_text": "My sister's cat loves it.",
+            "reviewer_name": "Jason",
             "customer_badge": "VERIFIED CUSTOMER"
           }
         },
@@ -580,8 +582,8 @@
           "type": "testimonial",
           "settings": {
             "star_rating": 5,
-            "review_text": "",
-            "reviewer_name": "",
+            "review_text": "Switched my guy over to this one because he was too fussy. Now he eats like a champ!",
+            "reviewer_name": "Robert Parr",
             "customer_badge": "VERIFIED CUSTOMER"
           }
         },
@@ -589,8 +591,8 @@
           "type": "testimonial",
           "settings": {
             "star_rating": 5,
-            "review_text": "",
-            "reviewer_name": "",
+            "review_text": "Our new puppy is loving the food.",
+            "reviewer_name": "Neil Anderson",
             "customer_badge": "VERIFIED CUSTOMER"
           }
         },
@@ -598,8 +600,8 @@
           "type": "testimonial",
           "settings": {
             "star_rating": 5,
-            "review_text": "",
-            "reviewer_name": "",
+            "review_text": "We use this food for my 5 year old very active husky and she absolutely loves it! The vet says she’s in incredible health :)",
+            "reviewer_name": "Emily Carson",
             "customer_badge": "VERIFIED CUSTOMER"
           }
         }
