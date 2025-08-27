@@ -1038,6 +1038,16 @@ span.cart-discount__label {
     display: none;
 }
 
+.facets-toggle {
+    background-color: #4498CD1A;
+}
+
+.cleanest-kibbles__extras {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+}
+
 .menu-drawer__menu .nutram-mega-wrap .nutram-mega-left h4.nutram-mega-title {
     font-size: 15px;
 }
