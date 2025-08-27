@@ -1044,7 +1044,7 @@ span.cart-discount__label {
 
 .page-class-collection .cleanest-kibbles__extras.collection_bottom_btn a{
     flex: 0 0 auto;
-    max-width: 128px;
+    max-width: fit-content;
     width:100%;
     text-align: center;
 }
