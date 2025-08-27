@@ -1051,6 +1051,7 @@ span.cart-discount__label {
 }
 
 .sorting-filter__select-wrapper select {
+    text-align: left;
     display: flex;
     justify-content: flex-start;
     width: fit-content;
