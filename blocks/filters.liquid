@@ -279,22 +279,6 @@
       </facets-form-component>
     </div>
   </div>
-{% if template.name contains 'collection' %}
-
-<div class="cleanest-kibbles__extras">
-  <a href="" class="cleanest-kibbles__cta"> All Recipes </a>
-
-  <a href="" class="cleanest-kibbles__cta"> Puppy </a>
-
-  <a href="" class="cleanest-kibbles__cta"> Adult </a>
-
-  <a href="" class="cleanest-kibbles__cta"> Senior </a>
-
-  <a href="" class="cleanest-kibbles__cta"> Large Breed </a>
-
-  <a href="" class="cleanest-kibbles__cta"> Small Breed </a>
-</div>
-{%endif %}
   <div
     class="facets-toggle {% if block_settings.enable_filtering == false %} facets-toggle--no-filters{% endif %}{% if block_settings.filter_style == 'horizontal' and block_settings.inherit_color_scheme == false %} color-{{ block_settings.color_scheme }}{% endif %}"
     style="
@@ -1101,6 +1085,23 @@
     }
   }
 {% endstylesheet %}
+
+{% if template.name contains 'collection' %}
+
+<div class="cleanest-kibbles__extras">
+  <a href="" class="cleanest-kibbles__cta"> All Recipes </a>
+
+  <a href="" class="cleanest-kibbles__cta"> Puppy </a>
+
+  <a href="" class="cleanest-kibbles__cta"> Adult </a>
+
+  <a href="" class="cleanest-kibbles__cta"> Senior </a>
+
+  <a href="" class="cleanest-kibbles__cta"> Large Breed </a>
+
+  <a href="" class="cleanest-kibbles__cta"> Small Breed </a>
+</div>
+{%endif %}
 
 {% schema %}
 {
