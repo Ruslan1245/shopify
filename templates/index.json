@@ -768,19 +768,22 @@
         "feature_N3ftCy": {
           "type": "feature",
           "settings": {
-            "feature_text": "<p>Matches your pet’s needs, not the masses</p>"
+            "feature_text": "<p>Matches your pet’s needs, not the masses</p>",
+            "icon_image": "shopify://shop_images/Vector_1.png"
           }
         },
         "feature_AEtxkw": {
           "type": "feature",
           "settings": {
-            "feature_text": "<p>Built on our Digestive Wellness System™</p>"
+            "feature_text": "<p>Built on our Digestive Wellness System™</p>",
+            "icon_image": "shopify://shop_images/Vector_1.png"
           }
         },
         "feature_RHi8TN": {
           "type": "feature",
           "settings": {
-            "feature_text": "<p>Backed by science, not guesswork</p>"
+            "feature_text": "<p>Backed by science, not guesswork</p>",
+            "icon_image": "shopify://shop_images/Vector_1.png"
           }
         }
       },
