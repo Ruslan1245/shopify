@@ -1034,8 +1034,8 @@ span.cart-discount__label {
     width: 100% !important;
 } */
 
-.page-class-collection .cleanest-kibbles__extras {
-    margin-top: 20px;
+.cleanest-kibbles__content .cleanest-kibbles__extras {
+    display: none;
 }
 
 .menu-drawer__menu .nutram-mega-wrap .nutram-mega-left h4.nutram-mega-title {
