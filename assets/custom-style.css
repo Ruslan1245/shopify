@@ -58,7 +58,6 @@
 }
 /* about us */
 .about-nutram-section .mobileviewsec {
-    max-width: 820px;
     margin: auto;
     padding: 0px 15px;
 }
@@ -1034,6 +1033,10 @@ span.cart-discount__label {
     /* .upsell-wrapper .swiper.upsell-swiper .swiper-wrapper .swiper-slide {
     width: 100% !important;
 } */
+
+.page-class-collection .cleanest-kibbles__extras {
+    margin-top: 20px;
+}
 
 .menu-drawer__menu .nutram-mega-wrap .nutram-mega-left h4.nutram-mega-title {
     font-size: 15px;
