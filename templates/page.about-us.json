@@ -128,6 +128,8 @@
       "name": "Custom Hero Banner",
       "settings": {
         "custom_class": "canada-clean-kibble about-us-page-sectionmain",
+        "hero_image": "shopify://shop_images/Image_Placeholder.png",
+        "mobile_hero_image": "shopify://shop_images/Image_Placeholder_9aa9f641-1b6d-4547-a04b-137bb3a2aa84.png",
         "subtitle": "",
         "title": "Our Commitment to You",
         "content": "<h3>August 29, 2017</h3><p>Dear Nutram Pet Specialty Retailer,<br/><br/>Nutram is a 100% Canadian, family-owned pet food company, with headquarters and production facilities in Elmira, Ontario, Canada. Since our conception in 1993, Nutram has chosen to partner exclusively with Canadian pet specialty retailers to deliver super-premium, Canadian-made recipes to Canadian pet parents.<br/><br/>As a small company from humble beginnings, we understand the importance of supporting our local Canadian partners, including our farmers, our distributors, and most importantly our pet specialty retailers. We are grateful for nearly 25 years of collectively serving the pet specialty industry, and are committed to continually serving the Canadian consumer with excellent pet nutrition.<br/><br/>We understand that while some of our competitors are now venturing into other retail channels in Canada, please rest assured the Nutram remains 100% committed to servicing only the Canadian Pet Specialty market with our super-premium, natural and holistic Nutram brand.<br/><br/>Sincerely,</p><h4>Eric Puim,<br/>General Manager / VP Sales<br/>Nutram Pet Products Inc.<br/><br/></h4>",
