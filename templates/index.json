@@ -696,8 +696,10 @@
       "settings": {
         "custom_class": "home-feature-collection",
         "button1_text": "For Cats",
+        "button1_image": "shopify://shop_images/pexels-ingewallu-126407.jpg",
         "button1_link": "shopify://collections/all-dogs",
         "button2_text": "For Dogs",
+        "button2_image": "shopify://shop_images/pexels-hnoody93-58997.jpg",
         "button2_link": "shopify://collections/dry-food-cat",
         "collection": "grain-free-1",
         "layout_type": "carousel",
