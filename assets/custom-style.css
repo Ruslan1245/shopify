@@ -1026,6 +1026,10 @@ span.cart-discount__label {
    width: 18px;
    height: auto;
 }
+
+.cleanest-kibbles__extras.collection_bottom_btn {
+    display: none;
+}
 /* button.button.cart-items__remove span {
     padding-left: 20px;
 } */
@@ -1033,6 +1037,10 @@ span.cart-discount__label {
     /* .upsell-wrapper .swiper.upsell-swiper .swiper-wrapper .swiper-slide {
     width: 100% !important;
 } */
+
+.cleanest-kibbles__extras.collection_bottom_btn {
+    display: flex;
+}
 
 .cleanest-kibbles__content .cleanest-kibbles__extras {
     display: none;
@@ -1051,7 +1059,7 @@ span.cart-discount__label {
 }
 
 .sorting-filter__select-wrapper select {
-    text-align: left;
+    text-align: left !important;
     display: flex;
     justify-content: flex-start;
     width: fit-content;
