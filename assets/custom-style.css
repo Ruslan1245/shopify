@@ -200,6 +200,9 @@ section.custom-hero-section.mobile-version {
         display: flex;
         /* justify-content: center; */
 }
+.nutram-comparison-wrapper {
+    margin-top:40px;
+}
 .custom-hero-section .hero-features {
     padding-top: 15px !important;
 }
