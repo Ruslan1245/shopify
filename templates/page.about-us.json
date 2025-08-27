@@ -81,7 +81,7 @@
         "award_BVVxhR": {
           "type": "award",
           "settings": {
-            "image": "shopify://shop_images/image_6.png",
+            "image": "shopify://shop_images/a3b6305102ef2d1e095c3f80c1746e897723016e.png",
             "title": "Pet Business",
             "desc": "Pet Business has honoured Nutram as one of the most exciting and innovative products in the pet industry with their 2016 “Industry Recognition Award”"
           }
@@ -89,6 +89,7 @@
         "award_VjapRV": {
           "type": "award",
           "settings": {
+            "image": "shopify://shop_images/49ceda5cc0a1ffd7b930da0f39fb574520fcd3b3.png",
             "title": "Pet Product News",
             "desc": "Pet Product News has awarded Nutram with their 2016 “Inventory Essentials” award, making Nutram one of the must-stock products of 2016."
           }
@@ -96,6 +97,7 @@
         "award_HRxUh8": {
           "type": "award",
           "settings": {
+            "image": "shopify://shop_images/6b2f5beecb8c157094bf4c1d980b4b747e0f3f3f.png",
             "title": "The Whole Dog Journal",
             "desc": "The Whole Dog Journal editorial team ranks only the very best, and most nutritious food for dogs. It’s truly an honor for Nutram to be ranked on their 2016, 2017, 2018, 2019, 2020 and 2021 list of Approved Dry Dog Foods."
           }
@@ -103,7 +105,7 @@
         "award_fzrPBJ": {
           "type": "award",
           "settings": {
-            "image": "shopify://shop_images/image_8.png",
+            "image": "shopify://shop_images/2c0b4475ac4500526cd88c4bc46ac418cae93fcf.png",
             "title": "Animal Wellness Magazine",
             "desc": "Animal Wellness Magazine has recognized Nutram as having superior quality in promoting the wellness of animals within the all-natural and holistic product line category and is their product pick for volume 18, issue 3."
           }
