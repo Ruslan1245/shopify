@@ -146,6 +146,8 @@
       "name": "Custom Hero Banner",
       "settings": {
         "custom_class": "canada-clean-kibble",
+        "hero_image": "shopify://shop_images/Image_Placeholder.png",
+        "mobile_hero_image": "shopify://shop_images/Image_Placeholder_9aa9f641-1b6d-4547-a04b-137bb3a2aa84.png",
         "subtitle": "",
         "title": "Find Your Pet’s Perfect Formula",
         "content": "<p>Take our 60-second quiz and get a personalized kibble recommendation backed by science and clean ingredients.</p><p></p>",
