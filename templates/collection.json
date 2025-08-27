@@ -126,7 +126,7 @@
           "type": "button",
           "settings": {
             "label": "All Recipes",
-            "url": ""
+            "url": "shopify://collections/all-cats"
           }
         },
         "button_R76jak": {
