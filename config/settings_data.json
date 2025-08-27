@@ -792,5 +792,10 @@
         }
       }
     }
+  },
+  "platform_customizations": {
+    "custom_css": [
+      ".variant-option--buttons legend {display: none !important; }"
+    ]
   }
 }
