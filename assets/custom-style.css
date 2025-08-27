@@ -1042,11 +1042,18 @@ span.cart-discount__label {
     display: flex;
 }
 
-.page-class-collection .cleanest-kibbles__cta {
+.page-class-collection .cleanest-kibbles__extras.collection_bottom_btn{
     flex: 0 0 auto;
     max-width: 128px;
     width:100%;
     text-align: center;
+}
+
+.cleanest-kibbles__extras.collection_bottom_btn {
+    display: flex;
+    justify-content: start;
+    gap: 10px;
+    flex-wrap: nowrap;
 }
 
 .cleanest-kibbles__content .cleanest-kibbles__extras {
