@@ -1049,6 +1049,14 @@ span.cart-discount__label {
     text-align: center;
 }
 
+.page-class-collection .cleanest-kibbles__extras.collection_bottom_btn a {
+    background: #4498CD1A;
+}
+
+.page-class-collection .cleanest-kibbles__extras.collection_bottom_btn a:first-child {
+    background: #e5c800;
+}
+
 .cleanest-kibbles__extras.collection_bottom_btn {
     display: flex;
     justify-content: start;
