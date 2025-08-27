@@ -233,6 +233,7 @@
                     },
                     "review_QhdEwM": {
                       "type": "review",
+                      "disabled": true,
                       "settings": {
                         "stars_style": "shaded",
                         "show_number": true,
