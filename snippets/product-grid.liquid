@@ -71,6 +71,8 @@
   }
 {% endstyle %}
 
+{% if template.name contains 'collection' %}
+
 <div class="cleanest-kibbles__extras">
   <a href="" class="cleanest-kibbles__cta"> All Recipes </a>
 
@@ -84,6 +86,7 @@
 
   <a href="" class="cleanest-kibbles__cta"> Small Breed </a>
 </div>
+{%endif %}
 
 <div
   id="ResultsList"
