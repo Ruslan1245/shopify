@@ -1060,6 +1060,7 @@ span.cart-discount__label {
 .cleanest-kibbles__extras.collection_bottom_btn {
     display: flex;
     justify-content: start;
+            margin-top: 5px !important;
     gap: 10px;
     flex-wrap: nowrap;
     scrollbar-width: none;
