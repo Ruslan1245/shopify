@@ -106,7 +106,6 @@
         "contact_item_EEzXnC": {
           "type": "contact_item",
           "settings": {
-            "icon": "shopify://shop_images/Group.png",
             "heading": "Call Us",
             "text": "+1 519-669-6240"
           }
@@ -114,7 +113,6 @@
         "contact_item_UF4diq": {
           "type": "contact_item",
           "settings": {
-            "icon": "shopify://shop_images/fi_2165061.png",
             "heading": "Email Us",
             "text": "info@nutram.com"
           }
@@ -122,7 +120,6 @@
         "contact_item_9R67B7": {
           "type": "contact_item",
           "settings": {
-            "icon": "shopify://shop_images/web_13982337_1.png",
             "heading": "Social Media",
             "text": "@nutram"
           }
@@ -205,7 +202,6 @@
       ],
       "name": "CTA Banner with Overlay",
       "settings": {
-        "background_image": "shopify://shop_images/c15da58cd2593ee29d3f7d9c89a3a2665e713b7a.jpg",
         "fallback_bg_color": "#4a9ee7",
         "overlay_color": "#4a9ee7",
         "overlay_opacity": 85,
@@ -218,7 +214,6 @@
         "button_url": "shopify://collections",
         "button_bg_color": "#f8c933",
         "button_text_color": "#333333",
-        "testimonial_image": "shopify://shop_images/PFP_Placeholder_4c68d1a1-df3f-47f8-9892-130666fe6b7e.png",
         "testimonial_rating": 5,
         "testimonial_text": "“After switching, Max’s coat is shinier and tummy trouble disappeared in two weeks!”",
         "customer_name": "John D.",
