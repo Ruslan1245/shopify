@@ -233,7 +233,7 @@
             "card-gallery": {
               "type": "_product-card-gallery",
               "settings": {
-                "image_ratio": "square",
+                "image_ratio": "adapt",
                 "border": "none",
                 "border_width": 1,
                 "border_opacity": 100,
@@ -670,6 +670,7 @@
       ],
       "name": "FAQ Section",
       "settings": {
+        "custom_css_class": "",
         "heading": "Questions? We’ve Got Answers",
         "subheading": "Everything you need to know."
       }
