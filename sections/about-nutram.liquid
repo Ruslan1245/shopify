@@ -181,6 +181,28 @@
     padding-top: 45px;
 }
 
+   .food-safety ul li {
+    flex-direction: column;
+}
+.food-safety ul li h3 {
+    font-size: 18px;
+    line-height: 125%;
+    color: #4498CD;
+    padding-top: 30px;
+}
+.food-safety ul li:first-child::before {
+  display: none;
+}
+.food-safety ul li ul li:first-child::before{
+  display: block;
+}
+.food-safety ul li ul li {
+    font-size: 16px;
+    line-height: 128%;
+    position: relative;
+    padding-left: 20px;
+}
+
   /* Responsive */
   @media (max-width: 768px) {
     .about-nutram-section__heading {
@@ -215,27 +237,7 @@
     .food-safety {
         background-color: #F8F8F8;
     }
-    .food-safety ul li {
-    flex-direction: column;
-}
-.food-safety ul li h3 {
-    font-size: 18px;
-    line-height: 125%;
-    color: #4498CD;
-    padding-top: 30px;
-}
-.food-safety ul li:first-child::before {
-  display: none;
-}
-.food-safety ul li ul li:first-child::before{
-  display: block;
-}
-.food-safety ul li ul li {
-    font-size: 16px;
-    line-height: 128%;
-    position: relative;
-    padding-left: 20px;
-}
+ 
 .about-nutram-section__bg {
     padding: 60px 20px 60px;
 }
