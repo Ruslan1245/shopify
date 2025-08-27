@@ -1054,6 +1054,8 @@ span.cart-discount__label {
     justify-content: start;
     gap: 10px;
     flex-wrap: nowrap;
+    scrollbar-width: none;
+        -ms-overflow-style: none;
 }
 
 .cleanest-kibbles__content .cleanest-kibbles__extras {
