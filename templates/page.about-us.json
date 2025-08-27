@@ -63,12 +63,12 @@
       "type": "about-nutram",
       "name": "About Nutram Section",
       "settings": {
-        "bg_image": "shopify://shop_images/pexels-hnoody93-58997.jpg",
         "overlay_color": "#00000030",
         "heading": "About Nutram",
         "subtext": "Trusted in over 30 countries worldwide, Nutram recipes represent the finest Canadian quality through many decades of pet nutrition excellence.",
         "video": "shopify://files/videos/NON_ Oui.mp4",
         "below_text": "<p>Nutram is a 100% Canadian, family-owned pet wellness company with a holistic approach to pet nutrition. Nutram’s team of in-house Certified Nutritionists and Holistic Experts craft each recipe to maximize nutrient absorption. Through sound scientific principles and natural ingredients, your pet will receive all of the benefits of each ingredient, as nature intended.</p>",
+        "fsicon": "shopify://shop_images/Vector_14a9d9e1-9dd5-40fb-803b-e412a54c2bbc.png",
         "fs_heading": "Food Safety at Nutram",
         "fs_text": "At Nutram, we prioritize providing your pet with the highest quality, nutrient-dense food made in a safe environment. We understand that you want the best for your pets, and we are committed to earning your trust with our food choices. Our recipes are trusted in over 30 countries worldwide.\n\nOur privately-owned manufacturing facility was the first pet food manufacturer in Canada to obtain the British Retail Consortium (BRC) certification in 2012. The BRC is one of the highest pet food quality assurance certifications available. It is designed to ensure manufacturers implement good practices and strong quality management systems.",
         "fs_list": "<h3>Our BRC certification means we have complete transparency in all aspects of production, including:</h3><ul><li>Supplier and Ingredient Traceability: We can trace each ingredient back to its source and track which recipe it's used in and where that recipe is shipped.</li><li>Strict Hygiene Standards: We maintain strict hygiene protocols for anyone who comes into contact with our products during production.</li><li>Product Safety: We have a meticulous approach to preventing contamination, including enforcing strict rules on materials allowed on the production floor.<br/><br/><br/><br/></li></ul>"
@@ -184,6 +184,7 @@
       ],
       "name": "FAQ Section",
       "settings": {
+        "custom_css_class": "",
         "heading": "Questions? We’ve Got Answers",
         "subheading": "Everything you need to know."
       }
