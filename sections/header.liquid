@@ -327,6 +327,164 @@
 
   {% endif %}
 
+  {% if section.settings.menu_handle_set_2 != blank %}
+  <div class="nutram-mega-menu" data-val="{{ section.settings.menu_handle_set_2 }}">
+    <div class="nutram-mega-menu__left">
+      {% if section.settings.menu_2_1 %}
+        <div class="nutram-mega-menu__menu-group">
+          <h4 class="nutram-mega-menu__menu-title">{{ section.settings.menu_2_1_heading }}</h4>
+          <ul class="nutram-mega-menu__menu-list">
+            {% for link in linklists[section.settings.menu_2_1].links %}
+              <li>
+                <a href="{{ link.url }}">{{ link.title }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+
+      {% if section.settings.menu_2_2 %}
+        <div class="nutram-mega-menu__menu-group">
+          <h4 class="nutram-mega-menu__menu-title">{{ section.settings.menu_2_2_heading }}</h4>
+          <ul class="nutram-mega-menu__menu-list">
+            {% for link in linklists[section.settings.menu_2_2].links %}
+              <li>
+                <a href="{{ link.url }}">{{ link.title }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="nutram-mega-menu__center">
+      {% assign collection = collections[section.settings.center_collection_2] %}
+      {% if collection %}
+        {% for product in collection.products limit: 3 %}
+          <div class="nutram-mega-menu__product">
+            <a href="{{ product.url }}">
+              <img
+                src="{{ product.featured_image | img_url: 'master' }}"
+                alt="{{ product.title }}"
+                class="nutram-mega-menu__product-image"
+              >
+              <div class="nutram-mega-menu__product-title">{{ product.title }}</div>
+              {% if product.description != blank %}
+                <div class="nutram-mega-menu__product-description">
+                  {{ product.description | strip_html | truncate: 60 }}
+                </div>
+              {% endif %}
+            </a>
+          </div>
+        {% endfor %}
+      {% endif %}
+    </div>
+
+    <div class="nutram-mega-menu__right">
+      {% if section.settings.side_image_2 %}
+        <img
+          src="{{ section.settings.side_image_2 | img_url: 'master' }}"
+          alt="Promo Image"
+          class="nutram-mega-menu__cta-image"
+        >
+      {% endif %}
+      <div class="nutram-mega-menu__cta-text">
+        <h3 class="nutram-mega-menu__cta-heading">
+          {{ section.settings.side_heading_2 }}
+        </h3>
+        <p class="nutram-mega-menu__cta-description">
+          {{ section.settings.side_content_2 }}
+        </p>
+        {% if section.settings.button_link_2 and section.settings.button_label_2 %}
+          <a href="{{ section.settings.button_link_2 }}" class="nutram-mega-menu__cta-button">
+            {{ section.settings.button_label_2 }}
+          </a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+
+{% if section.settings.menu_handle_set_3 != blank %}
+  <div class="nutram-mega-menu" data-val="{{ section.settings.menu_handle_set_3 }}">
+    <div class="nutram-mega-menu__left">
+      {% if section.settings.menu_3_1 %}
+        <div class="nutram-mega-menu__menu-group">
+          <h4 class="nutram-mega-menu__menu-title">{{ section.settings.menu_3_1_heading }}</h4>
+          <ul class="nutram-mega-menu__menu-list">
+            {% for link in linklists[section.settings.menu_3_1].links %}
+              <li>
+                <a href="{{ link.url }}">{{ link.title }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+
+      {% if section.settings.menu_3_2 %}
+        <div class="nutram-mega-menu__menu-group">
+          <h4 class="nutram-mega-menu__menu-title">{{ section.settings.menu_3_2_heading }}</h4>
+          <ul class="nutram-mega-menu__menu-list">
+            {% for link in linklists[section.settings.menu_3_2].links %}
+              <li>
+                <a href="{{ link.url }}">{{ link.title }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="nutram-mega-menu__center">
+      {% assign collection = collections[section.settings.center_collection_3] %}
+      {% if collection %}
+        {% for product in collection.products limit: 3 %}
+          <div class="nutram-mega-menu__product">
+            <a href="{{ product.url }}">
+              <img
+                src="{{ product.featured_image | img_url: 'master' }}"
+                alt="{{ product.title }}"
+                class="nutram-mega-menu__product-image"
+              >
+              <div class="nutram-mega-menu__product-title">{{ product.title }}</div>
+              {% if product.description != blank %}
+                <div class="nutram-mega-menu__product-description">
+                  {{ product.description | strip_html | truncate: 60 }}
+                </div>
+              {% endif %}
+            </a>
+          </div>
+        {% endfor %}
+      {% endif %}
+    </div>
+
+    <div class="nutram-mega-menu__right">
+      {% if section.settings.side_image_3 %}
+        <img
+          src="{{ section.settings.side_image_3 | img_url: 'master' }}"
+          alt="Promo Image"
+          class="nutram-mega-menu__cta-image"
+        >
+      {% endif %}
+      <div class="nutram-mega-menu__cta-text">
+        <h3 class="nutram-mega-menu__cta-heading">
+          {{ section.settings.side_heading_3 }}
+        </h3>
+        <p class="nutram-mega-menu__cta-description">
+          {{ section.settings.side_content_3 }}
+        </p>
+        {% if section.settings.button_link_3 and section.settings.button_label_3 %}
+          <a href="{{ section.settings.button_link_3 }}" class="nutram-mega-menu__cta-button">
+            {{ section.settings.button_label_3 }}
+          </a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+{% if section.settings.menu_handle_set != blank or section.settings.menu_handle_set_2 != blank or section.settings.menu_handle_set_3 != blank %}
     <style>
             .nutram-mega-menu {
               display: none;
@@ -752,6 +910,8 @@
         });
       });
     </script>
+
+  {%endif %}
 </header-component>
 
 <script
