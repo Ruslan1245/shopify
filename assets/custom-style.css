@@ -38,24 +38,6 @@
   border: none;
 }
 
-/* Start button */
-.resource-list__carousel slideshow-slides::-webkit-scrollbar-button:single-button:decrement {
-  display: none !important;
-}
-
-/* End button */
-.resource-list__carousel slideshow-slides::-webkit-scrollbar-button:single-button:increment {
-  display: none !important;
-}
-
-
-
-.resource-list__carousel slideshow-slides::-webkit-scrollbar-button {
-  display: none;
-  width: 0;
-  height: 0;
-}
-
 
 .resource-list__carousel slideshow-slides .resource-list__item .product-card {
     padding: 0px 10px;
