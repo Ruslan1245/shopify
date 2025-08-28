@@ -2,7 +2,7 @@
     column-gap: 20px;
 }
 
-slideshow-slides {
+.resource-list__carousel slideshow-slides {
   scrollbar-width: thin;
   scrollbar-color: #3498db #ddd;
   overflow-x: auto;
@@ -11,14 +11,14 @@ slideshow-slides {
 }
 
 /* WebKit scrollbar (Chrome, Safari, Edge) */
-slideshow-slides::-webkit-scrollbar {
+.resource-list__carousel slideshow-slides::-webkit-scrollbar {
   height: 10px;
   background: none; /* Removes outer color space */
   padding: 0;
   margin: 0;
 }
 
-slideshow-slides::-webkit-scrollbar-track {
+.resource-list__carousel slideshow-slides::-webkit-scrollbar-track {
   background-color: #ddd; /* Base background */
   background-image: repeating-linear-gradient(
     to right,
@@ -32,7 +32,7 @@ slideshow-slides::-webkit-scrollbar-track {
   border: none;
 }
 
-slideshow-slides::-webkit-scrollbar-thumb {
+.resource-list__carousel slideshow-slides::-webkit-scrollbar-thumb {
   background-color: #3498db;
   border-radius: 0;
   border: none;
