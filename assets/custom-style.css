@@ -18,7 +18,9 @@ slideshow-slides::-webkit-scrollbar-track {
     transparent 2px,
     #3498db 2px,
     #3498db 4px
-  ); /* Dotted pattern */
+  );
+  background: #ccc;
+  margin: 0 20px;
 }
 
 slideshow-slides::-webkit-scrollbar-thumb {
