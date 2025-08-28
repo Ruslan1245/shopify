@@ -32,7 +32,7 @@
   border: none;
 }
 
-slideshow-slides::-webkit-scrollbar-thumb {
+.resource-list__carousel slideshow-slides::-webkit-scrollbar-thumb {
   background-color: #3498db;
   border-radius: 0;
   border: none;
