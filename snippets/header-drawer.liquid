@@ -212,7 +212,7 @@
                 style="--menu-drawer-animation-index: {{ animation_index }};"
                 class="{%- if block_settings.drawer_accordion -%}menu-drawer__list-item--deep{%- else -%}menu-drawer__list-item--flat{%- endif -%}{% if block_settings.drawer_dividers %} menu-drawer__list-item--divider{% endif %}"
               >
-                {% if section.settings.menu_handle_set == link.handle %}
+                {% if section.settings.menu_handle_set == link.handle or section.settings.menu_handle_set_2 == link.handle or section.settings.menu_handle_set_3 == link.handle %}
                   {% liquid
                     assign accordion_state = ''
                     if first_accordion_open == false and block_settings.drawer_accordion_expand_first
