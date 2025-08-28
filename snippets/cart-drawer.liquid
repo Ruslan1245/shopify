@@ -64,9 +64,33 @@
   .upsell-product-card img {
     max-width: 100%;
     object-fit:contain;
-    aspect-ratio: 1 / 1;
     border-radius: 4px;
   }
+
+  .cart-drawer .dialog-drawer .swiper-wrapper {
+  display: flex;
+  align-items: stretch;
+}
+
+.cart-drawer .dialog-drawer .swiper-slide {
+  display: flex;
+  flex-direction: column;
+  height: auto !important; 
+}
+
+.cart-drawer .dialog-drawer .upsell-product-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.upsell-product-card .product-info {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
   .product-rating {
     color: #f0c14b;
