@@ -8,7 +8,8 @@ slideshow-slides{
 }
 
 slideshow-slides::-webkit-scrollbar {
-  height: 10px; /* Height of horizontal scrollbar */
+  height: 10px;
+  background-color:#ccc;
 }
 
 slideshow-slides::-webkit-scrollbar-track {
@@ -19,7 +20,6 @@ slideshow-slides::-webkit-scrollbar-track {
     #3498db 2px,
     #3498db 4px
   );
-  background: #ccc;
   margin: 0 20px;
 }
 
