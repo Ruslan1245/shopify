@@ -2,7 +2,7 @@
     column-gap: 20px;
 }
 
-.slideshow-slides {
+slideshow-slides {
   scrollbar-width: thin;
   scrollbar-color: #3498db #ddd;
   overflow-x: auto;
@@ -11,14 +11,14 @@
 }
 
 /* WebKit scrollbar (Chrome, Safari, Edge) */
-.slideshow-slides::-webkit-scrollbar {
+slideshow-slides::-webkit-scrollbar {
   height: 10px;
   background: none; /* Removes outer color space */
   padding: 0;
   margin: 0;
 }
 
-.slideshow-slides::-webkit-scrollbar-track {
+slideshow-slides::-webkit-scrollbar-track {
   background-color: #ddd; /* Base background */
   background-image: repeating-linear-gradient(
     to right,
@@ -32,7 +32,7 @@
   border: none;
 }
 
-.slideshow-slides::-webkit-scrollbar-thumb {
+slideshow-slides::-webkit-scrollbar-thumb {
   background-color: #3498db;
   border-radius: 0;
   border: none;
