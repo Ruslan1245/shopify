@@ -4,7 +4,7 @@
 
 .resource-list__carousel slideshow-slides {
   scrollbar-width: thin;
-  scrollbar-color: #3498db #ddd;
+  scrollbar-color: #3498db #ffffff;
   overflow-x: auto;
   overflow-y: hidden;
   white-space: nowrap;
