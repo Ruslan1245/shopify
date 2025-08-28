@@ -1,6 +1,26 @@
 .resource-list__carousel slideshow-slides {
     column-gap: 20px;
 }
+
+slideshow-slides{
+    scrollbar-width: thin; 
+  scrollbar-color: #3498db transparent;
+}
+
+slideshow-slides::-webkit-scrollbar {
+  height: 10px; /* Height of horizontal scrollbar */
+}
+
+slideshow-slides::-webkit-scrollbar-track {
+  background-image: repeating-linear-gradient(
+    to right,
+    transparent,
+    transparent 2px,
+    #3498db 2px,
+    #3498db 4px
+  ); /* Dotted pattern */
+}
+
 .resource-list__carousel slideshow-slides .resource-list__item .product-card {
     padding: 0px 10px;
 }
