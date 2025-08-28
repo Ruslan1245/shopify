@@ -32,13 +32,7 @@
   border: none;
 }
 
-.resource-list__carousel slideshow-slides::-webkit-scrollbar-button {
-  display: none;
-  width: 0;
-  height: 0;
-}
-
-.resource-list__carousel slideshow-slides::-webkit-scrollbar-thumb {
+slideshow-slides::-webkit-scrollbar-thumb {
   background-color: #3498db;
   border-radius: 0;
   border: none;
