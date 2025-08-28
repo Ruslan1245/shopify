@@ -963,6 +963,8 @@ span.cart-discount__label {
     color: #4498CD;
     font-size: 16px;
     line-height: 90%;
+        min-height: 30px;
+    overflow: hidden;
     text-transform: capitalize;
 }
 .cart-drawer .dialog-drawer .upsell-wrapper .product-rating {
