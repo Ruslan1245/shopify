@@ -27,7 +27,7 @@
   {% for link in block_settings.menu.links %}
     <li
       role="presentation"
-      class="menu-list__list-item test77"
+      class="menu-list__list-item "
       on:focus="/activate"
       on:blur="/deactivate"
       on:pointerenter="/activate"
@@ -36,7 +36,7 @@
     >
       <a
         href="{{ link.url }}"
-        class="main__menu_listed menu-list__link{% if link.active %} menu-list__link--active{% endif %} test99"
+        class="main__menu_listed menu-list__link{% if link.active %} menu-list__link--active{% endif %} "
         data-id="{{ link.handle }}"
         {%- if link.links != blank -%}
           aria-controls="submenu-{{ forloop.index }}"
