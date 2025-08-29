@@ -15,19 +15,22 @@
         "feature_YpkLzW": {
           "type": "feature",
           "settings": {
-            "feature_text": "<p>Visible digestive improvements, fast</p>"
+            "feature_text": "<p>Visible digestive improvements, fast</p>",
+            "icon_image": "shopify://shop_images/Vector_1.png"
           }
         },
         "feature_xYGDTM": {
           "type": "feature",
           "settings": {
-            "feature_text": "<p>Clean-label recipes, never recalled</p>"
+            "feature_text": "<p>Clean-label recipes, never recalled</p>",
+            "icon_image": "shopify://shop_images/Vector_1.png"
           }
         },
         "feature_WY74kF": {
           "type": "feature",
           "settings": {
-            "feature_text": "<p>Holistic nutrition, for happier pets</p>"
+            "feature_text": "<p>Holistic nutrition, for happier pets</p>",
+            "icon_image": "shopify://shop_images/Vector_1.png"
           }
         }
       },
@@ -48,8 +51,7 @@
         "btn_cat_text": "Shop For Cats",
         "btn_dog_url": "shopify://collections/adult-dog",
         "btn_dog_text": "Shop For Dogs",
-        "review_image": "shopify://shop_images/PFP_Placeholder.png",
-        "review_text": "<p>After switching, Max’s coat is shinier and tummy trouble disappeared in two weeks!</p>",
+        "review_text": "<p>My cats have always eaten Nutram dry food and they always come running when I open the bag. They have been eating it for years and are healthy and happy!</p>",
         "review_name": "John D."
       }
     },
@@ -696,7 +698,7 @@
         "button1_link": "shopify://collections/all-dogs",
         "button2_text": "For Dogs",
         "button2_link": "shopify://collections/dry-food-cat",
-        "collection": "frontpage",
+        "collection": "all-dogs",
         "layout_type": "carousel",
         "carousel_on_mobile": false,
         "max_products": 16,
