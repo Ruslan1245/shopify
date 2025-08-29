@@ -1106,7 +1106,7 @@ li.product-grid__item:nth-child(odd) .product-media::before {
   left: 15%;
   width: 70%;
   height: 70%;
-  background: linear-gradient(135deg, #397dab, #6b93c7, #397dab);
+  background: linear-gradient(135deg,rgb(198, 230, 252),rgb(217, 233, 255),rgb(183, 226, 255));
     border-radius: 50% 70% 60% 40% / 50% 60% 40% 50%;
   transform: translate(-50%, -50%);
   z-index: 0;
