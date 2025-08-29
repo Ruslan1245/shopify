@@ -1081,7 +1081,7 @@ span.cart-discount__label {
   display: inline-block;
 }
 
-/* .product-media::before {
+.product-media::before {
   content: "";
   position: absolute;
   top: 15%;
@@ -1093,7 +1093,7 @@ span.cart-discount__label {
   transform: translate(-50%, -50%);
   z-index: 0;
   opacity: 0.6;
-} */
+}
 
 .product-media img {
   position: relative;
