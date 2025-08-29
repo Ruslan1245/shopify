@@ -514,6 +514,7 @@
         "step_t7fXU4": {
           "type": "step",
           "settings": {
+            "image": "shopify://shop_images/Vector_62c25724-5952-4638-b214-21ac657a4629.png",
             "title": "Delivered Monthly",
             "text": "Made in Canada. Always fresh. Right to your door."
           }
@@ -521,6 +522,7 @@
         "step_Fi3bbK": {
           "type": "step",
           "settings": {
+            "image": "shopify://shop_images/Vector_fc23f109-207b-4324-aec9-82a1714f801e.png",
             "title": "Health You Can See",
             "text": "Bloat down and energy up within days."
           }
