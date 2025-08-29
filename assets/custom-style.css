@@ -1099,7 +1099,7 @@ span.cart-discount__label {
   position: relative;
   z-index: 1;
 }
-li.product-grid__item:first-child .product-media::before {
+li.product-grid__item:nth-child(odd) .product-media::before {
   content: "";
   position: absolute;
   top: 15%;
@@ -1112,7 +1112,7 @@ li.product-grid__item:first-child .product-media::before {
   z-index: 0;
   opacity: 0.6;
 }
-li.product-grid__item:first-child .product-media::before {
+li.product-grid__item:nth-child(even) .product-media::before {
   content: "";
   position: absolute;
   top: 15%;
