@@ -1088,8 +1088,8 @@ span.cart-discount__label {
   left: 50%;
   width: 120%;
   height: 120%;
-  background: linear-gradient(135deg, #ff6b6b, #f8a261);
-  border-radius: 50% 70% 60% 40% / 50% 60% 40% 50%;
+  background: linear-gradient(135deg, #397dab, #6b93c7, #397dab);
+    border-radius: 50% 70% 60% 40% / 50% 60% 40% 50%;
   transform: translate(-50%, -50%);
   z-index: 0;
   opacity: 0.6;
