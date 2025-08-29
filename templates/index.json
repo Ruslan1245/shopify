@@ -15,22 +15,19 @@
         "feature_YpkLzW": {
           "type": "feature",
           "settings": {
-            "feature_text": "<p>Visible digestive improvements, fast</p>",
-            "icon_image": "shopify://shop_images/Vector_1.png"
+            "feature_text": "<p>Visible digestive improvements, fast</p>"
           }
         },
         "feature_xYGDTM": {
           "type": "feature",
           "settings": {
-            "feature_text": "<p>Clean-label recipes, never recalled</p>",
-            "icon_image": "shopify://shop_images/Vector_1.png"
+            "feature_text": "<p>Clean-label recipes, never recalled</p>"
           }
         },
         "feature_WY74kF": {
           "type": "feature",
           "settings": {
-            "feature_text": "<p>Holistic nutrition, for happier pets</p>",
-            "icon_image": "shopify://shop_images/Vector_1.png"
+            "feature_text": "<p>Holistic nutrition, for happier pets</p>"
           }
         }
       },
@@ -731,7 +728,6 @@
         "step_3VUtkY": {
           "type": "step",
           "settings": {
-            "image": "shopify://shop_images/Vector_62c25724-5952-4638-b214-21ac657a4629.png",
             "title": "Delivered Monthly",
             "text": "Made in Canada. Always fresh. Right to your door."
           }
@@ -739,7 +735,6 @@
         "step_kUbzjU": {
           "type": "step",
           "settings": {
-            "image": "shopify://shop_images/Vector_fc23f109-207b-4324-aec9-82a1714f801e.png",
             "title": "Health You Can See",
             "text": "Bloat down and energy up within days."
           }
@@ -1117,7 +1112,7 @@
         "button1_link": "",
         "button2_text": "",
         "button2_link": "",
-        "collection": "all-cats",
+        "collection": "frontpage",
         "layout_type": "grid",
         "carousel_on_mobile": false,
         "max_products": 3,
@@ -1140,8 +1135,6 @@
       "type": "forgot-which-one",
       "name": "Forgot Which One Banner",
       "settings": {
-        "image": "shopify://shop_images/Image_Placeholder_11d37d07-791a-4a1b-a51a-f5e4ec572ac2.png",
-        "mobile_image": "shopify://shop_images/Image_Placeholder_b03d6594-509d-4095-be7c-50282d934d22.png",
         "heading": "Forgot Which One They Loved?",
         "subtext": "Find your pet’s perfect match again in seconds with the Nutram Number quiz.",
         "cta_text": "Find It Again",
@@ -1168,7 +1161,6 @@
         "feature_zBYHjq": {
           "type": "feature",
           "settings": {
-            "image_icon": "shopify://shop_images/Group_87_bc1bb9f0-be15-42d4-b2b1-37808fcd9bdc.png",
             "feature_text": "No Recalls, Ever!"
           }
         },
@@ -1182,7 +1174,6 @@
         "feature_hk37Ry": {
           "type": "feature",
           "settings": {
-            "image_icon": "shopify://shop_images/Group_88_ca20ced1-0c7b-4fdc-8067-7acde8ea7347.png",
             "feature_text": "Farm-to-Bowl Sourcing"
           }
         }
