@@ -1076,6 +1076,19 @@ span.cart-discount__label {
 /* button.button.cart-items__remove span {
     padding-left: 20px;
 } */
+ img.product-media__image:after{
+    position: relative;
+ }
+ img.product-media__image:after {
+    content: "";
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(135deg, #397dab, #6b93c7, #397dab);
+    border-radius: 50% 70% 60% 40% / 50% 60% 40% 50%;
+    animation: morph 8s infinite alternate ease-in-out;
+    opacity: 1;
+}
 @media(max-width:767px){
     /* .upsell-wrapper .swiper.upsell-swiper .swiper-wrapper .swiper-slide {
     width: 100% !important;
