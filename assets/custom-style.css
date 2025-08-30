@@ -1125,7 +1125,6 @@ li.product-grid__item:nth-child(even) .product-media::before {
 } */
 
 
-/* 1st, 4th, 7th, 10th... */
 li.product-grid__item:nth-child(3n+1) .product-media::before {
   content: "";
   position: absolute;
@@ -1139,7 +1138,6 @@ li.product-grid__item:nth-child(3n+1) .product-media::before {
   opacity: 0.6;
 }
 
-/* 2nd, 5th, 8th, 11th... */
 li.product-grid__item:nth-child(3n+2) .product-media::before {
   content: "";
   position: absolute;
@@ -1153,7 +1151,6 @@ li.product-grid__item:nth-child(3n+2) .product-media::before {
   opacity: 0.6;
 }
 
-/* 3rd, 6th, 9th, 12th... */
 li.product-grid__item:nth-child(3n+3) .product-media::before {
   content: "";
   position: absolute;
