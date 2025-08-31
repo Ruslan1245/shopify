@@ -1115,7 +1115,7 @@
         "button1_link": "",
         "button2_text": "",
         "button2_link": "",
-        "collection": "frontpage",
+        "collection": "all-dogs",
         "layout_type": "grid",
         "carousel_on_mobile": false,
         "max_products": 3,
