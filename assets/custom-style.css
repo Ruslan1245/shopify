@@ -1168,6 +1168,23 @@ li.product-grid__item:nth-child(3n+3) .product-media::before {
 .resource-list__carousel slideshow-slides slideshow-slide.resource-list__slide {
     padding-bottom: 35px;
 }
+.resource-list__carousel slideshow-slides slideshow-slide:before {
+    content: "";
+    position: absolute;
+    top: 15%;
+    left: 0%;
+    width: 69%;
+    height: 70%;
+    background: linear-gradient(135deg, #397dab, #397dab);
+    border-radius: 50% 70% 60% 50% / 50% 60% 59% 50%;
+    z-index: 0;
+    opacity: .6;
+}
+
+.resource-list__carousel slideshow-slides slideshow-slide {
+    position: relative;
+  z-index: 1;
+}
 
 @media(max-width:767px){
     /* .upsell-wrapper .swiper.upsell-swiper .swiper-wrapper .swiper-slide {
