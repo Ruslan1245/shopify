@@ -1165,6 +1165,10 @@ li.product-grid__item:nth-child(3n+3) .product-media::before {
 }
 
 
+.resource-list__carousel slideshow-slides slideshow-slide.resource-list__slide {
+    padding-bottom: 35px;
+}
+
 @media(max-width:767px){
     /* .upsell-wrapper .swiper.upsell-swiper .swiper-wrapper .swiper-slide {
     width: 100% !important;
