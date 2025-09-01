@@ -17,8 +17,11 @@
   {{ block.shopify_attributes }}
   style="--add-to-cart-font-case: {{ settings.button_text_case }};"
 >
-  {{ template.name }}
-  {% assign add_to_cart_text = "Shop now" %}
+  {% if template.name contains 'product' %}
+{% assign add_to_cart_text = "Add to cart" %}
+  {% else %}
+    {% assign add_to_cart_text = "Shop now" %}
+  {% endif %}
   {% render 'add-to-cart-button',
     id: id,
     class: class,
