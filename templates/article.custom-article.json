@@ -122,19 +122,22 @@
         "feature_WqMRLK": {
           "type": "feature",
           "settings": {
-            "feature_text": "<p>Tailored to your pet’s size, age & sensitivities</p>"
+            "feature_text": "<p>Tailored to your pet’s size, age & sensitivities</p>",
+            "icon_image": "shopify://shop_images/Vector_718559fb-68fe-434e-9fac-7e7cddc1934a.png"
           }
         },
         "feature_Cy9GGN": {
           "type": "feature",
           "settings": {
-            "feature_text": "<p>Backed by our Digestive Wellness System™<br/></p>"
+            "feature_text": "<p>Backed by our Digestive Wellness System™<br/></p>",
+            "icon_image": "shopify://shop_images/Vector_718559fb-68fe-434e-9fac-7e7cddc1934a.png"
           }
         },
         "feature_pTcQYf": {
           "type": "feature",
           "settings": {
-            "feature_text": "<p>No fillers, no guesswork, just real results<br/></p>"
+            "feature_text": "<p>No fillers, no guesswork, just real results<br/></p>",
+            "icon_image": "shopify://shop_images/Vector_718559fb-68fe-434e-9fac-7e7cddc1934a.png"
           }
         }
       },
