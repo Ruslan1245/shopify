@@ -469,7 +469,7 @@
                       "type": "custom-liquid",
                       "name": "t:names.custom_liquid",
                       "settings": {
-                        "custom_liquid": "<div class=\"guaranteed_analys\">{{product.metafields.custom.guaranteed_analysis_content}}</div>"
+                        "custom_liquid": "<div class=\"guaranteed_analys\">\n  {{ product.metafields.custom.guaranteed_analysis_content | metafield_tag }}\n</div>"
                       },
                       "blocks": {}
                     }
