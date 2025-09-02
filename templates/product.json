@@ -400,7 +400,7 @@
                       "type": "custom-liquid",
                       "name": "t:names.custom_liquid",
                       "settings": {
-                        "custom_liquid": "{{product.metafields.custom.guideline_content}}"
+                        "custom_liquid": "<div class=\"guidline\">{{product.metafields.custom.guideline_content}}</div>"
                       },
                       "blocks": {}
                     }
