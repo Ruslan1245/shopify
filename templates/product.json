@@ -505,6 +505,29 @@
                     "width": 20
                   },
                   "blocks": {
+                    "image_KWiJ7m": {
+                      "type": "image",
+                      "name": "t:names.image",
+                      "settings": {
+                        "image": "{{ closest.product.metafields.custom.guaranteed_analysis_table.value }}",
+                        "link": "",
+                        "image_ratio": "adapt",
+                        "width": "fill",
+                        "custom_width": 100,
+                        "width_mobile": "fill",
+                        "custom_width_mobile": 100,
+                        "height": "fit",
+                        "border": "none",
+                        "border_width": 1,
+                        "border_opacity": 100,
+                        "border_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    },
                     "text_UemWgi": {
                       "type": "text",
                       "settings": {
@@ -533,6 +556,7 @@
                     }
                   },
                   "block_order": [
+                    "image_KWiJ7m",
                     "text_UemWgi"
                   ]
                 }
