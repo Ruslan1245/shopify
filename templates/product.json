@@ -423,7 +423,7 @@
                       "type": "custom-liquid",
                       "name": "t:names.custom_liquid",
                       "settings": {
-                        "custom_liquid": "<div class=\"ingredient\">{{ product.metafields.custom.ingredients_list.value}}</div>"
+                        "custom_liquid": "<div class=\"ingredient\">\n  {{ product.metafields.custom.ingredients_list | metafield_tag }}\n</div>"
                       },
                       "blocks": {}
                     }
