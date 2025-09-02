@@ -474,8 +474,10 @@
       "settings": {
         "custom_class": "home-feature-collection newhomecustom",
         "button1_text": "For cats",
+        "button1_image": "shopify://shop_images/2fac5927fd2071f1b11da0c0efd8e0c23a70dd87_6c08fed2-39f9-4e16-8424-52b564db3052.png",
         "button1_link": "#",
         "button2_text": "For dogs",
+        "button2_image": "shopify://shop_images/c794e49d3af2a683e24ef8d422922eb91263473e_dde64072-5a6f-42f7-a059-622b6f1daa60.png",
         "button2_link": "#",
         "collection": "all-dogs",
         "layout_type": "grid",
