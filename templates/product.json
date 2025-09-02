@@ -350,7 +350,19 @@
                     "icon": "none",
                     "width": 20
                   },
-                  "blocks": {}
+                  "blocks": {
+                    "custom_liquid_z66dU4": {
+                      "type": "custom-liquid",
+                      "name": "t:names.custom_liquid",
+                      "settings": {
+                        "custom_liquid": "{{ product.description }}"
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "custom_liquid_z66dU4"
+                  ]
                 },
                 "accordion_row_jLfMfn": {
                   "type": "_accordion-row",
