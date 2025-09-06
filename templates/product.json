@@ -373,26 +373,11 @@
                     "width": 20
                   },
                   "blocks": {
-                    "image_Q6jq8a": {
-                      "type": "image",
-                      "name": "t:names.image",
+                    "custom_liquid_MEj3xx": {
+                      "type": "custom-liquid",
+                      "name": "t:names.custom_liquid",
                       "settings": {
-                        "image": "{{ closest.product.metafields.custom.guideline_table.value }}",
-                        "link": "",
-                        "image_ratio": "adapt",
-                        "width": "fill",
-                        "custom_width": 100,
-                        "width_mobile": "fill",
-                        "custom_width_mobile": 100,
-                        "height": "fit",
-                        "border": "none",
-                        "border_width": 1,
-                        "border_opacity": 100,
-                        "border_radius": 0,
-                        "padding-block-start": 0,
-                        "padding-block-end": 0,
-                        "padding-inline-start": 0,
-                        "padding-inline-end": 0
+                        "custom_liquid": "{{ product.metafields.custom.guideline_table_new.value }}"
                       },
                       "blocks": {}
                     },
@@ -406,7 +391,7 @@
                     }
                   },
                   "block_order": [
-                    "image_Q6jq8a",
+                    "custom_liquid_MEj3xx",
                     "custom_liquid_kVxcPR"
                   ]
                 },
