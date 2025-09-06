@@ -1281,15 +1281,21 @@ accordion-custom .table td:first-child {
   font-weight: 500;
 }
 
+.nutrient-table td:nth-child(2) {
+  text-align: center;
+  color: #555;
+  font-size: 14px;
+}
+
 .nutrient-table td:last-child {
   text-align: right;
-  color: #444;
+  font-weight: 600;
 }
 
 .nutrient-table .note {
   font-size: 13px;
   color: #666;
-  margin-top: 8px;
+  margin-top: 10px;
 }
 
 
