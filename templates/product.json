@@ -430,6 +430,7 @@
                     "image_KWiJ7m": {
                       "type": "image",
                       "name": "t:names.image",
+                      "disabled": true,
                       "settings": {
                         "image": "{{ closest.product.metafields.custom.guaranteed_analysis_table.value }}",
                         "link": "",
@@ -450,6 +451,14 @@
                       },
                       "blocks": {}
                     },
+                    "custom_liquid_HanzKD": {
+                      "type": "custom-liquid",
+                      "name": "t:names.custom_liquid",
+                      "settings": {
+                        "custom_liquid": "{{ product.metafields.custom.guaranteed_analysis_table_new.value }}"
+                      },
+                      "blocks": {}
+                    },
                     "custom_liquid_W4Wp8E": {
                       "type": "custom-liquid",
                       "name": "t:names.custom_liquid",
@@ -461,6 +470,7 @@
                   },
                   "block_order": [
                     "image_KWiJ7m",
+                    "custom_liquid_HanzKD",
                     "custom_liquid_W4Wp8E"
                   ]
                 }
