@@ -1259,6 +1259,40 @@ accordion-custom .table td:first-child {
 }
 
 
+.nutrient-table {
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+  color: #222;
+  margin: 20px 0;
+}
+
+.nutrient-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.nutrient-table td {
+  padding: 12px 8px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.nutrient-table td:first-child {
+  text-align: left;
+  font-weight: 500;
+}
+
+.nutrient-table td:last-child {
+  text-align: right;
+  color: #444;
+}
+
+.nutrient-table .note {
+  font-size: 13px;
+  color: #666;
+  margin-top: 8px;
+}
+
+
 @media(max-width:767px){
     /* .upsell-wrapper .swiper.upsell-swiper .swiper-wrapper .swiper-slide {
     width: 100% !important;
