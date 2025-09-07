@@ -1240,6 +1240,7 @@ accordion-custom .table td {
   padding: 12px;
   border: 1px solid #d9e0e7;
   color: #444;
+  background: white;
 }
 
 accordion-custom .table tbody tr:nth-child(even) {
