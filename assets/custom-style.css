@@ -1242,7 +1242,7 @@ accordion-custom .table td {
   background: white;
 }
 
-accordion-custom .table tbody tr:nth-child(even) {
+accordion-custom .table tbody tr td:nth-child(even) {
   background-color: #fafbfc; /* subtle alternate row color */
 }
 
