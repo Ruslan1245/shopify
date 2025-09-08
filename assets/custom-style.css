@@ -1242,6 +1242,10 @@ accordion-custom .table td {
   background: white;
 }
 
+accordion-custom .table tr td:first-child{
+    border-left:unset;
+}
+
 accordion-custom .table tbody tr td:nth-child(even) {
   background-color: #fafbfc; /* subtle alternate row color */
 }
