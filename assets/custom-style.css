@@ -1246,8 +1246,8 @@ accordion-custom .table tr td:first-child{
     border-left:unset;
 }
 
-accordion-custom .table tr td:first-child p{
-    font-weight:500;
+accordion-custom .table tr td:first-child p {
+    font-weight: 600 !important;
 }
 
 accordion-custom .table tr td:last-child{
