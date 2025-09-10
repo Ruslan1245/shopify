@@ -105,6 +105,24 @@
     background-repeat: no-repeat;
     background-size: contain;
 }
+.no-stores-message {
+  grid-column: 1 / -1;
+  padding: 20px;
+  text-align: left;
+}
+
+.no-stores-message h3 {
+  color: #2A6EBB; /* match figma blue */
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.no-stores-message p {
+  color: #666666; /* muted grey text */
+  font-size: 16px;
+  margin: 0;
+}
 
   /* map */
   .store-locator-{{ section.id }} .map-wrap { border:1px solid var(--border); border-radius:12px; overflow:hidden; background:#f7fbff; margin-bottom:22px; }
@@ -361,11 +379,17 @@
   }
   function renderCards(list){
     resultsGrid.innerHTML = "";
-    if (!list.length){
+   if (!list.length) {
       resultsTitle.style.display = "none";
-      resultsGrid.innerHTML = `<div style="grid-column:1/-1;color:var(--muted)">No stores found in this area.</div>`;
+      resultsGrid.innerHTML = `
+        <div class="no-stores-message">
+          <h3>No stores found near this location.</h3>
+          <p>Sorry, there are no stores within 100 km of your location.</p>
+        </div>
+      `;
       return;
     }
+
     resultsTitle.style.display = "block";
     resultsTitle.textContent = `Showing ${list.length} Location${list.length===1 ? "" : "s"}`;
     list.forEach(s => {
