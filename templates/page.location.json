@@ -91,40 +91,40 @@
           "type": "partner",
           "settings": {
             "logo": "shopify://shop_images/image_6_b590cb30-1003-48dc-8399-675f9d84ed69.png",
-            "partner_name": "Petamax.ca",
-            "partner_link": "#"
+            "partner_name": "Petamax.Ca",
+            "partner_link": "https://www.petmax.ca/"
           }
         },
         "partner_qXqDrj": {
           "type": "partner",
           "settings": {
             "logo": "shopify://shop_images/image_7.png",
-            "partner_name": "Petamax.ca",
-            "partner_link": ""
+            "partner_name": "Homesalive.Ca",
+            "partner_link": "https://www.homesalive.ca/"
           }
         },
         "partner_3cwQwe": {
           "type": "partner",
           "settings": {
             "logo": "shopify://shop_images/image_8_8901c4dd-8807-43fc-bbf7-bd41d734f9fd.png",
-            "partner_name": "Petamax.ca",
-            "partner_link": ""
+            "partner_name": "Animobouffe.Com",
+            "partner_link": "https://www.animobouffe.com"
           }
         },
         "partner_8K78Tb": {
           "type": "partner",
           "settings": {
             "logo": "shopify://shop_images/image_6_1.png",
-            "partner_name": "Petamax.ca",
-            "partner_link": ""
+            "partner_name": "Thepetpad.Net",
+            "partner_link": "https://www.thepetpad.net"
           }
         },
         "partner_fhRUz7": {
           "type": "partner",
           "settings": {
             "logo": "shopify://shop_images/image_7_1.png",
-            "partner_name": "Partner Name",
-            "partner_link": ""
+            "partner_name": "Sherbrookecanin.Com",
+            "partner_link": "https://sherbrookecanin.com/"
           }
         }
       },
