@@ -111,14 +111,6 @@
             "partner_link": "https://www.animobouffe.com"
           }
         },
-        "partner_8K78Tb": {
-          "type": "partner",
-          "settings": {
-            "logo": "shopify://shop_images/image_6_1.png",
-            "partner_name": "Thepetpad.Net",
-            "partner_link": "https://www.thepetpad.net"
-          }
-        },
         "partner_fhRUz7": {
           "type": "partner",
           "settings": {
@@ -126,14 +118,22 @@
             "partner_name": "Sherbrookecanin.Com",
             "partner_link": "https://sherbrookecanin.com/"
           }
+        },
+        "partner_8K78Tb": {
+          "type": "partner",
+          "settings": {
+            "logo": "shopify://shop_images/image_6_1.png",
+            "partner_name": "Thepetpad.Net",
+            "partner_link": "https://www.thepetpad.net"
+          }
         }
       },
       "block_order": [
         "partner_miWBib",
         "partner_qXqDrj",
         "partner_3cwQwe",
-        "partner_8K78Tb",
-        "partner_fhRUz7"
+        "partner_fhRUz7",
+        "partner_8K78Tb"
       ],
       "name": "Online Shopping Partners",
       "settings": {
