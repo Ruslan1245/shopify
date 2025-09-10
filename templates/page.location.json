@@ -63,7 +63,6 @@
       "type": "about-nutram",
       "name": "About Nutram Section",
       "settings": {
-        "bg_image": "shopify://shop_images/0a82e70785b483ff91766da49c8db9aba255f2f7_1.jpg",
         "overlay_color": "#00000030",
         "heading": "Find Nutram Near You",
         "subtext": "Search retailers across Canada or shop online with our trusted partners.",
@@ -90,7 +89,7 @@
         "partner_miWBib": {
           "type": "partner",
           "settings": {
-            "logo": "shopify://shop_images/365cc60426d8c066c348424e7c98139847a9c70b_1.jpg",
+            "logo": "shopify://shop_images/c15da58cd2593ee29d3f7d9c89a3a2665e713b7a.jpg",
             "partner_name": "Petamax.ca",
             "partner_link": "#"
           }
@@ -98,7 +97,6 @@
         "partner_qXqDrj": {
           "type": "partner",
           "settings": {
-            "logo": "shopify://shop_images/4144e03b00d3af80602ff0eaeab714267cfc720a.jpg",
             "partner_name": "Petamax.ca",
             "partner_link": ""
           }
@@ -106,7 +104,6 @@
         "partner_3cwQwe": {
           "type": "partner",
           "settings": {
-            "logo": "shopify://shop_images/5a40df3e888234732ec235cbd4ecb56352fc2a77.jpg",
             "partner_name": "Petamax.ca",
             "partner_link": ""
           }
@@ -114,7 +111,6 @@
         "partner_8K78Tb": {
           "type": "partner",
           "settings": {
-            "logo": "shopify://shop_images/e8b1efc86a93944b0c1f4764033e21e0dcb926bf.jpg",
             "partner_name": "Petamax.ca",
             "partner_link": ""
           }
@@ -122,7 +118,6 @@
         "partner_fhRUz7": {
           "type": "partner",
           "settings": {
-            "logo": "shopify://shop_images/e3292d669a6cac9fbde89e5833ed56871445144c.jpg",
             "partner_name": "Partner Name",
             "partner_link": ""
           }
@@ -171,7 +166,6 @@
       "name": "Custom Hero Banner",
       "settings": {
         "custom_class": "canada-clean-kibble",
-        "hero_image": "shopify://shop_images/Image_Placeholder_c9ad2337-e6a9-483e-9538-7b72c0dc75d7.png",
         "subtitle": "",
         "title": "Let’s Find Your Pet’s Perfect Formula",
         "content": "<p>Take the 60-second quiz to find the best Nutram formula based on your pet’s size, sensitivities, and gut health needs.<br/><br/></p>",
@@ -225,7 +219,6 @@
         "button_url": "",
         "button_bg_color": "#f8c933",
         "button_text_color": "#333333",
-        "testimonial_image": "shopify://shop_images/e3292d669a6cac9fbde89e5833ed56871445144c.jpg",
         "testimonial_rating": 5,
         "testimonial_text": "“After switching, Max’s coat is shinier and tummy trouble disappeared in two weeks!”",
         "customer_name": "John D.",
