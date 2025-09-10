@@ -63,6 +63,7 @@
       "type": "about-nutram",
       "name": "About Nutram Section",
       "settings": {
+        "bg_image": "shopify://shop_images/bd5383d7b4ba1bc094698fc69b5d20788a3d297c.png",
         "overlay_color": "#00000030",
         "heading": "Find Nutram Near You",
         "subtext": "Search retailers across Canada or shop online with our trusted partners.",
@@ -89,7 +90,7 @@
         "partner_miWBib": {
           "type": "partner",
           "settings": {
-            "logo": "shopify://shop_images/c15da58cd2593ee29d3f7d9c89a3a2665e713b7a.jpg",
+            "logo": "shopify://shop_images/image_6_b590cb30-1003-48dc-8399-675f9d84ed69.png",
             "partner_name": "Petamax.ca",
             "partner_link": "#"
           }
@@ -97,6 +98,7 @@
         "partner_qXqDrj": {
           "type": "partner",
           "settings": {
+            "logo": "shopify://shop_images/image_7.png",
             "partner_name": "Petamax.ca",
             "partner_link": ""
           }
@@ -104,6 +106,7 @@
         "partner_3cwQwe": {
           "type": "partner",
           "settings": {
+            "logo": "shopify://shop_images/image_8_8901c4dd-8807-43fc-bbf7-bd41d734f9fd.png",
             "partner_name": "Petamax.ca",
             "partner_link": ""
           }
@@ -111,6 +114,7 @@
         "partner_8K78Tb": {
           "type": "partner",
           "settings": {
+            "logo": "shopify://shop_images/image_6_1.png",
             "partner_name": "Petamax.ca",
             "partner_link": ""
           }
@@ -118,6 +122,7 @@
         "partner_fhRUz7": {
           "type": "partner",
           "settings": {
+            "logo": "shopify://shop_images/image_7_1.png",
             "partner_name": "Partner Name",
             "partner_link": ""
           }
