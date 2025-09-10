@@ -147,19 +147,22 @@
         "feature_7KidJf": {
           "type": "feature",
           "settings": {
-            "feature_text": "<p>Matches your pet’s needs, not the masses</p>"
+            "feature_text": "<p>Matches your pet’s needs, not the masses</p>",
+            "icon_image": "shopify://shop_images/Vector_718559fb-68fe-434e-9fac-7e7cddc1934a.png"
           }
         },
         "feature_46bAg9": {
           "type": "feature",
           "settings": {
-            "feature_text": "<p>Built on our Digestive Wellness System™</p>"
+            "feature_text": "<p>Built on our Digestive Wellness System™</p>",
+            "icon_image": "shopify://shop_images/Vector_718559fb-68fe-434e-9fac-7e7cddc1934a.png"
           }
         },
         "feature_4iWRy9": {
           "type": "feature",
           "settings": {
-            "feature_text": "<p>Backed by science, not guesswork</p>"
+            "feature_text": "<p>Backed by science, not guesswork</p>",
+            "icon_image": "shopify://shop_images/Vector_718559fb-68fe-434e-9fac-7e7cddc1934a.png"
           }
         }
       },
@@ -171,6 +174,7 @@
       "name": "Custom Hero Banner",
       "settings": {
         "custom_class": "canada-clean-kibble",
+        "hero_image": "shopify://shop_images/20e52658a4dca4f8d627089a5323d42a5c60e5c8_1.jpg",
         "subtitle": "",
         "title": "Let’s Find Your Pet’s Perfect Formula",
         "content": "<p>Take the 60-second quiz to find the best Nutram formula based on your pet’s size, sensitivities, and gut health needs.<br/><br/></p>",
