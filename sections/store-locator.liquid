@@ -304,7 +304,7 @@
   const storesUrl = "{{ 'stores.json' | asset_url }}";
   const apiKey = "{{ section.settings.google_api_key }}";
   const maxResults = parseInt({{ section.settings.max_results }}, 10) || 6;
-  const radiusKm = parseFloat({{ section.settings.radius_km }}) || 50;
+  const radiusKm = parseFloat({{ section.settings.radius_km }}) || 100;
 
   const searchInput = document.getElementById("sl-search-{{ section.id }}");
   const useGeoEl = document.getElementById("sl-use-geo-{{ section.id }}");
