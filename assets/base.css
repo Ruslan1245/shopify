@@ -4273,3 +4273,8 @@ text-component {
     font-size: max(1rem, 100%);
   }
 }
+
+
+.product-information {
+    background: #F8F8F8 !important;
+}
