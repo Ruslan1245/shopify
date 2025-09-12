@@ -1255,7 +1255,7 @@ accordion-custom .table tr td:last-child{
 }
 
 accordion-custom .table tbody tr td:nth-child(even) {
-  background-color: #fafbfc; /* subtle alternate row color */
+  background-color: #EFF3F6; /* subtle alternate row color */
 }
 
 accordion-custom .table td p {
