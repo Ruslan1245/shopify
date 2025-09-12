@@ -3630,6 +3630,7 @@ slideshow-component[autoplay] slideshow-controls {
   padding-inline: var(--slideshow-thumbnails-padding-inline, var(--padding-sm));
   padding-block: var(--slideshow-thumbnails-padding-block, var(--padding-sm));
   gap: 16px;
+  margin-top:16px;
   margin-inline: auto;
   height: fit-content;
 
