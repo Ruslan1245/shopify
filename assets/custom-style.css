@@ -1622,3 +1622,13 @@ accordion-custom .table td:first-child {
         align-items: flex-start;
     }
 }
+
+
+.product-media__image {
+  width: 608px !important;
+  height: 608px !important;
+  border-radius: 16px !important;
+  transform: rotate(0deg);
+  opacity: 1 !important;
+  object-fit: cover; /* ensures the image fills without distortion */
+}
