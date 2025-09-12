@@ -1637,3 +1637,8 @@ accordion-custom .table td:first-child {
     object-fit: cover;
   }
 }
+
+
+.variant-option__button-label svg {
+    stroke: black !important;
+}
