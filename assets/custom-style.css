@@ -1628,7 +1628,7 @@ accordion-custom .table td:first-child {
 
 
 @media screen and (min-width: 750px) {
-  .product-media__image {
+  .product-information .product-media__image {
     width: 608px !important;
     height: 608px !important;
     border-radius: 16px !important;
