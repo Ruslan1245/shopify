@@ -718,6 +718,9 @@ label.variant-option__button-label {
     width: 40px !important;
     height: 40px !important;
     min-height: auto;
+    position: sticky;
+    right: 24px !important;
+    left: 24px !important;
 }
 .product-information__grid button.slideshow-control {
     background-color: #353535 !important;
