@@ -1634,7 +1634,7 @@ accordion-custom .table td:first-child {
     border-radius: 16px !important;
     transform: rotate(0deg);
     opacity: 1 !important;
-    object-fit: cover;
+    /* object-fit: cover; */
   }
 }
 
