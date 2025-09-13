@@ -1312,7 +1312,10 @@ accordion-custom .table td:first-child {
   color: #666;
   margin-top: 10px;
 }
-
+.product-information .product-details variant-picker
+ {
+    padding-top: 30px;
+}
 
 @media(max-width:767px){
     /* .upsell-wrapper .swiper.upsell-swiper .swiper-wrapper .swiper-slide {
