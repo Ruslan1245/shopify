@@ -31,7 +31,6 @@
           <span>{{ block.settings.step_progress }}%</span>
         </div>
 
-        <!-- Rating Stars -->
         {% if section.settings.show_rating %}
           <div class="quiz-rating">
             {% for i in (1..section.settings.rating_stars) %}
@@ -66,12 +65,12 @@
         </div>
 
         <div class="quiz-review">
-          {% if block.settings.review_image %}
-            <img src="{{ block.settings.review_image | img_url: '100x' }}" alt="Review image">
+          {% if section.settings.review_image %}
+            <img src="{{ section.settings.review_image | img_url: '100x' }}" alt="Review image">
           {% endif %}
           <div>
-            <p>{{ block.settings.review_text }}</p>
-            <strong>{{ block.settings.review_author }} <span class="verified">✔ Verified Customer</span></strong>
+            <p>{{ section.settings.review_text }}</p>
+            <strong>{{ section.settings.review_author }} <span class="verified">✔ Verified Customer</span></strong>
           </div>
         </div>
       </div>
@@ -191,7 +190,11 @@ document.addEventListener("DOMContentLoaded", function(){
 
     { "type": "checkbox", "id": "show_rating", "label": "Show Rating on Steps", "default": true },
     { "type": "range", "id": "rating_stars", "label": "Number of Stars", "min": 1, "max": 5, "default": 5 },
-    { "type": "text", "id": "rating_text", "label": "Rating Text", "default": "Rated 5.0 by 300+ customers" }
+    { "type": "text", "id": "rating_text", "label": "Rating Text", "default": "Rated 5.0 by 300+ customers" },
+
+    { "type": "image_picker", "id": "review_image", "label": "Review Image" },
+    { "type": "text", "id": "review_text", "label": "Review Text", "default": "\"After switching, Max’s coat is shinier and tummy trouble disappeared in two weeks!\"" },
+    { "type": "text", "id": "review_author", "label": "Review Author", "default": "John D." }
   ],
   "blocks": [
     {
@@ -207,10 +210,7 @@ document.addEventListener("DOMContentLoaded", function(){
         { "type": "text", "id": "option2", "label": "Option 2 Label", "default": "Dog" },
         { "type": "image_picker", "id": "dog_image", "label": "Dog Image" },
         { "type": "text", "id": "back_text", "label": "Back Button Text", "default": "← Go Back" },
-        { "type": "text", "id": "next_text", "label": "Next Button Text", "default": "Next →" },
-        { "type": "image_picker", "id": "review_image", "label": "Review Image" },
-        { "type": "text", "id": "review_text", "label": "Review Text", "default": "\"After switching, Max’s coat is shinier and tummy trouble disappeared in two weeks!\"" },
-        { "type": "text", "id": "review_author", "label": "Review Author", "default": "John D." }
+        { "type": "text", "id": "next_text", "label": "Next Button Text", "default": "Next →" }
       ]
     }
   ],
