@@ -27,15 +27,6 @@
   {% for block in section.blocks %}
     {% if block.type == 'step1' %}
       <div class="quiz-step quiz-step-1" style="display:none;">
-        
-
-        {% if section.settings.show_rating %}
-          <div class="quiz-rating">
-            {% for i in (1..section.settings.rating_stars) %}★{% endfor %}
-            <span class="quiz-rating-text">{{ section.settings.rating_text }}</span>
-          </div>
-        {% endif %}
-
         <div class="quiz-progress" role="status" aria-live="polite">
           <span>{{ block.settings.step_label }}</span>
           <div class="quiz-progress-bar" aria-hidden="true">
@@ -43,6 +34,13 @@
           </div>
           <span>{{ block.settings.step_progress }}%</span>
         </div>
+
+        {% if section.settings.show_rating %}
+          <div class="quiz-rating">
+            {% for i in (1..section.settings.rating_stars) %}★{% endfor %}
+            <span class="quiz-rating-text">{{ section.settings.rating_text }}</span>
+          </div>
+        {% endif %}
 
         <h2 class="quiz-step-heading">{{ block.settings.step_heading }}</h2>
         <p class="quiz-step-subtext">{{ block.settings.step_subtext }}</p>
@@ -91,15 +89,6 @@
       {% assign next_text_key = pet | append: '_next_text' %}
 
       <div class="quiz-step quiz-step-2" data-pet="{{ pet }}" style="display:none;">
-        
-
-        {% if section.settings.show_rating %}
-          <div class="quiz-rating">
-            {% for i in (1..section.settings.rating_stars) %}★{% endfor %}
-            <span class="quiz-rating-text">{{ section.settings.rating_text }}</span>
-          </div>
-        {% endif %}
-
         <div class="quiz-progress" role="status" aria-live="polite">
           <span>{{ block.settings[step_label_key] }}</span>
           <div class="quiz-progress-bar" aria-hidden="true">
@@ -107,6 +96,13 @@
           </div>
           <span>{{ block.settings[step_progress_key] }}%</span>
         </div>
+
+        {% if section.settings.show_rating %}
+          <div class="quiz-rating">
+            {% for i in (1..section.settings.rating_stars) %}★{% endfor %}
+            <span class="quiz-rating-text">{{ section.settings.rating_text }}</span>
+          </div>
+        {% endif %}
 
         <h2 class="quiz-step-heading">{{ block.settings[heading_key] }}</h2>
         <p class="quiz-step-subtext">{{ block.settings[subtext_key] }}</p>
@@ -150,15 +146,6 @@
         {% assign next_text_key = pet | append: '_step3_next_text' %}
 
         <div class="quiz-step quiz-step-3" data-pet="{{ pet }}" style="display:none;">
-          
-
-          {% if section.settings.show_rating %}
-            <div class="quiz-rating">
-              {% for i in (1..section.settings.rating_stars) %}★{% endfor %}
-              <span class="quiz-rating-text">{{ section.settings.rating_text }}</span>
-            </div>
-          {% endif %}
-
           <div class="quiz-progress" role="status" aria-live="polite">
             <span>{{ block.settings[step_label_key] }}</span>
             <div class="quiz-progress-bar" aria-hidden="true">
@@ -166,6 +153,13 @@
             </div>
             <span>{{ block.settings[step_progress_key] }}%</span>
           </div>
+
+          {% if section.settings.show_rating %}
+            <div class="quiz-rating">
+              {% for i in (1..section.settings.rating_stars) %}★{% endfor %}
+              <span class="quiz-rating-text">{{ section.settings.rating_text }}</span>
+            </div>
+          {% endif %}
 
           <h2 class="quiz-step-heading">{{ block.settings[heading_key] }}</h2>
           <p class="quiz-step-subtext">{{ block.settings[subtext_key] }}</p>
