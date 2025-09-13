@@ -27,13 +27,7 @@
   {% for block in section.blocks %}
     {% if block.type == 'step1' %}
       <div class="quiz-step quiz-step-1" style="display:none;">
-        <div class="quiz-progress" role="status" aria-live="polite">
-          <span>{{ block.settings.step_label }}</span>
-          <div class="quiz-progress-bar" aria-hidden="true">
-            <div style="width:{{ block.settings.step_progress }}%"></div>
-          </div>
-          <span>{{ block.settings.step_progress }}%</span>
-        </div>
+        
 
         {% if section.settings.show_rating %}
           <div class="quiz-rating">
@@ -41,6 +35,14 @@
             <span class="quiz-rating-text">{{ section.settings.rating_text }}</span>
           </div>
         {% endif %}
+
+        <div class="quiz-progress" role="status" aria-live="polite">
+          <span>{{ block.settings.step_label }}</span>
+          <div class="quiz-progress-bar" aria-hidden="true">
+            <div style="width:{{ block.settings.step_progress }}%"></div>
+          </div>
+          <span>{{ block.settings.step_progress }}%</span>
+        </div>
 
         <h2 class="quiz-step-heading">{{ block.settings.step_heading }}</h2>
         <p class="quiz-step-subtext">{{ block.settings.step_subtext }}</p>
