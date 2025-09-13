@@ -125,8 +125,9 @@
       ],
       "name": "Quiz Banner",
       "settings": {
-        "overlay_color": "#000000",
-        "overlay_opacity": 40,
+        "bg_image": "shopify://shop_images/0a82e70785b483ff91766da49c8db9aba255f2f7_3.jpg",
+        "overlay_color": "#3086c8",
+        "overlay_opacity": 75,
         "heading": "Find The Perfect Nutram Recipe In 30 Seconds",
         "text": "Answer a few quick questions, get a custom dry-food plan and 10% off your first bag.",
         "btn_text": "Start Quiz",
