@@ -91,13 +91,7 @@
       {% assign next_text_key = pet | append: '_next_text' %}
 
       <div class="quiz-step quiz-step-2" data-pet="{{ pet }}" style="display:none;">
-        <div class="quiz-progress" role="status" aria-live="polite">
-          <span>{{ block.settings[step_label_key] }}</span>
-          <div class="quiz-progress-bar" aria-hidden="true">
-            <div style="width:{{ block.settings[step_progress_key] }}%"></div>
-          </div>
-          <span>{{ block.settings[step_progress_key] }}%</span>
-        </div>
+        
 
         {% if section.settings.show_rating %}
           <div class="quiz-rating">
@@ -105,6 +99,14 @@
             <span class="quiz-rating-text">{{ section.settings.rating_text }}</span>
           </div>
         {% endif %}
+
+        <div class="quiz-progress" role="status" aria-live="polite">
+          <span>{{ block.settings[step_label_key] }}</span>
+          <div class="quiz-progress-bar" aria-hidden="true">
+            <div style="width:{{ block.settings[step_progress_key] }}%"></div>
+          </div>
+          <span>{{ block.settings[step_progress_key] }}%</span>
+        </div>
 
         <h2 class="quiz-step-heading">{{ block.settings[heading_key] }}</h2>
         <p class="quiz-step-subtext">{{ block.settings[subtext_key] }}</p>
@@ -148,13 +150,7 @@
         {% assign next_text_key = pet | append: '_step3_next_text' %}
 
         <div class="quiz-step quiz-step-3" data-pet="{{ pet }}" style="display:none;">
-          <div class="quiz-progress" role="status" aria-live="polite">
-            <span>{{ block.settings[step_label_key] }}</span>
-            <div class="quiz-progress-bar" aria-hidden="true">
-              <div style="width:{{ block.settings[step_progress_key] }}%"></div>
-            </div>
-            <span>{{ block.settings[step_progress_key] }}%</span>
-          </div>
+          
 
           {% if section.settings.show_rating %}
             <div class="quiz-rating">
@@ -162,6 +158,14 @@
               <span class="quiz-rating-text">{{ section.settings.rating_text }}</span>
             </div>
           {% endif %}
+
+          <div class="quiz-progress" role="status" aria-live="polite">
+            <span>{{ block.settings[step_label_key] }}</span>
+            <div class="quiz-progress-bar" aria-hidden="true">
+              <div style="width:{{ block.settings[step_progress_key] }}%"></div>
+            </div>
+            <span>{{ block.settings[step_progress_key] }}%</span>
+          </div>
 
           <h2 class="quiz-step-heading">{{ block.settings[heading_key] }}</h2>
           <p class="quiz-step-subtext">{{ block.settings[subtext_key] }}</p>
