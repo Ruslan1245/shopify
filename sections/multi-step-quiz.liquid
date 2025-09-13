@@ -77,58 +77,66 @@
     {% endif %}
   {% endfor %}
 
-  {%- comment -%} === NEW: render any step2 blocks (one block per pet) === {%- endcomment -%}
   {% for block in section.blocks %}
-    {% if block.type == 'step2' %}
-      <div class="quiz-step quiz-step-2" data-pet="{{ block.settings.for_pet }}" style="display:none;">
-        <div class="quiz-progress" role="status" aria-live="polite">
-          <span>{{ block.settings.step_label }}</span>
-          <div class="quiz-progress-bar" aria-hidden="true"><div style="width:{{ block.settings.step_progress }}%"></div></div>
-          <span>{{ block.settings.step_progress }}%</span>
+  {% if block.type == 'step2' %}
+    <div class="quiz-step quiz-step-2" data-pet="{{ block.settings.for_pet }}" style="display:none;">
+      <div class="quiz-progress" role="status" aria-live="polite">
+        <span>{{ block.settings.step_label }}</span>
+        <div class="quiz-progress-bar" aria-hidden="true">
+          <div style="width:{{ block.settings.step_progress }}%"></div>
         </div>
-
-        {% if section.settings.show_rating %}
-          <div class="quiz-rating">
-            {% for i in (1..section.settings.rating_stars) %}
-              ★
-            {% endfor %}
-            <span class="quiz-rating-text">{{ section.settings.rating_text }}</span>
-          </div>
-        {% endif %}
-
-        <h2 class="quiz-step-heading">{{ block.settings.step_heading }}</h2>
-        <p class="quiz-step-subtext">{{ block.settings.step_subtext }}</p>
-
-        <div class="quiz-options" role="list">
-          <button type="button" class="quiz-option" data-choice="{{ block.settings.for_pet }}_opt1" aria-pressed="false">
-            {% if block.settings.opt1_image %}
-              <img src="{{ block.settings.opt1_image | img_url: '300x' }}" alt="{{ block.settings.opt1_label }}" class="quiz-option-img">
-            {% endif %}
-            <span>{{ block.settings.opt1_label }}</span>
-          </button>
-
-          <button type="button" class="quiz-option" data-choice="{{ block.settings.for_pet }}_opt2" aria-pressed="false">
-            {% if block.settings.opt2_image %}
-              <img src="{{ block.settings.opt2_image | img_url: '300x' }}" alt="{{ block.settings.opt2_label }}" class="quiz-option-img">
-            {% endif %}
-            <span>{{ block.settings.opt2_label }}</span>
-          </button>
-
-          <button type="button" class="quiz-option" data-choice="{{ block.settings.for_pet }}_opt3" aria-pressed="false">
-            {% if block.settings.opt3_image %}
-              <img src="{{ block.settings.opt3_image | img_url: '300x' }}" alt="{{ block.settings.opt3_label }}" class="quiz-option-img">
-            {% endif %}
-            <span>{{ block.settings.opt3_label }}</span>
-          </button>
-        </div>
-
-        <div class="quiz-nav">
-          <button type="button" class="quiz-back">{{ block.settings.back_text }}</button>
-          <button type="button" class="quiz-next">{{ block.settings.next_text }}</button>
-        </div>
+        <span>{{ block.settings.step_progress }}%</span>
       </div>
-    {% endif %}
-  {% endfor %}
+
+      {% if section.settings.show_rating %}
+        <div class="quiz-rating">
+          {% for i in (1..section.settings.rating_stars) %}
+            ★
+          {% endfor %}
+          <span class="quiz-rating-text">{{ section.settings.rating_text }}</span>
+        </div>
+      {% endif %}
+
+      <h2 class="quiz-step-heading">
+        {% if block.settings.for_pet == 'dog' %}
+          {{ block.settings.dog_heading }}
+        {% else %}
+          {{ block.settings.cat_heading }}
+        {% endif %}
+      </h2>
+      <p class="quiz-step-subtext">{{ block.settings.step_subtext }}</p>
+
+      <div class="quiz-options" role="list">
+        <button type="button" class="quiz-option" data-choice="{{ block.settings.for_pet }}_opt1" aria-pressed="false">
+          {% if block.settings.opt1_image %}
+            <img src="{{ block.settings.opt1_image | img_url: '300x' }}" alt="{{ block.settings.opt1_label }}" class="quiz-option-img">
+          {% endif %}
+          <span>{{ block.settings.opt1_label }}</span>
+        </button>
+
+        <button type="button" class="quiz-option" data-choice="{{ block.settings.for_pet }}_opt2" aria-pressed="false">
+          {% if block.settings.opt2_image %}
+            <img src="{{ block.settings.opt2_image | img_url: '300x' }}" alt="{{ block.settings.opt2_label }}" class="quiz-option-img">
+          {% endif %}
+          <span>{{ block.settings.opt2_label }}</span>
+        </button>
+
+        <button type="button" class="quiz-option" data-choice="{{ block.settings.for_pet }}_opt3" aria-pressed="false">
+          {% if block.settings.opt3_image %}
+            <img src="{{ block.settings.opt3_image | img_url: '300x' }}" alt="{{ block.settings.opt3_label }}" class="quiz-option-img">
+          {% endif %}
+          <span>{{ block.settings.opt3_label }}</span>
+        </button>
+      </div>
+
+      <div class="quiz-nav">
+        <button type="button" class="quiz-back">{{ block.settings.back_text }}</button>
+        <button type="button" class="quiz-next">{{ block.settings.next_text }}</button>
+      </div>
+    </div>
+  {% endif %}
+{% endfor %}
+
 
   {%- comment -%} REVIEW box kept outside steps so we can show it once quiz starts (it remains hidden until start). {%- endcomment -%}
   <div class="quiz-review global-review" style="display:none;">
@@ -354,30 +362,27 @@ document.addEventListener("DOMContentLoaded", function(){
         { "type": "text", "id": "next_text", "label": "Next Button Text", "default": "Next →" }
       ]
     },
-
     {
-      "type": "step2",
-      "name": "Step 2 (cat OR dog)",
-      "settings": [
-        { "type": "select", "id": "for_pet", "label": "Which pet (this block)", "options": [ { "value":"cat","label":"Cat" },{ "value":"dog","label":"Dog" } ], "default":"cat" },
-        { "type": "text", "id": "step_label", "label": "Step Label", "default": "Step 2" },
-        { "type": "range", "id": "step_progress", "label": "Progress %", "min": 0, "max": 100, "default": 65 },
-        { "type": "text", "id": "step_heading", "label": "Heading", "default": "How Old Is Your Pet?" },
-        { "type": "text", "id": "step_subtext", "label": "Subtext", "default": "Choose one as you want." },
+  "type": "step2",
+  "name": "Step 2 (Cat or Dog)",
+  "settings": [
+    { "type": "select", "id": "for_pet", "label": "Which pet (this block)?", "options":[ {"value":"cat","label":"Cat"}, {"value":"dog","label":"Dog"} ], "default":"cat" },
+    { "type": "text", "id": "step_label", "label": "Step Label", "default": "Step 2" },
+    { "type": "range", "id": "step_progress", "label": "Progress %", "min":0, "max":100, "default":65 },
+    { "type": "text", "id": "cat_heading", "label": "Heading (for Cat)", "default":"How Old Is Your Cat?" },
+    { "type": "text", "id": "dog_heading", "label": "Heading (for Dog)", "default":"How Old Is Your Dog?" },
+    { "type": "text", "id": "step_subtext", "label": "Subtext", "default":"Choose one as you want." },
+    { "type": "text", "id": "opt1_label", "label": "Option 1 Label", "default":"Puppy / Kitten" },
+    { "type": "image_picker", "id": "opt1_image", "label": "Option 1 Image" },
+    { "type": "text", "id": "opt2_label", "label": "Option 2 Label", "default":"Adult" },
+    { "type": "image_picker", "id": "opt2_image", "label": "Option 2 Image" },
+    { "type": "text", "id": "opt3_label", "label": "Option 3 Label", "default":"Senior" },
+    { "type": "image_picker", "id": "opt3_image", "label": "Option 3 Image" },
+    { "type": "text", "id": "back_text", "label": "Back Button Text", "default":"← Go Back" },
+    { "type": "text", "id": "next_text", "label": "Next Button Text", "default":"Next →" }
+  ]
+}
 
-        { "type": "text", "id": "opt1_label", "label": "Option 1 Label", "default": "Puppy / Kitten" },
-        { "type": "image_picker", "id": "opt1_image", "label": "Option 1 Image" },
-
-        { "type": "text", "id": "opt2_label", "label": "Option 2 Label", "default": "Adult" },
-        { "type": "image_picker", "id": "opt2_image", "label": "Option 2 Image" },
-
-        { "type": "text", "id": "opt3_label", "label": "Option 3 Label", "default": "Senior" },
-        { "type": "image_picker", "id": "opt3_image", "label": "Option 3 Image" },
-
-        { "type": "text", "id": "back_text", "label": "Back Button Text", "default": "← Go Back" },
-        { "type": "text", "id": "next_text", "label": "Next Button Text", "default": "Next →" }
-      ]
-    }
   ],
   "presets": [{ "name": "Quiz Banner" }]
 }
