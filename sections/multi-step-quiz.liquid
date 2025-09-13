@@ -63,8 +63,10 @@
           <button type="button" class="quiz-back">{{ block.settings.back_text }}</button>
           <button type="button" class="quiz-next">{{ block.settings.next_text }}</button>
         </div>
-
-        <div class="quiz-review">
+      </div>
+    {% endif %}
+  {% endfor %}
+  <div class="quiz-review">
           {% if section.settings.review_image %}
             <img src="{{ section.settings.review_image | img_url: '100x' }}" alt="Review image">
           {% endif %}
@@ -73,9 +75,6 @@
             <strong>{{ section.settings.review_author }} <span class="verified">✔ Verified Customer</span></strong>
           </div>
         </div>
-      </div>
-    {% endif %}
-  {% endfor %}
 </section>
 
 <style>
