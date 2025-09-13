@@ -472,24 +472,37 @@
       "type": "step2",
       "name": "Step 2 (Cat or Dog)",
       "settings": [
-        {
-          "type": "header",
-          "content": "For dogs"
-        },
-        { "type": "text", "id": "step_label", "label": "Step Label", "default": "Step 2" },
-        { "type": "range", "id": "step_progress", "label": "Progress %", "min": 0, "max": 100, "default": 65 },
-        { "type": "text", "id": "cat_heading", "label": "Heading (for Cat)", "default": "How Old Is Your Cat?" },
-        { "type": "text", "id": "dog_heading", "label": "Heading (for Dog)", "default": "How Old Is Your Dog?" },
-        { "type": "text", "id": "step_subtext", "label": "Subtext", "default": "Choose one as you want." },
-        { "type": "text", "id": "opt1_label", "label": "Option 1 Label", "default": "Puppy / Kitten" },
-        { "type": "image_picker", "id": "opt1_image", "label": "Option 1 Image" },
-        { "type": "text", "id": "opt2_label", "label": "Option 2 Label", "default": "Adult" },
-        { "type": "image_picker", "id": "opt2_image", "label": "Option 2 Image" },
-        { "type": "text", "id": "opt3_label", "label": "Option 3 Label", "default": "Senior" },
-        { "type": "image_picker", "id": "opt3_image", "label": "Option 3 Image" },
-        { "type": "text", "id": "back_text", "label": "Back Button Text", "default": "← Go Back" },
-        { "type": "text", "id": "next_text", "label": "Next Button Text", "default": "Next →" }
-      ]
+  {
+    "type": "header",
+    "content": "For Dogs"
+  },
+  { "type": "text", "id": "dog_step_label", "label": "Step Label", "default": "Step 2" },
+  { "type": "range", "id": "dog_step_progress", "label": "Progress %", "min": 0, "max": 100, "default": 65 },
+  { "type": "text", "id": "dog_heading", "label": "Heading", "default": "How Old Is Your Dog?" },
+  { "type": "text", "id": "dog_step_subtext", "label": "Subtext", "default": "Choose one as you want." },
+  { "type": "text", "id": "dog_opt1_label", "label": "Option 1 Label", "default": "Puppy" },
+  { "type": "image_picker", "id": "dog_opt1_image", "label": "Option 1 Image" },
+  { "type": "text", "id": "dog_opt2_label", "label": "Option 2 Label", "default": "Adult" },
+  { "type": "image_picker", "id": "dog_opt2_image", "label": "Option 2 Image" },
+  { "type": "text", "id": "dog_opt3_label", "label": "Option 3 Label", "default": "Senior" },
+  { "type": "image_picker", "id": "dog_opt3_image", "label": "Option 3 Image" },
+  { "type": "text", "id": "dog_back_text", "label": "Back Button Text", "default": "← Go Back" },
+  { "type": "text", "id": "dog_next_text", "label": "Next Button Text", "default": "Next →" },
+
+  {
+    "type": "header",
+    "content": "For Cats"
+  },
+  { "type": "text", "id": "cat_heading", "label": "Heading", "default": "How Old Is Your Cat?" },
+  { "type": "text", "id": "cat_step_subtext", "label": "Subtext", "default": "Choose one as you want." },
+  { "type": "text", "id": "cat_opt1_label", "label": "Option 1 Label", "default": "Kitten" },
+  { "type": "image_picker", "id": "cat_opt1_image", "label": "Option 1 Image" },
+  { "type": "text", "id": "cat_opt2_label", "label": "Option 2 Label", "default": "Adult" },
+  { "type": "image_picker", "id": "cat_opt2_image", "label": "Option 2 Image" },
+  { "type": "text", "id": "cat_opt3_label", "label": "Option 3 Label", "default": "Senior" },
+  { "type": "image_picker", "id": "cat_opt3_image", "label": "Option 3 Image" }
+]
+
     }
   ],
   "presets": [{ "name": "Quiz Banner" }]
