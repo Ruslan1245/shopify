@@ -272,7 +272,21 @@ button.quiz-option {
     width: 15px;
     height: auto;
 } {% endcomment %}
-
+span.verified:after {
+    content: "";
+    background-image: url(https://cdn.shopify.com/s/files/1/0627/0422/2426/files/Vector_8.png?v=1757788604);
+    height: 15px;
+    width: 15px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    top: calc(50% - 7.5px);
+    right: 0;
+}
+span.verified {
+    padding-left: 20px;
+    position: relative;
+}
 
   @media(max-width:768px){
     .quiz-step-2 .quiz-options { flex-direction: column; align-items: center; }
