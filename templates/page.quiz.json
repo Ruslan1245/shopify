@@ -1,0 +1,236 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "blocks": {
+        "heading": {
+          "type": "text",
+          "name": "Title",
+          "disabled": true,
+          "settings": {
+            "text": "<h1>{{ closest.page.title }}</h1>",
+            "truncate": false,
+            "width": "100%",
+            "max_width": "normal",
+            "alignment": "left",
+            "type_preset": "h2",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "page-content": {
+          "type": "page-content",
+          "settings": {},
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading",
+        "page-content"
+      ],
+      "disabled": true,
+      "settings": {
+        "content_direction": "column",
+        "gap": 32,
+        "color_scheme": "",
+        "padding-block-start": 60,
+        "padding-block-end": 60
+      }
+    },
+    "contact_banner_6NWUqG": {
+      "type": "contact-banner",
+      "name": "Contact Banner",
+      "settings": {
+        "background_image": "shopify://shop_images/e9913499dc2d091406d65f9020f06bed5a9c8628.png",
+        "overlay_color": "#3086c8",
+        "overlay_opacity": 75,
+        "heading": "Contact Us",
+        "subheading": "Trusted in over 30 countries worldwide, Nutram recipes represent the finest Canadian quality through many decades of pet nutrition excellence.",
+        "text_alignment": "center",
+        "section_height": 400
+      }
+    },
+    "custom_contact_form_Bm3W6c": {
+      "type": "custom-contact-form",
+      "custom_css": [],
+      "name": "Custom Contact Form",
+      "settings": {
+        "heading": "Fill In The Form Below",
+        "heading_color": "#3086c8",
+        "heading_underline": false,
+        "heading_size": 42,
+        "heading_size_mobile": 32,
+        "background_color": "#f8f8f8",
+        "input_bg": "#ffffff",
+        "input_text": "#000000",
+        "input_border": "#dddddd",
+        "input_focus": "#0066cc",
+        "input_radius": 40,
+        "checkbox_text": "#000000",
+        "terms_text": "I accept the terms & conditions",
+        "secure_text": "Your details are secure with us",
+        "button_text": "Get Started Today",
+        "button_bg": "#ffc107",
+        "button_hover": "#e6a900",
+        "button_text_color": "#000000",
+        "button_radius": 30,
+        "section_padding": 70,
+        "max_width": 800
+      }
+    },
+    "contact_info_fbfHVd": {
+      "type": "contact-info",
+      "blocks": {
+        "contact_item_EEzXnC": {
+          "type": "contact_item",
+          "settings": {
+            "icon": "shopify://shop_images/Group.png",
+            "heading": "Call Us",
+            "text": "+1 519-669-6240"
+          }
+        },
+        "contact_item_UF4diq": {
+          "type": "contact_item",
+          "settings": {
+            "icon": "shopify://shop_images/015---Email.png",
+            "heading": "Email Us",
+            "text": "info@nutram.com"
+          }
+        },
+        "contact_item_9R67B7": {
+          "type": "contact_item",
+          "settings": {
+            "icon": "shopify://shop_images/Vector_34f710fa-e08c-4e97-9edb-7c891b199e50.png",
+            "heading": "Social Media",
+            "text": "@nutram"
+          }
+        }
+      },
+      "block_order": [
+        "contact_item_EEzXnC",
+        "contact_item_UF4diq",
+        "contact_item_9R67B7"
+      ],
+      "name": "Custom Contact Info",
+      "settings": {
+        "title": "Get In Touch Via...",
+        "subtitle": "Call Us, Mail Us, Or Join Our Socials"
+      }
+    },
+    "faq_custom_y69pKc": {
+      "type": "faq-custom",
+      "blocks": {
+        "faq_item_kY34xH": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Sample Question",
+            "answer": "This is a sample answer."
+          }
+        },
+        "faq_item_bbaxxN": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Sample Question",
+            "answer": "This is a sample answer."
+          }
+        },
+        "faq_item_VpcTka": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Sample Question",
+            "answer": "This is a sample answer."
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_kY34xH",
+        "faq_item_bbaxxN",
+        "faq_item_VpcTka"
+      ],
+      "name": "FAQ Section",
+      "settings": {
+        "custom_css_class": "contact-faq-sec",
+        "heading": "Frequently Asked Questions",
+        "subheading": "We're always happy to help."
+      }
+    },
+    "banner_with_overlay_ewhPKc": {
+      "type": "banner-with-overlay",
+      "blocks": {
+        "feature_DVhzDP": {
+          "type": "feature",
+          "settings": {
+            "feature_text": "More energy & less bloating"
+          }
+        },
+        "feature_4t6Fch": {
+          "type": "feature",
+          "settings": {
+            "feature_text": "Clean ingredients, zero recalls"
+          }
+        },
+        "feature_knnP4K": {
+          "type": "feature",
+          "settings": {
+            "feature_text": "Holistic science for happy pets"
+          }
+        }
+      },
+      "block_order": [
+        "feature_DVhzDP",
+        "feature_4t6Fch",
+        "feature_knnP4K"
+      ],
+      "name": "CTA Banner with Overlay",
+      "settings": {
+        "background_image": "shopify://shop_images/c15da58cd2593ee29d3f7d9c89a3a2665e713b7a.jpg",
+        "fallback_bg_color": "#4a9ee7",
+        "overlay_color": "#4a9ee7",
+        "overlay_opacity": 85,
+        "main_title": "Ready to try",
+        "sub_title": "Canada's Cleanest Kibble?",
+        "title_color": "#ffffff",
+        "subtitle_color": "#ffffff",
+        "features_color": "#ffffff",
+        "button_text": "Shop Now",
+        "button_url": "shopify://collections",
+        "button_bg_color": "#f8c933",
+        "button_text_color": "#333333",
+        "testimonial_rating": 5,
+        "testimonial_text": "“My kitten loves this food! And it’s a relief that it’s also healthy for her too.”",
+        "customer_name": "Mike",
+        "customer_badge": "VERIFIED CUSTOMER"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "contact_banner_6NWUqG",
+    "custom_contact_form_Bm3W6c",
+    "contact_info_fbfHVd",
+    "faq_custom_y69pKc",
+    "banner_with_overlay_ewhPKc"
+  ]
+}
