@@ -78,15 +78,16 @@
         "step2_CANKGM": {
           "type": "step2",
           "settings": {
-            "for_pet": "cat",
             "step_label": "Step 2",
             "step_progress": 65,
+            "cat_heading": "How Old Is Your Cat?",
+            "dog_heading": "How Old Is Your Dog?",
             "step_subtext": "Choose one as you want.",
-            "opt1_label": "Puppy / Kitten",
+            "opt1_label": "Puppy",
             "opt2_label": "Adult",
             "opt3_label": "Senior",
-            "back_text": "← Go Back",
-            "next_text": "Next →"
+            "back_text": "Go Back",
+            "next_text": "Next"
           }
         }
       },
