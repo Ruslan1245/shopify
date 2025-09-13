@@ -59,6 +59,17 @@
         "padding-block-end": 60
       }
     },
+    "multi_step_quiz_BaqknT": {
+      "type": "multi-step-quiz",
+      "name": "Quiz Banner",
+      "settings": {
+        "overlay_color": "#000000",
+        "overlay_opacity": 40,
+        "heading": "Find The Perfect Nutram Recipe In 30 Seconds",
+        "text": "Answer a few quick questions, get a custom dry-food plan and 10% off your first bag.",
+        "btn_text": "Start Quiz"
+      }
+    },
     "contact_banner_6NWUqG": {
       "type": "contact-banner",
       "disabled": true,
@@ -226,27 +237,15 @@
         "customer_name": "Mike",
         "customer_badge": "VERIFIED CUSTOMER"
       }
-    },
-    "multi_step_quiz_kQC8Ft": {
-      "type": "multi-step-quiz",
-      "name": "Multi Step Quiz",
-      "settings": {
-        "bg_image": "shopify://shop_images/394764c5bc61f90946db96a17d4d618e803b98fd_1.jpg",
-        "overlay_color": "#29d7ff",
-        "overlay_opacity": 25,
-        "heading": "Find The Perfect Nutram Recipe In 30 Seconds",
-        "text": "Answer a few quick questions, get a custom dry-food plan and 10% off your first bag.",
-        "btn_text": "Start Quiz"
-      }
     }
   },
   "order": [
     "main",
+    "multi_step_quiz_BaqknT",
     "contact_banner_6NWUqG",
     "custom_contact_form_Bm3W6c",
     "contact_info_fbfHVd",
     "faq_custom_y69pKc",
-    "banner_with_overlay_ewhPKc",
-    "multi_step_quiz_kQC8Ft"
+    "banner_with_overlay_ewhPKc"
   ]
 }
