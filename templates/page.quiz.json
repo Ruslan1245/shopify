@@ -61,6 +61,26 @@
     },
     "multi_step_quiz_BaqknT": {
       "type": "multi-step-quiz",
+      "blocks": {
+        "step1_BVDUaM": {
+          "type": "step1",
+          "settings": {
+            "step_label": "Step 1",
+            "step_progress": 40,
+            "step_heading": "Who Are We Feeding Today?",
+            "step_subtext": "Choose one as you want.",
+            "option1": "Cat",
+            "option2": "Dog",
+            "back_text": "← Go Back",
+            "next_text": "Next →",
+            "review_text": "\"After switching, Max’s coat is shinier and tummy trouble disappeared in two weeks!\"",
+            "review_author": "John D."
+          }
+        }
+      },
+      "block_order": [
+        "step1_BVDUaM"
+      ],
       "name": "Quiz Banner",
       "settings": {
         "overlay_color": "#000000",
