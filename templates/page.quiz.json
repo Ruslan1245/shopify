@@ -78,22 +78,50 @@
         "step2_CANKGM": {
           "type": "step2",
           "settings": {
-            "step_label": "Step 2",
-            "step_progress": 65,
-            "cat_heading": "How Old Is Your Cat?",
+            "dog_step_label": "Step 2",
+            "dog_step_progress": 65,
             "dog_heading": "How Old Is Your Dog?",
-            "step_subtext": "Choose one as you want.",
-            "opt1_label": "Puppy",
-            "opt2_label": "Adult",
-            "opt3_label": "Senior",
-            "back_text": "Go Back",
-            "next_text": "Next"
+            "dog_step_subtext": "Choose one as you want.",
+            "dog_opt1_label": "Puppy",
+            "dog_opt2_label": "Adult",
+            "dog_opt3_label": "Senior",
+            "dog_back_text": "← Go Back",
+            "dog_next_text": "Next →",
+            "cat_heading": "How Old Is Your Cat?",
+            "cat_step_subtext": "Choose one as you want.",
+            "cat_opt1_label": "Kitten",
+            "cat_opt2_label": "Adult",
+            "cat_opt3_label": "Senior",
+            "cat_back_text": "← Go Back",
+            "cat_next_text": "Next →"
+          }
+        },
+        "step3_kj9MYP": {
+          "type": "step3",
+          "settings": {
+            "dog_step3_label": "Step 3",
+            "dog_step3_progress": 90,
+            "dog_step3_heading": "How Big Is Your Dog?",
+            "dog_step3_subtext": "Choose one you want.",
+            "dog_step3_opt1_label": "Small (< 25 lb)",
+            "dog_step3_opt2_label": "Medium (25‑70 lb)",
+            "dog_step3_opt3_label": "Large (>70 lb)",
+            "dog_step3_back_text": "← Go Back",
+            "dog_step3_next_text": "Finish →",
+            "cat_step3_heading": "How Big Is Your Cat?",
+            "cat_step3_subtext": "Choose one you want.",
+            "cat_step3_opt1_label": "Small",
+            "cat_step3_opt2_label": "Medium",
+            "cat_step3_opt3_label": "Large",
+            "cat_step3_back_text": "← Go Back",
+            "cat_step3_next_text": "Finish →"
           }
         }
       },
       "block_order": [
         "step1_BVDUaM",
-        "step2_CANKGM"
+        "step2_CANKGM",
+        "step3_kj9MYP"
       ],
       "name": "Quiz Banner",
       "settings": {
