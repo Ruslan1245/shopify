@@ -74,10 +74,25 @@
             "back_text": "Go Back",
             "next_text": "Next"
           }
+        },
+        "step2_CANKGM": {
+          "type": "step2",
+          "settings": {
+            "for_pet": "cat",
+            "step_label": "Step 2",
+            "step_progress": 65,
+            "step_subtext": "Choose one as you want.",
+            "opt1_label": "Puppy / Kitten",
+            "opt2_label": "Adult",
+            "opt3_label": "Senior",
+            "back_text": "← Go Back",
+            "next_text": "Next →"
+          }
         }
       },
       "block_order": [
-        "step1_BVDUaM"
+        "step1_BVDUaM",
+        "step2_CANKGM"
       ],
       "name": "Quiz Banner",
       "settings": {
