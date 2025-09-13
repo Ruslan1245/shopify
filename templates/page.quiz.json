@@ -61,6 +61,7 @@
     },
     "contact_banner_6NWUqG": {
       "type": "contact-banner",
+      "disabled": true,
       "name": "Contact Banner",
       "settings": {
         "background_image": "shopify://shop_images/e9913499dc2d091406d65f9020f06bed5a9c8628.png",
@@ -74,6 +75,7 @@
     },
     "custom_contact_form_Bm3W6c": {
       "type": "custom-contact-form",
+      "disabled": true,
       "custom_css": [],
       "name": "Custom Contact Form",
       "settings": {
@@ -114,7 +116,6 @@
         "contact_item_UF4diq": {
           "type": "contact_item",
           "settings": {
-            "icon": "shopify://shop_images/015---Email.png",
             "heading": "Email Us",
             "text": "info@nutram.com"
           }
@@ -122,7 +123,6 @@
         "contact_item_9R67B7": {
           "type": "contact_item",
           "settings": {
-            "icon": "shopify://shop_images/Vector_34f710fa-e08c-4e97-9edb-7c891b199e50.png",
             "heading": "Social Media",
             "text": "@nutram"
           }
@@ -133,6 +133,7 @@
         "contact_item_UF4diq",
         "contact_item_9R67B7"
       ],
+      "disabled": true,
       "name": "Custom Contact Info",
       "settings": {
         "title": "Get In Touch Via...",
@@ -169,6 +170,7 @@
         "faq_item_bbaxxN",
         "faq_item_VpcTka"
       ],
+      "disabled": true,
       "name": "FAQ Section",
       "settings": {
         "custom_css_class": "contact-faq-sec",
@@ -203,6 +205,7 @@
         "feature_4t6Fch",
         "feature_knnP4K"
       ],
+      "disabled": true,
       "name": "CTA Banner with Overlay",
       "settings": {
         "background_image": "shopify://shop_images/c15da58cd2593ee29d3f7d9c89a3a2665e713b7a.jpg",
@@ -223,6 +226,61 @@
         "customer_name": "Mike",
         "customer_badge": "VERIFIED CUSTOMER"
       }
+    },
+    "multi_step_quiz_kQC8Ft": {
+      "type": "multi-step-quiz",
+      "name": "Multi Step Quiz",
+      "settings": {
+        "rating_text": "4.8/5 loved by thousands of pet parents",
+        "step1_title": "Who Are We Feeding Today?",
+        "step1_subtitle": "Choose one as you want.",
+        "step1_option1": "Cat",
+        "step1_option1_icon": "🐱",
+        "step1_option2": "Dog",
+        "step1_option2_icon": "🐶",
+        "step2_title": "How Old Is Your Pet?",
+        "step2_subtitle": "Choose one as you want.",
+        "step2_option1": "Puppy",
+        "step2_option1_icon": "🐕‍🦺",
+        "step2_option2": "Adult",
+        "step2_option2_icon": "🐕",
+        "step2_option3": "Senior",
+        "step2_option3_icon": "🦮",
+        "step3_title": "How Big Is Your Dog?",
+        "step3_subtitle": "Choose one as you want.",
+        "step3_option1": "Small (< 25 Lb)",
+        "step3_option1_icon": "🐶",
+        "step3_option2": "Medium (25-70 Lb)",
+        "step3_option2_icon": "🐕",
+        "step3_option3": "Large (>70 Lb)",
+        "step3_option3_icon": "🐩",
+        "step4_title": "Which Goal Matters Most Right Now?",
+        "step4_subtitle": "Choose as many as you want.",
+        "step4_option1": "Healthy Skin & Coat",
+        "step4_option1_icon": "✨",
+        "step4_option2": "Sensitive Stomach",
+        "step4_option2_icon": "🍽️",
+        "step4_option3": "Weight Control",
+        "step4_option3_icon": "⚖️",
+        "step4_option4": "Urinary Cat Only",
+        "step4_option4_icon": "🚽",
+        "step4_option5": "High Energy / Active",
+        "step4_option5_icon": "⚡",
+        "step4_option6": "Grain-Free",
+        "step4_option6_icon": "🌾",
+        "step4_option7": "Mobility",
+        "step4_option7_icon": "🦴",
+        "step4_option8": "Overall Wellness",
+        "step4_option8_icon": "💚",
+        "final_title": "Awesome—Your Custom Plan Is Ready!",
+        "final_subtitle": "Tell us where to send it and unlock 10% off (coupon valid 48h).",
+        "testimonial_stars": "★★★★★",
+        "testimonial_text": "After switching, Max's coat is shinier and tummy trouble disappeared in two weeks!",
+        "testimonial_author": "John D.",
+        "product_1": "",
+        "product_2": "",
+        "product_3": ""
+      }
     }
   },
   "order": [
@@ -231,6 +289,7 @@
     "custom_contact_form_Bm3W6c",
     "contact_info_fbfHVd",
     "faq_custom_y69pKc",
-    "banner_with_overlay_ewhPKc"
+    "banner_with_overlay_ewhPKc",
+    "multi_step_quiz_kQC8Ft"
   ]
 }
