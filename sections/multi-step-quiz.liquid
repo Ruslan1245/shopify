@@ -1,10 +1,4 @@
-{% comment %}
-Quiz Banner with Step 1 (checked + scoped)
-File: sections/quiz-banner.liquid
-{% endcomment %}
-
 <section id="quiz-banner-{{ section.id }}" class="quiz-banner-section">
-  <!-- Intro Section -->
   <div class="quiz-banner-bg quiz-intro"
        style="background-image: url('{{ section.settings.bg_image | img_url: "1600x" }}');">
     <div class="quiz-banner-overlay"
@@ -20,46 +14,50 @@ File: sections/quiz-banner.liquid
     </div>
   </div>
 
-  <!-- Step 1 (hidden initially) -->
-  <div class="quiz-step quiz-step-1" style="display:none;">
-    <div class="quiz-progress" role="status" aria-live="polite">
-      <span>Step 1</span>
-      <div class="quiz-progress-bar" aria-hidden="true"><div style="width:40%"></div></div>
-      <span>40%</span>
-    </div>
+  {% for block in section.blocks %}
+    {% if block.type == 'step1' %}
+      <div class="quiz-step quiz-step-1" style="display:none;">
+        <div class="quiz-progress" role="status" aria-live="polite">
+          <span>{{ block.settings.step_label }}</span>
+          <div class="quiz-progress-bar" aria-hidden="true"><div style="width:{{ block.settings.step_progress }}%"></div></div>
+          <span>{{ block.settings.step_progress }}%</span>
+        </div>
 
-    <h2 class="quiz-step-heading">Who Are We Feeding Today?</h2>
-    <p class="quiz-step-subtext">Choose one as you want.</p>
+        <h2 class="quiz-step-heading">{{ block.settings.step_heading }}</h2>
+        <p class="quiz-step-subtext">{{ block.settings.step_subtext }}</p>
 
-    <div class="quiz-options" role="list">
-      <button type="button" class="quiz-option" data-choice="cat" role="listitem" aria-pressed="false">
-        <span class="quiz-icon" aria-hidden="true">🐱</span>
-        <span>Cat</span>
-      </button>
+        <div class="quiz-options" role="list">
+          <button type="button" class="quiz-option" data-choice="cat" role="listitem" aria-pressed="false">
+            <span class="quiz-icon" aria-hidden="true">🐱</span>
+            <span>{{ block.settings.option1 }}</span>
+          </button>
 
-      <button type="button" class="quiz-option" data-choice="dog" role="listitem" aria-pressed="false">
-        <span class="quiz-icon" aria-hidden="true">🐶</span>
-        <span>Dog</span>
-      </button>
-    </div>
+          <button type="button" class="quiz-option" data-choice="dog" role="listitem" aria-pressed="false">
+            <span class="quiz-icon" aria-hidden="true">🐶</span>
+            <span>{{ block.settings.option2 }}</span>
+          </button>
+        </div>
 
-    <div class="quiz-nav">
-      <button type="button" class="quiz-back">← Go Back</button>
-      <button type="button" class="quiz-next">Next →</button>
-    </div>
+        <div class="quiz-nav">
+          <button type="button" class="quiz-back">{{ block.settings.back_text }}</button>
+          <button type="button" class="quiz-next">{{ block.settings.next_text }}</button>
+        </div>
 
-    <div class="quiz-review">
-      <img src="https://via.placeholder.com/60" alt="Review image">
-      <div>
-        <p>"After switching, Max’s coat is shinier and tummy trouble disappeared in two weeks!"</p>
-        <strong>John D. <span class="verified">✔ Verified Customer</span></strong>
+        <div class="quiz-review">
+          {% if block.settings.review_image %}
+            <img src="{{ block.settings.review_image | img_url: '100x' }}" alt="Review image">
+          {% endif %}
+          <div>
+            <p>{{ block.settings.review_text }}</p>
+            <strong>{{ block.settings.review_author }} <span class="verified">✔ Verified Customer</span></strong>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
+    {% endif %}
+  {% endfor %}
 </section>
 
 <style>
-/* General */
 .quiz-banner-section { position: relative; width:100%; text-align:center; }
 .quiz-banner-bg { min-height:360px; display:flex; align-items:center; justify-content:center; position:relative; background-size:cover; background-position:center; }
 .quiz-banner-overlay { position:absolute; top:0; left:0; right:0; bottom:0; z-index:1; }
@@ -68,8 +66,6 @@ File: sections/quiz-banner.liquid
 .quiz-banner-text { font-size:16px; margin-bottom:22px; }
 .quiz-banner-btn { display:inline-block; background:#f2c94c; color:#000; font-weight:600; padding:14px 28px; border-radius:30px; text-decoration:none; transition:.3s; }
 .quiz-banner-btn:hover { background:#e5b93c; }
-
-/* Step 1 */
 .quiz-step { padding:40px 20px; }
 .quiz-progress { display:flex; align-items:center; justify-content:space-between; margin-bottom:20px; gap:12px; }
 .quiz-progress-bar { flex:1; height:8px; background:#eee; margin:0 10px; border-radius:4px; overflow:hidden; }
@@ -90,7 +86,6 @@ File: sections/quiz-banner.liquid
 .quiz-review p { margin:0 0 6px; font-size:14px; color:#333; }
 .quiz-review strong { font-size:14px; }
 .verified { color:#3b82f6; font-weight:600; }
-
 @media(max-width:768px){
   .quiz-banner-heading{font-size:24px;}
   .quiz-banner-text{font-size:14px;}
@@ -110,52 +105,38 @@ document.addEventListener("DOMContentLoaded", function(){
   var nextBtn = container.querySelector('.quiz-next');
   var options = container.querySelectorAll('.quiz-option');
 
-  // Start -> show step1
   if(startBtn){
     startBtn.addEventListener('click', function(e){
       e.preventDefault();
       if(intro) intro.style.display = 'none';
       if(step1) step1.style.display = 'block';
-      startBtn.blur();
-      // dispatch a namespaced event you can hook: 'quiz:intro-started'
-      container.dispatchEvent(new CustomEvent('quiz:intro-started', { bubbles: true, detail: { sectionId: '{{ section.id }}' } }));
     });
   }
 
-  // Back -> return to intro
   if(backBtn){
     backBtn.addEventListener('click', function(){
       if(step1) step1.style.display = 'none';
       if(intro) intro.style.display = '';
-      container.dispatchEvent(new CustomEvent('quiz:back', { bubbles: true, detail: { sectionId: '{{ section.id }}' } }));
     });
   }
 
-  // Options selection
   options.forEach(function(opt){
     opt.addEventListener('click', function(){
       options.forEach(function(o){ o.classList.remove('active'); o.setAttribute('aria-pressed', 'false'); });
       this.classList.add('active');
       this.setAttribute('aria-pressed', 'true');
-      // store selection on container for later use
       container.dataset.selection = this.getAttribute('data-choice');
-      // optional: dispatch choice event
-      container.dispatchEvent(new CustomEvent('quiz:choice', { bubbles:true, detail: { sectionId:'{{ section.id }}', choice: container.dataset.selection } }));
     });
   });
 
-  // Next -> require a selection, then dispatch event for next action
   if(nextBtn){
     nextBtn.addEventListener('click', function(){
       var selected = container.dataset.selection;
       if(!selected){
-        // simple lightweight feedback (non-blocking)
-        if (window.alert) { alert('Please choose an option to continue.'); }
+        alert('Please choose an option to continue.');
         return;
       }
-      container.dispatchEvent(new CustomEvent('quiz:next', { bubbles:true, detail: { sectionId:'{{ section.id }}', choice: selected } }));
-      console.log('quiz:next fired for section {{ section.id }} with choice:', selected);
-      // you can add navigation here (e.g. show Step 2)
+      console.log('Next clicked with choice:', selected);
     });
   }
 });
@@ -205,10 +186,27 @@ document.addEventListener("DOMContentLoaded", function(){
       "default": "Start Quiz"
     }
   ],
-  "presets": [
+  "blocks": [
     {
-      "name": "Quiz Banner"
+      "type": "step1",
+      "name": "Step 1",
+      "settings": [
+        { "type": "text", "id": "step_label", "label": "Step Label", "default": "Step 1" },
+        { "type": "range", "id": "step_progress", "label": "Progress %", "min": 0, "max": 100, "default": 40 },
+        { "type": "text", "id": "step_heading", "label": "Heading", "default": "Who Are We Feeding Today?" },
+        { "type": "text", "id": "step_subtext", "label": "Subtext", "default": "Choose one as you want." },
+        { "type": "text", "id": "option1", "label": "Option 1", "default": "Cat" },
+        { "type": "text", "id": "option2", "label": "Option 2", "default": "Dog" },
+        { "type": "text", "id": "back_text", "label": "Back Button Text", "default": "← Go Back" },
+        { "type": "text", "id": "next_text", "label": "Next Button Text", "default": "Next →" },
+        { "type": "image_picker", "id": "review_image", "label": "Review Image" },
+        { "type": "text", "id": "review_text", "label": "Review Text", "default": "\"After switching, Max’s coat is shinier and tummy trouble disappeared in two weeks!\"" },
+        { "type": "text", "id": "review_author", "label": "Review Author", "default": "John D." }
+      ]
     }
+  ],
+  "presets": [
+    { "name": "Quiz Banner" }
   ]
 }
 {% endschema %}
