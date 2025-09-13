@@ -49,8 +49,9 @@
           <button type="button" class="quiz-option" data-choice="cat" role="listitem" aria-pressed="false">
             {% if block.settings.cat_image %}
               <img src="{{ block.settings.cat_image | img_url: '300x' }}" alt="Cat option" class="quiz-option-img">
-              <img src="https://cdn.shopify.com/s/files/1/0627/0422/2426/files/outline.png?v=1757785070">
+              
             {% endif %}
+            <img src="https://cdn.shopify.com/s/files/1/0627/0422/2426/files/outline.png?v=1757785070">
             <span>{{ block.settings.option1 }}</span>
           </button>
 
