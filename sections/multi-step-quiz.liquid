@@ -1,390 +1,145 @@
 {% comment %}
-Multi-step Quiz Section
-- Place this file in sections/multi-step-quiz.liquid
-- Schema provides editable step labels and up to 3 recommended Shopify products
-- The form displays a generated coupon on success and posts to /contact (store owner). To send real emails with coupon to customers automatically, wire this form to an email automation (Shopify Flow + app, Zapier, or a server endpoint).
+Quiz Banner Intro Section
+File: sections/quiz-banner.liquid
 {% endcomment %}
 
-<section id="multi-step-quiz-{{ section.id }}" class="msq-section">
-  <div class="msq-inner">
-    <!-- Rating + progress -->
-    <div class="msq-rating">⭐️⭐️⭐️⭐️⭐️ <span class="msq-rating-text">{{ section.settings.rating_text }}</span></div>
-    <div class="msq-progress-wrap">
-      <div class="msq-progress-label">Step <span id="msq-current-step">1</span></div>
-      <div class="msq-progress">
-        <div class="msq-progress-bar" id="msq-progress-bar" style="width:0%"></div>
-      </div>
-      <div class="msq-progress-percent" id="msq-progress-percent">0%</div>
+<section id="quiz-banner-{{ section.id }}" class="quiz-banner-section">
+  <div class="quiz-banner-bg" 
+       style="background-image:url({{ section.settings.bg_image | img_url: '1600x' }});">
+    <div class="quiz-banner-overlay" 
+         style="background-color:{{ section.settings.overlay_color }}; opacity:{{ section.settings.overlay_opacity | divided_by: 100.0 }};">
     </div>
-
-    <!-- Title -->
-    <h2 class="msq-title" id="msq-title">{{ section.settings.step1_title }}</h2>
-    <p class="msq-subtitle" id="msq-subtitle">{{ section.settings.step1_subtitle }}</p>
-
-    <!-- Steps container -->
-    <div class="msq-steps" id="msq-steps">
-      <!-- Step 1 -->
-      <div class="msq-step active" data-step="1">
-        <div class="msq-choices msq-choices-2">
-          <button class="msq-choice" data-value="{{ section.settings.step1_option1 }}">
-            <div class="msq-icon">{{ section.settings.step1_option1_icon }}</div>
-            <div class="msq-label">{{ section.settings.step1_option1 }}</div>
-          </button>
-
-          <button class="msq-choice" data-value="{{ section.settings.step1_option2 }}">
-            <div class="msq-icon">{{ section.settings.step1_option2_icon }}</div>
-            <div class="msq-label">{{ section.settings.step1_option2 }}</div>
-          </button>
-        </div>
-      </div>
-
-      <!-- Step 2 -->
-      <div class="msq-step" data-step="2" style="display:none;">
-        <div class="msq-choices msq-choices-3">
-          <button class="msq-choice" data-value="{{ section.settings.step2_option1 }}"> <div class="msq-icon">{{ section.settings.step2_option1_icon }}</div><div class="msq-label">{{ section.settings.step2_option1 }}</div></button>
-          <button class="msq-choice" data-value="{{ section.settings.step2_option2 }}"> <div class="msq-icon">{{ section.settings.step2_option2_icon }}</div><div class="msq-label">{{ section.settings.step2_option2 }}</div></button>
-          <button class="msq-choice" data-value="{{ section.settings.step2_option3 }}"> <div class="msq-icon">{{ section.settings.step2_option3_icon }}</div><div class="msq-label">{{ section.settings.step2_option3 }}</div></button>
-        </div>
-      </div>
-
-      <!-- Step 3 -->
-      <div class="msq-step" data-step="3" style="display:none;">
-        <div class="msq-choices msq-choices-3">
-          <button class="msq-choice" data-value="{{ section.settings.step3_option1 }}"> <div class="msq-icon">{{ section.settings.step3_option1_icon }}</div><div class="msq-label">{{ section.settings.step3_option1 }}</div></button>
-          <button class="msq-choice" data-value="{{ section.settings.step3_option2 }}"> <div class="msq-icon">{{ section.settings.step3_option2_icon }}</div><div class="msq-label">{{ section.settings.step3_option2 }}</div></button>
-          <button class="msq-choice" data-value="{{ section.settings.step3_option3 }}"> <div class="msq-icon">{{ section.settings.step3_option3_icon }}</div><div class="msq-label">{{ section.settings.step3_option3 }}</div></button>
-        </div>
-      </div>
-
-      <!-- Step 4 (multiple choices) -->
-      <div class="msq-step" data-step="4" style="display:none;">
-        <div class="msq-choices msq-choices-grid">
-          {% for i in (1..8) %}
-            {% assign key = 'step4_option' | append: i %}
-            {% assign opt = section.settings[key] %}
-
-            {% assign icon_key = 'step4_option' | append: i | append: '_icon' %}
-            {% assign ic = section.settings[icon_key] %}
-
-            {% if opt != blank %}
-              <button class="msq-choice msq-multi" data-value="{{ opt }}"> <div class="msq-icon">{{ ic }}</div><div class="msq-label">{{ opt }}</div></button>
-            {% endif %}
-          {% endfor %}
-        </div>
-      </div>
-
-      <!-- Result / Form -->
-      <div class="msq-step" data-step="5" style="display:none;">
-        <h3>{{ section.settings.result_title }}</h3>
-        <p class="msq-result-summary" id="msq-result-summary">{{ section.settings.result_subtitle }}</p>
-
-        <form id="msq-result-form" class="msq-form" action="/contact" method="post">
-          <input type="hidden" name="form_type" value="contact" />
-          <input type="hidden" name="utf8" value="✓" />
-          <input type="hidden" name="contact[tags]" id="msq-hidden-tags" value="quiz-lead">
-
-          <div class="msq-field">
-            <label>Email Address *</label>
-            <input required type="email" name="contact[email]" id="msq-email" placeholder="Email Address">
-          </div>
-          <div class="msq-row">
-            <div class="msq-field small"><label>Phone (Optional)</label><input type="text" name="contact[phone]" id="msq-phone" placeholder="Phone Number"></div>
-            <div class="msq-field small"><label>Pet Name (Optional)</label><input type="text" name="contact[note]" id="msq-petname" placeholder="Pet Name"></div>
-          </div>
-
-          <button type="submit" class="msq-primary-btn" id="msq-reveal-btn">Reveal My Recommendation</button>
-
-          <div class="msq-coupon" id="msq-coupon" style="display:none;">
-            <p>Coupon created: <strong id="msq-coupon-code"></strong></p>
-            <p class="msq-small">Keep an eye on your inbox — we'll also send this coupon via email. (To enable automatic email with coupon replace form action with an email automation.)</p>
-          </div>
-        </form>
-
-        <div class="msq-recommended-products" id="msq-products">
-          {% if section.settings.product_1 != blank %}
-            {% assign p1 = all_products[section.settings.product_1] %}
-            {% if p1 %}
-              <div class="msq-product">
-                <img src="{{ p1.featured_image | img_url: '200x' }}" alt="{{ p1.title }}">
-                <div class="msq-product-info"><h4>{{ p1.title }}</h4><p>{{ p1.price | money }}</p>
-                <a href="{{ p1.url }}" class="msq-btn">View</a></div>
-              </div>
-            {% endif %}
-          {% endif %}
-
-          {% if section.settings.product_2 != blank %}
-            {% assign p2 = all_products[section.settings.product_2] %}
-            {% if p2 %}
-              <div class="msq-product">
-                <img src="{{ p2.featured_image | img_url: '200x' }}" alt="{{ p2.title }}">
-                <div class="msq-product-info"><h4>{{ p2.title }}</h4><p>{{ p2.price | money }}</p>
-                <a href="{{ p2.url }}" class="msq-btn">View</a></div>
-              </div>
-            {% endif %}
-          {% endif %}
-
-          {% if section.settings.product_3 != blank %}
-            {% assign p3 = all_products[section.settings.product_3] %}
-            {% if p3 %}
-              <div class="msq-product">
-                <img src="{{ p3.featured_image | img_url: '200x' }}" alt="{{ p3.title }}">
-                <div class="msq-product-info"><h4>{{ p3.title }}</h4><p>{{ p3.price | money }}</p>
-                <a href="{{ p3.url }}" class="msq-btn">View</a></div>
-              </div>
-            {% endif %}
-          {% endif %}
-        </div>
-
-      </div>
-
-    </div> <!-- /steps -->
-
-    <!-- Navigation -->
-    <div class="msq-nav">
-      <button class="msq-back" id="msq-back">← Go Back</button>
-      <button class="msq-next" id="msq-next">Next →</button>
+    <div class="quiz-banner-content">
+      <h2 class="quiz-banner-heading">{{ section.settings.heading }}</h2>
+      <p class="quiz-banner-text">{{ section.settings.text }}</p>
+      <a href="javascript:void(0);" class="quiz-banner-btn" id="quiz-start-btn">
+        {{ section.settings.btn_text }} →
+      </a>
     </div>
-
-    <!-- Testimonial area (editable text) -->
-    <div class="msq-testimonial"> 
-      <img src="{{ section.settings.testimonial_avatar | img_url: '80x80' }}" alt="testimonial">
-      <div class="msq-testimonial-text"> <div class="msq-stars">{{ section.settings.testimonial_stars }}</div>
-      <div class="msq-testimonial-copy">{{ section.settings.testimonial_text }}</div>
-      <div class="msq-testimonial-author">{{ section.settings.testimonial_author }}</div>
-      </div>
-    </div>
-
   </div>
-
-  <style>
-    /* Basic responsive styles — tweak according to your theme */
-    #multi-step-quiz-{{ section.id }} { padding:40px 20px; background:#fafafa; text-align:center; }
-    .msq-inner{max-width:1100px;margin:0 auto}
-    .msq-rating{font-size:14px;margin-bottom:6px}
-    .msq-progress-wrap{display:flex;align-items:center;gap:12px;justify-content:center;margin-bottom:10px}
-    .msq-progress{width:60%;background:#e9eef2;border-radius:20px;height:12px;overflow:hidden}
-    .msq-progress-bar{height:100%;background:#3b86c5;width:0%;transition:width .35s}
-    .msq-title{color:#2b7db0;font-size:28px;margin:8px 0}
-    .msq-subtitle{margin-bottom:24px;color:#666}
-    .msq-choices{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-bottom:22px}
-    .msq-choices-2 .msq-choice{width:240px;height:180px;border-radius:40px;background:#5da0d6;color:#fff;border:none}
-    .msq-choices-3 .msq-choice{width:220px;height:180px;border-radius:40px;background:#5da0d6;color:#fff;border:none}
-    .msq-choices-grid .msq-choice{min-width:220px;padding:14px 18px;border-radius:8px;background:#fff;border:2px solid #d6e2ea}
-    .msq-choice{cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:18px}
-    .msq-choice.active, .msq-choice.selected{box-shadow:0 6px 18px rgba(0,0,0,.08);border-color:#3b86c5}
-    .msq-icon{font-size:28px; margin-bottom:8px}
-    .msq-label{font-weight:600}
-    .msq-nav{display:flex;gap:12px;justify-content:center;margin:18px 0}
-    .msq-back,.msq-next{padding:12px 26px;border-radius:30px;border:1px solid #ccd7e0;background:#fff}
-    .msq-primary-btn{background:#f2c94c;border:none;padding:14px 20px;border-radius:28px}
-    .msq-row{display:flex;gap:12px;justify-content:center}
-    .msq-field{max-width:680px;margin:10px auto;text-align:left}
-    .msq-field.small{max-width:300px}
-    .msq-field input{width:100%;padding:12px;border-radius:8px;border:1px solid #d0d7dd}
-    .msq-product{display:inline-flex;align-items:center;gap:12px;padding:12px;margin:8px;background:#fff;border-radius:10px}
-    .msq-product img{width:80px;height:80px;object-fit:cover;border-radius:8px}
-    .msq-testimonial{display:flex;gap:12px;align-items:center;justify-content:center;margin-top:22px;background:#e9f3f8;padding:12px;border-radius:8px}
-
-    @media (max-width:768px){
-      .msq-choices-2 .msq-choice, .msq-choices-3 .msq-choice{width:44%;height:140px}
-      .msq-choices-grid .msq-choice{width:100%}
-      .msq-progress{width:50%}
-      .msq-row{flex-direction:column}
-    }
-  </style>
-
-  <script>
-    (function(){
-      var currentStep = 1;
-      var totalSteps = 5;
-      var selections = [];
-
-      var steps = document.querySelectorAll('#multi-step-quiz-{{ section.id }} .msq-step');
-      var progressBar = document.getElementById('msq-progress-bar');
-      var progressPercent = document.getElementById('msq-progress-percent');
-      var currentStepLabel = document.getElementById('msq-current-step');
-      var titleEl = document.getElementById('msq-title');
-      var subtitleEl = document.getElementById('msq-subtitle');
-
-      function updateProgress(){
-        var pct = Math.round(((currentStep-1)/(totalSteps-1))*100);
-        progressBar.style.width = pct + '%';
-        progressPercent.innerText = pct + '%';
-        currentStepLabel.innerText = currentStep;
-      }
-
-      function showStep(n){
-        steps.forEach(function(s){ s.style.display = 'none'; s.classList.remove('active'); });
-        var el = document.querySelector('#multi-step-quiz-{{ section.id }} .msq-step[data-step="'+n+'"]');
-        // fallback: select with attribute
-        el = document.querySelector('#multi-step-quiz-{{ section.id }} .msq-step[data-step="' + n + '"]') || document.querySelector('#multi-step-quiz-{{ section.id }} .msq-step[data-step="'+n+'"]');
-        if(!el){
-          // try by index
-          el = steps[n-1];
-        }
-        el.style.display = 'block';
-        el.classList.add('active');
-        currentStep = n;
-        updateProgress();
-
-        // update header text for some steps (optional schema-driven)
-        if(n==1){ titleEl.innerText = {{ section.settings.step1_title | json }}; subtitleEl.innerText = {{ section.settings.step1_subtitle | json }} }
-        if(n==2){ titleEl.innerText = {{ section.settings.step2_title | json }}; subtitleEl.innerText = {{ section.settings.step2_subtitle | json }} }
-        if(n==3){ titleEl.innerText = {{ section.settings.step3_title | json }}; subtitleEl.innerText = {{ section.settings.step3_subtitle | json }} }
-        if(n==4){ titleEl.innerText = {{ section.settings.step4_title | json }}; subtitleEl.innerText = {{ section.settings.step4_subtitle | json }} }
-        if(n==5){ titleEl.innerText = {{ section.settings.final_title | json }}; subtitleEl.innerText = {{ section.settings.final_subtitle | json }}; populateSummary(); }
-      }
-
-      function populateSummary(){
-        var summary = document.getElementById('msq-result-summary');
-        if(summary){
-          summary.innerText = 'You chose: ' + (selections.length? selections.join(' • '): 'No choices');
-          // put selections as tags in hidden field so store owner can see them
-          document.getElementById('msq-hidden-tags').value = 'quiz-lead, ' + selections.join(',');
-        }
-      }
-
-      // delegate clicks on choices
-      document.getElementById('multi-step-quiz-{{ section.id }}').addEventListener('click', function(e){
-        var btn = e.target.closest('.msq-choice');
-        if(!btn) return;
-        var stepEl = btn.closest('.msq-step');
-        var stepIndex = parseInt(stepEl.getAttribute('data-step'));
-        var value = btn.getAttribute('data-value');
-
-        if(btn.classList.contains('msq-multi')){
-          // toggle
-          btn.classList.toggle('selected');
-          if(btn.classList.contains('selected')) selections.push(value); else { var idx = selections.indexOf(value); if(idx>-1) selections.splice(idx,1); }
-        } else {
-          // single choice: mark and move forward
-          // remove other selections from this step range
-          var siblings = stepEl.querySelectorAll('.msq-choice');
-          siblings.forEach(function(s){ s.classList.remove('selected'); });
-          btn.classList.add('selected');
-
-          // store selection: remove any previous choice from this step (we'll use index by step)
-          // For simplicity keep unique values
-          // remove any existing value from same step by checking labels — straightforward approach: replace any value that came from this step
-          // We'll store as mapping step:value in a simple array of strings 'StepX:Value'
-          // remove previous stepX values
-          selections = selections.filter(function(it){ return it.indexOf('Step'+stepIndex+':')===-1 });
-          selections.push('Step'+stepIndex+':'+value);
-
-          // auto-advance a bit if not last
-          if(stepIndex < totalSteps-1){ showStep(stepIndex+1); }
-        }
-      });
-
-      // navigation
-      document.getElementById('msq-next').addEventListener('click', function(){ if(currentStep < totalSteps) showStep(currentStep+1); });
-      document.getElementById('msq-back').addEventListener('click', function(){ if(currentStep > 1) showStep(currentStep-1); });
-
-      // on form submit, generate a coupon and show it, still POSTs to /contact
-      document.getElementById('msq-result-form').addEventListener('submit', function(e){
-        // allow form to post, but also show coupon inline and prevent redirect
-        e.preventDefault();
-        // generate simple coupon code (random)
-        var code = 'QUIZ-'+Math.random().toString(36).substr(2,6).toUpperCase();
-        document.getElementById('msq-coupon-code').innerText = code;
-        document.getElementById('msq-coupon').style.display = 'block';
-
-        // append coupon to the message so store owner sees it in contact body
-        var email = document.getElementById('msq-email').value;
-        var pet = document.getElementById('msq-petname').value;
-        var phone = document.getElementById('msq-phone').value;
-
-        // create a hidden field note with the selections and coupon
-        var noteField = document.querySelector('input[name="contact[note]"]');
-        if(noteField){ noteField.value = 'Pet:'+pet+' Phone:'+phone+' Coupon:'+code+' Selections:'+selections.join('; '); }
-
-        // show success state
-        this.querySelector('#msq-reveal-btn').innerText = 'Recommendation Revealed';
-
-        // show recommended products (they are rendered server-side; could also fetch more info via AJAX if needed)
-        populateSummary();
-
-        // optionally perform an AJAX post to /contact to create the contact without page refresh
-        var formData = new FormData(this);
-        fetch(this.action, { method: 'POST', body: formData, credentials: 'same-origin' })
-          .then(function(resp){
-            // success — optionally inform user
-            console.log('contact posted', resp.status);
-          }).catch(function(err){ console.error(err); });
-
-      });
-
-      // init
-      showStep(1);
-
-    })();
-  </script>
-
 </section>
+
+<style>
+  .quiz-banner-section {
+    position: relative;
+    width: 100%;
+    min-height: 360px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+  }
+  .quiz-banner-bg {
+    position: relative;
+    width: 100%;
+    min-height: 360px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .quiz-banner-overlay {
+    position: absolute;
+    top:0; left:0; right:0; bottom:0;
+  }
+  .quiz-banner-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    padding: 40px 20px;
+    color: #fff;
+  }
+  .quiz-banner-heading {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 14px;
+  }
+  .quiz-banner-text {
+    font-size: 16px;
+    margin-bottom: 22px;
+  }
+  .quiz-banner-btn {
+    display: inline-block;
+    background: #f2c94c;
+    color: #000;
+    font-weight: 600;
+    padding: 14px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: background .3s ease;
+  }
+  .quiz-banner-btn:hover {
+    background: #e5b93c;
+  }
+
+  @media(max-width:768px){
+    .quiz-banner-heading{font-size:24px;}
+    .quiz-banner-text{font-size:14px;}
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function(){
+    var startBtn = document.getElementById("quiz-start-btn");
+    if(startBtn){
+      startBtn.addEventListener("click", function(){
+        // Later: open quiz steps (replace this with your quiz logic)
+        alert("Quiz will start...");
+      });
+    }
+  });
+</script>
 
 {% schema %}
 {
-  "name": "Multi Step Quiz",
+  "name": "Quiz Banner Intro",
   "settings": [
-    {"type":"text","id":"rating_text","label":"Rating text","default":"4.8/5 loved by thousands of pet parents"},
-
-    {"type":"text","id":"step1_title","label":"Step 1 title","default":"Who Are We Feeding Today?"},
-    {"type":"text","id":"step1_subtitle","label":"Step 1 subtitle","default":"Choose one as you want."},
-    {"type":"text","id":"step1_option1","label":"Step1 option 1","default":"Cat"},
-    {"type":"text","id":"step1_option1_icon","label":"Step1 option1 icon (html or emoji)","default":"🐱"},
-    {"type":"text","id":"step1_option2","label":"Step1 option 2","default":"Dog"},
-    {"type":"text","id":"step1_option2_icon","label":"Step1 option2 icon (html or emoji)","default":"🐶"},
-
-    {"type":"text","id":"step2_title","label":"Step 2 title","default":"How Old Is Your Pet?"},
-    {"type":"text","id":"step2_subtitle","label":"Step 2 subtitle","default":"Choose one as you want."},
-    {"type":"text","id":"step2_option1","label":"Step2 option 1","default":"Puppy"},
-    {"type":"text","id":"step2_option1_icon","label":"Step2 option1 icon","default":"🐕‍🦺"},
-    {"type":"text","id":"step2_option2","label":"Step2 option 2","default":"Adult"},
-    {"type":"text","id":"step2_option2_icon","label":"Step2 option2 icon","default":"🐕"},
-    {"type":"text","id":"step2_option3","label":"Step2 option 3","default":"Senior"},
-    {"type":"text","id":"step2_option3_icon","label":"Step2 option3 icon","default":"🦮"},
-
-    {"type":"text","id":"step3_title","label":"Step 3 title","default":"How Big Is Your Dog?"},
-    {"type":"text","id":"step3_subtitle","label":"Step 3 subtitle","default":"Choose one as you want."},
-    {"type":"text","id":"step3_option1","label":"Step3 option 1","default":"Small (< 25 Lb)"},
-    {"type":"text","id":"step3_option1_icon","label":"Step3 option1 icon","default":"🐶"},
-    {"type":"text","id":"step3_option2","label":"Step3 option 2","default":"Medium (25-70 Lb)"},
-    {"type":"text","id":"step3_option2_icon","label":"Step3 option2 icon","default":"🐕"},
-    {"type":"text","id":"step3_option3","label":"Step3 option 3","default":"Large (>70 Lb)"},
-    {"type":"text","id":"step3_option3_icon","label":"Step3 option3 icon","default":"🐩"},
-
-    {"type":"text","id":"step4_title","label":"Step 4 title","default":"Which Goal Matters Most Right Now?"},
-    {"type":"text","id":"step4_subtitle","label":"Step 4 subtitle","default":"Choose as many as you want."},
-
-    {"type":"text","id":"step4_option1","label":"Step4 option 1","default":"Healthy Skin & Coat"},
-    {"type":"text","id":"step4_option1_icon","label":"Step4 option1 icon","default":"✨"},
-    {"type":"text","id":"step4_option2","label":"Step4 option 2","default":"Sensitive Stomach"},
-    {"type":"text","id":"step4_option2_icon","label":"Step4 option2 icon","default":"🍽️"},
-    {"type":"text","id":"step4_option3","label":"Step4 option 3","default":"Weight Control"},
-    {"type":"text","id":"step4_option3_icon","label":"Step4 option3 icon","default":"⚖️"},
-    {"type":"text","id":"step4_option4","label":"Step4 option 4","default":"Urinary Cat Only"},
-    {"type":"text","id":"step4_option4_icon","label":"Step4 option4 icon","default":"🚽"},
-    {"type":"text","id":"step4_option5","label":"Step4 option 5","default":"High Energy / Active"},
-    {"type":"text","id":"step4_option5_icon","label":"Step4 option5 icon","default":"⚡"},
-    {"type":"text","id":"step4_option6","label":"Step4 option 6","default":"Grain-Free"},
-    {"type":"text","id":"step4_option6_icon","label":"Step4 option6 icon","default":"🌾"},
-    {"type":"text","id":"step4_option7","label":"Step4 option 7","default":"Mobility"},
-    {"type":"text","id":"step4_option7_icon","label":"Step4 option7 icon","default":"🦴"},
-    {"type":"text","id":"step4_option8","label":"Step4 option 8","default":"Overall Wellness"},
-    {"type":"text","id":"step4_option8_icon","label":"Step4 option8 icon","default":"💚"},
-
-    {"type":"text","id":"final_title","label":"Final / reveal title","default":"Awesome—Your Custom Plan Is Ready!"},
-    {"type":"text","id":"final_subtitle","label":"Final subtitle","default":"Tell us where to send it and unlock 10% off (coupon valid 48h)."},
-
-    {"type":"image_picker","id":"testimonial_avatar","label":"Testimonial avatar"},
-    {"type":"text","id":"testimonial_stars","label":"Testimonial stars","default":"★★★★★"},
-    {"type":"text","id":"testimonial_text","label":"Testimonial text","default":"After switching, Max's coat is shinier and tummy trouble disappeared in two weeks!"},
-    {"type":"text","id":"testimonial_author","label":"Testimonial author","default":"John D."},
-
-    {"type":"product","id":"product_1","label":"Recommended product 1"},
-    {"type":"product","id":"product_2","label":"Recommended product 2"},
-    {"type":"product","id":"product_3","label":"Recommended product 3"}
+    {
+      "type": "image_picker",
+      "id": "bg_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "color",
+      "id": "overlay_color",
+      "label": "Overlay Color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "label": "Overlay Opacity",
+      "default": 40
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Find The Perfect Nutram Recipe In 30 Seconds"
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Subtext",
+      "default": "Answer a few quick questions, get a custom dry-food plan and 10% off your first bag."
+    },
+    {
+      "type": "text",
+      "id": "btn_text",
+      "label": "Button Text",
+      "default": "Start Quiz"
+    }
   ],
-  "presets":[{"name":"Multi Step Quiz"}]
+  "presets": [
+    {
+      "name": "Quiz Banner Intro"
+    }
+  ]
 }
 {% endschema %}
