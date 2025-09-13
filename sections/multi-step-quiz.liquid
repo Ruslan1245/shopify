@@ -63,10 +63,8 @@
           <button type="button" class="quiz-back">{{ block.settings.back_text }}</button>
           <button type="button" class="quiz-next">{{ block.settings.next_text }}</button>
         </div>
-      </div>
-    {% endif %}
-  {% endfor %}
-  <div class="quiz-review">
+
+        <div class="quiz-review" style="display:none;">
           {% if section.settings.review_image %}
             <img src="{{ section.settings.review_image | img_url: '100x' }}" alt="Review image">
           {% endif %}
@@ -75,6 +73,9 @@
             <strong>{{ section.settings.review_author }} <span class="verified">✔ Verified Customer</span></strong>
           </div>
         </div>
+      </div>
+    {% endif %}
+  {% endfor %}
 </section>
 
 <style>
@@ -136,12 +137,14 @@ document.addEventListener("DOMContentLoaded", function(){
   var backBtn = container.querySelector('.quiz-back');
   var nextBtn = container.querySelector('.quiz-next');
   var options = container.querySelectorAll('.quiz-option');
+  var reviewBox = container.querySelector('.quiz-review');
 
   if(startBtn){
     startBtn.addEventListener('click', function(e){
       e.preventDefault();
       if(intro) intro.style.display = 'none';
       if(step1) step1.style.display = 'block';
+      if(reviewBox) reviewBox.style.display = 'flex';
     });
   }
 
@@ -149,6 +152,7 @@ document.addEventListener("DOMContentLoaded", function(){
     backBtn.addEventListener('click', function(){
       if(step1) step1.style.display = 'none';
       if(intro) intro.style.display = '';
+      if(reviewBox) reviewBox.style.display = 'none';
     });
   }
 
