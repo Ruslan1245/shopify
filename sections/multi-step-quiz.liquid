@@ -359,8 +359,19 @@ button.quiz-option {
     padding-right: 45px;
     width: 100%;
     max-width: 269px;
-  text-align: left; }
-
+  text-align: left;
+   position: relative;
+}
+.quiz-next:after {
+ content: "";
+    background-image: url(/cdn/shop/files/Vector_5c1622c0-29e6-402a-a815-8da37656e4fc.png?v=1755184216);
+    height: 15px;
+    width: 30px;
+    background-repeat: no-repeat;
+    background-size: contain;
+        position: absolute;
+    top: calc(50% - 7.5px);
+}
   .quiz-review { display:flex; gap:15px; max-width:640px; margin:20px auto 0; background:#f9fafb; padding:15px; border-radius:12px; text-align:left; align-items:center; }
   .quiz-review img { border-radius:4px; width:96px; height:96px; object-fit:cover; }
   .quiz-review p { margin:0 0 6px; font-size:14px; color:#333; }
