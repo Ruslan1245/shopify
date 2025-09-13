@@ -71,10 +71,8 @@
             "step_subtext": "Choose one as you want.",
             "option1": "Cat",
             "option2": "Dog",
-            "back_text": "← Go Back",
-            "next_text": "Next →",
-            "review_text": "\"After switching, Max’s coat is shinier and tummy trouble disappeared in two weeks!\"",
-            "review_author": "John D."
+            "back_text": "Go Back",
+            "next_text": "Next"
           }
         }
       },
@@ -87,7 +85,12 @@
         "overlay_opacity": 40,
         "heading": "Find The Perfect Nutram Recipe In 30 Seconds",
         "text": "Answer a few quick questions, get a custom dry-food plan and 10% off your first bag.",
-        "btn_text": "Start Quiz"
+        "btn_text": "Start Quiz",
+        "show_rating": true,
+        "rating_stars": 5,
+        "rating_text": "Rated 5.0 by 300+ customers",
+        "review_text": "\"After switching, Max’s coat is shinier and tummy trouble disappeared in two weeks!\"",
+        "review_author": "John D."
       }
     },
     "contact_banner_6NWUqG": {
