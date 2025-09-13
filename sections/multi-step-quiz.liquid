@@ -346,11 +346,13 @@ document.addEventListener('DOMContentLoaded', function () {
   var intro = container.querySelector('.quiz-intro');
   var step1 = container.querySelector('.quiz-step-1');
   var step2Nodes = Array.prototype.slice.call(container.querySelectorAll('.quiz-step-2'));
+  var step3Nodes = Array.prototype.slice.call(container.querySelectorAll('.quiz-step-3'));
   var reviewBox = container.querySelector('.global-review');
 
   function hideAllSteps() {
     if (step1) step1.style.display = 'none';
     step2Nodes.forEach(function (n) { n.style.display = 'none'; });
+    step3Nodes.forEach(function (n) { n.style.display = 'none'; });
   }
 
   function showStep2For(pet) {
@@ -359,15 +361,25 @@ document.addEventListener('DOMContentLoaded', function () {
     if (target) {
       target.style.display = 'block';
       if (reviewBox) reviewBox.style.display = 'flex';
-      // ensure focus for accessibility
-      target.querySelector('.quiz-option') && target.querySelector('.quiz-option').focus();
+      target.querySelector('.quiz-option')?.focus();
     } else {
       console.warn('No step2 block registered for pet:', pet);
       if (step1) step1.style.display = 'block';
     }
   }
 
-  // start quiz
+  function showStep3For(pet) {
+    hideAllSteps();
+    var target = container.querySelector('.quiz-step-3[data-pet="' + pet + '"]');
+    if (target) {
+      target.style.display = 'block';
+      if (reviewBox) reviewBox.style.display = 'flex';
+      target.querySelector('.quiz-option')?.focus();
+    } else {
+      console.warn('No step3 block registered for pet:', pet);
+    }
+  }
+
   if (startBtn) {
     startBtn.addEventListener('click', function (e) {
       e.preventDefault();
@@ -377,7 +389,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // delegated click handling for options / next / back
   container.addEventListener('click', function (e) {
     var opt = e.target.closest('.quiz-option');
     if (opt) {
@@ -394,6 +405,8 @@ document.addEventListener('DOMContentLoaded', function () {
         container.dataset.selection = opt.getAttribute('data-choice'); // 'cat' or 'dog'
       } else if (parentStep.classList.contains('quiz-step-2')) {
         container.dataset.selection2 = opt.getAttribute('data-choice'); // e.g. 'dog_opt1'
+      } else if (parentStep.classList.contains('quiz-step-3')) {
+        container.dataset.selection3 = opt.getAttribute('data-choice'); // e.g. 'dog_opt1'
       }
       return;
     }
@@ -402,7 +415,6 @@ document.addEventListener('DOMContentLoaded', function () {
     var backBtn = e.target.closest('.quiz-back');
 
     if (nextBtn) {
-      // from step1 to step2
       if (step1 && window.getComputedStyle(step1).display !== 'none') {
         var sel = container.dataset.selection;
         if (!sel) { alert('Please choose an option to continue.'); return; }
@@ -410,32 +422,59 @@ document.addEventListener('DOMContentLoaded', function () {
         return;
       }
 
-      // on step2 -> you can add the logic to go to next steps or submit results here
-      var visibleStep2 = step2Nodes.find(function (n) { return window.getComputedStyle(n).display !== 'none'; });
+      var visibleStep2 = step2Nodes.find(function (n) {
+        return window.getComputedStyle(n).display !== 'none';
+      });
       if (visibleStep2) {
         var chosen = container.dataset.selection2 || null;
-        console.log('Step 2 Next clicked. selection2 =', chosen);
-        // TODO: wire further navigation/submission if needed
+        if (!chosen) { alert('Please choose an option to continue.'); return; }
+        var pet = container.dataset.selection;
+        showStep3For(pet);
+        return;
       }
+
+      var visibleStep3 = step3Nodes.find(function (n) {
+        return window.getComputedStyle(n).display !== 'none';
+      });
+      if (visibleStep3) {
+        var chosen3 = container.dataset.selection3 || null;
+        if (!chosen3) { alert('Please choose an option to continue.'); return; }
+        console.log("Step 3 completed. Selection3 =", chosen3);
+        // You can add the next action here: e.g., show results or go to Step 4
+      }
+
       return;
     }
 
     if (backBtn) {
-      var visibleStep2 = step2Nodes.find(function (n) { return window.getComputedStyle(n).display !== 'none'; });
+      var visibleStep3 = step3Nodes.find(function (n) {
+        return window.getComputedStyle(n).display !== 'none';
+      });
+      if (visibleStep3) {
+        visibleStep3.style.display = 'none';
+        var pet = container.dataset.selection;
+        showStep2For(pet);
+        return;
+      }
+
+      var visibleStep2 = step2Nodes.find(function (n) {
+        return window.getComputedStyle(n).display !== 'none';
+      });
       if (visibleStep2) {
         visibleStep2.style.display = 'none';
         if (step1) step1.style.display = 'block';
         return;
       }
+
       if (step1 && window.getComputedStyle(step1).display !== 'none') {
         step1.style.display = 'none';
         if (intro) intro.style.display = '';
         if (reviewBox) reviewBox.style.display = 'none';
       }
-      return;
     }
   });
 });
+
 </script>
 
 {% schema %}
