@@ -394,115 +394,7 @@
   .quiz-banner-section .quiz-review.global-review {
       background-color: #4498CD1A;
   }
-{% comment %} 
-  button.quiz-option[data-choice="cat_opt1"]:before, button.quiz-option[data-choice="cat_step3_opt1"]:before {
-    content: "";
-    background-image: url(https://cdn.shopify.com/s/files/1/0627/0422/2426/files/Group_1_347c3794-0ff3-4a85-864e-c4d4f866cf6a.png?v=1757786226);
-    background-size: 45px 45px;
-    background-repeat: no-repeat;
-    height: 45px;
-    width: 45px;
-    display: inline-block;
-    margin-right: 8px;
-    vertical-align: middle;
-    position: relative;
-}
-  button.quiz-option[data-choice="cat_opt2"]:before, button.quiz-option[data-choice="cat_step3_opt2"]:before {
-    content: "";
-    background-image: url(https://cdn.shopify.com/s/files/1/0627/0422/2426/files/outline.png?v=1757785070);
-    background-size: 50px 60px;
-    background-repeat: no-repeat;
-    height: 60px;
-    width: 50px;
-    display: inline-block;
-    margin-right: 8px;
-    vertical-align: middle;
-    position: relative;
-}
-  button.quiz-option[data-choice="cat_opt3"]:before, button.quiz-option[data-choice="cat_step3_opt3"]:before {
-    content: "";
-    background-image: url(https://cdn.shopify.com/s/files/1/0627/0422/2426/files/selkirk-rex-cat_107977_1.png?v=1757786226);
-    background-size: 45px 50px;
-    background-repeat: no-repeat;
-    height: 50px;
-    width: 45px;
-    display: inline-block;
-    margin-right: 8px;
-    vertical-align: middle;
-    position: relative;
-}
-  button.quiz-option[data-choice="dog_opt1"]:before {
-    content: "";
-    background-image: url(https://cdn.shopify.com/s/files/1/0627/0422/2426/files/dog_14854431_1.png?v=1757786227);
-    background-size: 38px 45px;
-    background-repeat: no-repeat;
-    height: 45px;
-    width: 38px;
-    display: inline-block;
-    margin-right: 8px;
-    vertical-align: middle;
-    position: relative;
-}
-  button.quiz-option[data-choice="dog_opt2"]:before {
-    content: "";
-    background-image: url(https://cdn.shopify.com/s/files/1/0627/0422/2426/files/dog_3416187_2.png?v=1757786226);
-    background-size: 45px 50px;
-    background-repeat: no-repeat;
-    height: 50px;
-    width: 45px;
-    display: inline-block;
-    margin-right: 8px;
-    vertical-align: middle;
-    position: relative;
-}
-  button.quiz-option[data-choice="dog_opt3"]:before {
-    content: "";
-    background-image: url(https://cdn.shopify.com/s/files/1/0627/0422/2426/files/german-sheperd_107431_1.png?v=1757786226);
-    background-size: 45px 50px;
-    background-repeat: no-repeat;
-    height: 50px;
-    width: 45px;
-    display: inline-block;
-    margin-right: 8px;
-    vertical-align: middle;
-    position: relative;
-}
-  button.quiz-option[data-choice="dog_step3_opt1"]:before {
-    content: "";
-    background-image: url(https://cdn.shopify.com/s/files/1/0627/0422/2426/files/dog_14296254_1.png?v=1757858464);
-    background-size: 45px 50px;
-    background-repeat: no-repeat;
-    height: 50px;
-    width: 45px;
-    display: inline-block;
-    margin-right: 8px;
-    vertical-align: middle;
-    position: relative;
-}
-  button.quiz-option[data-choice="dog_step3_opt2"]:before {
-    content: "";
-    background-image: url(https://cdn.shopify.com/s/files/1/0627/0422/2426/files/dog_3416187_2.png?v=1757786226);
-    background-size: 45px 50px;
-    background-repeat: no-repeat;
-    height: 50px;
-    width: 45px;
-    display: inline-block;
-    margin-right: 8px;
-    vertical-align: middle;
-    position: relative;
-}
-  button.quiz-option[data-choice="dog_step3_opt3"]:before {
-    content: "";
-    background-image: url(https://cdn.shopify.com/s/files/1/0627/0422/2426/files/pets_12452249_1.png?v=1757785069);
-    background-size: 45px 50px;
-    background-repeat: no-repeat;
-    height: 50px;
-    width: 45px;
-    display: inline-block;
-    margin-right: 8px;
-    vertical-align: middle;
-    position: relative;
-} {% endcomment %}
+
 button.quiz-option img.quiz-option-img {
     background-color: transparent !important;
 }
@@ -825,6 +717,19 @@ p.quiz-note small {
 p.quiz-note {
     margin: 30px 0px;
 }
+p.quiz-note small::before {
+  content: "";
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin-right: 6px;
+  background-image: url("https://cdn.shopify.com/s/files/1/0627/0422/2426/files/carbon_information.png?v=1757865921");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  vertical-align: middle;
+}
+
   @media (max-width: 768px) {
     .quiz-step-3 .quiz-options {
       flex-direction: column;
