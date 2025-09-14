@@ -109,7 +109,7 @@
             "dog_step3_opt2_label": "Medium (25‑70 lb)",
             "dog_step3_opt3_label": "Large (>70 lb)",
             "dog_step3_back_text": "Go Back",
-            "dog_step3_next_text": "Finish",
+            "dog_step3_next_text": "Next",
             "cat_step3_label": "Step 3",
             "cat_step3_progress": 80,
             "cat_step3_heading": "How Big Is Your Cat?",
@@ -118,7 +118,7 @@
             "cat_step3_opt2_label": "Medium",
             "cat_step3_opt3_label": "Large",
             "cat_step3_back_text": "Go Back",
-            "cat_step3_next_text": "Finish"
+            "cat_step3_next_text": "Next"
           }
         },
         "step4_6gHndB": {
