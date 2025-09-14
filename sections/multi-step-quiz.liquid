@@ -52,7 +52,7 @@
             {% if block.settings.cat_image %}
               <img src="{{ block.settings.cat_image | img_url: '300x' }}" alt="Cat option" class="quiz-option-img">
             {% endif %}
-            <img src="https://cdn.shopify.com/s/files/1/0627/0422/2426/files/outline.png?v=1757785070">
+            {% comment %} <img src="https://cdn.shopify.com/s/files/1/0627/0422/2426/files/outline.png?v=1757785070"> {% endcomment %}
             <span>{{ block.settings.option1 }}</span>
           </button>
 
@@ -60,7 +60,7 @@
             {% if block.settings.dog_image %}
               <img src="{{ block.settings.dog_image | img_url: '300x' }}" alt="Dog option" class="quiz-option-img">
             {% endif %}
-            <img src="https://cdn.shopify.com/s/files/1/0627/0422/2426/files/pets_12452249_1.png?v=1757785069">
+            {% comment %} <img src="https://cdn.shopify.com/s/files/1/0627/0422/2426/files/pets_12452249_1.png?v=1757785069"> {% endcomment %}
 
             <span>{{ block.settings.option2 }}</span>
           </button>
