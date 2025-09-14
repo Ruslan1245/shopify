@@ -92,8 +92,8 @@
             "cat_opt1_label": "Kitten",
             "cat_opt2_label": "Adult",
             "cat_opt3_label": "Senior",
-            "cat_back_text": "← Go Back",
-            "cat_next_text": "Next →"
+            "cat_back_text": "Go Back",
+            "cat_next_text": "Next"
           }
         },
         "step3_kj9MYP": {
@@ -106,8 +106,8 @@
             "dog_step3_opt1_label": "Small (< 25 lb)",
             "dog_step3_opt2_label": "Medium (25‑70 lb)",
             "dog_step3_opt3_label": "Large (>70 lb)",
-            "dog_step3_back_text": "← Go Back",
-            "dog_step3_next_text": "Finish →",
+            "dog_step3_back_text": "Go Back",
+            "dog_step3_next_text": "Finish",
             "cat_step3_heading": "How Big Is Your Cat?",
             "cat_step3_subtext": "Choose one you want.",
             "cat_step3_opt1_label": "Small",
