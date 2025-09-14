@@ -267,7 +267,30 @@
         <h2 class="quiz-step-heading">{{ block.settings.step5_heading }}</h2>
         <p class="quiz-step-subtext">{{ block.settings.step5_subtext }}</p>
 
-        
+        <form id="quiz-result-form" class="quiz-result-form">
+          <div class="form-group">
+            <input type="email" name="email" id="quiz-email" placeholder="Email Address*" required>
+          </div>
+          <div class="form-group">
+            <input type="text" name="phone" id="quiz-phone" placeholder="Phone Number (Optional)">
+          </div>
+          <div class="form-group">
+            <input type="text" name="pet_name" id="quiz-pet-name" placeholder="Pet Name (Optional)">
+          </div>
+
+          <!-- Hidden fields for quiz selections -->
+          <input type="hidden" name="step1" id="quiz-step1">
+          <input type="hidden" name="step2" id="quiz-step2">
+          <input type="hidden" name="step3" id="quiz-step3">
+          <input type="hidden" name="step4" id="quiz-step4">
+          <input type="hidden" name="step5" id="quiz-step5">
+
+          <button type="submit" class="quiz-submit-btn">Reveal My Recommendation</button>
+
+          <p class="quiz-note">
+            <small>💡 Get a Free gift for your pet’s birthday (once a year)</small>
+          </p>
+        </form>
 
         <div class="quiz-nav">
           <button type="button" class="quiz-back">{{ block.settings.step5_back_text }}</button>
@@ -567,6 +590,36 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
+    var form = document.getElementById('quiz-result-form');
+    if (!form) return;
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      for (let i = 1; i <= 5; i++) {
+        var field = document.getElementById('quiz-step' + i);
+        if (field) {
+          field.value = localStorage.getItem('quiz_step' + i) || '';
+        }
+      }
+      var formData = new FormData(form);
+      fetch('/contact', {
+        method: 'POST',
+        body: formData,
+      })
+        .then((res) => {
+          if (res.ok) {
+            alert('✅ Thank you! Your recommendation will be revealed.');
+          } else {
+            alert('⚠️ Something went wrong, please try again.');
+          }
+        })
+        .catch((err) => {
+          console.error('Form error:', err);
+          alert('⚠️ Error submitting form.');
+        });
+    });
+  });
+
+  document.addEventListener('DOMContentLoaded', function () {
     var container = document.getElementById('quiz-banner-{{ section.id }}');
     if (!container) return;
 
@@ -581,7 +634,7 @@
 
     /** Utility: hide all steps */
     function hideAllSteps() {
-      [step1].concat(step2Nodes, step3Nodes, step4Nodes, step5Nodes).forEach(n => {
+      [step1].concat(step2Nodes, step3Nodes, step4Nodes, step5Nodes).forEach((n) => {
         if (n) n.style.display = 'none';
       });
     }
@@ -641,7 +694,7 @@
           parentStep.classList.contains('quiz-step-2') ||
           parentStep.classList.contains('quiz-step-3')
         ) {
-          parentStep.querySelectorAll('.quiz-option').forEach(s => {
+          parentStep.querySelectorAll('.quiz-option').forEach((s) => {
             s.classList.remove('active');
             s.setAttribute('aria-pressed', 'false');
           });
@@ -658,9 +711,10 @@
 
         /** Save answers into localStorage */
         var stepKey = parentStep.className.match(/quiz-step-(\d)/)[1];
-        var selections = Array.from(parentStep.querySelectorAll('.quiz-option.active'))
-          .map(btn => btn.dataset.choice);
-        localStorage.setItem("quiz_step" + stepKey, selections.join(","));
+        var selections = Array.from(parentStep.querySelectorAll('.quiz-option.active')).map(
+          (btn) => btn.dataset.choice
+        );
+        localStorage.setItem('quiz_step' + stepKey, selections.join(','));
         return;
       }
 
@@ -670,27 +724,27 @@
       /** NEXT button flow */
       if (nextBtn) {
         if (step1 && window.getComputedStyle(step1).display !== 'none') {
-          if (!localStorage.getItem("quiz_step1")) {
+          if (!localStorage.getItem('quiz_step1')) {
             alert('Please choose an option to continue.');
             return;
           }
-          showStep2For(localStorage.getItem("quiz_step1"));
+          showStep2For(localStorage.getItem('quiz_step1'));
           return;
         }
 
-        var visibleStep2 = step2Nodes.find(n => window.getComputedStyle(n).display !== 'none');
+        var visibleStep2 = step2Nodes.find((n) => window.getComputedStyle(n).display !== 'none');
         if (visibleStep2) {
-          if (!localStorage.getItem("quiz_step2")) {
+          if (!localStorage.getItem('quiz_step2')) {
             alert('Please choose an option to continue.');
             return;
           }
-          showStep3For(localStorage.getItem("quiz_step1"));
+          showStep3For(localStorage.getItem('quiz_step1'));
           return;
         }
 
-        var visibleStep3 = step3Nodes.find(n => window.getComputedStyle(n).display !== 'none');
+        var visibleStep3 = step3Nodes.find((n) => window.getComputedStyle(n).display !== 'none');
         if (visibleStep3) {
-          if (!localStorage.getItem("quiz_step3")) {
+          if (!localStorage.getItem('quiz_step3')) {
             alert('Please choose an option to continue.');
             return;
           }
@@ -698,9 +752,9 @@
           return;
         }
 
-        var visibleStep4 = step4Nodes.find(n => window.getComputedStyle(n).display !== 'none');
+        var visibleStep4 = step4Nodes.find((n) => window.getComputedStyle(n).display !== 'none');
         if (visibleStep4) {
-          if (!localStorage.getItem("quiz_step4")) {
+          if (!localStorage.getItem('quiz_step4')) {
             alert('Please choose at least one option to continue.');
             return;
           }
@@ -708,39 +762,39 @@
           return;
         }
 
-        var visibleStep5 = step5Nodes.find(n => window.getComputedStyle(n).display !== 'none');
+        var visibleStep5 = step5Nodes.find((n) => window.getComputedStyle(n).display !== 'none');
         if (visibleStep5) {
           // ✅ Final step reached: show results from localStorage
           var results = [];
           for (var i = 1; i <= 5; i++) {
-            results.push("Step " + i + ": " + (localStorage.getItem("quiz_step" + i) || "No selection"));
+            results.push('Step ' + i + ': ' + (localStorage.getItem('quiz_step' + i) || 'No selection'));
           }
-          alert("🎉 Quiz Completed!\n\n" + results.join("\n"));
+          alert('🎉 Quiz Completed!\n\n' + results.join('\n'));
           return;
         }
       }
 
       /** BACK button flow */
       if (backBtn) {
-        var visibleStep5 = step5Nodes.find(n => window.getComputedStyle(n).display !== 'none');
+        var visibleStep5 = step5Nodes.find((n) => window.getComputedStyle(n).display !== 'none');
         if (visibleStep5) {
           visibleStep5.style.display = 'none';
           showStep4();
           return;
         }
-        var visibleStep4 = step4Nodes.find(n => window.getComputedStyle(n).display !== 'none');
+        var visibleStep4 = step4Nodes.find((n) => window.getComputedStyle(n).display !== 'none');
         if (visibleStep4) {
           visibleStep4.style.display = 'none';
-          showStep3For(localStorage.getItem("quiz_step1"));
+          showStep3For(localStorage.getItem('quiz_step1'));
           return;
         }
-        var visibleStep3 = step3Nodes.find(n => window.getComputedStyle(n).display !== 'none');
+        var visibleStep3 = step3Nodes.find((n) => window.getComputedStyle(n).display !== 'none');
         if (visibleStep3) {
           visibleStep3.style.display = 'none';
-          showStep2For(localStorage.getItem("quiz_step1"));
+          showStep2For(localStorage.getItem('quiz_step1'));
           return;
         }
-        var visibleStep2 = step2Nodes.find(n => window.getComputedStyle(n).display !== 'none');
+        var visibleStep2 = step2Nodes.find((n) => window.getComputedStyle(n).display !== 'none');
         if (visibleStep2) {
           visibleStep2.style.display = 'none';
           if (step1) step1.style.display = 'block';
@@ -755,7 +809,6 @@
     });
   });
 </script>
-
 
 {% schema %}
 {
@@ -929,7 +982,7 @@
         { "type": "text", "id": "step5_heading", "label": "Heading", "default": "Choose your plan" },
         { "type": "text", "id": "step5_subtext", "label": "Subtext", "default": "Pick one that works best for you" },
         { "type": "text", "id": "step5_back_text", "label": "Back Button Text", "default": "Back" },
-        { "type": "text", "id": "step5_next_text", "label": "Next Button Text", "default": "Next" },
+        { "type": "text", "id": "step5_next_text", "label": "Next Button Text", "default": "Next" }
       ]
     }
   ],
