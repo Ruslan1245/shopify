@@ -679,6 +679,25 @@ button.quiz-option img.quiz-option-img {
     color: #fff;
   }
 
+ .quiz-options.step4-options button.quiz-option {
+  background-image: none;
+  width: auto;
+  height: auto;
+}
+
+/* Odd buttons */
+.quiz-options.step4-options button.quiz-option:nth-child(odd) {
+  background-color: #4498CD !important;
+  color: #fff;
+}
+
+/* Even buttons */
+.quiz-options.step4-options button.quiz-option:nth-child(even) {
+  background-color: #fff !important;
+  color: #4498CD; 
+  border: 2px solid #4498CD; 
+}
+
   @media (max-width: 768px) {
     .quiz-step-3 .quiz-options {
       flex-direction: column;
