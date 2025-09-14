@@ -205,61 +205,60 @@
   {% endfor %}
 
   {% for block in section.blocks %}
-  {% if block.type == 'step4' %}
-    <div class="quiz-step quiz-step-4" style="display:none;">
-      {% if section.settings.show_rating %}
-        <div class="quiz-rating">
-          {% for i in (1..section.settings.rating_stars) -%}
-            ★
-          {%- endfor %}
-          <span class="quiz-rating-text">{{ section.settings.rating_text }}</span>
+    {% if block.type == 'step4' %}
+      <div class="quiz-step quiz-step-4" style="display:none;">
+        {% if section.settings.show_rating %}
+          <div class="quiz-rating">
+            {% for i in (1..section.settings.rating_stars) -%}
+              ★
+            {%- endfor %}
+            <span class="quiz-rating-text">{{ section.settings.rating_text }}</span>
+          </div>
+        {% endif %}
+
+        <div class="quiz-progress" role="status" aria-live="polite">
+          <span>{{ block.settings.step4_label }}</span>
+          <div class="quiz-progress-bar" aria-hidden="true">
+            <div style="width:{{ block.settings.step4_progress }}%"></div>
+          </div>
+          <span>{{ block.settings.step4_progress }}%</span>
         </div>
-      {% endif %}
 
-      <div class="quiz-progress" role="status" aria-live="polite">
-        <span>{{ block.settings.step4_label }}</span>
-        <div class="quiz-progress-bar" aria-hidden="true">
-          <div style="width:{{ block.settings.step4_progress }}%"></div>
+        <h2 class="quiz-step-heading">{{ block.settings.step4_heading }}</h2>
+        <p class="quiz-step-subtext">{{ block.settings.step4_subtext }}</p>
+
+        <div class="quiz-options step4-options" role="list">
+          {% for i in (1..10) %}
+            {% assign text_key = 'button' | append: i | append: '_text' %}
+            {% assign icon_key = 'button' | append: i | append: '_icon' %}
+
+            {% if block.settings[text_key] != blank or block.settings[icon_key] != blank %}
+              <button
+                type="button"
+                class="quiz-option"
+                data-choice="step4_button{{ i }}"
+                aria-pressed="false"
+              >
+                {% if block.settings[icon_key] %}
+                  <img
+                    src="{{ block.settings[icon_key] | img_url: '88x88' }}"
+                    alt="{{ block.settings[text_key] }}"
+                    class="quiz-option-img"
+                  >
+                {% endif %}
+                <span>{{ block.settings[text_key] }}</span>
+              </button>
+            {% endif %}
+          {% endfor %}
         </div>
-        <span>{{ block.settings.step4_progress }}%</span>
+
+        <div class="quiz-nav">
+          <button type="button" class="quiz-back">{{ block.settings.step4_back_text }}</button>
+          <button type="button" class="quiz-next">{{ block.settings.step4_next_text }}</button>
+        </div>
       </div>
-
-      <h2 class="quiz-step-heading">{{ block.settings.step4_heading }}</h2>
-      <p class="quiz-step-subtext">{{ block.settings.step4_subtext }}</p>
-
-      <div class="quiz-options step4-options" role="list">
-        {% for i in (1..10) %}
-          {% assign text_key = 'button' | append: i | append: '_text' %}
-          {% assign icon_key = 'button' | append: i | append: '_icon' %}
-
-          {% if block.settings[text_key] != blank or block.settings[icon_key] != blank %}
-            <button
-              type="button"
-              class="quiz-option"
-              data-choice="step4_button{{ i }}"
-              aria-pressed="false"
-            >
-              {% if block.settings[icon_key] %}
-                <img
-                  src="{{ block.settings[icon_key] | img_url: '88x88' }}"
-                  alt="{{ block.settings[text_key] }}"
-                  class="quiz-option-img"
-                >
-              {% endif %}
-              <span>{{ block.settings[text_key] }}</span>
-            </button>
-          {% endif %}
-        {% endfor %}
-      </div>
-
-      <div class="quiz-nav">
-        <button type="button" class="quiz-back">{{ block.settings.step4_back_text }}</button>
-        <button type="button" class="quiz-next">{{ block.settings.step4_next_text }}</button>
-      </div>
-    </div>
-  {% endif %}
-{% endfor %}
-
+    {% endif %}
+  {% endfor %}
 
   {%- comment -%} REVIEW box kept outside steps so we can show it once quiz starts (it remains hidden until start). {%- endcomment -%}
   <div class="quiz-review global-review" style="display:none;">
@@ -559,18 +558,18 @@
     var step1 = container.querySelector('.quiz-step-1');
     var step2Nodes = Array.prototype.slice.call(container.querySelectorAll('.quiz-step-2'));
     var step3Nodes = Array.prototype.slice.call(container.querySelectorAll('.quiz-step-3'));
+    var step4Nodes = Array.prototype.slice.call(container.querySelectorAll('.quiz-step-4'));
     var reviewBox = container.querySelector('.global-review');
 
+    /** hide all steps */
     function hideAllSteps() {
       if (step1) step1.style.display = 'none';
-      step2Nodes.forEach(function (n) {
-        n.style.display = 'none';
-      });
-      step3Nodes.forEach(function (n) {
-        n.style.display = 'none';
-      });
+      step2Nodes.forEach(n => n.style.display = 'none');
+      step3Nodes.forEach(n => n.style.display = 'none');
+      step4Nodes.forEach(n => n.style.display = 'none');
     }
 
+    /** step2 based on pet */
     function showStep2For(pet) {
       hideAllSteps();
       var target = container.querySelector('.quiz-step-2[data-pet="' + pet + '"]');
@@ -579,11 +578,11 @@
         if (reviewBox) reviewBox.style.display = 'flex';
         target.querySelector('.quiz-option')?.focus();
       } else {
-        console.warn('No step2 block registered for pet:', pet);
         if (step1) step1.style.display = 'block';
       }
     }
 
+    /** step3 based on pet */
     function showStep3For(pet) {
       hideAllSteps();
       var target = container.querySelector('.quiz-step-3[data-pet="' + pet + '"]');
@@ -591,11 +590,21 @@
         target.style.display = 'block';
         if (reviewBox) reviewBox.style.display = 'flex';
         target.querySelector('.quiz-option')?.focus();
-      } else {
-        console.warn('No step3 block registered for pet:', pet);
       }
     }
 
+    /** generic show step4 */
+    function showStep4() {
+      hideAllSteps();
+      var target = step4Nodes[0]; // assuming only one step4 block
+      if (target) {
+        target.style.display = 'block';
+        if (reviewBox) reviewBox.style.display = 'flex';
+        target.querySelector('.quiz-option')?.focus();
+      }
+    }
+
+    /** Start button */
     if (startBtn) {
       startBtn.addEventListener('click', function (e) {
         e.preventDefault();
@@ -605,12 +614,13 @@
       });
     }
 
+    /** Options + Navigation */
     container.addEventListener('click', function (e) {
       var opt = e.target.closest('.quiz-option');
       if (opt) {
         var parentStep = opt.closest('.quiz-step');
         if (!parentStep) return;
-        parentStep.querySelectorAll('.quiz-option').forEach(function (s) {
+        parentStep.querySelectorAll('.quiz-option').forEach(s => {
           s.classList.remove('active');
           s.setAttribute('aria-pressed', 'false');
         });
@@ -620,9 +630,11 @@
         if (parentStep.classList.contains('quiz-step-1')) {
           container.dataset.selection = opt.getAttribute('data-choice'); // 'cat' or 'dog'
         } else if (parentStep.classList.contains('quiz-step-2')) {
-          container.dataset.selection2 = opt.getAttribute('data-choice'); // e.g. 'dog_opt1'
+          container.dataset.selection2 = opt.getAttribute('data-choice');
         } else if (parentStep.classList.contains('quiz-step-3')) {
-          container.dataset.selection3 = opt.getAttribute('data-choice'); // e.g. 'dog_opt1'
+          container.dataset.selection3 = opt.getAttribute('data-choice');
+        } else if (parentStep.classList.contains('quiz-step-4')) {
+          container.dataset.selection4 = opt.getAttribute('data-choice');
         }
         return;
       }
@@ -630,6 +642,7 @@
       var nextBtn = e.target.closest('.quiz-next');
       var backBtn = e.target.closest('.quiz-back');
 
+      /** NEXT button */
       if (nextBtn) {
         if (step1 && window.getComputedStyle(step1).display !== 'none') {
           var sel = container.dataset.selection;
@@ -641,50 +654,57 @@
           return;
         }
 
-        var visibleStep2 = step2Nodes.find(function (n) {
-          return window.getComputedStyle(n).display !== 'none';
-        });
+        var visibleStep2 = step2Nodes.find(n => window.getComputedStyle(n).display !== 'none');
         if (visibleStep2) {
-          var chosen = container.dataset.selection2 || null;
+          var chosen = container.dataset.selection2;
           if (!chosen) {
             alert('Please choose an option to continue.');
             return;
           }
-          var pet = container.dataset.selection;
-          showStep3For(pet);
+          showStep3For(container.dataset.selection);
           return;
         }
 
-        var visibleStep3 = step3Nodes.find(function (n) {
-          return window.getComputedStyle(n).display !== 'none';
-        });
+        var visibleStep3 = step3Nodes.find(n => window.getComputedStyle(n).display !== 'none');
         if (visibleStep3) {
-          var chosen3 = container.dataset.selection3 || null;
+          var chosen3 = container.dataset.selection3;
           if (!chosen3) {
             alert('Please choose an option to continue.');
             return;
           }
-          console.log('Step 3 completed. Selection3 =', chosen3);
-          // You can add the next action here: e.g., show results or go to Step 4
-        }
-
-        return;
-      }
-
-      if (backBtn) {
-        var visibleStep3 = step3Nodes.find(function (n) {
-          return window.getComputedStyle(n).display !== 'none';
-        });
-        if (visibleStep3) {
-          visibleStep3.style.display = 'none';
-          var pet = container.dataset.selection;
-          showStep2For(pet);
+          showStep4();
           return;
         }
 
-        var visibleStep2 = step2Nodes.find(function (n) {
-          return window.getComputedStyle(n).display !== 'none';
-        });
+        var visibleStep4 = step4Nodes.find(n => window.getComputedStyle(n).display !== 'none');
+        if (visibleStep4) {
+          var chosen4 = container.dataset.selection4;
+          if (!chosen4) {
+            alert('Please choose an option to continue.');
+            return;
+          }
+          console.log('Step 4 completed. Selection4 =', chosen4);
+          // TODO: Final action (redirect, show results, etc.)
+        }
+      }
+
+      /** BACK button */
+      if (backBtn) {
+        var visibleStep4 = step4Nodes.find(n => window.getComputedStyle(n).display !== 'none');
+        if (visibleStep4) {
+          visibleStep4.style.display = 'none';
+          showStep3For(container.dataset.selection);
+          return;
+        }
+
+        var visibleStep3 = step3Nodes.find(n => window.getComputedStyle(n).display !== 'none');
+        if (visibleStep3) {
+          visibleStep3.style.display = 'none';
+          showStep2For(container.dataset.selection);
+          return;
+        }
+
+        var visibleStep2 = step2Nodes.find(n => window.getComputedStyle(n).display !== 'none');
         if (visibleStep2) {
           visibleStep2.style.display = 'none';
           if (step1) step1.style.display = 'block';
@@ -823,10 +843,10 @@
       ]
     },
     {
-  "type": "step4",
-  "name": "Step 4",
-  "settings": [
-     { "type": "text", "id": "step4_label", "label": "Step Label", "default": "Step 4" },
+      "type": "step4",
+      "name": "Step 4",
+      "settings": [
+        { "type": "text", "id": "step4_label", "label": "Step Label", "default": "Step 4" },
         { "type": "range", "id": "step4_progress", "label": "Progress %", "min": 0, "max": 100, "default": 100 },
         { "type": "text", "id": "step4_heading", "label": "Heading", "default": "Choose your plan" },
         { "type": "text", "id": "step4_subtext", "label": "Subtext", "default": "Pick one that works best for you" },
@@ -862,8 +882,8 @@
 
         { "type": "text", "id": "button10_text", "label": "Button 10 Text", "default": "Option 10" },
         { "type": "image_picker", "id": "button10_icon", "label": "Button 10 Icon" }
-  ]
-}
+      ]
+    }
   ],
   "presets": [{ "name": "Quiz Banner" }]
 }
