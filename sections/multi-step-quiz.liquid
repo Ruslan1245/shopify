@@ -584,14 +584,13 @@ padding-bottom: 30px; }
   gap: 8px !important;
 }
 
-/* Odd buttons */
-.quiz-options.step4-options button.quiz-option:nth-child(odd) {
+{% comment %} .quiz-options.step4-options button.quiz-option {
   background-color: #4498CD !important;
   color: #fff;
-}
+} {% endcomment %}
 
 /* Even buttons */
-.quiz-options.step4-options button.quiz-option:nth-child(even), .quiz-options.step4-options button.quiz-option:nth-last-child(2) {
+.quiz-options.step4-options button.quiz-option {
   background-color: #fff !important;
   color: #4498CD; 
   border: 1.5px solid #66666640; 
