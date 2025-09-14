@@ -1,0 +1,64 @@
+{% comment %}
+  Template: quiz-result
+  This page shows the personalized recipe result after quiz.
+{% endcomment %}
+
+<div class="quiz-result-wrapper">
+  <h2 class="quiz-result-heading" id="quizHeading">
+    Here’s <span id="quizPetName"></span>’s perfect Nutram recipe!
+  </h2>
+
+  <div class="quiz-result-content">
+    <!-- Left: product text -->
+    <div class="quiz-result-text">
+      <div class="quiz-stars">⭐⭐⭐⭐⭐ <span>6,879 reviews</span></div>
+      <h3 class="quiz-product-title">T23 Nutram Total Grain-Free</h3>
+      <p class="quiz-product-subtitle">Chicken and Turkey Recipe</p>
+      <p class="quiz-product-price">From $19.99</p>
+      <ul class="quiz-bullets">
+        <li>Matches your pet’s needs, not the masses</li>
+        <li>Built on our Digestive Wellness System™</li>
+        <li>Backed by science, not opinions</li>
+      </ul>
+      <a href="/cart" class="quiz-add-to-cart">Add to Cart</a>
+      <a href="/pages/store-locator" class="quiz-find-retailer">Find the Retailer</a>
+    </div>
+
+    <!-- Right: product images -->
+    <div class="quiz-result-image">
+      <img src="{{ 'nutram-dog.png' | asset_url }}" alt="Nutram Dog" />
+      <img src="{{ 'nutram-cat.png' | asset_url }}" alt="Nutram Cat" />
+    </div>
+  </div>
+</div>
+
+<style>
+.quiz-result-wrapper { text-align:center; padding:40px 20px; }
+.quiz-result-heading { font-size:28px; color:#2ca9e1; margin-bottom:30px; }
+.quiz-result-content { display:flex; justify-content:center; gap:40px; align-items:flex-start; flex-wrap:wrap; }
+.quiz-result-text { max-width:420px; text-align:left; }
+.quiz-stars { color:#f7b500; font-weight:600; margin-bottom:10px; }
+.quiz-product-title { font-size:22px; font-weight:700; color:#222; }
+.quiz-product-subtitle { font-size:16px; color:#777; }
+.quiz-product-price { font-size:16px; margin:10px 0; font-weight:600; }
+.quiz-bullets { margin:15px 0; padding-left:20px; }
+.quiz-bullets li { margin-bottom:8px; }
+.quiz-add-to-cart { background:#f7b500; color:#222; padding:12px 24px; border-radius:30px; display:inline-block; margin:10px 0; text-decoration:none; font-weight:600; }
+.quiz-find-retailer { background:#2ca9e1; color:#fff; padding:12px 24px; border-radius:30px; display:inline-block; margin-left:10px; text-decoration:none; font-weight:600; }
+.quiz-result-image img { max-width:200px; margin:10px; }
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  var petName = localStorage.getItem("quiz_petname") || "";
+  var span = document.getElementById("quizPetName");
+  var heading = document.getElementById("quizHeading");
+
+  if (petName && span) {
+    span.textContent = petName;
+  } else if (heading) {
+    // Hide entire heading if no PetName
+    heading.style.display = "none";
+  }
+});
+</script>
