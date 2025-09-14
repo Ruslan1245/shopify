@@ -85,8 +85,8 @@
             "dog_opt1_label": "Puppy",
             "dog_opt2_label": "Adult",
             "dog_opt3_label": "Senior",
-            "dog_back_text": "← Go Back",
-            "dog_next_text": "Next →",
+            "dog_back_text": "Go Back",
+            "dog_next_text": "Next",
             "cat_heading": "How Old Is Your Cat?",
             "cat_step_subtext": "Choose one as you want.",
             "cat_opt1_label": "Kitten",
@@ -113,8 +113,8 @@
             "cat_step3_opt1_label": "Small",
             "cat_step3_opt2_label": "Medium",
             "cat_step3_opt3_label": "Large",
-            "cat_step3_back_text": "← Go Back",
-            "cat_step3_next_text": "Finish →"
+            "cat_step3_back_text": "Go Back",
+            "cat_step3_next_text": "Finish"
           }
         }
       },
