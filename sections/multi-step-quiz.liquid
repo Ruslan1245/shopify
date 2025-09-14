@@ -294,7 +294,7 @@
 
         <div class="quiz-nav">
           <button type="button" class="quiz-back">{{ block.settings.step5_back_text }}</button>
-          <button type="button" class="quiz-next">{{ block.settings.step5_next_text }}</button>
+          <button type="button" class="quiz-restart">{{ block.settings.step5_next_text }}</button>\
         </div>
       </div>
     {% endif %}
@@ -589,7 +589,18 @@
 </style>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.quiz-restart').forEach(btn => {
+    btn.addEventListener('click', function () {
+      document.querySelectorAll('.quiz-step').forEach(step => step.style.display = 'none');
+      let step1 = document.querySelector('.quiz-step-1');
+      if (step1) step1.style.display = 'block';
+      for (let i = 1; i <= 5; i++) {
+        localStorage.removeItem('quiz_step' + i);
+      }
+      document.querySelector('#quiz-banner-{{ section.id }}').scrollIntoView({ behavior: "smooth" });
+    });
+  });
     var form = document.getElementById('quiz-result-form');
     if (!form) return;
     form.addEventListener('submit', function (e) {
