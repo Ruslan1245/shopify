@@ -77,6 +77,138 @@
         "review_verified": "VERIFIED CUSTOMER"
       }
     },
+    "testimonial_gJfN9R": {
+      "type": "testimonial",
+      "blocks": {
+        "testimonial_yygp7C": {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": 5,
+            "review_text": "My cats used to love this treat ... I say \"used to love\" because for over 2 months, I haven't been able to find it in stores at all! My local pet store orders it every week but never receives any. However, they do receive your other products. I also buy the I19 food. Hoping that this treat will be back in my local pet store very soon!",
+            "reviewer_name": "Manon",
+            "customer_badge": "VERIFIED CUSTOMER"
+          }
+        },
+        "testimonial_xmCw9z": {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": 5,
+            "review_text": "My cats love the catfood T24.",
+            "reviewer_name": "John Anderson",
+            "customer_badge": "VERIFIED CUSTOMER"
+          }
+        },
+        "testimonial_w69aMT": {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": 5,
+            "review_text": "My new puppy Nala loves this food.",
+            "reviewer_name": "Pamela",
+            "customer_badge": "VERIFIED CUSTOMER"
+          }
+        },
+        "testimonial_KmwgKY": {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": 5,
+            "review_text": "Our yellow lab Patsy loves to eat well. She adores TOTW but gained too much weight. We switched to Nutram and she loves it. Her coat is also so soft",
+            "reviewer_name": "Mitch",
+            "customer_badge": "VERIFIED CUSTOMER"
+          }
+        },
+        "testimonial_zVrR94": {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": 5,
+            "review_text": "My cats love this taste! And I love the flaxseed, rich in Omega-3 fatty acids in it. All the ingredients sound so healthy for my cat's well-being. I love that this pet’s food is healing, wholesome, and nutritionally sound to keep my cats living a long healthy life!",
+            "reviewer_name": "Hope Ryckman",
+            "customer_badge": "VERIFIED CUSTOMER"
+          }
+        },
+        "testimonial_zdfyki": {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": 5,
+            "review_text": "Been feeding Nutram dog foods to my German Shepherds for years! My current German Shepherd adores this specific food! Totally recommend.",
+            "reviewer_name": "Lisa",
+            "customer_badge": "VERIFIED CUSTOMER"
+          }
+        },
+        "testimonial_Mf8mjX": {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": 5,
+            "review_text": "My Golden Retriever had some food sensitivity issues. This food has changed his life!",
+            "reviewer_name": "Gracie Grace",
+            "customer_badge": "VERIFIED CUSTOMER"
+          }
+        },
+        "testimonial_gG6PHD": {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": 5,
+            "review_text": "I have 3 cats, all of them rescues. This is the one dry cat food that they all love and agree on!!!",
+            "reviewer_name": "Nena Sinclair",
+            "customer_badge": "VERIFIED CUSTOMER"
+          }
+        },
+        "testimonial_diiaHb": {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": 5,
+            "review_text": "Best food ever! My two cats love it! Thank you for keeping them happy and healthy",
+            "reviewer_name": "Alison Priddle",
+            "customer_badge": "VERIFIED CUSTOMER"
+          }
+        },
+        "testimonial_GzzMEt": {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": 5,
+            "review_text": "My cats love this food. I have three cats of various ages who love this food and are extremely healthy.",
+            "reviewer_name": "Shannon L",
+            "customer_badge": "VERIFIED CUSTOMER"
+          }
+        },
+        "testimonial_AXCazq": {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": 5,
+            "review_text": "MY OLDER CATS REALLY ENJOY THIS.",
+            "reviewer_name": "FRAN",
+            "customer_badge": "VERIFIED CUSTOMER"
+          }
+        },
+        "testimonial_HmaCnY": {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": 5,
+            "review_text": "My dog likes this product.",
+            "reviewer_name": "Gilles Bernatchez",
+            "customer_badge": "VERIFIED CUSTOMER"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_yygp7C",
+        "testimonial_xmCw9z",
+        "testimonial_w69aMT",
+        "testimonial_KmwgKY",
+        "testimonial_zVrR94",
+        "testimonial_zdfyki",
+        "testimonial_Mf8mjX",
+        "testimonial_gG6PHD",
+        "testimonial_diiaHb",
+        "testimonial_GzzMEt",
+        "testimonial_AXCazq",
+        "testimonial_HmaCnY"
+      ],
+      "name": "Pet Parents Testimonials",
+      "settings": {
+        "main_title": "",
+        "subtitle": ""
+      }
+    },
     "section_HE8WM6": {
       "type": "section",
       "blocks": {
@@ -554,6 +686,7 @@
   "order": [
     "main",
     "quiz_result_RXKQKU",
+    "testimonial_gJfN9R",
     "section_HE8WM6",
     "product_list_NG9eRF",
     "section_W9Vbfb"
