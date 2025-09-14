@@ -70,6 +70,7 @@
             "step_heading": "Who Are We Feeding Today?",
             "step_subtext": "Choose one as you want.",
             "option1": "Cat",
+            "cat_image": "shopify://shop_images/outline.png",
             "option2": "Dog",
             "back_text": "Go Back",
             "next_text": "Next"
