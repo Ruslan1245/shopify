@@ -97,8 +97,11 @@
             "cat_heading": "How Old Is Your Cat?",
             "cat_step_subtext": "Choose one as you want.",
             "cat_opt1_label": "Kitten",
+            "cat_opt1_image": "shopify://shop_images/Group_1_347c3794-0ff3-4a85-864e-c4d4f866cf6a.png",
             "cat_opt2_label": "Adult",
+            "cat_opt2_image": "shopify://shop_images/outline.png",
             "cat_opt3_label": "Senior",
+            "cat_opt3_image": "shopify://shop_images/selkirk-rex-cat_107977_1.png",
             "cat_back_text": "Go Back",
             "cat_next_text": "Next"
           }
