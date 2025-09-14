@@ -120,6 +120,12 @@
         "step4_6gHndB": {
           "type": "step4",
           "settings": {
+            "step4_label": "Step 4",
+            "step4_progress": 100,
+            "step4_heading": "Choose your plan",
+            "step4_subtext": "Pick one that works best for you",
+            "step4_back_text": "Back",
+            "step4_next_text": "Next",
             "button1_text": "Button 1",
             "button2_text": "Button 2",
             "button3_text": "Button 3",
@@ -131,13 +137,25 @@
             "button9_text": "Button 9",
             "button10_text": "Button 10"
           }
+        },
+        "step5_rBfVqE": {
+          "type": "step5",
+          "settings": {
+            "step5_label": "Step 5",
+            "step5_progress": 100,
+            "step5_heading": "Choose your plan",
+            "step5_subtext": "Pick one that works best for you",
+            "step5_back_text": "Back",
+            "step5_next_text": "Next"
+          }
         }
       },
       "block_order": [
         "step1_BVDUaM",
         "step2_CANKGM",
         "step3_kj9MYP",
-        "step4_6gHndB"
+        "step4_6gHndB",
+        "step5_rBfVqE"
       ],
       "name": "Quiz Banner",
       "settings": {
