@@ -169,8 +169,8 @@
           "settings": {
             "step5_label": "Step 5",
             "step5_progress": 100,
-            "step5_heading": "Choose your plan",
-            "step5_subtext": "Pick one that works best for you",
+            "step5_heading": "Awesome—your custom plan is ready!",
+            "step5_subtext": "Tell us where to send it and unlock 10 % off (coupon valid 48h)",
             "step5_back_text": "Back",
             "step5_next_text": "Start Over"
           }
