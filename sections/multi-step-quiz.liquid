@@ -204,6 +204,63 @@
     {% endif %}
   {% endfor %}
 
+  {% for block in section.blocks %}
+  {% if block.type == 'step4' %}
+    <div class="quiz-step quiz-step-4" style="display:none;">
+      {% if section.settings.show_rating %}
+        <div class="quiz-rating">
+          {% for i in (1..section.settings.rating_stars) -%}
+            ★
+          {%- endfor %}
+          <span class="quiz-rating-text">{{ section.settings.rating_text }}</span>
+        </div>
+      {% endif %}
+
+      <div class="quiz-progress" role="status" aria-live="polite">
+        <span>{{ block.settings.step4_label }}</span>
+        <div class="quiz-progress-bar" aria-hidden="true">
+          <div style="width:{{ block.settings.step4_progress }}%"></div>
+        </div>
+        <span>{{ block.settings.step4_progress }}%</span>
+      </div>
+
+      <h2 class="quiz-step-heading">{{ block.settings.step4_heading }}</h2>
+      <p class="quiz-step-subtext">{{ block.settings.step4_subtext }}</p>
+
+      <div class="quiz-options step4-options" role="list">
+        {% for i in (1..10) %}
+          {% assign text_key = 'button' | append: i | append: '_text' %}
+          {% assign icon_key = 'button' | append: i | append: '_icon' %}
+
+          {% if block.settings[text_key] != blank or block.settings[icon_key] != blank %}
+            <button
+              type="button"
+              class="quiz-option"
+              data-choice="step4_button{{ i }}"
+              aria-pressed="false"
+            >
+              {% if block.settings[icon_key] %}
+                <img
+                  src="{{ block.settings[icon_key] | img_url: '88x88' }}"
+                  alt="{{ block.settings[text_key] }}"
+                  class="quiz-option-img"
+                >
+              {% endif %}
+              <span>{{ block.settings[text_key] }}</span>
+            </button>
+          {% endif %}
+        {% endfor %}
+      </div>
+
+      <div class="quiz-nav">
+        <button type="button" class="quiz-back">{{ block.settings.step4_back_text }}</button>
+        <button type="button" class="quiz-next">{{ block.settings.step4_next_text }}</button>
+      </div>
+    </div>
+  {% endif %}
+{% endfor %}
+
+
   {%- comment -%} REVIEW box kept outside steps so we can show it once quiz starts (it remains hidden until start). {%- endcomment -%}
   <div class="quiz-review global-review" style="display:none;">
     {% if section.settings.review_image %}
@@ -500,20 +557,20 @@
     var startBtn = container.querySelector('#quiz-start-btn-{{ section.id }}');
     var intro = container.querySelector('.quiz-intro');
     var step1 = container.querySelector('.quiz-step-1');
-    var step2Nodes = Array.prototype.slice.call(container.querySelectorAll('.quiz-step-2'));
-    var step3Nodes = Array.prototype.slice.call(container.querySelectorAll('.quiz-step-3'));
+    var step2Nodes = Array.from(container.querySelectorAll('.quiz-step-2'));
+    var step3Nodes = Array.from(container.querySelectorAll('.quiz-step-3'));
+    var step4Nodes = Array.from(container.querySelectorAll('.quiz-step-4'));
     var reviewBox = container.querySelector('.global-review');
 
+    /** Hide all steps */
     function hideAllSteps() {
       if (step1) step1.style.display = 'none';
-      step2Nodes.forEach(function (n) {
-        n.style.display = 'none';
-      });
-      step3Nodes.forEach(function (n) {
-        n.style.display = 'none';
-      });
+      step2Nodes.forEach(n => n.style.display = 'none');
+      step3Nodes.forEach(n => n.style.display = 'none');
+      step4Nodes.forEach(n => n.style.display = 'none');
     }
 
+    /** Step switchers */
     function showStep2For(pet) {
       hideAllSteps();
       var target = container.querySelector('.quiz-step-2[data-pet="' + pet + '"]');
@@ -539,6 +596,19 @@
       }
     }
 
+    function showStep4For(pet) {
+      hideAllSteps();
+      var target = container.querySelector('.quiz-step-4[data-pet="' + pet + '"]');
+      if (target) {
+        target.style.display = 'block';
+        if (reviewBox) reviewBox.style.display = 'flex';
+        target.querySelector('.quiz-option, .custom-btn')?.focus();
+      } else {
+        console.warn('No step4 block registered for pet:', pet);
+      }
+    }
+
+    /** Start quiz */
     if (startBtn) {
       startBtn.addEventListener('click', function (e) {
         e.preventDefault();
@@ -548,11 +618,13 @@
       });
     }
 
+    /** Main click handler */
     container.addEventListener('click', function (e) {
       var opt = e.target.closest('.quiz-option');
       if (opt) {
         var parentStep = opt.closest('.quiz-step');
         if (!parentStep) return;
+
         parentStep.querySelectorAll('.quiz-option').forEach(function (s) {
           s.classList.remove('active');
           s.setAttribute('aria-pressed', 'false');
@@ -563,9 +635,9 @@
         if (parentStep.classList.contains('quiz-step-1')) {
           container.dataset.selection = opt.getAttribute('data-choice'); // 'cat' or 'dog'
         } else if (parentStep.classList.contains('quiz-step-2')) {
-          container.dataset.selection2 = opt.getAttribute('data-choice'); // e.g. 'dog_opt1'
+          container.dataset.selection2 = opt.getAttribute('data-choice');
         } else if (parentStep.classList.contains('quiz-step-3')) {
-          container.dataset.selection3 = opt.getAttribute('data-choice'); // e.g. 'dog_opt1'
+          container.dataset.selection3 = opt.getAttribute('data-choice');
         }
         return;
       }
@@ -573,6 +645,7 @@
       var nextBtn = e.target.closest('.quiz-next');
       var backBtn = e.target.closest('.quiz-back');
 
+      /** Next button logic */
       if (nextBtn) {
         if (step1 && window.getComputedStyle(step1).display !== 'none') {
           var sel = container.dataset.selection;
@@ -584,12 +657,9 @@
           return;
         }
 
-        var visibleStep2 = step2Nodes.find(function (n) {
-          return window.getComputedStyle(n).display !== 'none';
-        });
+        var visibleStep2 = step2Nodes.find(n => window.getComputedStyle(n).display !== 'none');
         if (visibleStep2) {
-          var chosen = container.dataset.selection2 || null;
-          if (!chosen) {
+          if (!container.dataset.selection2) {
             alert('Please choose an option to continue.');
             return;
           }
@@ -598,39 +668,49 @@
           return;
         }
 
-        var visibleStep3 = step3Nodes.find(function (n) {
-          return window.getComputedStyle(n).display !== 'none';
-        });
+        var visibleStep3 = step3Nodes.find(n => window.getComputedStyle(n).display !== 'none');
         if (visibleStep3) {
-          var chosen3 = container.dataset.selection3 || null;
-          if (!chosen3) {
+          if (!container.dataset.selection3) {
             alert('Please choose an option to continue.');
             return;
           }
-          console.log('Step 3 completed. Selection3 =', chosen3);
-          // You can add the next action here: e.g., show results or go to Step 4
+          var pet = container.dataset.selection;
+          showStep4For(pet);
+          return;
         }
 
-        return;
+        var visibleStep4 = step4Nodes.find(n => window.getComputedStyle(n).display !== 'none');
+        if (visibleStep4) {
+          console.log('Quiz completed. Selections:', {
+            pet: container.dataset.selection,
+            choice2: container.dataset.selection2,
+            choice3: container.dataset.selection3
+          });
+          // 👉 Add "submit" or "show results" logic here
+          return;
+        }
       }
 
+      /** Back button logic */
       if (backBtn) {
-        var visibleStep3 = step3Nodes.find(function (n) {
-          return window.getComputedStyle(n).display !== 'none';
-        });
+        var visibleStep4 = step4Nodes.find(n => window.getComputedStyle(n).display !== 'none');
+        if (visibleStep4) {
+          var pet = container.dataset.selection;
+          showStep3For(pet);
+          return;
+        }
+
+        var visibleStep3 = step3Nodes.find(n => window.getComputedStyle(n).display !== 'none');
         if (visibleStep3) {
-          visibleStep3.style.display = 'none';
           var pet = container.dataset.selection;
           showStep2For(pet);
           return;
         }
 
-        var visibleStep2 = step2Nodes.find(function (n) {
-          return window.getComputedStyle(n).display !== 'none';
-        });
+        var visibleStep2 = step2Nodes.find(n => window.getComputedStyle(n).display !== 'none');
         if (visibleStep2) {
-          visibleStep2.style.display = 'none';
           if (step1) step1.style.display = 'block';
+          visibleStep2.style.display = 'none';
           return;
         }
 
@@ -643,6 +723,7 @@
     });
   });
 </script>
+
 
 {% schema %}
 {
@@ -766,46 +847,50 @@
       ]
     },
     {
-      "type": "step4",
-      "name": "Step 4",
-      "settings": [
-        { "type": "text", "id": "step__label", "label": "Step Label", "default": "Step 3" },
-        { "type": "range", "id": "step__progress", "label": "Progress %", "min": 0, "max": 100, "default": 90 },
-        { "type": "text", "id": "step__heading", "label": "Heading", "default": "How Big Is Your Dog?" },
-        { "type": "text", "id": "step__subtext", "label": "Subtext", "default": "Choose one you want." },
-        { "type": "header", "content": "Custom Buttons" },
+  "type": "step4",
+  "name": "Step 4",
+  "settings": [
+    { "type": "text", "id": "step4_label", "label": "Step Label", "default": "Step 4" },
+    { "type": "range", "id": "step4_progress", "label": "Progress %", "min": 0, "max": 100, "default": 100 },
+    { "type": "text", "id": "step4_heading", "label": "Heading", "default": "Pick One Option Below" },
+    { "type": "text", "id": "step4_subtext", "label": "Subtext", "default": "Choose from the options." },
 
-        { "type": "text", "id": "button1_text", "label": "Button 1 Text", "default": "Button 1" },
-        { "type": "image_picker", "id": "button1_icon", "label": "Button 1 Icon" },
+    { "type": "text", "id": "step4_back_text", "label": "Back Button Text", "default": "Back" },
+    { "type": "text", "id": "step4_next_text", "label": "Next Button Text", "default": "Next" },
 
-        { "type": "text", "id": "button2_text", "label": "Button 2 Text", "default": "Button 2" },
-        { "type": "image_picker", "id": "button2_icon", "label": "Button 2 Icon" },
+    { "type": "header", "content": "Custom Buttons (Up to 10)" },
 
-        { "type": "text", "id": "button3_text", "label": "Button 3 Text", "default": "Button 3" },
-        { "type": "image_picker", "id": "button3_icon", "label": "Button 3 Icon" },
+    { "type": "text", "id": "button1_text", "label": "Button 1 Text", "default": "Button 1" },
+    { "type": "image_picker", "id": "button1_icon", "label": "Button 1 Icon" },
 
-        { "type": "text", "id": "button4_text", "label": "Button 4 Text", "default": "Button 4" },
-        { "type": "image_picker", "id": "button4_icon", "label": "Button 4 Icon" },
+    { "type": "text", "id": "button2_text", "label": "Button 2 Text", "default": "Button 2" },
+    { "type": "image_picker", "id": "button2_icon", "label": "Button 2 Icon" },
 
-        { "type": "text", "id": "button5_text", "label": "Button 5 Text", "default": "Button 5" },
-        { "type": "image_picker", "id": "button5_icon", "label": "Button 5 Icon" },
+    { "type": "text", "id": "button3_text", "label": "Button 3 Text", "default": "Button 3" },
+    { "type": "image_picker", "id": "button3_icon", "label": "Button 3 Icon" },
 
-        { "type": "text", "id": "button6_text", "label": "Button 6 Text", "default": "Button 6" },
-        { "type": "image_picker", "id": "button6_icon", "label": "Button 6 Icon" },
+    { "type": "text", "id": "button4_text", "label": "Button 4 Text", "default": "Button 4" },
+    { "type": "image_picker", "id": "button4_icon", "label": "Button 4 Icon" },
 
-        { "type": "text", "id": "button7_text", "label": "Button 7 Text", "default": "Button 7" },
-        { "type": "image_picker", "id": "button7_icon", "label": "Button 7 Icon" },
+    { "type": "text", "id": "button5_text", "label": "Button 5 Text", "default": "Button 5" },
+    { "type": "image_picker", "id": "button5_icon", "label": "Button 5 Icon" },
 
-        { "type": "text", "id": "button8_text", "label": "Button 8 Text", "default": "Button 8" },
-        { "type": "image_picker", "id": "button8_icon", "label": "Button 8 Icon" },
+    { "type": "text", "id": "button6_text", "label": "Button 6 Text", "default": "Button 6" },
+    { "type": "image_picker", "id": "button6_icon", "label": "Button 6 Icon" },
 
-        { "type": "text", "id": "button9_text", "label": "Button 9 Text", "default": "Button 9" },
-        { "type": "image_picker", "id": "button9_icon", "label": "Button 9 Icon" },
+    { "type": "text", "id": "button7_text", "label": "Button 7 Text", "default": "Button 7" },
+    { "type": "image_picker", "id": "button7_icon", "label": "Button 7 Icon" },
 
-        { "type": "text", "id": "button10_text", "label": "Button 10 Text", "default": "Button 10" },
-        { "type": "image_picker", "id": "button10_icon", "label": "Button 10 Icon" }
-      ]
-    }
+    { "type": "text", "id": "button8_text", "label": "Button 8 Text", "default": "Button 8" },
+    { "type": "image_picker", "id": "button8_icon", "label": "Button 8 Icon" },
+
+    { "type": "text", "id": "button9_text", "label": "Button 9 Text", "default": "Button 9" },
+    { "type": "image_picker", "id": "button9_icon", "label": "Button 9 Icon" },
+
+    { "type": "text", "id": "button10_text", "label": "Button 10 Text", "default": "Button 10" },
+    { "type": "image_picker", "id": "button10_icon", "label": "Button 10 Icon" }
+  ]
+}
   ],
   "presets": [{ "name": "Quiz Banner" }]
 }
