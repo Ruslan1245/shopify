@@ -72,13 +72,6 @@
         </div>
       </div>
     {% endif %}
-  {% endfor %}
-
-  {%- comment -%}
-    STEP 2: render one panel per pet using prefixed settings (dog_*, cat_*)
-    This assumes step2 block exists (we render the block's dog_/cat_ settings).
-  {%- endcomment -%}
-  {% for block in section.blocks %}
     {% if block.type == 'step2' %}
       {% assign pets = 'dog,cat' | split: ',' %}
       {% for pet in pets %}
@@ -139,9 +132,6 @@
         </div>
       {% endfor %}
     {% endif %}
-  {% endfor %}
-
-  {% for block in section.blocks %}
     {% if block.type == 'step3' %}
       {% assign pets = 'dog,cat' | split: ',' %}
       {% for pet in pets %}
@@ -202,9 +192,6 @@
         </div>
       {% endfor %}
     {% endif %}
-  {% endfor %}
-
-  {% for block in section.blocks %}
     {% if block.type == 'step4' %}
       <div class="quiz-step quiz-step-4" style="display:none;">
         {% if section.settings.show_rating %}
@@ -255,6 +242,36 @@
         <div class="quiz-nav">
           <button type="button" class="quiz-back">{{ block.settings.step4_back_text }}</button>
           <button type="button" class="quiz-next">{{ block.settings.step4_next_text }}</button>
+        </div>
+      </div>
+    {% endif %}
+    {% if block.type == 'step5' %}
+      <div class="quiz-step quiz-step-5" style="display:none;">
+        {% if section.settings.show_rating %}
+          <div class="quiz-rating">
+            {% for i in (1..section.settings.rating_stars) -%}
+              ★
+            {%- endfor %}
+            <span class="quiz-rating-text">{{ section.settings.rating_text }}</span>
+          </div>
+        {% endif %}
+
+        <div class="quiz-progress" role="status" aria-live="polite">
+          <span>{{ block.settings.step5_label }}</span>
+          <div class="quiz-progress-bar" aria-hidden="true">
+            <div style="width:{{ block.settings.step5_progress }}%"></div>
+          </div>
+          <span>{{ block.settings.step5_progress }}%</span>
+        </div>
+
+        <h2 class="quiz-step-heading">{{ block.settings.step5_heading }}</h2>
+        <p class="quiz-step-subtext">{{ block.settings.step5_subtext }}</p>
+
+        
+
+        <div class="quiz-nav">
+          <button type="button" class="quiz-back">{{ block.settings.step5_back_text }}</button>
+          <button type="button" class="quiz-next">{{ block.settings.step5_next_text }}</button>
         </div>
       </div>
     {% endif %}
@@ -561,7 +578,6 @@
     var step4Nodes = Array.from(container.querySelectorAll('.quiz-step-4'));
     var reviewBox = container.querySelector('.global-review');
 
-    /** Hide all steps */
     function hideAllSteps() {
       if (step1) step1.style.display = 'none';
       step2Nodes.forEach(n => n.style.display = 'none');
@@ -569,19 +585,15 @@
       step4Nodes.forEach(n => n.style.display = 'none');
     }
 
-    /** Show Step 2 for pet */
     function showStep2For(pet) {
       hideAllSteps();
       var target = container.querySelector('.quiz-step-2[data-pet="' + pet + '"]');
       if (target) {
         target.style.display = 'block';
         if (reviewBox) reviewBox.style.display = 'flex';
-      } else {
-        if (step1) step1.style.display = 'block';
       }
     }
 
-    /** Show Step 3 for pet */
     function showStep3For(pet) {
       hideAllSteps();
       var target = container.querySelector('.quiz-step-3[data-pet="' + pet + '"]');
@@ -591,17 +603,15 @@
       }
     }
 
-    /** Show Step 4 (generic) */
     function showStep4() {
       hideAllSteps();
-      var target = step4Nodes[0]; // assume only one step4 block
+      var target = step4Nodes[0];
       if (target) {
         target.style.display = 'block';
         if (reviewBox) reviewBox.style.display = 'flex';
       }
     }
 
-    /** Start quiz */
     if (startBtn) {
       startBtn.addEventListener('click', function (e) {
         e.preventDefault();
@@ -611,29 +621,44 @@
       });
     }
 
-    /** Handle option clicks + navigation */
     container.addEventListener('click', function (e) {
       var opt = e.target.closest('.quiz-option');
       if (opt) {
         var parentStep = opt.closest('.quiz-step');
         if (!parentStep) return;
 
-        parentStep.querySelectorAll('.quiz-option').forEach(s => {
-          s.classList.remove('active');
-          s.setAttribute('aria-pressed', 'false');
-        });
+        /** ✅ Step 1–3 = single select */
+        if (
+          parentStep.classList.contains('quiz-step-1') ||
+          parentStep.classList.contains('quiz-step-2') ||
+          parentStep.classList.contains('quiz-step-3')
+        ) {
+          parentStep.querySelectorAll('.quiz-option').forEach(s => {
+            s.classList.remove('active');
+            s.setAttribute('aria-pressed', 'false');
+          });
+          opt.classList.add('active');
+          opt.setAttribute('aria-pressed', 'true');
 
-        opt.classList.add('active');
-        opt.setAttribute('aria-pressed', 'true');
+          if (parentStep.classList.contains('quiz-step-1')) {
+            container.dataset.selection = opt.getAttribute('data-choice');
+          } else if (parentStep.classList.contains('quiz-step-2')) {
+            container.dataset.selection2 = opt.getAttribute('data-choice');
+          } else if (parentStep.classList.contains('quiz-step-3')) {
+            container.dataset.selection3 = opt.getAttribute('data-choice');
+          }
+        }
 
-        if (parentStep.classList.contains('quiz-step-1')) {
-          container.dataset.selection = opt.getAttribute('data-choice'); 
-        } else if (parentStep.classList.contains('quiz-step-2')) {
-          container.dataset.selection2 = opt.getAttribute('data-choice'); 
-        } else if (parentStep.classList.contains('quiz-step-3')) {
-          container.dataset.selection3 = opt.getAttribute('data-choice'); 
-        } else if (parentStep.classList.contains('quiz-step-4')) {
-          container.dataset.selection4 = opt.getAttribute('data-choice'); 
+        /** ✅ Step 4 = multiple select (toggle) */
+        if (parentStep.classList.contains('quiz-step-4')) {
+          opt.classList.toggle('active');
+          var pressed = opt.classList.contains('active');
+          opt.setAttribute('aria-pressed', pressed);
+
+          // collect all active selections
+          var selections = Array.from(parentStep.querySelectorAll('.quiz-option.active'))
+            .map(btn => btn.getAttribute('data-choice'));
+          container.dataset.selection4 = selections.join(',');
         }
         return;
       }
@@ -641,9 +666,7 @@
       var nextBtn = e.target.closest('.quiz-next');
       var backBtn = e.target.closest('.quiz-back');
 
-      /** NEXT button */
       if (nextBtn) {
-        // From Step 1 -> Step 2
         if (step1 && window.getComputedStyle(step1).display !== 'none') {
           if (!container.dataset.selection) {
             alert('Please choose an option to continue.');
@@ -653,7 +676,6 @@
           return;
         }
 
-        // From Step 2 -> Step 3
         var visibleStep2 = step2Nodes.find(n => window.getComputedStyle(n).display !== 'none');
         if (visibleStep2) {
           if (!container.dataset.selection2) {
@@ -664,7 +686,6 @@
           return;
         }
 
-        // From Step 3 -> Step 4
         var visibleStep3 = step3Nodes.find(n => window.getComputedStyle(n).display !== 'none');
         if (visibleStep3) {
           if (!container.dataset.selection3) {
@@ -675,19 +696,17 @@
           return;
         }
 
-        // Step 4 completed
         var visibleStep4 = step4Nodes.find(n => window.getComputedStyle(n).display !== 'none');
         if (visibleStep4) {
           if (!container.dataset.selection4) {
-            alert('Please choose an option to continue.');
+            alert('Please choose at least one option to continue.');
             return;
           }
-          console.log('✅ Step 4 completed. Selection4 =', container.dataset.selection4);
-          // TODO: Final action (redirect, results page, etc.)
+          console.log('✅ Step 4 multiple selections =', container.dataset.selection4);
+          // TODO: handle final action
         }
       }
 
-      /** BACK button */
       if (backBtn) {
         var visibleStep4 = step4Nodes.find(n => window.getComputedStyle(n).display !== 'none');
         if (visibleStep4) {
@@ -719,6 +738,7 @@
     });
   });
 </script>
+
 
 {% schema %}
 {
