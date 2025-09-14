@@ -126,8 +126,11 @@
             "cat_step3_heading": "How Big Is Your Cat?",
             "cat_step3_subtext": "Choose one you want.",
             "cat_step3_opt1_label": "Small",
+            "cat_step3_opt1_image": "shopify://shop_images/Group_1_347c3794-0ff3-4a85-864e-c4d4f866cf6a.png",
             "cat_step3_opt2_label": "Medium",
+            "cat_step3_opt2_image": "shopify://shop_images/outline.png",
             "cat_step3_opt3_label": "Large",
+            "cat_step3_opt3_image": "shopify://shop_images/selkirk-rex-cat_107977_1.png",
             "cat_step3_back_text": "Go Back",
             "cat_step3_next_text": "Next"
           }
