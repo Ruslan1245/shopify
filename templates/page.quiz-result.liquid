@@ -1,64 +1,201 @@
 {% comment %}
   Template: quiz-result
-  This page shows the personalized recipe result after quiz.
+  Shows the personalized result after the quiz
+  - Reads localStorage keys: quiz_petname, quiz_step1..quiz_step5
+  - Each quiz_stepN item is expected to be JSON: { name: "...", value: "..." }
 {% endcomment %}
 
-<div class="quiz-result-wrapper">
-  <h2 class="quiz-result-heading" id="quizHeading">
-    Here’s <span id="quizPetName"></span>’s perfect Nutram recipe!
-  </h2>
+<div class="qr-container">
+  <div class="qr-inner">
+    <h1 id="qr-heading" class="qr-heading">
+      Here’s <span id="qr-petname" class="qr-petname"></span><span id="qr-heading-no-name" class="qr-heading-no-name">the</span> perfect Nutram recipe!
+    </h1>
 
-  <div class="quiz-result-content">
-    <!-- Left: product text -->
-    <div class="quiz-result-text">
-      <div class="quiz-stars">⭐⭐⭐⭐⭐ <span>6,879 reviews</span></div>
-      <h3 class="quiz-product-title">T23 Nutram Total Grain-Free</h3>
-      <p class="quiz-product-subtitle">Chicken and Turkey Recipe</p>
-      <p class="quiz-product-price">From $19.99</p>
-      <ul class="quiz-bullets">
-        <li>Matches your pet’s needs, not the masses</li>
-        <li>Built on our Digestive Wellness System™</li>
-        <li>Backed by science, not opinions</li>
-      </ul>
-      <a href="/cart" class="quiz-add-to-cart">Add to Cart</a>
-      <a href="/pages/store-locator" class="quiz-find-retailer">Find the Retailer</a>
-    </div>
+    <div class="qr-grid">
+      <div class="qr-left">
+        <div class="qr-rating">
+          <div class="qr-stars">★★★★★</div>
+          <div class="qr-review-count">6,879 reviews</div>
+        </div>
 
-    <!-- Right: product images -->
-    <div class="quiz-result-image">
-      <img src="{{ 'nutram-dog.png' | asset_url }}" alt="Nutram Dog" />
-      <img src="{{ 'nutram-cat.png' | asset_url }}" alt="Nutram Cat" />
+        <h2 class="qr-product-title" id="qr-product-title">T23 Nutram Total Grain-Free</h2>
+        <div class="qr-subtitle" id="qr-product-subtitle">Chicken & Turkey Recipe</div>
+        <div class="qr-price" id="qr-price">From $19.99</div>
+
+        <ul class="qr-bullets" id="qr-bullets">
+          <li>Matches your pet’s needs, not the masses</li>
+          <li>Built on our Digestive Wellness System™</li>
+          <li>Backed by science, not opinions</li>
+        </ul>
+
+        <div class="qr-ctas">
+          <!-- Replace href with the real product page or use cart/add.js with variant ID -->
+          <a id="qr-add-to-cart" href="/products/t23-nutram-total-grain-free" class="qr-btn qr-btn-primary">Add to Cart</a>
+          <a id="qr-find-retailer" href="/pages/store-locator" class="qr-btn qr-btn-secondary">Find the Retailer</a>
+        </div>
+
+        <!-- Optional: small user avatar + note (matches screenshot) -->
+        <div class="qr-testimonial">
+          <img src="{{ 'nutram-avatar.png' | asset_url }}" alt="customer" onerror="this.style.display='none'">
+          <div>
+            <strong>Max’s owner</strong>
+            <div class="qr-test-text">“After switching Max’s coat improved in two weeks.”</div>
+          </div>
+        </div>
+
+        <!-- Quiz answers summary (only show if we have saved answers) -->
+        <div id="qr-answers" class="qr-answers" style="display:none;">
+          <h3>Your answers</h3>
+          <ul id="qr-answers-list"></ul>
+        </div>
+      </div>
+
+      <div class="qr-right">
+        <div class="qr-blob"></div>
+        <div class="qr-images">
+          <!-- Use theme assets - replace names if needed. Fallback images included. -->
+          <img id="qr-image-main" src="{{ 'nutram-dog.png' | asset_url }}" alt="Nutram product" class="qr-img-main" onerror="this.src='https://cdn.shopify.com/s/files/1/0627/0422/2426/files/dog-bag.png';">
+          <img id="qr-image-side" src="{{ 'nutram-cat.png' | asset_url }}" alt="Nutram product 2" class="qr-img-side" onerror="this.src='https://cdn.shopify.com/s/files/1/0627/0422/2426/files/cat-bag.png';">
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
 <style>
-.quiz-result-wrapper { text-align:center; padding:40px 20px; }
-.quiz-result-heading { font-size:28px; color:#2ca9e1; margin-bottom:30px; }
-.quiz-result-content { display:flex; justify-content:center; gap:40px; align-items:flex-start; flex-wrap:wrap; }
-.quiz-result-text { max-width:420px; text-align:left; }
-.quiz-stars { color:#f7b500; font-weight:600; margin-bottom:10px; }
-.quiz-product-title { font-size:22px; font-weight:700; color:#222; }
-.quiz-product-subtitle { font-size:16px; color:#777; }
-.quiz-product-price { font-size:16px; margin:10px 0; font-weight:600; }
-.quiz-bullets { margin:15px 0; padding-left:20px; }
-.quiz-bullets li { margin-bottom:8px; }
-.quiz-add-to-cart { background:#f7b500; color:#222; padding:12px 24px; border-radius:30px; display:inline-block; margin:10px 0; text-decoration:none; font-weight:600; }
-.quiz-find-retailer { background:#2ca9e1; color:#fff; padding:12px 24px; border-radius:30px; display:inline-block; margin-left:10px; text-decoration:none; font-weight:600; }
-.quiz-result-image img { max-width:200px; margin:10px; }
+/* Layout / visual styles tuned to match the screenshot */
+.qr-container { width:100%; display:flex; justify-content:center; padding:36px 16px; box-sizing:border-box; background:#fff; }
+.qr-inner { max-width:1100px; width:100%; }
+.qr-heading { text-align:center; font-size:28px; color:#1fa0d6; margin:8px 0 24px; font-weight:700; line-height:1.1; }
+.qr-petname { color:#2b9dd3; }
+.qr-heading-no-name { display:none; } /* shown only when no pet name to produce "the" */
+
+.qr-grid { display:flex; gap:32px; align-items:flex-start; justify-content:center; flex-wrap:wrap; }
+.qr-left { flex:1 1 420px; max-width:480px; text-align:left; }
+.qr-right { flex:0 0 360px; position:relative; min-height:260px; display:flex; align-items:center; justify-content:center; }
+
+.qr-rating { display:flex; align-items:center; gap:10px; margin-bottom:8px; color:#f7b500; font-weight:700; }
+.qr-stars { font-size:16px; letter-spacing:1px; }
+.qr-review-count { color:#666; font-size:14px; font-weight:600; margin-left:6px; color:#2b9dd3; }
+
+.qr-product-title { font-size:20px; margin:8px 0; color:#0e3340; font-weight:800; }
+.qr-subtitle { font-size:15px; color:#6b6b6b; margin-bottom:6px; }
+.qr-price { font-weight:700; margin-bottom:12px; }
+
+.qr-bullets { margin:16px 0; padding-left:18px; color:#333; }
+.qr-bullets li { margin:8px 0; }
+
+.qr-ctas { display:flex; gap:12px; margin-top:6px; flex-wrap:wrap; }
+.qr-btn { display:inline-block; padding:12px 24px; border-radius:28px; font-weight:700; text-decoration:none; }
+.qr-btn-primary { background:#f2c94c; color:#111; }
+.qr-btn-secondary { background:#2fa1d6; color:#fff; }
+
+.qr-testimonial { display:flex; gap:12px; align-items:center; margin-top:18px; color:#555; }
+.qr-testimonial img { width:56px; height:56px; object-fit:cover; border-radius:8px; }
+.qr-test-text { font-size:13px; color:#666; }
+
+.qr-answers { margin-top:22px; background:#f7fbff; border-radius:8px; padding:12px; }
+.qr-answers h3 { margin:0 0 8px; color:#2b9dd3; font-size:15px; }
+.qr-answers ul { margin:0; padding-left:18px; color:#333; }
+
+.qr-images { position:relative; width:320px; height:260px; display:flex; align-items:center; justify-content:center; }
+.qr-blob { position:absolute; width:320px; height:220px; border-radius:56px; background:#2fa1d6; opacity:0.12; left:0; top:20px; transform:rotate(-6deg); }
+.qr-img-main { width:220px; max-width:60%; position:relative; z-index:2; box-shadow:0 10px 30px rgba(0,0,0,0.08); transform:translateX(-10px); }
+.qr-img-side { width:140px; max-width:40%; position:absolute; right:-10px; bottom:0; z-index:1; opacity:0.95; transform:rotate(-6deg); }
+
+@media(max-width:820px) {
+  .qr-grid { flex-direction:column-reverse; align-items:center; }
+  .qr-left { max-width:640px; text-align:center; }
+  .qr-left .qr-bullets { text-align:left; margin-left:auto; margin-right:auto; max-width:360px; }
+  .qr-images { width:260px; height:200px; }
+  .qr-img-main{ width:180px; }
+  .qr-img-side{ width:110px; right:10px; bottom:-10px; }
+}
 </style>
 
 <script>
-document.addEventListener("DOMContentLoaded", function() {
-  var petName = localStorage.getItem("quiz_petname") || "";
-  var span = document.getElementById("quizPetName");
-  var heading = document.getElementById("quizHeading");
-
-  if (petName && span) {
-    span.textContent = petName;
-  } else if (heading) {
-    // Hide entire heading if no PetName
-    heading.style.display = "none";
+document.addEventListener('DOMContentLoaded', function () {
+  // Utility: safe JSON parse
+  function safeParse(str) {
+    try { return JSON.parse(str); } catch (e) { return null; }
   }
+
+  // Read pet name
+  var petName = (localStorage.getItem('quiz_petname') || '').trim();
+  var petSpan = document.getElementById('qr-petname');
+  var headingNoName = document.getElementById('qr-heading-no-name');
+  var heading = document.getElementById('qr-heading');
+
+  if (petName) {
+    petSpan.textContent = petName;
+    petSpan.style.display = 'inline';
+    headingNoName.style.display = 'none';
+  } else {
+    // Hide petName span and show "the" to make sentence natural:
+    petSpan.style.display = 'none';
+    headingNoName.style.display = 'inline';
+  }
+
+  // Build answers summary from quiz_step1..quiz_step5 (if present)
+  var answersList = document.getElementById('qr-answers-list');
+  var answersWrapper = document.getElementById('qr-answers');
+  var anyAnswers = false;
+
+  for (var i = 1; i <= 5; i++) {
+    var stored = localStorage.getItem('quiz_step' + i);
+    if (!stored) continue;
+    var parsed = safeParse(stored);
+    if (!parsed) continue;
+    var label = parsed.name || ('Step ' + i);
+    var value = parsed.value || '';
+
+    // skip empty
+    if (!value || value.trim() === '') continue;
+
+    anyAnswers = true;
+    var li = document.createElement('li');
+    li.textContent = label + ': ' + value;
+    answersList.appendChild(li);
+  }
+
+  if (anyAnswers) {
+    answersWrapper.style.display = 'block';
+  } else {
+    answersWrapper.style.display = 'none';
+  }
+
+  // Optional: update product title/subtitle based on answers
+  // Example: if step1 indicates Dog or Cat, adjust subtitle or images
+  var s1 = safeParse(localStorage.getItem('quiz_step1') || 'null');
+  var isDog = false, isCat = false;
+  if (s1 && s1.value) {
+    var v = s1.value.toLowerCase();
+    if (v.indexOf('dog') !== -1) isDog = true;
+    if (v.indexOf('cat') !== -1) isCat = true;
+  }
+
+  // Change product subtitle / images depending on pet
+  var productSubtitle = document.getElementById('qr-product-subtitle');
+  var imgMain = document.getElementById('qr-image-main');
+  var imgSide = document.getElementById('qr-image-side');
+
+  if (isCat) {
+    productSubtitle.textContent = 'Adult Cat Recipe';
+    // swap images if you have cat-specific assets (replace paths if necessary)
+    imgMain.src = '{{ "nutram-cat-main.png" | asset_url }}' || imgMain.src;
+    imgSide.src = '{{ "nutram-cat-side.png" | asset_url }}' || imgSide.src;
+  } else if (isDog) {
+    productSubtitle.textContent = 'Chicken & Turkey Recipe';
+    imgMain.src = '{{ "nutram-dog.png" | asset_url }}' || imgMain.src;
+    imgSide.src = '{{ "nutram-dog-side.png" | asset_url }}' || imgSide.src;
+  } else {
+    // default
+    productSubtitle.textContent = 'Chicken & Turkey Recipe';
+  }
+
+  // If you want to auto-add to cart (AJAX) replace # below with variant id
+  // Example: document.getElementById('qr-add-to-cart').addEventListener('click', function(e){ ... })
+  // The template currently links to product page - replace href with your product handle or cart add.
+
 });
 </script>
