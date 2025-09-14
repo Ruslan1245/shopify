@@ -556,12 +556,12 @@
     var startBtn = container.querySelector('#quiz-start-btn-{{ section.id }}');
     var intro = container.querySelector('.quiz-intro');
     var step1 = container.querySelector('.quiz-step-1');
-    var step2Nodes = Array.prototype.slice.call(container.querySelectorAll('.quiz-step-2'));
-    var step3Nodes = Array.prototype.slice.call(container.querySelectorAll('.quiz-step-3'));
-    var step4Nodes = Array.prototype.slice.call(container.querySelectorAll('.quiz-step-4'));
+    var step2Nodes = Array.from(container.querySelectorAll('.quiz-step-2'));
+    var step3Nodes = Array.from(container.querySelectorAll('.quiz-step-3'));
+    var step4Nodes = Array.from(container.querySelectorAll('.quiz-step-4'));
     var reviewBox = container.querySelector('.global-review');
 
-    /** hide all steps */
+    /** Hide all steps */
     function hideAllSteps() {
       if (step1) step1.style.display = 'none';
       step2Nodes.forEach(n => n.style.display = 'none');
@@ -569,42 +569,39 @@
       step4Nodes.forEach(n => n.style.display = 'none');
     }
 
-    /** step2 based on pet */
+    /** Show Step 2 for pet */
     function showStep2For(pet) {
       hideAllSteps();
       var target = container.querySelector('.quiz-step-2[data-pet="' + pet + '"]');
       if (target) {
         target.style.display = 'block';
         if (reviewBox) reviewBox.style.display = 'flex';
-        target.querySelector('.quiz-option')?.focus();
       } else {
         if (step1) step1.style.display = 'block';
       }
     }
 
-    /** step3 based on pet */
+    /** Show Step 3 for pet */
     function showStep3For(pet) {
       hideAllSteps();
       var target = container.querySelector('.quiz-step-3[data-pet="' + pet + '"]');
       if (target) {
         target.style.display = 'block';
         if (reviewBox) reviewBox.style.display = 'flex';
-        target.querySelector('.quiz-option')?.focus();
       }
     }
 
-    /** generic show step4 */
+    /** Show Step 4 (generic) */
     function showStep4() {
       hideAllSteps();
-      var target = step4Nodes[0]; // assuming only one step4 block
+      var target = step4Nodes[0]; // assume only one step4 block
       if (target) {
         target.style.display = 'block';
         if (reviewBox) reviewBox.style.display = 'flex';
-        target.querySelector('.quiz-option')?.focus();
       }
     }
 
-    /** Start button */
+    /** Start quiz */
     if (startBtn) {
       startBtn.addEventListener('click', function (e) {
         e.preventDefault();
@@ -614,27 +611,29 @@
       });
     }
 
-    /** Options + Navigation */
+    /** Handle option clicks + navigation */
     container.addEventListener('click', function (e) {
       var opt = e.target.closest('.quiz-option');
       if (opt) {
         var parentStep = opt.closest('.quiz-step');
         if (!parentStep) return;
+
         parentStep.querySelectorAll('.quiz-option').forEach(s => {
           s.classList.remove('active');
           s.setAttribute('aria-pressed', 'false');
         });
+
         opt.classList.add('active');
         opt.setAttribute('aria-pressed', 'true');
 
         if (parentStep.classList.contains('quiz-step-1')) {
-          container.dataset.selection = opt.getAttribute('data-choice'); // 'cat' or 'dog'
+          container.dataset.selection = opt.getAttribute('data-choice'); 
         } else if (parentStep.classList.contains('quiz-step-2')) {
-          container.dataset.selection2 = opt.getAttribute('data-choice');
+          container.dataset.selection2 = opt.getAttribute('data-choice'); 
         } else if (parentStep.classList.contains('quiz-step-3')) {
-          container.dataset.selection3 = opt.getAttribute('data-choice');
+          container.dataset.selection3 = opt.getAttribute('data-choice'); 
         } else if (parentStep.classList.contains('quiz-step-4')) {
-          container.dataset.selection4 = opt.getAttribute('data-choice');
+          container.dataset.selection4 = opt.getAttribute('data-choice'); 
         }
         return;
       }
@@ -644,20 +643,20 @@
 
       /** NEXT button */
       if (nextBtn) {
+        // From Step 1 -> Step 2
         if (step1 && window.getComputedStyle(step1).display !== 'none') {
-          var sel = container.dataset.selection;
-          if (!sel) {
+          if (!container.dataset.selection) {
             alert('Please choose an option to continue.');
             return;
           }
-          showStep2For(sel);
+          showStep2For(container.dataset.selection);
           return;
         }
 
+        // From Step 2 -> Step 3
         var visibleStep2 = step2Nodes.find(n => window.getComputedStyle(n).display !== 'none');
         if (visibleStep2) {
-          var chosen = container.dataset.selection2;
-          if (!chosen) {
+          if (!container.dataset.selection2) {
             alert('Please choose an option to continue.');
             return;
           }
@@ -665,10 +664,10 @@
           return;
         }
 
+        // From Step 3 -> Step 4
         var visibleStep3 = step3Nodes.find(n => window.getComputedStyle(n).display !== 'none');
         if (visibleStep3) {
-          var chosen3 = container.dataset.selection3;
-          if (!chosen3) {
+          if (!container.dataset.selection3) {
             alert('Please choose an option to continue.');
             return;
           }
@@ -676,15 +675,15 @@
           return;
         }
 
+        // Step 4 completed
         var visibleStep4 = step4Nodes.find(n => window.getComputedStyle(n).display !== 'none');
         if (visibleStep4) {
-          var chosen4 = container.dataset.selection4;
-          if (!chosen4) {
+          if (!container.dataset.selection4) {
             alert('Please choose an option to continue.');
             return;
           }
-          console.log('Step 4 completed. Selection4 =', chosen4);
-          // TODO: Final action (redirect, show results, etc.)
+          console.log('✅ Step 4 completed. Selection4 =', container.dataset.selection4);
+          // TODO: Final action (redirect, results page, etc.)
         }
       }
 
