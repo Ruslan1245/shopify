@@ -116,12 +116,28 @@
             "cat_step3_back_text": "Go Back",
             "cat_step3_next_text": "Finish"
           }
+        },
+        "step4_6gHndB": {
+          "type": "step4",
+          "settings": {
+            "button1_text": "Button 1",
+            "button2_text": "Button 2",
+            "button3_text": "Button 3",
+            "button4_text": "Button 4",
+            "button5_text": "Button 5",
+            "button6_text": "Button 6",
+            "button7_text": "Button 7",
+            "button8_text": "Button 8",
+            "button9_text": "Button 9",
+            "button10_text": "Button 10"
+          }
         }
       },
       "block_order": [
         "step1_BVDUaM",
         "step2_CANKGM",
-        "step3_kj9MYP"
+        "step3_kj9MYP",
+        "step4_6gHndB"
       ],
       "name": "Quiz Banner",
       "settings": {
