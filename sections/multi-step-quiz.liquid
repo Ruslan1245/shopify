@@ -611,7 +611,8 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       }
       var formData = new FormData(form);
-      fetch('/contact', {
+      console.log(formData);
+      {% comment %} fetch('/contact', {
         method: 'POST',
         body: formData,
       })
@@ -626,7 +627,7 @@ document.addEventListener('DOMContentLoaded', function () {
           console.error('Form error:', err);
           alert('⚠️ Error submitting form.');
         });
-    });
+    }); {% endcomment %}
   });
 
   document.addEventListener('DOMContentLoaded', function () {
