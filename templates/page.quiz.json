@@ -110,6 +110,8 @@
             "dog_step3_opt3_label": "Large (>70 lb)",
             "dog_step3_back_text": "Go Back",
             "dog_step3_next_text": "Finish",
+            "cat_step3_label": "Step 3",
+            "cat_step3_progress": 80,
             "cat_step3_heading": "How Big Is Your Cat?",
             "cat_step3_subtext": "Choose one you want.",
             "cat_step3_opt1_label": "Small",
@@ -123,7 +125,7 @@
           "type": "step4",
           "settings": {
             "step4_label": "Step 4",
-            "step4_progress": 100,
+            "step4_progress": 95,
             "step4_heading": "Choose your plan",
             "step4_subtext": "Pick one that works best for you",
             "step4_back_text": "Back",
