@@ -93,11 +93,11 @@
           {% endif %}
 
           <div class="quiz-progress" role="status" aria-live="polite">
-            <span>{{ block.settings[step_label_key] }}</span>
+            <span class="step-number">{{ block.settings[step_label_key] }}</span>
             <div class="quiz-progress-bar" aria-hidden="true">
               <div style="width:{{ block.settings[step_progress_key] }}%"></div>
             </div>
-            <span>{{ block.settings[step_progress_key] }}%</span>
+            <span class="progress-number">{{ block.settings[step_progress_key] }}%</span>
           </div>
 
           <h2 class="quiz-step-heading">{{ block.settings[heading_key] }}</h2>
@@ -153,11 +153,11 @@
           {% endif %}
 
           <div class="quiz-progress" role="status" aria-live="polite">
-            <span>{{ block.settings[step_label_key] }}</span>
+            <span class="step-number">{{ block.settings[step_label_key] }}</span>
             <div class="quiz-progress-bar" aria-hidden="true">
               <div style="width:{{ block.settings[step_progress_key] }}%"></div>
             </div>
-            <span>{{ block.settings[step_progress_key] }}%</span>
+            <span class="progress-number">{{ block.settings[step_progress_key] }}%</span>
           </div>
 
           <h2 class="quiz-step-heading">{{ block.settings[heading_key] }}</h2>
@@ -204,11 +204,11 @@
         {% endif %}
 
         <div class="quiz-progress" role="status" aria-live="polite">
-          <span>{{ block.settings.step4_label }}</span>
+          <span class="step-number">{{ block.settings.step4_label }}</span>
           <div class="quiz-progress-bar" aria-hidden="true">
             <div style="width:{{ block.settings.step4_progress }}%"></div>
           </div>
-          <span>{{ block.settings.step4_progress }}%</span>
+          <span class="progress-number">{{ block.settings.step4_progress }}%</span>
         </div>
 
         <h2 class="quiz-step-heading">{{ block.settings.step4_heading }}</h2>
@@ -257,11 +257,11 @@
         {% endif %}
 
         <div class="quiz-progress" role="status" aria-live="polite">
-          <span>{{ block.settings.step5_label }}</span>
+          <span class="step-number">{{ block.settings.step5_label }}</span>
           <div class="quiz-progress-bar" aria-hidden="true">
             <div style="width:{{ block.settings.step5_progress }}%"></div>
           </div>
-          <span>{{ block.settings.step5_progress }}%</span>
+          <span class="progress-number">{{ block.settings.step5_progress }}%</span>
         </div>
 
         <h2 class="quiz-step-heading">{{ block.settings.step5_heading }}</h2>
