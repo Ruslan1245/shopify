@@ -87,6 +87,8 @@
             "dog_opt3_label": "Senior",
             "dog_back_text": "Go Back",
             "dog_next_text": "Next",
+            "cat_step_label": "Step 2",
+            "cat_step_progress": 65,
             "cat_heading": "How Old Is Your Cat?",
             "cat_step_subtext": "Choose one as you want.",
             "cat_opt1_label": "Kitten",
@@ -100,7 +102,7 @@
           "type": "step3",
           "settings": {
             "dog_step3_label": "Step 3",
-            "dog_step3_progress": 90,
+            "dog_step3_progress": 80,
             "dog_step3_heading": "How Big Is Your Dog?",
             "dog_step3_subtext": "Choose one you want.",
             "dog_step3_opt1_label": "Small (< 25 lb)",
