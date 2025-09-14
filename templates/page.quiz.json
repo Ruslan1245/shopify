@@ -72,6 +72,7 @@
             "option1": "Cat",
             "cat_image": "shopify://shop_images/outline.png",
             "option2": "Dog",
+            "dog_image": "shopify://shop_images/pets_12452249_1.png",
             "back_text": "Go Back",
             "next_text": "Next"
           }
