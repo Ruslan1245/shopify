@@ -651,6 +651,13 @@ document.addEventListener('DOMContentLoaded', function () {
       if (intro) intro.style.display = '';
       if (reviewBox) reviewBox.style.display = 'none';
       localStorage.clear(); // wipe quiz selections
+
+      // reset hidden fields
+      document.querySelectorAll("#quiz-result-form input[type='hidden']").forEach(inp => {
+        inp.name = "";
+        inp.value = "";
+      });
+
       if (step1) step1.style.display = 'none'; // keep hidden until start button
       container.scrollIntoView({ behavior: "smooth" });
     }
@@ -686,10 +693,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
       /** Save answers into localStorage */
       var stepKey = parentStep.className.match(/quiz-step-(\d)/)[1];
+      var stepHeading = parentStep.querySelector(".quiz-step-heading")?.innerText || `Step ${stepKey}`;
       var selections = Array.from(parentStep.querySelectorAll('.quiz-option.active')).map(
-        (btn) => btn.dataset.choice
+        (btn) => btn.querySelector("span")?.innerText.trim()
       );
-      localStorage.setItem('quiz_step' + stepKey, selections.join(','));
+
+      localStorage.setItem('quiz_step' + stepKey, JSON.stringify({ name: stepHeading, value: selections.join(', ') }));
       return;
     }
 
@@ -703,7 +712,7 @@ document.addEventListener('DOMContentLoaded', function () {
           alert('Please choose an option to continue.');
           return;
         }
-        showStep2For(localStorage.getItem('quiz_step1'));
+        showStep2For(localStorage.getItem('quiz_step1').includes("Dog") ? "dog" : "cat");
         return;
       }
 
@@ -713,7 +722,7 @@ document.addEventListener('DOMContentLoaded', function () {
           alert('Please choose an option to continue.');
           return;
         }
-        showStep3For(localStorage.getItem('quiz_step1'));
+        showStep3For(localStorage.getItem('quiz_step1').includes("Dog") ? "dog" : "cat");
         return;
       }
 
@@ -743,9 +752,9 @@ document.addEventListener('DOMContentLoaded', function () {
       var visibleStep5 = step5Nodes.find((n) => window.getComputedStyle(n).display !== 'none');
       if (visibleStep5) { showStep4(); return; }
       var visibleStep4 = step4Nodes.find((n) => window.getComputedStyle(n).display !== 'none');
-      if (visibleStep4) { showStep3For(localStorage.getItem('quiz_step1')); return; }
+      if (visibleStep4) { showStep3For(localStorage.getItem('quiz_step1').includes("Dog") ? "dog" : "cat"); return; }
       var visibleStep3 = step3Nodes.find((n) => window.getComputedStyle(n).display !== 'none');
-      if (visibleStep3) { showStep2For(localStorage.getItem('quiz_step1')); return; }
+      if (visibleStep3) { showStep2For(localStorage.getItem('quiz_step1').includes("Dog") ? "dog" : "cat"); return; }
       var visibleStep2 = step2Nodes.find((n) => window.getComputedStyle(n).display !== 'none');
       if (visibleStep2) { if (step1) step1.style.display = 'block'; return; }
       if (step1 && window.getComputedStyle(step1).display !== 'none') {
@@ -763,7 +772,12 @@ document.addEventListener('DOMContentLoaded', function () {
       for (let i = 1; i <= 5; i++) {
         var field = document.getElementById('quiz-step' + i);
         if (field) {
-          field.value = localStorage.getItem('quiz_step' + i) || '';
+          var stored = localStorage.getItem('quiz_step' + i);
+          if (stored) {
+            var parsed = JSON.parse(stored);
+            field.name = parsed.name;
+            field.value = parsed.value;
+          }
         }
       }
       var formData = new FormData(form);
