@@ -788,7 +788,7 @@
         "subtitle": "",
         "title": "Let’s Find Your Pet’s Perfect Formula",
         "content": "<p>Take the 60-second quiz to find the best Nutram formula based on your pet’s size, sensitivities, and gut health needs.<br/><br/></p>",
-        "btn_cat_url": "#",
+        "btn_cat_url": "shopify://pages/quiz",
         "btn_cat_text": "Take the Quiz",
         "btn_dog_url": "",
         "btn_dog_text": "Shop For Dogs",
