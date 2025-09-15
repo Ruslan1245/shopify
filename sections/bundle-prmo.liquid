@@ -92,14 +92,6 @@
             <img src="{{ section.settings.custom_image | img_url: '800x' }}" alt="{{ section.settings.custom_title }}" class="bundle-product-img">
           {% endif %}
         {% endif %}
-
-        {% if section.settings.custom_side_image %}
-          <img src="{{ section.settings.custom_side_image | img_url: '600x' }}" alt="Side graphic" class="bundle-side-img">
-        {% endif %}
-
-        {% if section.settings.save_badge_text != blank %}
-          <div class="bundle-badge">{{ section.settings.save_badge_text }}</div>
-        {% endif %}
       </div>
     </div>
   </div>
@@ -157,7 +149,6 @@
     { "type": "url", "id": "custom_button_url", "label": "Primary button URL (used when no product)" },
     { "type": "text", "id": "secondary_button_text", "label": "Secondary button text", "default": "Find the Retailer" },
     { "type": "url", "id": "secondary_button_url", "label": "Secondary button URL" },
-    { "type": "text", "id": "save_badge_text", "label": "Save badge text", "default": "Save 15%" }
   ],
   "blocks": [
     {
