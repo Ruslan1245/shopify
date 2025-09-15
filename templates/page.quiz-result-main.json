@@ -79,6 +79,18 @@
         "review_verified": "VERIFIED CUSTOMER"
       }
     },
+    "alternative_product_9RyJzn": {
+      "type": "alternative-product",
+      "name": "Alternate Dry Formulas",
+      "settings": {
+        "heading": "Alternate Dry Formulas",
+        "subheading": "Order Nutram products from our trusted partners with fast, secure delivery.",
+        "fallback_left": "best-2",
+        "fallback_right": "best-1",
+        "reviews_text": "4.9/5.0 (100 reviews)",
+        "add_to_cart_text": "Shop Now"
+      }
+    },
     "testimonial_gJfN9R": {
       "type": "testimonial",
       "blocks": {
@@ -209,18 +221,6 @@
       "settings": {
         "main_title": "",
         "subtitle": ""
-      }
-    },
-    "alternative_product_9RyJzn": {
-      "type": "alternative-product",
-      "name": "Alternate Dry Formulas",
-      "settings": {
-        "heading": "Alternate Dry Formulas",
-        "subheading": "Order Nutram products from our trusted partners with fast, secure delivery.",
-        "fallback_left": "best-2",
-        "fallback_right": "best-1",
-        "reviews_text": "4.9/5.0 (100 reviews)",
-        "add_to_cart_text": "Shop Now"
       }
     },
     "section_HE8WM6": {
@@ -718,8 +718,8 @@
   "order": [
     "main",
     "quiz_result_RXKQKU",
-    "testimonial_gJfN9R",
     "alternative_product_9RyJzn",
+    "testimonial_gJfN9R",
     "section_HE8WM6",
     "bundle_prmo_g8DP4h",
     "product_list_NG9eRF",
