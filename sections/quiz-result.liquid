@@ -1,19 +1,24 @@
 {% comment %}
   Section: quiz-result
   Displays personalized product recommendation after quiz.
-  Fetches product based on URL parameter `product_id`.
+  - If ?product_id= is in URL → use mapped product
+  - Else → use selected fallback product from section settings
 {% endcomment %}
 
-{% assign query_id = 8996512989402 %}
+{% assign query_id = request.params.product_id %}
 {% assign product_handle = blank %}
 
-{%- for block in section.blocks -%}
-  {% if block.type == "product_map" and block.settings.product_id == query_id %}
-    {% assign product_handle = block.settings.product_handle %}
-  {% endif %}
-{%- endfor -%}
+{%- if query_id != blank -%}
+  {%- for block in section.blocks -%}
+    {% if block.type == "product_map" and block.settings.product_id == query_id %}
+      {% assign product_handle = block.settings.product_handle %}
+    {% endif %}
+  {%- endfor -%}
+{%- endif -%}
 
-{% if product_handle %}
+{% if product_handle == blank %}
+  {% assign quiz_product = section.settings.default_product %}
+{% else %}
   {% assign quiz_product = all_products[product_handle] %}
 {% endif %}
 
@@ -33,7 +38,7 @@
 
       {% if quiz_product %}
         <h3 class="quiz-product-title">{{ quiz_product.title }}</h3>
-        <p class="quiz-product-subtitle">{{ quiz_product.type }}</p>
+        <p class="quiz-product-subtitle">{{ quiz_product.description | strip_html | truncate: 120 }}</p>
         <p class="quiz-product-price">From {{ quiz_product.price_min | money }}</p>
       {% else %}
         <p>No product found for this quiz result.</p>
@@ -107,7 +112,6 @@
 document.addEventListener("DOMContentLoaded", function() {
   var petName = localStorage.getItem("quiz_petname") || "";
   var span = document.getElementById("quizPetName");
-  var heading = document.getElementById("quizHeading");
   if (petName && petName.trim() !== "" && span) {
     span.textContent = petName;
   }
@@ -118,6 +122,7 @@ document.addEventListener("DOMContentLoaded", function() {
 {
   "name": "Quiz Result",
   "settings": [
+    { "type": "product", "id": "default_product", "label": "Fallback Product" },
     { "type": "text", "id": "top_rating_text", "label": "Top rating text", "default": "4.8/5 loved by thousands of pet parents" },
     { "type": "text", "id": "heading_text", "label": "Heading Text", "default": "perfect Nutram recipe!" },
     { "type": "text", "id": "review_text", "label": "Review Stars Text", "default": "4.8/5 (100 reviews)" },
