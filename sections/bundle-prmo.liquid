@@ -1,0 +1,167 @@
+{% comment %}
+  Section: Bundle Promo / Add-on promo
+{% endcomment %}
+
+{% assign query_id = request.params.product_id %}
+{% assign mapped_handle = blank %}
+{% assign product_handle = blank %}
+
+{%- if query_id != blank -%}
+  {%- for block in section.blocks -%}
+    {%- if block.type == "product_map" and block.settings.product_id == query_id -%}
+      {% assign mapped_handle = block.settings.mapped_product %}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endif -%}
+
+{%- if mapped_handle != blank -%}
+  {% assign product_handle = mapped_handle %}
+{%- elsif section.settings.fallback_product != blank -%}
+  {% assign product_handle = section.settings.fallback_product %}
+{%- else -%}
+  {% assign product_handle = blank %}
+{%- endif -%}
+
+{%- if product_handle != blank -%}
+  {% assign product = all_products[product_handle] %}
+{% else %}
+  {% assign product = nil %}
+{%- endif -%}
+
+<section class="bundle-promo">
+  <div class="bundle-inner container">
+    <div class="bundle-left">
+      {% if section.settings.small_label != blank %}
+        <div class="bundle-small">{{ section.settings.small_label }}</div>
+      {% endif %}
+      <h2 class="bundle-title">
+        {% if product %}
+          {{ product.title }}
+        {% else %}
+          {{ section.settings.custom_title }}
+        {% endif %}
+      </h2>
+
+      {% if section.settings.custom_subheading != blank %}
+        <div class="bundle-sub">{{ section.settings.custom_subheading }}</div>
+      {% endif %}
+
+      <ul class="bundle-bullets">
+        {% if section.settings.bullet_1 != blank %}<li>{{ section.settings.bullet_1 }}</li>{% endif %}
+        {% if section.settings.bullet_2 != blank %}<li>{{ section.settings.bullet_2 }}</li>{% endif %}
+        {% if section.settings.bullet_3 != blank %}<li>{{ section.settings.bullet_3 }}</li>{% endif %}
+      </ul>
+
+      <div class="bundle-ctas">
+        {% if product %}
+          <form method="post" action="/cart/add" class="bundle-add-form">
+            <input type="hidden" name="id" value="{{ product.first_available_variant.id }}">
+            <button type="submit" class="bundle-btn primary">
+              {{ section.settings.button_text_add | default: "Add to Bundle" }}
+              <span class="btn-arrow">→</span>
+            </button>
+          </form>
+        {% else %}
+          {% if section.settings.custom_button_url != blank %}
+            <a href="{{ section.settings.custom_button_url }}" class="bundle-btn primary">
+              {{ section.settings.button_text_add | default: "Add to Bundle" }}
+              <span class="btn-arrow">→</span>
+            </a>
+          {% endif %}
+        {% endif %}
+
+        {% if section.settings.secondary_button_text != blank and section.settings.secondary_button_url != blank %}
+          <a href="{{ section.settings.secondary_button_url }}" class="bundle-btn secondary">
+            {{ section.settings.secondary_button_text }}
+            <span class="btn-arrow">→</span>
+          </a>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="bundle-right">
+      <div class="bundle-art">
+        <div class="bundle-blob" aria-hidden="true"></div>
+
+        {% if product and product.featured_image %}
+          <a href="{{ product.url }}">
+            <img src="{{ product.featured_image | img_url: '800x' }}" alt="{{ product.title }}" class="bundle-product-img">
+          </a>
+        {% else %}
+          {% if section.settings.custom_image %}
+            <img src="{{ section.settings.custom_image | img_url: '800x' }}" alt="{{ section.settings.custom_title }}" class="bundle-product-img">
+          {% endif %}
+        {% endif %}
+
+        {% if section.settings.save_badge_text != blank %}
+          <div class="bundle-badge">{{ section.settings.save_badge_text }}</div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.bundle-promo { padding:36px 20px; background: #f0f7fb; }
+.bundle-inner { display:flex; gap:40px; align-items:center; justify-content:space-between; max-width:1200px; margin:0 auto; }
+.bundle-left { flex:1; max-width:520px; padding-left:10px; }
+.bundle-right { flex:1; display:flex; justify-content:center; align-items:center; position:relative; }
+
+.bundle-small { font-size:13px; color:#666; margin-bottom:8px; }
+.bundle-title { font-size:40px; line-height:1; color:#1b2b3b; margin:0 0 10px; font-weight:800; }
+.bundle-sub { color:#444; margin-bottom:12px; font-size:14px; }
+.bundle-bullets { list-style:none; padding-left:0; margin:10px 0 18px; }
+.bundle-bullets li { margin-bottom:10px; padding-left:22px; position:relative; color:#333; }
+.bundle-bullets li:before { content: "✔"; color:#1e9adf; position:absolute; left:0; top:0; font-weight:700; }
+
+.bundle-ctas { display:flex; gap:12px; align-items:center; margin-top:6px; }
+.bundle-btn { display:inline-flex; align-items:center; gap:12px; padding:12px 28px; border-radius:28px; text-decoration:none; font-weight:700; border:0; cursor:pointer; }
+.bundle-btn .btn-arrow { margin-left:6px; }
+.primary { background:#2f9bd6; color:#fff; }
+.secondary { background:#fff; color:#2f9bd6; border:2px solid #2f9bd6; }
+
+.bundle-art { position:relative; width:100%; display:flex; justify-content:center; align-items:center; min-height:300px; }
+.bundle-blob { position:absolute; right:8%; width:300px; height:380px; background:#2f9bd633; border-radius:50% 50% 40% 40%; transform: translateY(-12px); z-index:0; }
+.bundle-product-img { max-width:360px; z-index:1; position:relative; box-shadow:0 8px 24px rgba(0,0,0,0.08); border-radius:8px; }
+.bundle-badge { position:absolute; top:8%; right:20%; z-index:2; background:#2f9bd6; color:#fff; padding:16px 18px; border-radius:34px; font-weight:700; }
+
+@media(max-width:980px){
+  .bundle-inner { flex-direction:column-reverse; align-items:center; gap:24px; }
+  .bundle-left { text-align:center; max-width:720px; }
+  .bundle-blob { width:220px; height:270px; right:6%; }
+  .bundle-product-img { max-width:320px; }
+  .bundle-badge { right:30%; top:5%; }
+}
+</style>
+
+{% schema %}
+{
+  "name": "Bundle Promo (Add-on)",
+  "settings": [
+    { "type": "text", "id": "small_label", "label": "Small label (top left)", "default": "Add Omega-3 Treat Bites" },
+    { "type": "text", "id": "custom_title", "label": "Custom title (when no product)", "default": "Add Omega-3 Treat Bites" },
+    { "type": "text", "id": "custom_subheading", "label": "Subheading / small text", "default": "Save 15 % When Bundled" },
+    { "type": "image_picker", "id": "custom_image", "label": "Custom product image (used when no product selected)" },
+    { "type": "product", "id": "fallback_product", "label": "Fallback Product (used when no product_id in URL)" },
+    { "type": "text", "id": "bullet_1", "label": "Bullet 1", "default": "Matches your pet’s needs, not the masses" },
+    { "type": "text", "id": "bullet_2", "label": "Bullet 2", "default": "Built on our Digestive Wellness System™" },
+    { "type": "text", "id": "bullet_3", "label": "Bullet 3", "default": "Backed by science, not guesswork" },
+    { "type": "text", "id": "button_text_add", "label": "Primary button text", "default": "Add to Bundle" },
+    { "type": "url", "id": "custom_button_url", "label": "Primary button URL (used when no product)" },
+    { "type": "text", "id": "secondary_button_text", "label": "Secondary button text", "default": "Find the Retailer" },
+    { "type": "url", "id": "secondary_button_url", "label": "Secondary button URL" },
+    { "type": "text", "id": "save_badge_text", "label": "Save badge text", "default": "Save 15%" }
+  ],
+  "blocks": [
+    {
+      "type": "product_map",
+      "name": "Product mapping",
+      "settings": [
+        { "type": "text", "id": "product_id", "label": "Product ID (value from URL)" },
+        { "type": "product", "id": "mapped_product", "label": "Mapped Product" }
+      ]
+    }
+  ],
+  "presets": [ { "name": "Bundle Promo" } ]
+}
+{% endschema %}
