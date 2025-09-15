@@ -63,6 +63,7 @@
       "type": "quiz-result",
       "name": "Quiz Result",
       "settings": {
+        "default_product": "best-1",
         "top_rating_text": "4.8/5 loved by thousands of pet parents",
         "heading_text": "perfect Nutram recipe!",
         "review_text": "4.8/5 (100 reviews)",
