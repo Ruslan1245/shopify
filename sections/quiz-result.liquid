@@ -38,7 +38,7 @@
 
       {% if quiz_product %}
         <h3 class="quiz-product-title">{{ quiz_product.title }}</h3>
-        <p class="quiz-product-subtitle">{{ quiz_product.description | strip_html | truncate: 120 }}</p>
+        <p class="quiz-product-subtitle">Chicken and Turkey Recipe</p>
         <p class="quiz-product-price">From {{ quiz_product.price_min | money }}</p>
       {% else %}
         <p>No product found for this quiz result.</p>
@@ -57,6 +57,7 @@
           <button type="submit" class="quiz-add-to-cart">
             {{ section.settings.add_to_cart_text }} →
           </button>
+
         </form>
         {% if section.settings.retailer_url != blank %}
           <a href="{{ section.settings.retailer_url }}" class="quiz-find-retailer">
