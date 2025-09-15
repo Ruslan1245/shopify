@@ -69,7 +69,7 @@
       <div class="quiz-customer-review">
         {% if section.settings.author_image != blank %}
         <div class="quiz__author-img">
-          <img src="{{ section.settings.author_image | img_url: '100x100' }}" alt="{{ section.settings.review_author }}">
+          <img src="{{ section.settings.author_image | img_url: 'master' }}" alt="{{ section.settings.review_author }}">
         </div>
         {% endif %}
         <div class="quiz__content">
@@ -87,9 +87,6 @@
         {% if quiz_product.featured_image %}
           <img src="{{ quiz_product.featured_image | img_url: '400x' }}" alt="{{ quiz_product.title }}">
         {% endif %}
-        {% for image in quiz_product.images limit:2 %}
-          <img src="{{ image | img_url: '400x' }}" alt="{{ quiz_product.title }}">
-        {% endfor %}
       {% endif %}
     </div>
   </div>
