@@ -17,7 +17,7 @@
 {%- endif -%}
 
 {% if product_handle == blank %}
-  {% assign quiz_product = section.settings.default_product %}
+  {% assign quiz_product = all_products[section.settings.default_product] %}
 {% else %}
   {% assign quiz_product = all_products[product_handle] %}
 {% endif %}
@@ -67,10 +67,17 @@
       {% endif %}
 
       <div class="quiz-customer-review">
-        ⭐⭐⭐⭐⭐
-        <p>{{ section.settings.review_quote }}</p>
-        <strong>{{ section.settings.review_author }}</strong>
-        <span class="verified">✔ {{ section.settings.review_verified }}</span>
+        {% if section.settings.author_image != blank %}
+        <div class="quiz__author-img">
+          <img src="{{ section.settings.author_image | img_url: '100x100' }}" alt="{{ section.settings.review_author }}">
+        </div>
+        {% endif %}
+        <div class="quiz__content">
+          ⭐⭐⭐⭐⭐
+          <p>{{ section.settings.review_quote }}</p>
+          <strong>{{ section.settings.review_author }}</strong>
+          <span class="verified">✔ {{ section.settings.review_verified }}</span>
+        </div>
       </div>
     </div>
 
@@ -104,8 +111,9 @@
 .quiz-add-to-cart { background:#f7b500; color:#222; padding:12px 24px; border-radius:30px; font-weight:600; border:none; cursor:pointer; }
 .quiz-find-retailer { background:#2ca9e1; color:#fff; padding:12px 24px; border-radius:30px; font-weight:600; text-decoration:none; display:inline-block; }
 .quiz-result-image img { max-width:200px; margin:10px; border-radius:10px; }
-.quiz-customer-review { margin-top:20px; padding:15px; background:#f9f9f9; border-radius:10px; font-size:14px; color:#333; }
+.quiz-customer-review { margin-top:20px; padding:15px; background:#f9f9f9; border-radius:10px; font-size:14px; color:#333; display:flex; gap:15px; align-items:center; }
 .quiz-customer-review .verified { color:#2ca9e1; font-weight:600; }
+.quiz__author-img img { border-radius:50%; }
 </style>
 
 <script>
