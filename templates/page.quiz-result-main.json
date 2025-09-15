@@ -326,7 +326,7 @@
         "small_label": "Add Omega-3 Treat Bites",
         "custom_title": "Add Omega-3 Treat Bites",
         "custom_subheading": "Save 15 % When Bundled",
-        "custom_side_image": "shopify://shop_images/e3292d669a6cac9fbde89e5833ed56871445144c.jpg",
+        "custom_image": "shopify://shop_images/e8b1efc86a93944b0c1f4764033e21e0dcb926bf.jpg",
         "fallback_product": "",
         "bullet_1": "Matches your pet’s needs, not the masses",
         "bullet_2": "Built on our Digestive Wellness System™",
@@ -334,8 +334,7 @@
         "button_text_add": "Add to Bundle",
         "custom_button_url": "shopify://collections/all",
         "secondary_button_text": "Find the Retailer",
-        "secondary_button_url": "",
-        "save_badge_text": "Save 15%"
+        "secondary_button_url": ""
       }
     },
     "product_list_NG9eRF": {
