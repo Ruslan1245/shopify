@@ -1318,6 +1318,8 @@ accordion-custom .table td:first-child {
 }
 .page-class-page-quiz-result-main .pet-testimonial-card {
     padding: 8px;
+    min-width: 500px;
+    max-width: 500px;
 }
 @media(max-width:767px){
     /* .upsell-wrapper .swiper.upsell-swiper .swiper-wrapper .swiper-slide {
