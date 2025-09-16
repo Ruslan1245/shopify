@@ -90,7 +90,8 @@
 
 <div class="quiz-result-wrapper">
   <div class="quiz-top-rating">
-    ⭐⭐⭐⭐⭐  <span><img src="https://cdn.shopify.com/s/files/1/0627/0422/2426/files/Group_55.png?v=1758037849">{{ section.settings.top_rating_text }}</span>
+    {% comment %} ⭐⭐⭐⭐⭐  {% endcomment %}
+     <span><img src="https://cdn.shopify.com/s/files/1/0627/0422/2426/files/Group_55.png?v=1758037849">{{ section.settings.top_rating_text }}</span>
   </div>
 
   <h2 class="quiz-result-heading" id="quizHeading">
@@ -101,7 +102,9 @@
     <!-- Left -->
     <div class="quiz-result-text">
       <div class="inner-left">
-      <div class="quiz-stars">⭐⭐⭐⭐⭐ <span>{{ section.settings.review_text }}</span></div>
+      <div class="quiz-stars">
+        {% comment %} ⭐⭐⭐⭐⭐ {% endcomment %}
+        <span><img src="https://cdn.shopify.com/s/files/1/0627/0422/2426/files/Group_55.png?v=1758037849">{{ section.settings.review_text }}</span></div>
 
       {% if quiz_product %}
         <h3 class="quiz-product-title">{{ quiz_product.title }}</h3>
