@@ -23,7 +23,24 @@
     justify-content: space-between;
     padding-right: 1rem;
 }
-.quiz-add-to-cart::after {
+.quiz-find-retailer{
+    font-weight: 600;
+    padding: .75rem 1.5rem;
+    border-radius: 9999px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    max-width: 100%;
+    width: 100%;
+    font-size: 17px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 1rem;
+}
+
+.quiz-add-to-cart::after, .quiz-find-retailer::after {
     content: "";
     background-image: url('/cdn/shop/files/Vector_5c1622c0-29e6-402a-a815-8da37656e4fc.png?v=1755184216');
     height: 15px;
@@ -90,7 +107,7 @@
         </form>
         {% if section.settings.retailer_url != blank %}
           <a href="{{ section.settings.retailer_url }}" class="quiz-find-retailer">
-            {{ section.settings.retailer_text }} →
+            {{ section.settings.retailer_text }}
           </a>
         {% endif %}
       </div>
