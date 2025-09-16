@@ -5,7 +5,7 @@
   - Else → use selected fallback product from section settings
 {% endcomment %}
 {% style %}
-  .quiz-add-to-cart {
+  .quiz-add-to-cart, .alt-actions button {
     background-color: #ffc107;
     color: #353535;
     font-weight: 600;
@@ -40,14 +40,21 @@
     padding-right: 1rem;
 }
 
-.quiz-add-to-cart::after, .quiz-find-retailer::after {
+.quiz-add-to-cart::after, .quiz-find-retailer::after, .alt-actions button::after {
     content: "";
-    background-image: url('/cdn/shop/files/Vector_914f7b28-0d65-42ec-8a4f-a4f16f0ada9a.png?v=1755190591');
+    background-image: url('/cdn/shop/files/Vector_5c1622c0-29e6-402a-a815-8da37656e4fc.png?v=1755184216');
     height: 15px;
     width: 30px;
     background-repeat: no-repeat;
     background-size: contain;
 }
+
+.quiz-find-retailer::after {
+    content: "";
+    background-image: url('/cdn/shop/files/Vector_914f7b28-0d65-42ec-8a4f-a4f16f0ada9a.png?v=1755190591');
+    height: 15px;
+}
+
 {% endstyle %}
 
 
