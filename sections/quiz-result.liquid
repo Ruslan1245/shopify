@@ -85,7 +85,7 @@
         <form method="post" action="/cart/add">
           <input type="hidden" name="id" value="{{ quiz_product.first_available_variant.id }}">
           <button type="submit" class="quiz-add-to-cart">
-            {{ section.settings.add_to_cart_text }} →
+            {{ section.settings.add_to_cart_text }}
           </button>
         </form>
         {% if section.settings.retailer_url != blank %}
