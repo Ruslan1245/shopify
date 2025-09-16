@@ -1316,7 +1316,9 @@ accordion-custom .table td:first-child {
  {
     padding-top: 30px;
 }
-
+.page-class-page-quiz-result-main .pet-testimonial-card {
+    padding: 8px;
+}
 @media(max-width:767px){
     /* .upsell-wrapper .swiper.upsell-swiper .swiper-wrapper .swiper-slide {
     width: 100% !important;
