@@ -335,7 +335,7 @@
       "type": "bundle-prmo",
       "name": "Bundle Promo",
       "settings": {
-        "small_label": "Add Omega-3 Treat Bites",
+        "small_label": "",
         "custom_title": "Add Omega-3 Treat Bites",
         "custom_subheading": "Save 15 % When Bundled",
         "custom_image": "shopify://shop_images/e8b1efc86a93944b0c1f4764033e21e0dcb926bf.jpg",
