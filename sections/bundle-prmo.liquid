@@ -58,14 +58,12 @@
             <input type="hidden" name="id" value="{{ product.first_available_variant.id }}">
             <button type="submit" class="bundle-btn primary">
               {{ section.settings.button_text_add | default: "Add to Bundle" }}
-              <span class="btn-arrow">→</span>
             </button>
           </form>
         {% else %}
           {% if section.settings.custom_button_url != blank %}
             <a href="{{ section.settings.custom_button_url }}" class="bundle-btn primary">
               {{ section.settings.button_text_add | default: "Add to Bundle" }}
-              <span class="btn-arrow">→</span>
             </a>
           {% endif %}
         {% endif %}
@@ -73,7 +71,6 @@
         {% if section.settings.secondary_button_text != blank and section.settings.secondary_button_url != blank %}
           <a href="{{ section.settings.secondary_button_url }}" class="bundle-btn secondary">
             {{ section.settings.secondary_button_text }}
-            <span class="btn-arrow">→</span>
           </a>
         {% endif %}
       </div>
