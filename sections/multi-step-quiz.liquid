@@ -1062,16 +1062,23 @@ p.quiz-note small::before {
         if (emailInput) localStorage.setItem('quiz_email', emailInput.value.trim());
         if (phoneInput) localStorage.setItem('quiz_phone', phoneInput.value.trim());
         let quizTags = quizData.map(item => item.value.toLowerCase().trim());
-        let matchingProducts = [];
-        document.querySelectorAll(".filter__product_main .product-item").forEach(item => {
-          let productTags = item.getAttribute("data-tags").toLowerCase().split(",");
-          let hasMatch = quizTags.some(tag => productTags.includes(tag));
-          if (hasMatch) {
-            matchingProducts.push(item.getAttribute("data-handle"));
-          }
-        });
+let matchingProducts = [];
 
-        console.log("Matching Product Handles:", matchingProducts);
+document.querySelectorAll(".filter__product_main .product-item").forEach(item => {
+  let productTags = item.getAttribute("data-tags").toLowerCase().split(",");
+
+  // check if ANY quiz tag is contained inside ANY product tag
+  let hasMatch = quizTags.some(qTag => 
+    productTags.some(pTag => pTag.includes(qTag))
+  );
+
+  if (hasMatch) {
+    matchingProducts.push(item.getAttribute("data-handle"));
+  }
+});
+
+console.log("Matching Product Handles:", matchingProducts);
+
 
         // Redirect to result page
         //window.location.href = '/pages/quiz-result';
