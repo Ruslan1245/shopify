@@ -807,6 +807,25 @@ p.quiz-note small::before {
     }
 </style>
 
+{% for product in collection.products %}
+  <div class="product-item">
+    <h3>{{ product.title }}</h3>
+
+    {% if product.tags.size > 0 %}
+      <ul class="product-tags">
+        {% for tag in product.tags %}
+          <li>
+            {{ tag }}{% unless forloop.last %}, {% endunless %}
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>No tags available</p>
+    {% endif %}
+  </div>
+{% endfor %}
+
+
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     var container = document.getElementById('quiz-banner-{{ section.id }}');
