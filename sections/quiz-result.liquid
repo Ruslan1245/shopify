@@ -85,18 +85,6 @@
 {% endstyle %}
 
 {% assign query_id = request.params.handle_main %}
-{% assign getperameter = '' %}
-
-<script>
-  const params = new URLSearchParams(window.location.search);
-  const handleMain = params.get("handle_main");
-  if (handleMain) {
-    {% assign getperameter = handleMain %}
-    document.getElementById("quiz-handle").value = handleMain;
-  }
-</script>
-
-{{ getperameter }}
 
 {% assign product_handle = blank %}
 
@@ -114,6 +102,36 @@
   {% assign quiz_product = all_products[product_handle] %}
 {% endif %}
 
+{% assign query_handle = '' %}
+
+<!-- Hidden input set via JS -->
+<input type="hidden" id="quiz-handle-liquid" value="">
+
+<div id="quiz-result-container"></div>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const handleMain = params.get("handle_main");
+  document.getElementById("quiz-handle-liquid").value = handleMain;
+
+  const container = document.getElementById("quiz-result-container");
+  
+  {% for product in collections.all.products %}
+    if(handleMain === "{{ product.handle }}"){
+      container.innerHTML = `
+        <div class="quiz-result-content">
+          <h3>{{ product.title }}</h3>
+          {% if product.featured_image %}
+          <img src="{{ product.featured_image | img_url: '400x' }}" alt="{{ product.title }}">
+          {% endif %}
+          <p>Price from {{ product.price_min | money }}</p>
+        </div>
+      `;
+    }
+  {% endfor %}
+</script>
+
+
 <div class="quiz-result-wrapper">
   <div class="quiz-top-rating">
     {% comment %} ⭐⭐⭐⭐⭐  {% endcomment %}
@@ -123,6 +141,8 @@
   <h2 class="quiz-result-heading" id="quizHeading">
     Here’s <span id="quizPetName"></span>’s {{ section.settings.heading_text }}
   </h2>
+
+
 
   <div class="quiz-result-content">
     <!-- Left -->
@@ -190,6 +210,8 @@
       {% endif %}
     </div>
   </div>
+
+
 </div>
 
 
