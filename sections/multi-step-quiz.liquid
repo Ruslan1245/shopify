@@ -809,10 +809,9 @@ p.quiz-note small::before {
 
 {% assign all_products_collection = collections['all'] %}
 
+<div class="filter__product_main" style="display:none">
 {% for product in all_products_collection.products %}
   <div class="product-item">
-    <h3>{{ product.title }}</h3>
-
     {% if product.tags.size > 0 %}
       <ul class="product-tags">
         {% for tag in product.tags %}
@@ -822,6 +821,8 @@ p.quiz-note small::before {
     {% endif %}
   </div>
 {% endfor %}
+</div>
+
 
 
 
