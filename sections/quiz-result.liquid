@@ -86,6 +86,8 @@
 
 {% assign quiz_product = blank %}
 
+{{ cart.attributes.quiz_handle }}
+
 {% if cart.attributes.quiz_handle != blank %}
   {% assign quiz_handles = cart.attributes.quiz_handle | split: ',' %}
   {% for handle in quiz_handles %}
