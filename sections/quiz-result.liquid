@@ -86,7 +86,7 @@
 
 {% assign query_id = request.params.handle_main %}
 
-<p>Params: {{ request.params | json }}</p>
+<p>Params: {{ request.query | json }}</p>
 
 {% assign product_handle = blank %}
 
