@@ -86,12 +86,7 @@
 
 {% assign query_id = request.params.handle_main %}
 
-{% assign query_handles = request.params.handle_main %}
-{% assign handles_array = query_handles | split: ',' %}
-
-{% for h in handles_array %}
-  {{ h }} <br>
-{% endfor %}
+<p>Params: {{ request.params | json }}</p>
 
 {% assign product_handle = blank %}
 
