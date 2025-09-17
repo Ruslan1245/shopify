@@ -84,7 +84,10 @@
 }
 {% endstyle %}
 
-{% assign query_id = request.params.product_id %}
+{% assign query_id = request.params.handle_main %}
+
+{{query_id }}
+
 {% assign product_handle = blank %}
 
 {%- if query_id != blank -%}
@@ -179,7 +182,6 @@
   </div>
 </div>
 
-asdfasdf
 
 <style>
 .quiz-result-wrapper { text-align:center; padding:40px 20px; padding-top: 80px;background:#fbfbfb;}
