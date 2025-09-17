@@ -85,7 +85,7 @@
 {% endstyle %}
 
 {% assign query_id = request.params.handle_main %}
-{% capture full_url %}https://{{ request.host }}{{ request.path }}{% if request.query_string %}?{{ request.query_string }}{% endif %}{% endcapture %}
+{% capture full_url %}{{request.params.handle_main}}{% endcapture %}
 {{ full_url }}
 
 {% assign product_handle = blank %}
