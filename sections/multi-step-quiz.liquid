@@ -1080,13 +1080,33 @@ p.quiz-note small::before {
         });
 
        if (matchingProducts.length > 0) {
-          window.location.href = '/pages/quiz-result?handle_main=' + matchingProducts.join(',');
-        } else {
-          alert("No matching products found for your quiz answers.");
-        }
+            // Save quiz product handle in cart first
+            fetch('/cart/update.js', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({
+                attributes: {
+                  quiz_handle: handle_product
+                }
+              })
+            })
+            .then(response => response.json())
+            .then(cart => {
+              console.log('Quiz product handle saved in cart:', cart.attributes.quiz_handle);
 
-        // Redirect to result page
-        //window.location.href = '/pages/quiz-result';
+              // After saving, redirect to quiz result page
+              window.location.href = '/pages/quiz-result?handle_main=' + matchingProducts.join(',');
+            })
+            .catch(error => {
+              console.error('Error updating cart attribute:', error);
+              // Optional: still redirect even if cart update fails
+              window.location.href = '/pages/quiz-result?handle_main=' + matchingProducts.join(',');
+            });
+          } else {
+            alert("No matching products found for your quiz answers.");
+          }
       });
     }
   });
