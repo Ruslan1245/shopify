@@ -824,7 +824,6 @@ p.quiz-note small::before {
 
 
 
-
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     var container = document.getElementById('quiz-banner-{{ section.id }}');
@@ -847,28 +846,75 @@ p.quiz-note small::before {
       });
     }
 
+    /** Utility: print saved selections */
+    function printQuizSelections() {
+      var outputBox = container.querySelector('.quiz-selections');
+      if (!outputBox) return;
+
+      outputBox.innerHTML = '';
+      for (let i = 1; i <= 5; i++) {
+        var stored = localStorage.getItem('quiz_step' + i);
+        if (stored) {
+          try {
+            var parsed = JSON.parse(stored);
+            var stepName = parsed.name || `Step ${i}`;
+            var stepValue = parsed.value || '';
+            var p = document.createElement('p');
+            p.innerHTML = `<strong>${stepName}:</strong> ${stepValue}`;
+            outputBox.appendChild(p);
+          } catch (err) {
+            console.warn('Invalid stored data for step' + i, stored);
+          }
+        }
+      }
+
+      // Optional extra fields
+      var petName = localStorage.getItem('quiz_petname');
+      if (petName) {
+        var p = document.createElement('p');
+        p.innerHTML = `<strong>Pet Name:</strong> ${petName}`;
+        outputBox.appendChild(p);
+      }
+      var email = localStorage.getItem('quiz_email');
+      if (email) {
+        var p = document.createElement('p');
+        p.innerHTML = `<strong>Email:</strong> ${email}`;
+        outputBox.appendChild(p);
+      }
+      var phone = localStorage.getItem('quiz_phone');
+      if (phone) {
+        var p = document.createElement('p');
+        p.innerHTML = `<strong>Phone:</strong> ${phone}`;
+        outputBox.appendChild(p);
+      }
+    }
+
     /** Step show functions */
     function showStep2For(pet) {
       hideAllSteps();
       var target = container.querySelector('.quiz-step-2[data-pet="' + pet + '"]');
       if (target) target.style.display = 'block';
       if (reviewBox) reviewBox.style.display = 'flex';
+      printQuizSelections();
     }
     function showStep3For(pet) {
       hideAllSteps();
       var target = container.querySelector('.quiz-step-3[data-pet="' + pet + '"]');
       if (target) target.style.display = 'block';
       if (reviewBox) reviewBox.style.display = 'flex';
+      printQuizSelections();
     }
     function showStep4() {
       hideAllSteps();
       if (step4Nodes[0]) step4Nodes[0].style.display = 'block';
       if (reviewBox) reviewBox.style.display = 'flex';
+      printQuizSelections();
     }
     function showStep5() {
       hideAllSteps();
       if (step5Nodes[0]) step5Nodes[0].style.display = 'block';
       if (reviewBox) reviewBox.style.display = 'flex';
+      printQuizSelections();
     }
 
     /** Start Quiz */
@@ -878,6 +924,7 @@ p.quiz-note small::before {
         if (intro) intro.style.display = 'none';
         if (step1) step1.style.display = 'block';
         if (reviewBox) reviewBox.style.display = 'flex';
+        printQuizSelections();
       });
     }
 
@@ -888,16 +935,17 @@ p.quiz-note small::before {
         hideAllSteps();
         if (intro) intro.style.display = '';
         if (reviewBox) reviewBox.style.display = 'none';
-        localStorage.clear(); // wipe quiz selections
+        localStorage.clear();
 
-        // reset hidden fields
         document.querySelectorAll("#quiz-result-form input[type='hidden']").forEach((inp) => {
           inp.name = '';
           inp.value = '';
         });
 
-        if (step1) step1.style.display = 'none'; // keep hidden until start button
+        if (step1) step1.style.display = 'none';
         container.scrollIntoView({ behavior: 'smooth' });
+
+        printQuizSelections();
       }
     });
 
@@ -940,6 +988,8 @@ p.quiz-note small::before {
           'quiz_step' + stepKey,
           JSON.stringify({ name: stepHeading, value: selections.join(', ') })
         );
+
+        printQuizSelections();
         return;
       }
 
@@ -1008,6 +1058,7 @@ p.quiz-note small::before {
         var visibleStep2 = step2Nodes.find((n) => window.getComputedStyle(n).display !== 'none');
         if (visibleStep2) {
           if (step1) step1.style.display = 'block';
+          printQuizSelections();
           return;
         }
         if (step1 && window.getComputedStyle(step1).display !== 'none') {
@@ -1041,24 +1092,27 @@ p.quiz-note small::before {
           }
         }
 
-        // Save PetName (if exists in form)
+        // Save PetName
         var petNameInput = document.getElementById('quiz-pet-name');
         if (petNameInput) {
           localStorage.setItem('quiz_petname', petNameInput.value.trim());
         }
 
-        // (Optional) Save Phone + Email too
+        // Save Phone + Email too
         var emailInput = document.getElementById('quiz-email');
         var phoneInput = document.getElementById('quiz-phone');
         if (emailInput) localStorage.setItem('quiz_email', emailInput.value.trim());
         if (phoneInput) localStorage.setItem('quiz_phone', phoneInput.value.trim());
 
+        printQuizSelections();
+
         // Redirect to result page
-        //window.location.href = '/pages/quiz-result';
+        // window.location.href = '/pages/quiz-result';
       });
     }
   });
 </script>
+
 
 {% schema %}
 {
