@@ -88,8 +88,8 @@
 
 
 {% if cart.attributes.quiz_handle != blank %}
-  {% assign quiz_handles = cart.attributes.quiz_handle | remove: ' ' | split: ',' %}
-  {{cart.attributes.quiz_handle | split: ',' }}
+  {% assign raw_handles = cart.attributes.quiz_handle | remove: '"' %}
+  {% assign quiz_handles = raw_handles | split: ' ' %}
   {% for handle in quiz_handles %}
     {% assign product = all_products[handle] %}
     {% if product and forloop.first %}
