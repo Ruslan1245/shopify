@@ -1066,8 +1066,7 @@ let matchingProducts = [];
 
 document.querySelectorAll(".filter__product_main .product-item").forEach(item => {
   let productTags = item.getAttribute("data-tags").toLowerCase().split(",");
-
-  // check if ANY quiz tag is contained inside ANY product tag
+  console.log(productTags);
   let hasMatch = quizTags.some(qTag => 
     productTags.some(pTag => pTag.includes(qTag))
   );
