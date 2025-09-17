@@ -85,8 +85,30 @@
 {% endstyle %}
 
 {% assign query_id = request.params.handle_main %}
-{% capture full_url %}{{request.params.handle_main}}{% endcapture %}
-{{ full_url }}
+
+
+{% if cart.attributes.quiz_handle %}
+  {% assign quiz_handle = cart.attributes.quiz_handle %}
+  <p>Quiz product handle: {{ quiz_handle }}</p>
+
+  {%- comment -%}
+    If you stored multiple handles as comma-separated values:
+  {%- endcomment -%}
+  {% assign handles_array = quiz_handle | split: ',' %}
+  {% for handle in handles_array %}
+    {% assign product = all_products[handle] %}
+    {% if product %}
+      <div class="quiz-product">
+        <h3>{{ product.title }}</h3>
+        <p>Price: {{ product.price_min | money }}</p>
+        {% if product.featured_image %}
+          <img src="{{ product.featured_image | img_url: '400x' }}" alt="{{ product.title }}">
+        {% endif %}
+      </div>
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
 
 {% assign product_handle = blank %}
 
