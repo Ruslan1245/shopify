@@ -807,23 +807,37 @@ p.quiz-note small::before {
     }
 </style>
 
-{% for product in collection.products %}
-  <div class="product-item">
-    <h3>{{ product.title }}</h3>
+{% comment %}
+  Try to pull as many items as you need in one pass. Replace 1000 with a lower value
+  if your theme errors — Shopify may impose practical limits.
+{% endcomment %}
 
-    {% if product.tags.size > 0 %}
-      <ul class="product-tags">
-        {% for tag in product.tags %}
-          <li>
-            {{ tag }}{% unless forloop.last %}, {% endunless %}
-          </li>
-        {% endfor %}
-      </ul>
-    {% else %}
-      <p>No tags available</p>
-    {% endif %}
-  </div>
-{% endfor %}
+{% paginate collection.products by 1000 %}
+  {% for product in collection.products %}
+    <div class="product-item">
+      <a href="{{ product.url }}">
+        <h3>{{ product.title }}</h3>
+        {% if product.featured_image %}
+          <img src="{{ product.featured_image | img_url: '300x' }}" alt="{{ product.title }}">
+        {% endif %}
+      </a>
+    </div>
+  {% endfor %}
+
+  {%- if paginate.pages > 1 -%}
+    <!-- optional paging UI -->
+    <nav class="pagination">
+      {% if paginate.previous %}
+        <a href="{{ paginate.previous.url }}">Previous</a>
+      {% endif %}
+      <span>Page {{ paginate.page }} / {{ paginate.pages }}</span>
+      {% if paginate.next %}
+        <a href="{{ paginate.next.url }}">Next</a>
+      {% endif %}
+    </nav>
+  {%- endif -%}
+{% endpaginate %}
+
 
 
 <script>
