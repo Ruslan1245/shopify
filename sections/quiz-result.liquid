@@ -92,7 +92,8 @@
        | remove: '[' 
        | remove: ']' 
        | remove: '"' %}
-  {% assign quiz_handles = raw_handles | split: ' ' %}
+  {% assign quiz_handles = raw_handles | split: ',' %}
+
   {% for handle in quiz_handles %}
     {{ handle }}
     {% assign product = all_products[handle] %}
