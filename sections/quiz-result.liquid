@@ -84,17 +84,14 @@
 }
 {% endstyle %}
 
-
 {% assign quiz_product = blank %}
 
 {% if cart.attributes.quiz_handle != blank %}
   {% assign quiz_handles = cart.attributes.quiz_handle | split: ',' %}
   {% for handle in quiz_handles %}
     {% assign product = all_products[handle] %}
-    {% if product %}
-      {% if forloop.first %}
-        {% assign quiz_product = product %}
-      {% endif %}
+    {% if product and forloop.first %}
+      {% assign quiz_product = product %}
     {% endif %}
   {% endfor %}
 {% else %}
@@ -109,14 +106,19 @@
     {%- endfor -%}
   {%- endif -%}
 
-  {% if product_handle == blank %}
-    {% assign quiz_product = all_products[section.settings.default_product] %}
-  {% else %}
+  {% if product_handle != blank %}
     {% assign quiz_product = all_products[product_handle] %}
+  {% else %}
+    {% assign quiz_product = all_products[section.settings.default_product] %}
   {% endif %}
 {% endif %}
 
-{{ quiz_product.title }}
+{% if quiz_product %}
+  {{ quiz_product.title }}
+{% else %}
+  No product found.
+{% endif %}
+
 
 <div class="quiz-result-wrapper">
   <div class="quiz-top-rating">
