@@ -107,30 +107,6 @@
 <!-- Hidden input set via JS -->
 <input type="hidden" id="quiz-handle-liquid" value="">
 
-<div id="quiz-result-container"></div>
-
-<script>
-  const params = new URLSearchParams(window.location.search);
-  const handleMain = params.get("handle_main");
-  document.getElementById("quiz-handle-liquid").value = handleMain;
-
-  const container = document.getElementById("quiz-result-container");
-  
-  {% for product in collections.all.products %}
-    if(handleMain === "{{ product.handle }}"){
-      container.innerHTML = `
-        <div class="quiz-result-content">
-          <h3>{{ product.title }}</h3>
-          {% if product.featured_image %}
-          <img src="{{ product.featured_image | img_url: '400x' }}" alt="{{ product.title }}">
-          {% endif %}
-          <p>Price from {{ product.price_min | money }}</p>
-        </div>
-      `;
-    }
-  {% endfor %}
-</script>
-
 
 <div class="quiz-result-wrapper">
   <div class="quiz-top-rating">
@@ -144,75 +120,94 @@
 
 
 
+  <div id="quiz-result-wrapper" style="display:none;">
   <div class="quiz-result-content">
     <!-- Left -->
     <div class="quiz-result-text">
       <div class="inner-left">
-      <div class="quiz-stars">
-        {% comment %} ⭐⭐⭐⭐⭐ {% endcomment %}
-        <span><img src="https://cdn.shopify.com/s/files/1/0627/0422/2426/files/Group_55.png?v=1758037849">{{ section.settings.review_text }}</span></div>
-
-      {% if quiz_product %}
-        <h3 class="quiz-product-title">{{ quiz_product.title }}</h3>
-        <p class="quiz-product-subtitle">Chicken and Turkey Recipe</p>
-        <p class="quiz-product-price">From {{ quiz_product.price_min | money }}</p>
-      {% else %}
-        <p>No product found for this quiz result.</p>
-      {% endif %}
-
-      <ul class="quiz-bullets">
-        <li>{{ section.settings.bullet_1 }}</li>
-        <li>{{ section.settings.bullet_2 }}</li>
-        <li>{{ section.settings.bullet_3 }}</li>
-      </ul>
-
-      {% if quiz_product %}
-      <div class="quiz-buttons">
-        <form method="post" action="/cart/add">
-          <input type="hidden" name="id" value="{{ quiz_product.first_available_variant.id }}">
-          <button type="submit" class="quiz-add-to-cart">
-            {{ section.settings.add_to_cart_text }}
-          </button>
-        </form>
-        {% if section.settings.retailer_url != blank %}
-          <a href="{{ section.settings.retailer_url }}" class="quiz-find-retailer">
-            {{ section.settings.retailer_text }}
-          </a>
-        {% endif %}
-      </div>
-      {% endif %}
-
-      <div class="quiz-customer-review">
-        {% if section.settings.author_image != blank %}
-        <div class="quiz__author-img">
-          <img src="{{ section.settings.author_image | img_url: 'master' }}" alt="{{ section.settings.review_author }}">
+        <div class="quiz-stars">
+          <span><img src="https://cdn.shopify.com/s/files/1/0627/0422/2426/files/Group_55.png?v=1758037849">{{ section.settings.review_text }}</span>
         </div>
-        {% endif %}
-        <div class="quiz__content">
-          {% comment %} ⭐⭐⭐⭐⭐ {% endcomment %}
-           <span class="rating-img"><img src="https://cdn.shopify.com/s/files/1/0627/0422/2426/files/Group_55.png?v=1758037849"></span>
-          <p>{{ section.settings.review_quote }}</p>
-          <span class="verify-person">
-          <strong>{{ section.settings.review_author }}</strong>
-          <span class="verified"><img src="https://cdn.shopify.com/s/files/1/0627/0422/2426/files/Vector_c848f606-5188-41c9-96d9-b348691fe7cb.png?v=1758037503"> {{ section.settings.review_verified }}</span></span>
+
+        <h3 class="quiz-product-title" id="quiz-product-title"></h3>
+        <p class="quiz-product-subtitle" id="quiz-product-subtitle"></p>
+        <p class="quiz-product-price" id="quiz-product-price"></p>
+
+        <ul class="quiz-bullets">
+          <li>{{ section.settings.bullet_1 }}</li>
+          <li>{{ section.settings.bullet_2 }}</li>
+          <li>{{ section.settings.bullet_3 }}</li>
+        </ul>
+
+        <div class="quiz-buttons" id="quiz-buttons"></div>
+
+        <div class="quiz-customer-review">
+          {% if section.settings.author_image != blank %}
+          <div class="quiz__author-img">
+            <img src="{{ section.settings.author_image | img_url: 'master' }}" alt="{{ section.settings.review_author }}">
+          </div>
+          {% endif %}
+          <div class="quiz__content">
+            <span class="rating-img"><img src="https://cdn.shopify.com/s/files/1/0627/0422/2426/files/Group_55.png?v=1758037849"></span>
+            <p>{{ section.settings.review_quote }}</p>
+            <span class="verify-person">
+              <strong>{{ section.settings.review_author }}</strong>
+              <span class="verified"><img src="https://cdn.shopify.com/s/files/1/0627/0422/2426/files/Vector_c848f606-5188-41c9-96d9-b348691fe7cb.png?v=1758037503"> {{ section.settings.review_verified }}</span>
+            </span>
+          </div>
         </div>
       </div>
-
-    </div>
     </div>
 
     <!-- Right -->
-    <div class="quiz-result-image">
-      {% if quiz_product %}
-        {% if quiz_product.featured_image %}
-          <img src="{{ quiz_product.featured_image | img_url: '400x' }}" alt="{{ quiz_product.title }}">
-        {% endif %}
-      {% endif %}
-    </div>
+    <div class="quiz-result-image" id="quiz-result-image"></div>
   </div>
+</div>
+
 
 
 </div>
+
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const handleMain = params.get("handle_main");
+
+  if(handleMain){
+    const wrapper = document.getElementById("quiz-result-wrapper");
+    const titleEl = document.getElementById("quiz-product-title");
+    const priceEl = document.getElementById("quiz-product-price");
+    const buttonsEl = document.getElementById("quiz-buttons");
+    const imageEl = document.getElementById("quiz-result-image");
+
+    // Loop through all products to find matching handle
+    {% for product in collections.all.products %}
+      if(handleMain === "{{ product.handle }}"){
+        wrapper.style.display = "block";
+
+        titleEl.innerText = "{{ product.title }}";
+        priceEl.innerText = "From {{ product.price_min | money }}";
+
+        // Add Add-to-Cart button dynamically
+        buttonsEl.innerHTML = `
+          <form method="post" action="/cart/add">
+            <input type="hidden" name="id" value="{{ product.first_available_variant.id }}">
+            <button type="submit" class="quiz-add-to-cart">{{ section.settings.add_to_cart_text }}</button>
+          </form>
+          {% if section.settings.retailer_url != blank %}
+          <a href="{{ section.settings.retailer_url }}" class="quiz-find-retailer">{{ section.settings.retailer_text }}</a>
+          {% endif %}
+        `;
+
+        // Set product image
+        {% if product.featured_image %}
+          imageEl.innerHTML = '<img src="{{ product.featured_image | img_url: "400x" }}" alt="{{ product.title }}">';
+        {% endif %}
+      }
+    {% endfor %}
+  }
+</script>
+
 
 
 <style>
