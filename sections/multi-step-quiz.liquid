@@ -1062,33 +1062,29 @@ p.quiz-note small::before {
         if (emailInput) localStorage.setItem('quiz_email', emailInput.value.trim());
         if (phoneInput) localStorage.setItem('quiz_phone', phoneInput.value.trim());
         let quizTags = quizData.map(item => item.value.toLowerCase().trim());
+        let species = quizTags.includes("cat") ? "cat" : (quizTags.includes("dog") ? "dog" : null);
 
-// determine species from quiz answers
-let species = quizTags.includes("cat") ? "cat" : (quizTags.includes("dog") ? "dog" : null);
+        let matchingProducts = [];
 
-let matchingProducts = [];
+        document.querySelectorAll(".filter__product_main .product-item").forEach(item => {
+          let productTags = item.getAttribute("data-tags").toLowerCase().split(",");
+          if (species && !productTags.includes(species)) {
+            return;
+          }
+          let hasMatch = quizTags.some(qTag =>
+            productTags.some(pTag => pTag.includes(qTag))
+          );
 
-document.querySelectorAll(".filter__product_main .product-item").forEach(item => {
-  let productTags = item.getAttribute("data-tags").toLowerCase().split(",");
+          if (hasMatch) {
+            matchingProducts.push(item.getAttribute("data-handle"));
+          }
+        });
 
-  // must match the same species first
-  if (species && !productTags.includes(species)) {
-    return; // skip products of the wrong species
-  }
-
-  // check if ANY other quiz tag exists in product tags
-  let hasMatch = quizTags.some(qTag =>
-    productTags.some(pTag => pTag.includes(qTag))
-  );
-
-  if (hasMatch) {
-    matchingProducts.push(item.getAttribute("data-handle"));
-  }
-});
-
-console.log("Matching Product Handles:", matchingProducts);
-
-
+       if (matchingProducts.length > 0) {
+          window.location.href = '/pages/quiz-result?handle_main=' + matchingProducts.join(',');
+        } else {
+          alert("No matching products found for your quiz answers.");
+        }
 
         // Redirect to result page
         //window.location.href = '/pages/quiz-result';
