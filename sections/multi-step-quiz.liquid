@@ -1067,8 +1067,6 @@ p.quiz-note small::before {
 
         document.querySelectorAll(".filter__product_main .product-item").forEach(item => {
           let productTags = item.getAttribute("data-tags").toLowerCase().split(",");
-          console.log(species);
-             console.log(productTags);
           if (species && !productTags.includes(species)) {
             return;
           }
