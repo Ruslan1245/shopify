@@ -1596,9 +1596,9 @@ media-gallery.media-gallery--grid .media-gallery__grid .product-media-container 
 }
 
 .product-media-container img {
-  aspect-ratio: inherit;
+  /* aspect-ratio: inherit; */
   object-fit: contain;
-  object-position: center center;
+  /* object-position: center center; */
 }
 
 .product-media-container.media-fit {
