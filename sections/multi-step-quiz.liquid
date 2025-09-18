@@ -1073,12 +1073,12 @@ p.quiz-note small::before {
           let hasMatch = quizTags.some(qTag =>
             productTags.some(pTag => pTag.includes(qTag))
           );
-
+console.log(hasMatch);
           if (hasMatch) {
             matchingProducts.push(item.getAttribute("data-handle"));
           }
         });
-
+          console.log(matchingProducts);
        if (matchingProducts.length > 0) {
             fetch('/cart/update.js', {
               method: 'POST',
