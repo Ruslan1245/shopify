@@ -1057,8 +1057,15 @@ p.quiz-note small::before {
         if (emailInput) localStorage.setItem('quiz_email', emailInput.value.trim());
         if (phoneInput) localStorage.setItem('quiz_phone', phoneInput.value.trim());
         let quizTags = quizData
-  .map(item => item.value.toLowerCase().trim().replace(/\s+/g, "-"))
-  .filter(tag => tag.length > 0); // clean empty
+  .flatMap(item => 
+    item.value
+      .toLowerCase()
+      .trim()
+      .replace(/\s+/g, "-")
+      .split(",")                // <-- split if multiple tags
+      .map(t => t.trim())
+  )
+  .filter(tag => tag.length > 0);
 
 let matchingProducts = [];
 
@@ -1069,7 +1076,7 @@ document.querySelectorAll(".filter__product_main .product-item").forEach(item =>
     .split(",")
     .map(t => t.trim());
 
-  // ✅ check if ALL quizTags are inside productTags
+  // ✅ check if ALL quizTags exist in productTags
   let hasAllMatches = quizTags.every(qTag => productTags.includes(qTag));
 
   console.log("Quiz Tags:", quizTags);
