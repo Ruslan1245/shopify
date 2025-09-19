@@ -1078,7 +1078,7 @@ p.quiz-note small::before {
             matchingProducts.push(item.getAttribute("data-handle"));
           }
         });
-          console.log(matchingProducts);
+          console.log(productTags);
        if (matchingProducts.length > 0) {
             fetch('/cart/update.js', {
               method: 'POST',
