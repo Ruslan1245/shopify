@@ -1048,24 +1048,24 @@ p.quiz-note small::before {
             }
           }
         }
-
-        // Save PetName (if exists in form)
         var petNameInput = document.getElementById('quiz-pet-name');
         if (petNameInput) {
           localStorage.setItem('quiz_petname', petNameInput.value.trim());
         }
-
-        // (Optional) Save Phone + Email too
         var emailInput = document.getElementById('quiz-email');
         var phoneInput = document.getElementById('quiz-phone');
         if (emailInput) localStorage.setItem('quiz_email', emailInput.value.trim());
         if (phoneInput) localStorage.setItem('quiz_phone', phoneInput.value.trim());
         let quizTags = quizData.map(item => item.value.toLowerCase().trim().replace(/\s+/g, "-")); 
         let matchingProducts = [];
-        
+
         document.querySelectorAll(".filter__product_main .product-item").forEach(item => {
           let productTags = item.getAttribute("data-tags").toLowerCase().split(",").map(t => t.trim());
           let hasAllMatches = quizTags.every(qTag => productTags.includes(qTag));
+
+          console.log(quizTags);
+          console.log(productTags);
+          
           if (hasAllMatches) {
             matchingProducts.push(item.getAttribute("data-handle"));
             console.log("✅ MATCHED:", item.getAttribute("data-handle"), "=>", productTags);
