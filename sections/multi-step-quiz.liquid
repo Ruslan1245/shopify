@@ -1056,23 +1056,26 @@ p.quiz-note small::before {
         var phoneInput = document.getElementById('quiz-phone');
         if (emailInput) localStorage.setItem('quiz_email', emailInput.value.trim());
         if (phoneInput) localStorage.setItem('quiz_phone', phoneInput.value.trim());
-        let quizTags = quizData.map(item => item.value.toLowerCase().trim().replace(/\s+/g, "-")); 
-        let matchingProducts = [];
+        let quizTags = quizData.map(item => 
+  item.value.toLowerCase().trim().replace(/\s+/g, "-")
+);
 
-        document.querySelectorAll(".filter__product_main .product-item").forEach(item => {
-          let productTags = item.getAttribute("data-tags").toLowerCase().split(",").map(t => t.trim());
-          let hasAllMatches = quizTags.every(qTag => productTags.includes(qTag));
+let matchingProducts = [];
 
-          console.log(quizTags);
-          console.log(productTags);
-          
-          if (hasAllMatches) {
-            matchingProducts.push(item.getAttribute("data-handle"));
-            console.log("✅ MATCHED:", item.getAttribute("data-handle"), "=>", productTags);
-          } else {
-            console.log("❌ NOT MATCHED:", item.getAttribute("data-handle"), "=>", productTags);
-          }
-        });
+document.querySelectorAll(".filter__product_main .product-item").forEach(item => {
+  let productTags = item.getAttribute("data-tags").toLowerCase().split(",").map(t => t.trim());
+
+  // ✅ product must contain every quizTag (extras in productTags are allowed)
+  let hasAllQuizTags = quizTags.every(qTag => productTags.includes(qTag));
+
+  if (hasAllQuizTags) {
+    matchingProducts.push(item.getAttribute("data-handle"));
+    console.log("✅ MATCHED:", item.getAttribute("data-handle"), "=>", productTags);
+  } else {
+    console.log("❌ NOT MATCHED:", item.getAttribute("data-handle"), "=>", productTags);
+  }
+});
+
 
        if (matchingProducts.length > 0) {
             fetch('/cart/update.js', {
