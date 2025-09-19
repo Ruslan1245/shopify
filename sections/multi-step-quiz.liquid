@@ -823,7 +823,6 @@ p.quiz-note small::before {
 
 
 
-
 <script>
 document.addEventListener('DOMContentLoaded', function () {
   var container = document.getElementById('quiz-banner-{{ section.id }}');
@@ -850,7 +849,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (stored) {
       try {
         var parsed = JSON.parse(stored);
-        var selectedValues = parsed.value.split(',').map(v => v.trim().toLowerCase());
+        var selectedValues = String(parsed.value || '').split(',').map(v => v.trim().toLowerCase());
         stepElement.querySelectorAll('.quiz-option').forEach(opt => {
           var text = opt.querySelector('span')?.innerText.trim().toLowerCase();
           if (selectedValues.includes(text)) {
@@ -861,7 +860,15 @@ document.addEventListener('DOMContentLoaded', function () {
             opt.setAttribute('aria-pressed', 'false');
           }
         });
-      } catch(e) {}
+      } catch (e) {
+        // ignore parse errors
+      }
+    } else {
+      // clear active states if nothing stored
+      stepElement.querySelectorAll('.quiz-option').forEach(opt => {
+        opt.classList.remove('active');
+        opt.setAttribute('aria-pressed', 'false');
+      });
     }
   }
 
@@ -874,6 +881,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     if (reviewBox) reviewBox.style.display = 'flex';
   }
+
   function showStep3For(pet) {
     hideAllSteps();
     var target = container.querySelector('.quiz-step-3[data-pet="' + pet + '"]');
@@ -883,6 +891,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     if (reviewBox) reviewBox.style.display = 'flex';
   }
+
   function showStep4() {
     hideAllSteps();
     if (step4Nodes[0]) {
@@ -891,6 +900,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     if (reviewBox) reviewBox.style.display = 'flex';
   }
+
   function showStep5() {
     hideAllSteps();
     if (step5Nodes[0]) {
@@ -926,6 +936,40 @@ document.addEventListener('DOMContentLoaded', function () {
       .replace(/-+/g, '-');
   }
 
+  // find currently visible step element and its numeric key
+  function findVisibleStep() {
+    if (step1 && window.getComputedStyle(step1).display !== 'none') return { el: step1, key: 1 };
+    var v2 = step2Nodes.find(n => window.getComputedStyle(n).display !== 'none');
+    if (v2) return { el: v2, key: 2 };
+    var v3 = step3Nodes.find(n => window.getComputedStyle(n).display !== 'none');
+    if (v3) return { el: v3, key: 3 };
+    var v4 = step4Nodes.find(n => window.getComputedStyle(n).display !== 'none');
+    if (v4) return { el: v4, key: 4 };
+    var v5 = step5Nodes.find(n => window.getComputedStyle(n).display !== 'none');
+    if (v5) return { el: v5, key: 5 };
+    return null;
+  }
+
+  // save selections for a given step element and key (same format as restoreSelections expects)
+  function saveSelectionsForStep(stepEl, stepKey) {
+    if (!stepEl) return;
+    var stepHeading = stepEl.querySelector('.quiz-step-heading')?.innerText || ('Step ' + stepKey);
+    var selections = Array.from(stepEl.querySelectorAll('.quiz-option.active')).map((btn) =>
+      btn.querySelector('span')?.innerText.trim()
+    ).filter(Boolean);
+    localStorage.removeItem('quiz_step' + stepKey);
+    if (selections.length > 0) {
+      localStorage.setItem('quiz_step' + stepKey, JSON.stringify({ name: stepHeading, value: selections.join(', ') }));
+    }
+  }
+
+  // save current visible step before navigation
+  function saveSelectionsForVisibleStep() {
+    var vs = findVisibleStep();
+    if (vs) saveSelectionsForStep(vs.el, vs.key);
+  }
+
+  // START button
   if (startBtn) {
     startBtn.addEventListener('click', function (e) {
       e.preventDefault();
@@ -938,6 +982,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  // RESTART handler
   container.addEventListener('click', function (e) {
     var restartBtn = e.target.closest('.quiz-restart');
     if (restartBtn) {
@@ -954,12 +999,14 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
+  // OPTIONS + NAVIGATION handler (single listener)
   container.addEventListener('click', function (e) {
     var opt = e.target.closest('.quiz-option');
     if (opt) {
       var parentStep = opt.closest('.quiz-step');
       if (!parentStep) return;
 
+      // Step 1-3: single select
       if (
         parentStep.classList.contains('quiz-step-1') ||
         parentStep.classList.contains('quiz-step-2') ||
@@ -973,6 +1020,7 @@ document.addEventListener('DOMContentLoaded', function () {
         opt.setAttribute('aria-pressed', 'true');
       }
 
+      // Step 4: multi-select toggle
       if (parentStep.classList.contains('quiz-step-4')) {
         opt.classList.toggle('active');
         var pressed = opt.classList.contains('active');
@@ -986,12 +1034,10 @@ document.addEventListener('DOMContentLoaded', function () {
         btn.querySelector('span')?.innerText.trim()
       );
 
+      // update localStorage immediately on click
       localStorage.removeItem('quiz_step' + stepKey);
       if (selections.length > 0) {
-        localStorage.setItem(
-          'quiz_step' + stepKey,
-          JSON.stringify({ name: stepHeading, value: selections.join(', ') })
-        );
+        localStorage.setItem('quiz_step' + stepKey, JSON.stringify({ name: stepHeading, value: selections.join(', ') }));
       }
       return;
     }
@@ -1000,6 +1046,9 @@ document.addEventListener('DOMContentLoaded', function () {
     var backBtn = e.target.closest('.quiz-back');
 
     if (nextBtn) {
+      // ensure we save current selections before navigating
+      saveSelectionsForVisibleStep();
+
       if (step1 && window.getComputedStyle(step1).display !== 'none') {
         if (!localStorage.getItem('quiz_step1')) {
           alert('Please choose an option to continue.');
@@ -1011,6 +1060,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       var visibleStep2 = step2Nodes.find((n) => window.getComputedStyle(n).display !== 'none');
       if (visibleStep2) {
+        saveSelectionsForStep(visibleStep2, 2);
         if (!localStorage.getItem('quiz_step2')) {
           alert('Please choose an option to continue.');
           return;
@@ -1021,6 +1071,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       var visibleStep3 = step3Nodes.find((n) => window.getComputedStyle(n).display !== 'none');
       if (visibleStep3) {
+        saveSelectionsForStep(visibleStep3, 3);
         if (!localStorage.getItem('quiz_step3')) {
           alert('Please choose an option to continue.');
           return;
@@ -1031,6 +1082,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       var visibleStep4 = step4Nodes.find((n) => window.getComputedStyle(n).display !== 'none');
       if (visibleStep4) {
+        saveSelectionsForStep(visibleStep4, 4);
         if (!localStorage.getItem('quiz_step4')) {
           alert('Please choose at least one option to continue.');
           return;
@@ -1041,6 +1093,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     if (backBtn) {
+      // ensure we save current selections before navigating back
+      saveSelectionsForVisibleStep();
+
       var visibleStep5 = step5Nodes.find((n) => window.getComputedStyle(n).display !== 'none');
       if (visibleStep5) {
         showStep4();
@@ -1141,13 +1196,18 @@ document.addEventListener('DOMContentLoaded', function () {
           .split(',')
           .map(t => normalizeTag(t))
           .filter(t => t.length > 0);
+
+        // strict normalized check (first pass)
         let strictMatch = quizTags.every(qTag => productTags.includes(qTag));
+
+        // fallback loose check (second pass)
         let looseMatch = false;
         if (!strictMatch && quizTags.length > 0) {
           looseMatch = quizTags.every(qTag =>
             productTags.some(pTag => pTag.includes(qTag) || qTag.includes(pTag))
           );
         }
+
         if (strictMatch || looseMatch) {
           matchingProducts.push(productEl.getAttribute("data-handle"));
         } else {
@@ -1181,6 +1241,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 </script>
+
 
 {% schema %}
 {
