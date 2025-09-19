@@ -825,299 +825,360 @@ p.quiz-note small::before {
 
 
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    var container = document.getElementById('quiz-banner-{{ section.id }}');
-    if (!container) return;
+document.addEventListener('DOMContentLoaded', function () {
+  var container = document.getElementById('quiz-banner-{{ section.id }}');
+  if (!container) return;
 
-    var startBtn = container.querySelector('#quiz-start-btn-{{ section.id }}');
-    var intro = container.querySelector('.quiz-intro');
-    var step1 = container.querySelector('.quiz-step-1');
-    var step2Nodes = Array.from(container.querySelectorAll('.quiz-step-2'));
-    var step3Nodes = Array.from(container.querySelectorAll('.quiz-step-3'));
-    var step4Nodes = Array.from(container.querySelectorAll('.quiz-step-4'));
-    var step5Nodes = Array.from(container.querySelectorAll('.quiz-step-5'));
-    var reviewBox = container.querySelector('.global-review');
-    var form = document.getElementById('quiz-result-form');
+  var startBtn = container.querySelector('#quiz-start-btn-{{ section.id }}');
+  var intro = container.querySelector('.quiz-intro');
+  var step1 = container.querySelector('.quiz-step-1');
+  var step2Nodes = Array.from(container.querySelectorAll('.quiz-step-2'));
+  var step3Nodes = Array.from(container.querySelectorAll('.quiz-step-3'));
+  var step4Nodes = Array.from(container.querySelectorAll('.quiz-step-4'));
+  var step5Nodes = Array.from(container.querySelectorAll('.quiz-step-5'));
+  var reviewBox = container.querySelector('.global-review');
+  var form = document.getElementById('quiz-result-form');
 
-    /** Utility: hide all steps */
-    function hideAllSteps() {
-      [step1].concat(step2Nodes, step3Nodes, step4Nodes, step5Nodes).forEach((n) => {
-        if (n) n.style.display = 'none';
-      });
-    }
-
-    /** Step show functions */
-    function showStep2For(pet) {
-      hideAllSteps();
-      var target = container.querySelector('.quiz-step-2[data-pet="' + pet + '"]');
-      if (target) target.style.display = 'block';
-      if (reviewBox) reviewBox.style.display = 'flex';
-    }
-    function showStep3For(pet) {
-      hideAllSteps();
-      var target = container.querySelector('.quiz-step-3[data-pet="' + pet + '"]');
-      if (target) target.style.display = 'block';
-      if (reviewBox) reviewBox.style.display = 'flex';
-    }
-    function showStep4() {
-      hideAllSteps();
-      if (step4Nodes[0]) step4Nodes[0].style.display = 'block';
-      if (reviewBox) reviewBox.style.display = 'flex';
-    }
-    function showStep5() {
-      hideAllSteps();
-      if (step5Nodes[0]) step5Nodes[0].style.display = 'block';
-      if (reviewBox) reviewBox.style.display = 'flex';
-    }
-
-    /** Start Quiz */
-    if (startBtn) {
-      startBtn.addEventListener('click', function (e) {
-        e.preventDefault();
-        if (intro) intro.style.display = 'none';
-        if (step1) step1.style.display = 'block';
-        if (reviewBox) reviewBox.style.display = 'flex';
-      });
-    }
-
-    /** Restart Quiz */
-    container.addEventListener('click', function (e) {
-      var restartBtn = e.target.closest('.quiz-restart');
-      if (restartBtn) {
-        hideAllSteps();
-        if (intro) intro.style.display = '';
-        if (reviewBox) reviewBox.style.display = 'none';
-        localStorage.clear(); // wipe quiz selections
-
-        // reset hidden fields
-        document.querySelectorAll("#quiz-result-form input[type='hidden']").forEach((inp) => {
-          inp.name = '';
-          inp.value = '';
-        });
-
-        if (step1) step1.style.display = 'none'; // keep hidden until start button
-        container.scrollIntoView({ behavior: 'smooth' });
-      }
+  /** Utility: hide all steps */
+  function hideAllSteps() {
+    [step1].concat(step2Nodes, step3Nodes, step4Nodes, step5Nodes).forEach((n) => {
+      if (n) n.style.display = 'none';
     });
+  }
 
-    /** Handle option clicks + navigation */
-    container.addEventListener('click', function (e) {
-      var opt = e.target.closest('.quiz-option');
-      if (opt) {
-        var parentStep = opt.closest('.quiz-step');
-        if (!parentStep) return;
+  /** Step show functions */
+  function showStep2For(pet) {
+    hideAllSteps();
+    var target = container.querySelector('.quiz-step-2[data-pet="' + pet + '"]');
+    if (target) target.style.display = 'block';
+    if (reviewBox) reviewBox.style.display = 'flex';
+  }
+  function showStep3For(pet) {
+    hideAllSteps();
+    var target = container.querySelector('.quiz-step-3[data-pet="' + pet + '"]');
+    if (target) target.style.display = 'block';
+    if (reviewBox) reviewBox.style.display = 'flex';
+  }
+  function showStep4() {
+    hideAllSteps();
+    if (step4Nodes[0]) step4Nodes[0].style.display = 'block';
+    if (reviewBox) reviewBox.style.display = 'flex';
+  }
+  function showStep5() {
+    hideAllSteps();
+    if (step5Nodes[0]) step5Nodes[0].style.display = 'block';
+    if (reviewBox) reviewBox.style.display = 'flex';
+  }
 
-        /** Step 1–3 → single select */
-        if (
-          parentStep.classList.contains('quiz-step-1') ||
-          parentStep.classList.contains('quiz-step-2') ||
-          parentStep.classList.contains('quiz-step-3')
-        ) {
-          parentStep.querySelectorAll('.quiz-option').forEach((s) => {
-            s.classList.remove('active');
-            s.setAttribute('aria-pressed', 'false');
-          });
-          opt.classList.add('active');
-          opt.setAttribute('aria-pressed', 'true');
+  /** Helper: get pet (dog/cat) from stored step1 - robust parse */
+  function getPetFromStorage() {
+    var raw = localStorage.getItem('quiz_step1');
+    if (!raw) return null;
+    try {
+      var parsed = JSON.parse(raw);
+      var val = String(parsed.value || parsed.name || raw).toLowerCase();
+      if (val.includes('dog')) return 'dog';
+      if (val.includes('cat')) return 'cat';
+    } catch (err) {
+      var lr = raw.toLowerCase();
+      if (lr.includes('dog')) return 'dog';
+      if (lr.includes('cat')) return 'cat';
+    }
+    return null;
+  }
+
+  /** Normalize tag for robust matching */
+  function normalizeTag(tag) {
+    if (tag === undefined || tag === null) return '';
+    return String(tag)
+      .toLowerCase()
+      .trim()
+      .replace(/\s+/g, '-')        // spaces -> hyphen
+      .replace(/[^a-z0-9-]/g, '')  // remove punctuation except hyphen
+      .replace(/-+/g, '-');        // collapse repeated hyphens
+  }
+
+  /** Start Quiz */
+  if (startBtn) {
+    startBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      if (intro) intro.style.display = 'none';
+      if (step1) step1.style.display = 'block';
+      if (reviewBox) reviewBox.style.display = 'flex';
+    });
+  }
+
+  /** Restart Quiz */
+  container.addEventListener('click', function (e) {
+    var restartBtn = e.target.closest('.quiz-restart');
+    if (restartBtn) {
+      hideAllSteps();
+      if (intro) intro.style.display = '';
+      if (reviewBox) reviewBox.style.display = 'none';
+      localStorage.clear(); // wipe quiz selections
+
+      // reset hidden fields
+      document.querySelectorAll("#quiz-result-form input[type='hidden']").forEach((inp) => {
+        inp.name = '';
+        inp.value = '';
+      });
+
+      if (step1) step1.style.display = 'none'; // keep hidden until start button
+      container.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+
+  /** Handle option clicks + navigation */
+  container.addEventListener('click', function (e) {
+    var opt = e.target.closest('.quiz-option');
+    if (opt) {
+      var parentStep = opt.closest('.quiz-step');
+      if (!parentStep) return;
+
+      /** Step 1–3 → single select */
+      if (
+        parentStep.classList.contains('quiz-step-1') ||
+        parentStep.classList.contains('quiz-step-2') ||
+        parentStep.classList.contains('quiz-step-3')
+      ) {
+        parentStep.querySelectorAll('.quiz-option').forEach((s) => {
+          s.classList.remove('active');
+          s.setAttribute('aria-pressed', 'false');
+        });
+        opt.classList.add('active');
+        opt.setAttribute('aria-pressed', 'true');
+      }
+
+      /** Step 4 → multiple select */
+      if (parentStep.classList.contains('quiz-step-4')) {
+        opt.classList.toggle('active');
+        var pressed = opt.classList.contains('active');
+        opt.setAttribute('aria-pressed', pressed);
+      }
+
+      /** Save answers into localStorage */
+      var stepKeyMatch = parentStep.className.match(/quiz-step-(\d)/);
+      var stepKey = stepKeyMatch ? stepKeyMatch[1] : '';
+      var stepHeading = parentStep.querySelector('.quiz-step-heading')?.innerText || `Step ${stepKey}`;
+      var selections = Array.from(parentStep.querySelectorAll('.quiz-option.active')).map((btn) =>
+        btn.querySelector('span')?.innerText.trim()
+      );
+
+      localStorage.setItem(
+        'quiz_step' + stepKey,
+        JSON.stringify({ name: stepHeading, value: selections.join(', ') })
+      );
+      return;
+    }
+
+    var nextBtn = e.target.closest('.quiz-next');
+    var backBtn = e.target.closest('.quiz-back');
+
+    /** NEXT button flow */
+    if (nextBtn) {
+      if (step1 && window.getComputedStyle(step1).display !== 'none') {
+        if (!localStorage.getItem('quiz_step1')) {
+          alert('Please choose an option to continue.');
+          return;
         }
-
-        /** Step 4 → multiple select */
-        if (parentStep.classList.contains('quiz-step-4')) {
-          opt.classList.toggle('active');
-          var pressed = opt.classList.contains('active');
-          opt.setAttribute('aria-pressed', pressed);
-        }
-
-        /** Save answers into localStorage */
-        var stepKey = parentStep.className.match(/quiz-step-(\d)/)[1];
-        var stepHeading = parentStep.querySelector('.quiz-step-heading')?.innerText || `Step ${stepKey}`;
-        var selections = Array.from(parentStep.querySelectorAll('.quiz-option.active')).map((btn) =>
-          btn.querySelector('span')?.innerText.trim()
-        );
-
-        localStorage.setItem(
-          'quiz_step' + stepKey,
-          JSON.stringify({ name: stepHeading, value: selections.join(', ') })
-        );
+        showStep2For(getPetFromStorage() || 'cat');
         return;
       }
 
-      var nextBtn = e.target.closest('.quiz-next');
-      var backBtn = e.target.closest('.quiz-back');
-
-      /** NEXT button flow */
-      if (nextBtn) {
-        if (step1 && window.getComputedStyle(step1).display !== 'none') {
-          if (!localStorage.getItem('quiz_step1')) {
-            alert('Please choose an option to continue.');
-            return;
-          }
-          showStep2For(localStorage.getItem('quiz_step1').includes('Dog') ? 'dog' : 'cat');
+      var visibleStep2 = step2Nodes.find((n) => window.getComputedStyle(n).display !== 'none');
+      if (visibleStep2) {
+        if (!localStorage.getItem('quiz_step2')) {
+          alert('Please choose an option to continue.');
           return;
         }
-
-        var visibleStep2 = step2Nodes.find((n) => window.getComputedStyle(n).display !== 'none');
-        if (visibleStep2) {
-          if (!localStorage.getItem('quiz_step2')) {
-            alert('Please choose an option to continue.');
-            return;
-          }
-          showStep3For(localStorage.getItem('quiz_step1').includes('Dog') ? 'dog' : 'cat');
-          return;
-        }
-
-        var visibleStep3 = step3Nodes.find((n) => window.getComputedStyle(n).display !== 'none');
-        if (visibleStep3) {
-          if (!localStorage.getItem('quiz_step3')) {
-            alert('Please choose an option to continue.');
-            return;
-          }
-          showStep4();
-          return;
-        }
-
-        var visibleStep4 = step4Nodes.find((n) => window.getComputedStyle(n).display !== 'none');
-        if (visibleStep4) {
-          if (!localStorage.getItem('quiz_step4')) {
-            alert('Please choose at least one option to continue.');
-            return;
-          }
-          showStep5();
-          return;
-        }
+        showStep3For(getPetFromStorage() || 'cat');
+        return;
       }
 
-      /** BACK button flow */
-      if (backBtn) {
-        var visibleStep5 = step5Nodes.find((n) => window.getComputedStyle(n).display !== 'none');
-        if (visibleStep5) {
-          showStep4();
+      var visibleStep3 = step3Nodes.find((n) => window.getComputedStyle(n).display !== 'none');
+      if (visibleStep3) {
+        if (!localStorage.getItem('quiz_step3')) {
+          alert('Please choose an option to continue.');
           return;
         }
-        var visibleStep4 = step4Nodes.find((n) => window.getComputedStyle(n).display !== 'none');
-        if (visibleStep4) {
-          showStep3For(localStorage.getItem('quiz_step1').includes('Dog') ? 'dog' : 'cat');
-          return;
-        }
-        var visibleStep3 = step3Nodes.find((n) => window.getComputedStyle(n).display !== 'none');
-        if (visibleStep3) {
-          showStep2For(localStorage.getItem('quiz_step1').includes('Dog') ? 'dog' : 'cat');
-          return;
-        }
-        var visibleStep2 = step2Nodes.find((n) => window.getComputedStyle(n).display !== 'none');
-        if (visibleStep2) {
-          if (step1) step1.style.display = 'block';
-          return;
-        }
-        if (step1 && window.getComputedStyle(step1).display !== 'none') {
-          step1.style.display = 'none';
-          if (intro) intro.style.display = '';
-          if (reviewBox) reviewBox.style.display = 'none';
-        }
+        showStep4();
+        return;
       }
-    });
 
-    if (form) {
-      let quizData = [];
-      form.addEventListener('submit', function (e) {
-        e.preventDefault();
-        for (let i = 1; i <= 5; i++) {
-          var field = document.getElementById('quiz-step' + i);
-          if (field) {
-            var stored = localStorage.getItem('quiz_step' + i);
-            if (stored) {
-              try {
-                var parsed = JSON.parse(stored);
-                field.name = parsed.name || 'quiz_step' + i;
-                field.value = parsed.value || stored;
-                var stepData = {
-                  step: i,
-                  name: parsed.name || 'quiz_step' + i,
-                  value: parsed.value || stored
-                };
-                quizData.push(stepData);
-              } catch (err) {
-                field.name = 'quiz_step' + i;
-                field.value = stored;
-                quizData.push({
-                  step: i,
-                  name: 'quiz_step' + i,
-                  value: stored
-                });
-              }
-            }
-          }
+      var visibleStep4 = step4Nodes.find((n) => window.getComputedStyle(n).display !== 'none');
+      if (visibleStep4) {
+        if (!localStorage.getItem('quiz_step4')) {
+          alert('Please choose at least one option to continue.');
+          return;
         }
-        var petNameInput = document.getElementById('quiz-pet-name');
-        if (petNameInput) {
-          localStorage.setItem('quiz_petname', petNameInput.value.trim());
-        }
-        var emailInput = document.getElementById('quiz-email');
-        var phoneInput = document.getElementById('quiz-phone');
-        if (emailInput) localStorage.setItem('quiz_email', emailInput.value.trim());
-        if (phoneInput) localStorage.setItem('quiz_phone', phoneInput.value.trim());
-        let quizTags = quizData
-            .flatMap(item => 
-              item.value
-                .toLowerCase()
-                .trim()
-                .replace(/\s+/g, "-")
-                .split(",") 
-                .map(t => t.trim())
-            )
-            .filter(tag => tag.length > 0);
+        showStep5();
+        return;
+      }
+    }
 
-          let matchingProducts = [];
+    /** BACK button flow (robust, uses stored step1 to decide pet-specific pages) */
+    if (backBtn) {
+      // Step 5 → go back to Step 4
+      var visibleStep5 = step5Nodes.find((n) => window.getComputedStyle(n).display !== 'none');
+      if (visibleStep5) {
+        showStep4();
+        return;
+      }
 
-          document.querySelectorAll(".filter__product_main .product-item").forEach(item => {
-            let productTags = item
-              .getAttribute("data-tags")
-              .toLowerCase()
-              .split(",")
-              .map(t => t.trim());
-            let hasAllMatches = quizTags.every(qTag => productTags.includes(qTag));
+      // Step 4 → go back to Step 3 (dog/cat specific)
+      var visibleStep4 = step4Nodes.find((n) => window.getComputedStyle(n).display !== 'none');
+      if (visibleStep4) {
+        var pet4 = getPetFromStorage() || 'cat';
+        showStep3For(pet4);
+        return;
+      }
 
-            console.log("Quiz Tags:", quizTags);
-            console.log("Product Tags:", productTags);
+      // Step 3 → go back to Step 2 (dog/cat specific)
+      var visibleStep3 = step3Nodes.find((n) => window.getComputedStyle(n).display !== 'none');
+      if (visibleStep3) {
+        var pet3 = getPetFromStorage() || 'cat';
+        showStep2For(pet3);
+        return;
+      }
 
-            if (hasAllMatches) {
-              matchingProducts.push(item.getAttribute("data-handle"));
-            } else {
-            }
-          });
+      // Step 2 → go back to Step 1
+      var visibleStep2 = step2Nodes.find((n) => window.getComputedStyle(n).display !== 'none');
+      if (visibleStep2) {
+        hideAllSteps();
+        if (step1) step1.style.display = 'block';
+        return;
+      }
 
-          console.log("Final Matching Products:", matchingProducts);
-
-       if (matchingProducts.length > 0) {
-            fetch('/cart/update.js', {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json'
-              },
-              body: JSON.stringify({
-                attributes: {
-                  quiz_handle: matchingProducts
-                }
-              })
-            })
-            .then(response => response.json())
-            .then(cart => {
-              console.log('Quiz product handle saved in cart:', cart.attributes.quiz_handle);
-
-              // After saving, redirect to quiz result page
-              window.location.href = '/pages/quiz-result?handle_main=' + matchingProducts.join(',');
-            })
-            .catch(error => {
-              console.error('Error updating cart attribute:', error);
-              // Optional: still redirect even if cart update fails
-              window.location.href = '/pages/quiz-result?handle_main=' + matchingProducts.join(',');
-            });
-          } else {
-            alert("No matching products found for your quiz answers.");
-          }
-      });
+      // Step 1 → go back to intro
+      if (step1 && window.getComputedStyle(step1).display !== 'none') {
+        hideAllSteps();
+        if (intro) intro.style.display = '';
+        if (reviewBox) reviewBox.style.display = 'none';
+      }
     }
   });
+
+  if (form) {
+    let quizData = [];
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      quizData = []; // reset in case of multiple submits
+
+      for (let i = 1; i <= 5; i++) {
+        var field = document.getElementById('quiz-step' + i);
+        if (field) {
+          var stored = localStorage.getItem('quiz_step' + i);
+          if (stored) {
+            try {
+              var parsed = JSON.parse(stored);
+              field.name = parsed.name || 'quiz_step' + i;
+              field.value = parsed.value || stored;
+              var stepData = {
+                step: i,
+                name: parsed.name || 'quiz_step' + i,
+                value: parsed.value || stored
+              };
+              quizData.push(stepData);
+            } catch (err) {
+              field.name = 'quiz_step' + i;
+              field.value = stored;
+              quizData.push({
+                step: i,
+                name: 'quiz_step' + i,
+                value: stored
+              });
+            }
+          }
+        }
+      }
+
+      // Save PetName (if exists in form)
+      var petNameInput = document.getElementById('quiz-pet-name');
+      if (petNameInput) {
+        localStorage.setItem('quiz_petname', petNameInput.value.trim());
+      }
+
+      // (Optional) Save Phone + Email too
+      var emailInput = document.getElementById('quiz-email');
+      var phoneInput = document.getElementById('quiz-phone');
+      if (emailInput) localStorage.setItem('quiz_email', emailInput.value.trim());
+      if (phoneInput) localStorage.setItem('quiz_phone', phoneInput.value.trim());
+
+      // Build quizTags array: split by commas and normalize, flatten all steps
+      let quizTags = quizData
+        .flatMap(item =>
+          String(item.value || '')
+            .split(',')
+            .map(t => normalizeTag(t))
+        )
+        .filter(t => t.length > 0);
+
+      // console debug
+      console.log('Quiz tags (normalized):', quizTags);
+
+      let matchingProducts = [];
+      let notMatchingProducts = [];
+
+      document.querySelectorAll(".filter__product_main .product-item").forEach((productEl) => {
+        var raw = productEl.getAttribute("data-tags") || '';
+        let productTags = String(raw)
+          .toLowerCase()
+          .split(',')
+          .map(t => normalizeTag(t))
+          .filter(t => t.length > 0);
+
+        // strict normalized check (first pass)
+        let strictMatch = quizTags.every(qTag => productTags.includes(qTag));
+
+        // fallback loose check (second pass) — substring check to catch small variations
+        let looseMatch = false;
+        if (!strictMatch && quizTags.length > 0) {
+          looseMatch = quizTags.every(qTag =>
+            productTags.some(pTag => pTag.includes(qTag) || qTag.includes(pTag))
+          );
+        }
+
+        console.log('Product:', productEl.getAttribute('data-handle'), 'productTags:', productTags, 'strictMatch:', strictMatch, 'looseMatch:', looseMatch);
+
+        if (strictMatch || looseMatch) {
+          matchingProducts.push(productEl.getAttribute("data-handle"));
+        } else {
+          notMatchingProducts.push(productEl.getAttribute("data-handle"));
+        }
+      });
+
+      console.log("Matched product handles:", matchingProducts);
+      console.log("Not matched product handles:", notMatchingProducts);
+
+      if (matchingProducts.length > 0) {
+        fetch('/cart/update.js', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            attributes: {
+              quiz_handle: matchingProducts
+            }
+          })
+        })
+        .then(response => response.json())
+        .then(cart => {
+          console.log('Quiz product handle saved in cart:', cart.attributes.quiz_handle);
+          // redirect to results page
+          window.location.href = '/pages/quiz-result?handle_main=' + matchingProducts.join(',');
+        })
+        .catch(error => {
+          console.error('Error updating cart attribute:', error);
+          // still redirect with matched handles
+          window.location.href = '/pages/quiz-result?handle_main=' + matchingProducts.join(',');
+        });
+      } else {
+        alert("No matching products found for your quiz answers.");
+      }
+    });
+  }
+});
 </script>
 
 {% schema %}
