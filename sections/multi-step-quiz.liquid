@@ -1096,12 +1096,12 @@ p.quiz-note small::before {
               console.log('Quiz product handle saved in cart:', cart.attributes.quiz_handle);
 
               // After saving, redirect to quiz result page
-              window.location.href = '/pages/quiz-result?handle_main=' + matchingProducts.join(',');
+              //window.location.href = '/pages/quiz-result?handle_main=' + matchingProducts.join(',');
             })
             .catch(error => {
               console.error('Error updating cart attribute:', error);
               // Optional: still redirect even if cart update fails
-              window.location.href = '/pages/quiz-result?handle_main=' + matchingProducts.join(',');
+              //window.location.href = '/pages/quiz-result?handle_main=' + matchingProducts.join(',');
             });
           } else {
             alert("No matching products found for your quiz answers.");
