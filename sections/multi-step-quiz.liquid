@@ -1136,8 +1136,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
       document.querySelectorAll(".filter__product_main .product-item").forEach((productEl) => {
         var raw = productEl.getAttribute("data-tags") || '';
-        console.log(quizData);
-        console.log(raw);
         let productTags = String(raw)
           .toLowerCase()
           .split(',')
@@ -1171,10 +1169,10 @@ document.addEventListener('DOMContentLoaded', function () {
         })
         .then(response => response.json())
         .then(cart => {
-          //window.location.href = '/pages/quiz-result?handle_main=' + matchingProducts.join(',');
+          window.location.href = '/pages/quiz-result?handle_main=' + matchingProducts.join(',');
         })
         .catch(error => {
-          //window.location.href = '/pages/quiz-result?handle_main=' + matchingProducts.join(',');
+          window.location.href = '/pages/quiz-result?handle_main=' + matchingProducts.join(',');
         });
       } else {
         alert("No matching products found for your quiz answers.");
