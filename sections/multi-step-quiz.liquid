@@ -1057,41 +1057,36 @@ p.quiz-note small::before {
         if (emailInput) localStorage.setItem('quiz_email', emailInput.value.trim());
         if (phoneInput) localStorage.setItem('quiz_phone', phoneInput.value.trim());
         let quizTags = quizData
-  .flatMap(item => 
-    item.value
-      .toLowerCase()
-      .trim()
-      .replace(/\s+/g, "-")
-      .split(",")                // <-- split if multiple tags
-      .map(t => t.trim())
-  )
-  .filter(tag => tag.length > 0);
+            .flatMap(item => 
+              item.value
+                .toLowerCase()
+                .trim()
+                .replace(/\s+/g, "-")
+                .split(",") 
+                .map(t => t.trim())
+            )
+            .filter(tag => tag.length > 0);
 
-let matchingProducts = [];
+          let matchingProducts = [];
 
-document.querySelectorAll(".filter__product_main .product-item").forEach(item => {
-  let productTags = item
-    .getAttribute("data-tags")
-    .toLowerCase()
-    .split(",")
-    .map(t => t.trim());
+          document.querySelectorAll(".filter__product_main .product-item").forEach(item => {
+            let productTags = item
+              .getAttribute("data-tags")
+              .toLowerCase()
+              .split(",")
+              .map(t => t.trim());
+            let hasAllMatches = quizTags.every(qTag => productTags.includes(qTag));
 
-  // ✅ check if ALL quizTags exist in productTags
-  let hasAllMatches = quizTags.every(qTag => productTags.includes(qTag));
+            console.log("Quiz Tags:", quizTags);
+            console.log("Product Tags:", productTags);
 
-  console.log("Quiz Tags:", quizTags);
-  console.log("Product Tags:", productTags);
+            if (hasAllMatches) {
+              matchingProducts.push(item.getAttribute("data-handle"));
+            } else {
+            }
+          });
 
-  if (hasAllMatches) {
-    matchingProducts.push(item.getAttribute("data-handle"));
-    console.log("✅ MATCHED:", item.getAttribute("data-handle"), "=>", productTags);
-  } else {
-    console.log("❌ NOT MATCHED:", item.getAttribute("data-handle"), "=>", productTags);
-  }
-});
-
-console.log("Final Matching Products:", matchingProducts);
-
+          console.log("Final Matching Products:", matchingProducts);
 
        if (matchingProducts.length > 0) {
             fetch('/cart/update.js', {
@@ -1110,12 +1105,12 @@ console.log("Final Matching Products:", matchingProducts);
               console.log('Quiz product handle saved in cart:', cart.attributes.quiz_handle);
 
               // After saving, redirect to quiz result page
-              //window.location.href = '/pages/quiz-result?handle_main=' + matchingProducts.join(',');
+              window.location.href = '/pages/quiz-result?handle_main=' + matchingProducts.join(',');
             })
             .catch(error => {
               console.error('Error updating cart attribute:', error);
               // Optional: still redirect even if cart update fails
-              //window.location.href = '/pages/quiz-result?handle_main=' + matchingProducts.join(',');
+              window.location.href = '/pages/quiz-result?handle_main=' + matchingProducts.join(',');
             });
           } else {
             alert("No matching products found for your quiz answers.");
