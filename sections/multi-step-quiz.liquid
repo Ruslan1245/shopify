@@ -1136,6 +1136,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
       document.querySelectorAll(".filter__product_main .product-item").forEach((productEl) => {
         var raw = productEl.getAttribute("data-tags") || '';
+        console.log(quizData);
+        console.log(raw);
         let productTags = String(raw)
           .toLowerCase()
           .split(',')
