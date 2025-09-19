@@ -1061,6 +1061,7 @@ p.quiz-note small::before {
         if (emailInput) localStorage.setItem('quiz_email', emailInput.value.trim());
         if (phoneInput) localStorage.setItem('quiz_phone', phoneInput.value.trim());
         let quizTags = quizData.map(item => item.value.toLowerCase().trim());
+        console.log(quizTags);
         let species = quizTags.includes("cat") ? "cat" : (quizTags.includes("dog") ? "dog" : null);
 
         let matchingProducts = [];
@@ -1073,7 +1074,6 @@ p.quiz-note small::before {
           let hasMatch = quizTags.some(qTag =>
             productTags.some(pTag => pTag.includes(qTag))
           );
-console.log(hasMatch);
           if (hasMatch) {
             matchingProducts.push(item.getAttribute("data-handle"));
           }
