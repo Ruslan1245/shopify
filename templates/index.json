@@ -15,22 +15,19 @@
         "feature_YpkLzW": {
           "type": "feature",
           "settings": {
-            "feature_text": "<p>Visible digestive improvements, fast</p>",
-            "icon_image": "shopify://shop_images/Vector_1.png"
+            "feature_text": "<p>Visible digestive improvements, fast</p>"
           }
         },
         "feature_xYGDTM": {
           "type": "feature",
           "settings": {
-            "feature_text": "<p>Clean-label recipes, never recalled</p>",
-            "icon_image": "shopify://shop_images/Vector_1.png"
+            "feature_text": "<p>Clean-label recipes, never recalled</p>"
           }
         },
         "feature_WY74kF": {
           "type": "feature",
           "settings": {
-            "feature_text": "<p>Holistic nutrition, for happier pets</p>",
-            "icon_image": "shopify://shop_images/Vector_1.png"
+            "feature_text": "<p>Holistic nutrition, for happier pets</p>"
           }
         }
       },
@@ -695,12 +692,10 @@
       "settings": {
         "custom_class": "home-feature-collection",
         "button1_text": "For Cats",
-        "button1_image": "shopify://shop_images/2fac5927fd2071f1b11da0c0efd8e0c23a70dd87_6c08fed2-39f9-4e16-8424-52b564db3052.png",
         "button1_link": "shopify://collections/all-dogs",
         "button2_text": "For Dogs",
-        "button2_image": "shopify://shop_images/c794e49d3af2a683e24ef8d422922eb91263473e_dde64072-5a6f-42f7-a059-622b6f1daa60.png",
         "button2_link": "shopify://collections/dry-food-cat",
-        "collection": "all-dogs",
+        "collection": "frontpage",
         "layout_type": "carousel",
         "carousel_on_mobile": false,
         "max_products": 16,
@@ -733,7 +728,6 @@
         "step_3VUtkY": {
           "type": "step",
           "settings": {
-            "image": "shopify://shop_images/Vector_62c25724-5952-4638-b214-21ac657a4629.png",
             "title": "Delivered Monthly",
             "text": "Made in Canada. Always fresh. Right to your door."
           }
@@ -741,7 +735,6 @@
         "step_kUbzjU": {
           "type": "step",
           "settings": {
-            "image": "shopify://shop_images/Vector_fc23f109-207b-4324-aec9-82a1714f801e.png",
             "title": "Health You Can See",
             "text": "Bloat down and energy up within days."
           }
@@ -767,22 +760,19 @@
         "feature_N3ftCy": {
           "type": "feature",
           "settings": {
-            "feature_text": "<p>Matches your pet’s needs, not the masses</p>",
-            "icon_image": "shopify://shop_images/Vector_718559fb-68fe-434e-9fac-7e7cddc1934a.png"
+            "feature_text": "<p>Matches your pet’s needs, not the masses</p>"
           }
         },
         "feature_AEtxkw": {
           "type": "feature",
           "settings": {
-            "feature_text": "<p>Built on our Digestive Wellness System™</p>",
-            "icon_image": "shopify://shop_images/Vector_718559fb-68fe-434e-9fac-7e7cddc1934a.png"
+            "feature_text": "<p>Built on our Digestive Wellness System™</p>"
           }
         },
         "feature_RHi8TN": {
           "type": "feature",
           "settings": {
-            "feature_text": "<p>Backed by science, not guesswork</p>",
-            "icon_image": "shopify://shop_images/Vector_718559fb-68fe-434e-9fac-7e7cddc1934a.png"
+            "feature_text": "<p>Backed by science, not guesswork</p>"
           }
         }
       },
@@ -1145,8 +1135,6 @@
       "type": "forgot-which-one",
       "name": "Forgot Which One Banner",
       "settings": {
-        "image": "shopify://shop_images/Image_Placeholder_2d442e35-e6e3-428a-8604-de5122bdde01.png",
-        "mobile_image": "shopify://shop_images/Image_Placeholder_b03d6594-509d-4095-be7c-50282d934d22.png",
         "heading": "Forgot Which One They Loved?",
         "subtext": "Find your pet’s perfect match again in seconds with the Nutram Number quiz.",
         "cta_text": "Find It Again",
@@ -1173,7 +1161,6 @@
         "feature_zBYHjq": {
           "type": "feature",
           "settings": {
-            "image_icon": "shopify://shop_images/Group_87_bc1bb9f0-be15-42d4-b2b1-37808fcd9bdc.png",
             "feature_text": "No Recalls, Ever!"
           }
         },
@@ -1187,7 +1174,6 @@
         "feature_hk37Ry": {
           "type": "feature",
           "settings": {
-            "image_icon": "shopify://shop_images/Group_88_ca20ced1-0c7b-4fdc-8067-7acde8ea7347.png",
             "feature_text": "Farm-to-Bowl Sourcing"
           }
         }
