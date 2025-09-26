@@ -8,11 +8,14 @@
   @param {string} [settings.drawer_color_scheme] - The color scheme for the drawer.
 {%- enddoc -%}
 
+<!-- Swiper CSS -->
+
 <script
   src="{{ 'cart-drawer.js' | asset_url }}"
   type="module"
   fetchpriority="low"
 ></script>
+
 
 <cart-drawer-component
   class="cart-drawer"
@@ -40,7 +43,7 @@
         data-section-id="{{ section.id }}"
       >
         {% assign item__count = cart.item_count %}
-        {%- if item__count and cart.empty? -%}
+        {%- if cart.empty? -%}
           <div class="cart-drawer__header">
             <div class="cart__drawer__emptytop">
               <div class="cart_icon"><img src="https://cdn.shopify.com/s/files/1/0627/0422/2426/files/Group_1.png?v=1756048209"></div>
