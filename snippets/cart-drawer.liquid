@@ -8,178 +8,11 @@
   @param {string} [settings.drawer_color_scheme] - The color scheme for the drawer.
 {%- enddoc -%}
 
-<!-- Swiper CSS -->
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
->
-
-<!-- Swiper JS -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
 <script
   src="{{ 'cart-drawer.js' | asset_url }}"
   type="module"
   fetchpriority="low"
 ></script>
-
-<style>
-    .free-shipping-wrapper {
-      background: #eaf6ff;
-      border-radius: 8px;
-      padding: 16px;
-      text-align: center;
-      font-family: Arial, sans-serif;
-      margin: 20px 0;
-    }
-
-    .shipping-message {
-      font-size: 16px;
-      font-weight: bold;
-      color: #1d74d6;
-      margin-bottom: 12px;
-    }
-
-    .upsell-wrapper {
-    padding: 24px;
-    background: #fff;
-    text-align: center;
-  }
-
-  .upsell-heading {
-    font-size: 1.4rem;
-    font-weight: 600;
-    margin-bottom: 20px;
-  }
-
-  .upsell-product-card {
-    background: #f9f9f9;
-    border-radius: 10px;
-    border: 1px solid #eee;
-    padding: 16px;
-    text-align: center;
-    width: auto;
-  }
-
-  .upsell-product-card img {
-    max-width: 100%;
-    object-fit:contain;
-    border-radius: 4px;
-  }
-
-  .cart-drawer .dialog-drawer .swiper-wrapper {
-  display: flex;
-  align-items: stretch;
-}
-
-.cart-drawer .dialog-drawer .swiper-slide {
-  display: flex;
-  flex-direction: column;
-  height: auto !important; 
-}
-
-.cart-drawer .dialog-drawer .upsell-product-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-}
-
-.upsell-product-card .product-info {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-  .product-rating {
-    color: #f0c14b;
-    font-size: 0.9em;
-    margin-top: 6px;
-  }
-
-  .product-title {
-    font-size: 1em;
-    font-weight: 600;
-    margin: 10px 0 5px;
-  }
-
-  .product-price {
-    color: #444;
-    font-size: 0.95em;
-  }
-
-  .upsell-message {
-    font-size: 0.85em;
-    color: #888;
-    margin: 8px 0;
-  }
-
-  .shopify-buy-button {
-    background-color: #f2c200;
-    border: none;
-    color: #000;
-    padding: 10px 20px;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 50px;
-    transition: background 0.3s ease;
-  }
-
-  .shopify-buy-button:hover {
-    background-color: #d1a800;
-  }
-
-  /* Swiper arrows */
-  .swiper-button-prev,
-  .swiper-button-next {
-    color: #000;
-    background: #fff;
-    border: 1px solid #ccc;
-    border-radius: 50%;
-    width: 36px;
-    height: 36px;
-    top: 40%;
-  }
-
-  .swiper-button-prev::after,
-  .swiper-button-next::after {
-    font-size: 14px;
-  }
-
-
-    .shipping-message strong {
-      color: #e53935;
-    }
-
-    .shipping-progress {
-      background: #cce5ff;
-      height: 14px;
-      border-radius: 8px;
-      position: relative;
-      /*overflow: hidden;*/
-    }
-
-    .shipping-progress-fill {
-      background: #2a8edb;
-      height: 100%;
-      border-radius: 8px;
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      transition: width 0.4s ease-in-out;
-      position: relative;
-    }
-
-    .shipping-truck {
-      background: #fff;
-      border-radius: 50%;
-      padding: 6px;
-      font-size: 16px;
-      margin-right: -10px; /* overlaps outside like in screenshot */
-      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-    }
-</style>
 
 <cart-drawer-component
   class="cart-drawer"
@@ -206,13 +39,8 @@
         class="cart-items-component"
         data-section-id="{{ section.id }}"
       >
-        {% assign item__count = cart.item_count %}
-        {%- if item__count and cart.empty? -%}
+        {%- if cart.empty? -%}
           <div class="cart-drawer__header">
-            <div class="cart__drawer__emptytop">
-              <div class="cart_icon"><img src="https://cdn.shopify.com/s/files/1/0627/0422/2426/files/Group_1.png?v=1756048209"></div>
-              <div class="cart_content">Your cart (0 Item)</div>
-            </div>
             <button
               ref="closeButton"
               on:click="cart-drawer-component/close"
@@ -229,87 +57,22 @@
             class="cart-drawer__content motion-reduce"
             aria-label="{{ 'accessibility.cart' | t }}"
           >
-            <div class="cart-empty-box">
-              <div class="cart-empty-box__rating">⭐⭐⭐⭐⭐ <span>4.8/5 loved by thousands of pet parents</span></div>
+            <span class="cart-drawer__heading h3 cart-drawer__heading--empty">
+              {{ 'content.your_cart_is_empty' | t }}
+            </span>
 
-              <h2 class="cart-empty-box__heading">Your Cart Is Empty</h2>
-
-              {% if settings.below_message_cart %}
-                <p class="cart-empty-box__subtext">
-                  {{ settings.below_message_cart }}
-                </p>
-              {% endif %}
-
-              <div class="cart-empty-box__buttons">
-                {% if settings.first_btn_1 and settings.first_btn_1_url %}
-                  <a
-                    href="{{ settings.first_btn_1_url }}"
-                    class="cart-empty-box__button cart-empty-box__button--primary"
-                  >
-                    {{ settings.first_btn_1 }}
-                  </a>
-                {% endif %}
-
-                {% if settings.second_btn_2 and settings.second_btn__url %}
-                  <a
-                    href="{{ settings.second_btn__url }}"
-                    class="cart-empty-box__button cart-empty-box__button--secondary"
-                  >
-                    {{ settings.second_btn_2 }}
-                  </a>
-                {% endif %}
-              </div>
+            <div class="cart-drawer__items">
+              {% render 'cart-products' %}
             </div>
-
-            {% if settings.upsell_products != blank %}
-              <div class="upsell-wrapper">
-                <div class="swiper upsell-swiper-empty">
-                  <div class="swiper-wrapper">
-                    {% for product in settings.upsell_products %}
-                      <div class="swiper-slide upsell-product-card">
-                        <div class="product-image">
-                          <a href="{{ product.url }}">
-                            <img src="{{ product.featured_image | img_url: '400x' }}" alt="{{ product.title }}">
-                          </a>
-                        </div>
-                        <div class="product-info">
-                          <div class="product-rating"><span>★</span> 4.8/5 (100 reviews)</div>
-                          <h4 class="product-title">{{ product.title }}</h4>
-                          <p class="product-price">From {{ product.price | money }}</p>
-                          <p class="upsell-message">{{ settings.upsell_message }}</p>
-                          <form method="post" action="/cart/add">
-                            <input type="hidden" name="id" value="{{ product.variants.first.id }}">
-                            <button type="submit" class="shopify-buy-button">
-                              {{ settings.upsell_button_text }}
-                            </button>
-                          </form>
-                        </div>
-                      </div>
-                    {% endfor %}
-                  </div>
-
-                  <!-- Unique Swiper Arrows -->
-                  <div class="swiper-button-prev swiper-prev-empty"></div>
-                  <div class="swiper-button-next swiper-next-empty"></div>
-                </div>
-              </div>
-            {% endif %}
-
-            
           </div>
-          <div class="cart_bottom_custom">
-              <a href="/collections/all">Explore All Products</a>
-              <div class="cart-empty-box__rating">⭐⭐⭐⭐⭐ <span>4.8/5 loved by thousands of pet parents</span></div>
-            </div>
         {%- else -%}
           <div
             class="cart-drawer__header"
             id="cart-drawer-header"
           >
             <span class="cart-drawer__heading h3">
-              <span class="cart_drawer__icon"><img src="https://cdn.shopify.com/s/files/1/0627/0422/2426/files/Group_1.png?v=1756048209"></span>
-              your cart ({{ cart.item_count }} items)
-              {% comment %} {% render 'cart-bubble' %} {% endcomment %}
+              {{ 'content.cart_title' | t }}
+              {% render 'cart-bubble' %}
             </span>
 
             <button
@@ -324,29 +87,6 @@
             </button>
           </div>
 
-          {% assign cart_total = cart.original_total_price | divided_by: 100 %}
-          {% assign threshold = settings.free_shipping_threshold %}
-          {% assign remaining = threshold | minus: cart_total %}
-
-          <div class="free-shipping-wrapper">
-            <p class="shipping-message">
-              {% if cart_total >= threshold %}
-                {{ settings.above_message }}
-              {% else %}
-                {{ settings.below_message }} You are only <strong>${{ remaining }}</strong> away!
-              {% endif %}
-            </p>
-
-            <div class="shipping-progress">
-              <div
-                class="shipping-progress-fill"
-                style="width: {{ cart_total | times: 100 | divided_by: threshold | at_most: 100 }}%;"
-              >
-                <div class="shipping-truck"><img src="https://cdn.shopify.com/s/files/1/0627/0422/2426/files/1.png?v=1756050343"></div>
-              </div>
-            </div>
-          </div>
-
           <div
             class="cart-drawer__content motion-reduce"
             aria-label="{{ 'accessibility.cart' | t }}"
@@ -356,41 +96,6 @@
               class="cart-drawer__items"
             >
               {% render 'cart-products' %}
-              {% if settings.upsell_products != blank %}
-                <div class="upsell-wrapper">
-                  <h3 class="upsell-heading">{{ settings.upsell_heading }}</h3>
-
-                  <div class="swiper upsell-swiper">
-                    <div class="swiper-wrapper">
-                      {% for product in settings.upsell_products %}
-                        <div class="swiper-slide upsell-product-card">
-                          <div class="product-image">
-                            <a href="{{ product.url }}">
-                              <img src="{{ product.featured_image | img_url: '400x' }}" alt="{{ product.title }}">
-                            </a>
-                          </div>
-                          <div class="product-info">
-                            <div class="product-rating">★ 4.8/5 (100 reviews)</div>
-                            <h4 class="product-title">{{ product.title }}</h4>
-                            <p class="product-price">From {{ product.price | money }}</p>
-                            <p class="upsell-message">{{ settings.upsell_message }}</p>
-                            <form method="post" action="/cart/add">
-                              <input type="hidden" name="id" value="{{ product.variants.first.id }}">
-                              <button type="submit" class="shopify-buy-button">
-                                {{ settings.upsell_button_text }}
-                              </button>
-                            </form>
-                          </div>
-                        </div>
-                      {% endfor %}
-                    </div>
-
-                    <!-- Arrows -->
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
-                  </div>
-                </div>
-              {% endif %}
             </scroll-hint>
 
             <div
@@ -464,4 +169,3 @@
     z-index: 1;
   }
 {% endstylesheet %}
-
