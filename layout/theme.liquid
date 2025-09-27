@@ -75,16 +75,9 @@
     {% if settings.quick_add or settings.mobile_quick_add %}
       {% render 'quick-add-modal' %}
     {% endif %}
-    <link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
->
-
-<!-- Swiper JS -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <script>
-      document.addEventListener('DOMContentLoaded', function () {
+      {% comment %} document.addEventListener('DOMContentLoaded', function () {
         let upsellSwiper = null;
         let upsellEmptySwiper = null;
 
@@ -137,7 +130,7 @@
             upsellEmptySwiper = null;
           }
         }, 5000);
-      });
+      }); {% endcomment %}
     </script>
   </body>
 </html>
