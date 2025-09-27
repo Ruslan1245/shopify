@@ -65,7 +65,7 @@
             <div class="cart-empty-box__rating">⭐⭐⭐⭐⭐ <span>4.8/5 loved by thousands of pet parents</span></div>
           </div>
         {% endif %}
-          <div class="cart-drawer__header">
+          <div class="cart-drawer__header hidden">
             <button
               ref="closeButton"
               on:click="cart-drawer-component/close"
@@ -79,7 +79,7 @@
           </div>
 
           <div
-            class="cart-drawer__content motion-reduce"
+            class="cart-drawer__content motion-reduce hidden"
             aria-label="{{ 'accessibility.cart' | t }}"
           >
             <span class="cart-drawer__heading h3 cart-drawer__heading--empty">
