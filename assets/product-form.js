@@ -249,20 +249,6 @@ class ProductFormComponent extends Component {
               this.#clearLiveRegionText();
             }, 5000);
           }
-Object.entries(response.sections).forEach(([sectionId, sectionHTML]) => {
-  const tempDiv = document.createElement("div");
-  tempDiv.innerHTML = sectionHTML;
-
-  const newCartItems = tempDiv.querySelector("cart-items-component");
-  const existingCartItems = document.querySelector("cart-items-component");
-
-  if (newCartItems && existingCartItems) {
-    console.log(`Replacing cart-items-component from section: ${sectionId}`);
-
-    // Replace the entire component
-    existingCartItems.replaceWith(newCartItems);
-  }
-});
 
 
           this.dispatchEvent(
@@ -273,6 +259,18 @@ Object.entries(response.sections).forEach(([sectionId, sectionHTML]) => {
               sections: response.sections,
             })
           );
+          Object.entries(response.sections).forEach(([sectionId, sectionHTML]) => {
+            const tempDiv = document.createElement("div");
+            tempDiv.innerHTML = sectionHTML;
+
+            const newCartItems = tempDiv.querySelector("cart-items-component");
+            const existingCartItems = document.querySelector("cart-items-component");
+
+            if (newCartItems && existingCartItems) {
+              console.log(`Replacing cart-items-component from section: ${sectionId}`);
+              existingCartItems.replaceWith(newCartItems);
+            }
+          });
         }
       })
       .catch((error) => {
