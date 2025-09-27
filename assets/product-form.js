@@ -250,6 +250,8 @@ class ProductFormComponent extends Component {
             }, 5000);
           }
 
+          console.log(Theme.routes.cart_add_url);
+
 
           this.dispatchEvent(
             new CartAddEvent({}, id.toString(), {
