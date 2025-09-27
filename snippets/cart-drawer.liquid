@@ -42,11 +42,7 @@
         data-section-id="{{ section.id }}"
       >
         {%- if cart.empty? -%}
-          <div class="cart-drawer__header">
-            <div class="cart__drawer__emptytop">
-              <div class="cart_icon"><img src="https://cdn.shopify.com/s/files/1/0627/0422/2426/files/Group_1.png?v=1756048209"></div>
-              <div class="cart_content">Your cart (0 Item)</div>
-            </div>
+         <div class="cart-drawer__header">
             <button
               ref="closeButton"
               on:click="cart-drawer-component/close"
@@ -59,10 +55,18 @@
             </button>
           </div>
 
-          <div class="cart_bottom_custom">
-              <a href="/collections/all">Explore All Products</a>
-              <div class="cart-empty-box__rating">⭐⭐⭐⭐⭐ <span>4.8/5 loved by thousands of pet parents</span></div>
+          <div
+            class="cart-drawer__content motion-reduce"
+            aria-label="{{ 'accessibility.cart' | t }}"
+          >
+            <span class="cart-drawer__heading h3 cart-drawer__heading--empty">
+              {{ 'content.your_cart_is_empty' | t }}
+            </span>
+
+            <div class="cart-drawer__items">
+              {% render 'cart-products' %}
             </div>
+          </div>
         {%- else -%}
           <div
             class="cart-drawer__header"
