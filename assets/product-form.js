@@ -189,6 +189,7 @@ class ProductFormComponent extends Component {
     })
       .then((response) => response.json())
       .then((response) => {
+        console.log(response);
         if (response.status) {
           window.dispatchEvent(new CartErrorEvent(this.id, response.message));
 
@@ -249,29 +250,7 @@ class ProductFormComponent extends Component {
               this.#clearLiveRegionText();
             }, 5000);
           }
-
-          if (response.sections) {
-  Object.entries(response.sections).forEach(([sectionId, sectionHTML]) => {
-    const sectionEl = document.querySelector(`[data-section-id="${sectionId}"]`);
-
-    if (sectionEl) {
-      // If it's a <cart-items-component>, replace only its inner content
-      if (sectionEl.tagName.toLowerCase() === 'cart-items-component') {
-        const tmp = document.createElement('div');
-        tmp.innerHTML = sectionHTML;
-
-        // take children of the root element in the returned HTML
-        const newContent = tmp.firstElementChild;
-        if (newContent) {
-          sectionEl.innerHTML = newContent.innerHTML;
-        }
-      } else {
-        // For other sections, replace fully
-        sectionEl.innerHTML = sectionHTML;
-      }
-    }
-  });
-}
+          
 
           this.dispatchEvent(
             new CartAddEvent({}, id.toString(), {
