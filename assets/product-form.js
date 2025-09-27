@@ -178,6 +178,8 @@ class ProductFormComponent extends Component {
       formData.append('sections', cartItemComponentsSectionIds.join(','));
     });
 
+    console.log(formData);
+
     const fetchCfg = fetchConfig('javascript', { body: formData });
 
     fetch(Theme.routes.cart_add_url, {
@@ -249,9 +251,6 @@ class ProductFormComponent extends Component {
               this.#clearLiveRegionText();
             }, 5000);
           }
-
-          console.log(Theme.routes.cart_add_url);
-
 
           this.dispatchEvent(
             new CartAddEvent({}, id.toString(), {
