@@ -188,80 +188,90 @@ class ProductFormComponent extends Component {
       },
     })
       .then((response) => response.json())
-      .then((response) => {
-        if (response.status) {
-          window.dispatchEvent(new CartErrorEvent(this.id, response.message));
+     .then((response) => {
+  if (response.status) {
+    window.dispatchEvent(new CartErrorEvent(this.id, response.message));
 
-          if (!addToCartTextError) return;
-          addToCartTextError.classList.remove('hidden');
+    if (!addToCartTextError) return;
+    addToCartTextError.classList.remove('hidden');
 
-          // Reuse the text node if the user is spam-clicking
-          const textNode = addToCartTextError.childNodes[2];
-          if (textNode) {
-            textNode.textContent = response.message;
-          } else {
-            const newTextNode = document.createTextNode(response.message);
-            addToCartTextError.appendChild(newTextNode);
-          }
+    // Reuse the text node if the user is spam-clicking
+    const textNode = addToCartTextError.childNodes[2];
+    if (textNode) {
+      textNode.textContent = response.message;
+    } else {
+      const newTextNode = document.createTextNode(response.message);
+      addToCartTextError.appendChild(newTextNode);
+    }
 
-          // Create or get existing error live region for screen readers
-          this.#setLiveRegionText(response.message);
+    // Create or get existing error live region for screen readers
+    this.#setLiveRegionText(response.message);
 
-          this.#timeout = setTimeout(() => {
-            if (!addToCartTextError) return;
-            addToCartTextError.classList.add('hidden');
+    this.#timeout = setTimeout(() => {
+      if (!addToCartTextError) return;
+      addToCartTextError.classList.add('hidden');
 
-            // Clear the announcement
-            this.#clearLiveRegionText();
-          }, 10000);
+      // Clear the announcement
+      this.#clearLiveRegionText();
+    }, 10000);
 
-          // When we add more than the maximum amount of items to the cart, we need to dispatch a cart update event
-          // because our back-end still adds the max allowed amount to the cart.
-          this.dispatchEvent(
-            new CartAddEvent({}, this.id, {
-              didError: true,
-              source: 'product-form-component',
-              itemCount: Number(formData.get('quantity')) || Number(this.dataset.quantityDefault),
-              productId: this.dataset.productId,
-            })
-          );
-
-          return;
-        } else {
-          const id = formData.get('id');
-
-          if (addToCartTextError) {
-            addToCartTextError.classList.add('hidden');
-            addToCartTextError.removeAttribute('aria-live');
-          }
-
-          if (!id) throw new Error('Form ID is required');
-
-          // Add aria-live region to inform screen readers that the item was added
-          if (this.refs.addToCartButtonContainer?.refs.addToCartButton) {
-            const addToCartButton = this.refs.addToCartButtonContainer.refs.addToCartButton;
-            const addedTextElement = addToCartButton.querySelector('.add-to-cart-text--added');
-            const addedText = addedTextElement?.textContent?.trim() || Theme.translations.added;
-
-            this.#setLiveRegionText(addedText);
-
-            setTimeout(() => {
-              this.#clearLiveRegionText();
-            }, 5000);
-          }
-
-
-          this.dispatchEvent(
-            new CartAddEvent({}, id.toString(), {
-              source: 'product-form-component',
-              itemCount: Number(formData.get('quantity')) || Number(this.dataset.quantityDefault),
-              productId: this.dataset.productId,
-              sections: response.sections,
-            })
-          );
-
-        }
+    // When we add more than the maximum amount of items to the cart, we need to dispatch a cart update event
+    // because our back-end still adds the max allowed amount to the cart.
+    this.dispatchEvent(
+      new CartAddEvent({}, this.id, {
+        didError: true,
+        source: 'product-form-component',
+        itemCount: Number(formData.get('quantity')) || Number(this.dataset.quantityDefault),
+        productId: this.dataset.productId,
       })
+    );
+
+    return;
+  } else {
+    const id = formData.get('id');
+
+    if (addToCartTextError) {
+      addToCartTextError.classList.add('hidden');
+      addToCartTextError.removeAttribute('aria-live');
+    }
+
+    if (!id) throw new Error('Form ID is required');
+
+    // Add aria-live region to inform screen readers that the item was added
+    if (this.refs.addToCartButtonContainer?.refs.addToCartButton) {
+      const addToCartButton = this.refs.addToCartButtonContainer.refs.addToCartButton;
+      const addedTextElement = addToCartButton.querySelector('.add-to-cart-text--added');
+      const addedText = addedTextElement?.textContent?.trim() || Theme.translations.added;
+
+      this.#setLiveRegionText(addedText);
+
+      setTimeout(() => {
+        this.#clearLiveRegionText();
+      }, 5000);
+    }
+
+    // ✅ Update cart drawer with new sections returned by Shopify
+    if (response.sections) {
+      Object.entries(response.sections).forEach(([sectionId, sectionHTML]) => {
+        const sectionEl = document.querySelector(`[data-section-id="${sectionId}"]`);
+        if (sectionEl) {
+          sectionEl.innerHTML = sectionHTML;
+        }
+      });
+    }
+
+    // Dispatch custom event so other scripts can hook into it
+    this.dispatchEvent(
+      new CartAddEvent({}, id.toString(), {
+        source: 'product-form-component',
+        itemCount: Number(formData.get('quantity')) || Number(this.dataset.quantityDefault),
+        productId: this.dataset.productId,
+        sections: response.sections,
+      })
+    );
+  }
+})
+
       .catch((error) => {
         console.error(error);
       })
