@@ -12,6 +12,183 @@ body {
   font-variation-settings: 'slnt' 0;
 }
 
+.cart-drawer__dialog {
+    overflow: hidden;
+  }
+
+  .cart-drawer__inner {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .cart-drawer__content {
+    height: calc(100% - var(--header-height));
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cart-drawer__summary {
+    background-color: var(--color-background);
+    position: sticky;
+    bottom: 0;
+    z-index: 1;
+  }
+      .free-shipping-wrapper {
+      background: #eaf6ff;
+      border-radius: 8px;
+      padding: 16px;
+      text-align: center;
+      font-family: Arial, sans-serif;
+      margin: 20px 0;
+    }
+
+    .shipping-message {
+      font-size: 16px;
+      font-weight: bold;
+      color: #1d74d6;
+      margin-bottom: 12px;
+    }
+
+    .upsell-wrapper {
+    padding: 24px;
+    background: #fff;
+    text-align: center;
+  }
+
+  .upsell-heading {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+
+  .upsell-product-card {
+    background: #f9f9f9;
+    border-radius: 10px;
+    border: 1px solid #eee;
+    padding: 16px;
+    text-align: center;
+    width: auto;
+  }
+
+  .upsell-product-card img {
+    max-width: 100%;
+    object-fit:contain;
+    border-radius: 4px;
+  }
+
+  .cart-drawer .dialog-drawer .swiper-wrapper {
+  display: flex;
+  align-items: stretch;
+}
+
+.cart-drawer .dialog-drawer .swiper-slide {
+  display: flex;
+  flex-direction: column;
+  height: auto !important; 
+}
+
+.cart-drawer .dialog-drawer .upsell-product-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.upsell-product-card .product-info {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+  .product-rating {
+    color: #f0c14b;
+    font-size: 0.9em;
+    margin-top: 6px;
+  }
+
+  .product-title {
+    font-size: 1em;
+    font-weight: 600;
+    margin: 10px 0 5px;
+  }
+
+  .product-price {
+    color: #444;
+    font-size: 0.95em;
+  }
+
+  .upsell-message {
+    font-size: 0.85em;
+    color: #888;
+    margin: 8px 0;
+  }
+
+  .shopify-buy-button {
+    background-color: #f2c200;
+    border: none;
+    color: #000;
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: background 0.3s ease;
+  }
+
+  .shopify-buy-button:hover {
+    background-color: #d1a800;
+  }
+
+  /* Swiper arrows */
+  .swiper-button-prev,
+  .swiper-button-next {
+    color: #000;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    top: 40%;
+  }
+
+  .swiper-button-prev::after,
+  .swiper-button-next::after {
+    font-size: 14px;
+  }
+
+
+    .shipping-message strong {
+      color: #e53935;
+    }
+
+    .shipping-progress {
+      background: #cce5ff;
+      height: 14px;
+      border-radius: 8px;
+      position: relative;
+      /*overflow: hidden;*/
+    }
+
+    .shipping-progress-fill {
+      background: #2a8edb;
+      height: 100%;
+      border-radius: 8px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      transition: width 0.4s ease-in-out;
+      position: relative;
+    }
+
+    .shipping-truck {
+      background: #fff;
+      border-radius: 50%;
+      padding: 6px;
+      font-size: 16px;
+      margin-right: -10px; /* overlaps outside like in screenshot */
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+
 :root {
   --hover-lift-amount: 4px;
   --hover-scale-amount: 1.03;
