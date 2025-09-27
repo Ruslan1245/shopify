@@ -250,20 +250,16 @@ class ProductFormComponent extends Component {
             }, 5000);
           }
 Object.entries(response.sections).forEach(([sectionId, sectionHTML]) => {
-  // Look for your custom cart component in the DOM
-  const cartComponent = document.querySelector("cart-items-component");
+  // Create a temporary container to parse the section HTML
+  const tempDiv = document.createElement("div");
+  tempDiv.innerHTML = sectionHTML;
 
-  if (cartComponent && sectionId === "cart-drawer") {
-    // Replace cart drawer HTML inside your component
-    cartComponent.innerHTML = sectionHTML;
-  }
+  // Look for cart-items-component inside that section
+  const cartItems = tempDiv.querySelector("cart-items-component");
 
-  // If you also want to update cart icon bubble:
-  if (sectionId === "cart-icon-bubble") {
-    const bubbleTarget = document.getElementById("cart-icon-bubble");
-    if (bubbleTarget) {
-      bubbleTarget.innerHTML = sectionHTML;
-    }
+  if (cartItems) {
+    console.log(`Section ID: ${sectionId}`);
+    console.log("Cart Items Component HTML:", cartItems.outerHTML);
   }
 });
 
