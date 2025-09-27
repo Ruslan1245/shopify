@@ -250,7 +250,7 @@ class ProductFormComponent extends Component {
             }, 5000);
           }
 
-          alert('asdasd');
+          console.log(response.sections);
 
           this.dispatchEvent(
             new CartAddEvent({}, id.toString(), {
