@@ -250,6 +250,8 @@ class ProductFormComponent extends Component {
             }, 5000);
           }
 
+          console.log("Pretty JSON:", JSON.stringify( response.sections, null, 2));
+
           this.dispatchEvent(
             new CartAddEvent({}, id.toString(), {
               source: 'product-form-component',
