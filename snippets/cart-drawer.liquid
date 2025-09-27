@@ -44,10 +44,9 @@
         {%- if cart.empty? -%}
 
           <div
-            class="cart-drawer__content motion-reduce"
-            aria-label="{{ 'accessibility.cart' | t }}"
+            class="cart-drawer__content motion-reduce""
           >
-            <div class="cart-drawer__items hidden">
+            <div class="cart-drawer__items" style="display:none;">
               {% render 'cart-products' %}
             </div>
           </div>
