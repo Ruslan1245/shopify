@@ -250,18 +250,20 @@ class ProductFormComponent extends Component {
             }, 5000);
           }
 Object.entries(response.sections).forEach(([sectionId, sectionHTML]) => {
-  // Create a temporary container to parse the section HTML
   const tempDiv = document.createElement("div");
   tempDiv.innerHTML = sectionHTML;
 
-  // Look for cart-items-component inside that section
-  const cartItems = tempDiv.querySelector("cart-items-component");
+  const newCartItems = tempDiv.querySelector("cart-items-component");
+  const existingCartItems = document.querySelector("cart-items-component");
 
-  if (cartItems) {
-    console.log(`Section ID: ${sectionId}`);
-    console.log("Cart Items Component HTML:", cartItems.outerHTML);
+  if (newCartItems && existingCartItems) {
+    console.log(`Replacing cart-items-component from section: ${sectionId}`);
+
+    // Replace the entire component
+    existingCartItems.replaceWith(newCartItems);
   }
 });
+
 
           this.dispatchEvent(
             new CartAddEvent({}, id.toString(), {
