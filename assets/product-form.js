@@ -249,13 +249,23 @@ class ProductFormComponent extends Component {
               this.#clearLiveRegionText();
             }, 5000);
           }
+Object.entries(response.sections).forEach(([sectionId, sectionHTML]) => {
+  // Look for your custom cart component in the DOM
+  const cartComponent = document.querySelector("cart-items-component");
 
-          Object.entries(response.sections).forEach(([sectionId, sectionHTML]) => {
-      const tempDiv = document.createElement("div");
-      tempDiv.id = sectionId;
-      tempDiv.innerHTML = sectionHTML;
-      document.body.appendChild(tempDiv);
-    });
+  if (cartComponent && sectionId === "cart-drawer") {
+    // Replace cart drawer HTML inside your component
+    cartComponent.innerHTML = sectionHTML;
+  }
+
+  // If you also want to update cart icon bubble:
+  if (sectionId === "cart-icon-bubble") {
+    const bubbleTarget = document.getElementById("cart-icon-bubble");
+    if (bubbleTarget) {
+      bubbleTarget.innerHTML = sectionHTML;
+    }
+  }
+});
 
           this.dispatchEvent(
             new CartAddEvent({}, id.toString(), {
