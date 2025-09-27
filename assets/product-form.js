@@ -250,6 +250,8 @@ class ProductFormComponent extends Component {
             }, 5000);
           }
 
+          alert('asdasd');
+
           this.dispatchEvent(
             new CartAddEvent({}, id.toString(), {
               source: 'product-form-component',
