@@ -133,6 +133,99 @@
             <a href="/collections/all">Explore All Products</a>
             <div class="cart-empty-box__rating">⭐⭐⭐⭐⭐ <span>4.8/5 loved by thousands of pet parents</span></div>
           </div>
+
+        {% elsif cart.item_count == 0 %}
+         <div class="cart-drawer__header">
+            <div class="cart__drawer__emptytop">
+              <div class="cart_icon"><img src="https://cdn.shopify.com/s/files/1/0627/0422/2426/files/Group_1.png?v=1756048209"></div>
+              <div class="cart_content">Your cart (0 Item)</div>
+            </div>
+            <button
+              ref="closeButton"
+              on:click="cart-drawer-component/close"
+              class="button close-button cart-drawer__close-button button-unstyled"
+              aria-label="{{ 'actions.close_dialog' | t }}"
+            >
+              <span class="svg-wrapper">
+                {{- 'icon-close.svg' | inline_asset_content -}}
+              </span>
+            </button>
+          </div>
+
+          <div
+            class="cart-drawer__content motion-reduce"
+            aria-label="{{ 'accessibility.cart' | t }}"
+          >
+            <div class="cart-empty-box">
+              <div class="cart-empty-box__rating">⭐⭐⭐⭐⭐ <span>4.8/5 loved by thousands of pet parents</span></div>
+
+              <h2 class="cart-empty-box__heading">Your Cart Is Empty</h2>
+
+              {% if settings.below_message_cart %}
+                <p class="cart-empty-box__subtext">
+                  {{ settings.below_message_cart }}
+                </p>
+              {% endif %}
+
+              <div class="cart-empty-box__buttons">
+                {% if settings.first_btn_1 and settings.first_btn_1_url %}
+                  <a
+                    href="{{ settings.first_btn_1_url }}"
+                    class="cart-empty-box__button cart-empty-box__button--primary"
+                  >
+                    {{ settings.first_btn_1 }}
+                  </a>
+                {% endif %}
+
+                {% if settings.second_btn_2 and settings.second_btn__url %}
+                  <a
+                    href="{{ settings.second_btn__url }}"
+                    class="cart-empty-box__button cart-empty-box__button--secondary"
+                  >
+                    {{ settings.second_btn_2 }}
+                  </a>
+                {% endif %}
+              </div>
+            </div>
+
+            {% if settings.upsell_products != blank %}
+              <div class="upsell-wrapper">
+                <div class="swiper upsell-swiper-empty">
+                  <div class="swiper-wrapper">
+                    {% for product in settings.upsell_products %}
+                      <div class="swiper-slide upsell-product-card">
+                        <div class="product-image">
+                          <a href="{{ product.url }}">
+                            <img src="{{ product.featured_image | img_url: '400x' }}" alt="{{ product.title }}">
+                          </a>
+                        </div>
+                        <div class="product-info">
+                          <div class="product-rating"><span>★</span> 4.8/5 (100 reviews)</div>
+                          <h4 class="product-title">{{ product.title }}</h4>
+                          <p class="product-price">From {{ product.price | money }}</p>
+                          <p class="upsell-message">{{ settings.upsell_message }}</p>
+                          <form method="post" action="/cart/add">
+                            <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+                            <button type="submit" class="shopify-buy-button">
+                              {{ settings.upsell_button_text }}
+                            </button>
+                          </form>
+                        </div>
+                      </div>
+                    {% endfor %}
+                  </div>
+
+                  <!-- Unique Swiper Arrows -->
+                  <div class="swiper-button-prev swiper-prev-empty"></div>
+                  <div class="swiper-button-next swiper-next-empty"></div>
+                </div>
+              </div>
+            {% endif %}
+          </div>
+          <div class="cart_bottom_custom">
+            <a href="/collections/all">Explore All Products</a>
+            <div class="cart-empty-box__rating">⭐⭐⭐⭐⭐ <span>4.8/5 loved by thousands of pet parents</span></div>
+          </div>
         {%- else -%}
           <div
             class="cart-drawer__header"
