@@ -43,28 +43,11 @@
       >
         {%- if cart.empty? -%}
 
-          <div class="cart-drawer__header">
-            <button
-              ref="closeButton"
-              on:click="cart-drawer-component/close"
-              class="button close-button cart-drawer__close-button button-unstyled"
-              aria-label="{{ 'actions.close_dialog' | t }}"
-            >
-              <span class="svg-wrapper">
-                {{- 'icon-close.svg' | inline_asset_content -}}
-              </span>
-            </button>
-          </div>
-
           <div
             class="cart-drawer__content motion-reduce"
             aria-label="{{ 'accessibility.cart' | t }}"
           >
-            <span class="cart-drawer__heading h3 cart-drawer__heading--empty">
-              {{ 'content.your_cart_is_empty' | t }}
-            </span>
-
-            <div class="cart-drawer__items">
+            <div class="cart-drawer__items hidden">
               {% render 'cart-products' %}
             </div>
           </div>
