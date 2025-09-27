@@ -95,7 +95,39 @@
               </div>
             </div>
 
-            
+            {% if settings.upsell_products != blank %}
+              <div class="upsell-wrapper">
+                <div class="swiper upsell-swiper-empty">
+                  <div class="swiper-wrapper">
+                    {% for product in settings.upsell_products %}
+                      <div class="swiper-slide upsell-product-card">
+                        <div class="product-image">
+                          <a href="{{ product.url }}">
+                            <img src="{{ product.featured_image | img_url: '400x' }}" alt="{{ product.title }}">
+                          </a>
+                        </div>
+                        <div class="product-info">
+                          <div class="product-rating"><span>★</span> 4.8/5 (100 reviews)</div>
+                          <h4 class="product-title">{{ product.title }}</h4>
+                          <p class="product-price">From {{ product.price | money }}</p>
+                          <p class="upsell-message">{{ settings.upsell_message }}</p>
+                          <form method="post" action="/cart/add">
+                            <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+                            <button type="submit" class="shopify-buy-button">
+                              {{ settings.upsell_button_text }}
+                            </button>
+                          </form>
+                        </div>
+                      </div>
+                    {% endfor %}
+                  </div>
+
+                  <!-- Unique Swiper Arrows -->
+                  <div class="swiper-button-prev swiper-prev-empty"></div>
+                  <div class="swiper-button-next swiper-next-empty"></div>
+                </div>
+              </div>
+            {% endif %}
 
             
           </div>
