@@ -251,6 +251,10 @@ class ProductFormComponent extends Component {
           }
 
           console.log("Pretty JSON:", JSON.stringify( response.sections, null, 2));
+          const tempDiv = document.createElement("div");
+        tempDiv.id = sectionId;
+        tempDiv.innerHTML = sectionHTML;
+        document.body.appendChild(tempDiv);
 
           this.dispatchEvent(
             new CartAddEvent({}, id.toString(), {
