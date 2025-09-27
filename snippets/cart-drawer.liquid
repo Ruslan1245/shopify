@@ -42,7 +42,9 @@
         data-section-id="{{ section.id }}"
       >
       {%- if cart.empty? -%}
-        {{ cart.item_count }}
+        {% if cart.item_count == 0 %}
+          sdsdsss
+        {% endif %}
           <div class="cart-drawer__header">
             <button
               ref="closeButton"
