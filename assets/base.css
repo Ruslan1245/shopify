@@ -189,6 +189,15 @@ body {
       box-shadow: 0 2px 6px rgba(0,0,0,0.15);
     }
 
+    .upsell-wrapper .swiper-button-prev:after, .swiper-button-next:after {
+      font-size: 14px !important;
+    }
+
+    .upsell-wrapper .swiper-button-prev, .upsell-wrapper .swiper-button-next{
+      height:30px;
+      width:30px;
+    }
+
 :root {
   --hover-lift-amount: 4px;
   --hover-scale-amount: 1.03;
