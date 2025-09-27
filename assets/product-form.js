@@ -250,6 +250,7 @@ class ProductFormComponent extends Component {
             }, 5000);
           }
 
+
           this.dispatchEvent(
             new CartAddEvent({}, id.toString(), {
               source: 'product-form-component',
@@ -258,6 +259,7 @@ class ProductFormComponent extends Component {
               sections: response.sections,
             })
           );
+
         }
       })
       .catch((error) => {
