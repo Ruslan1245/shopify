@@ -189,7 +189,10 @@ class ProductFormComponent extends Component {
     })
       .then((response) => response.json())
       .then((response) => {
-        console.log(response);
+        Object.entries(response.sections).forEach(([id, html]) => {
+  console.log('Section ID:', id);
+  console.log('Updated HTML:', html);
+});
         if (response.status) {
           window.dispatchEvent(new CartErrorEvent(this.id, response.message));
 
