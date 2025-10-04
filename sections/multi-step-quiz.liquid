@@ -812,7 +812,7 @@ p.quiz-note small::before {
 <div class="filter__product_main" style="display:none">
   {% assign all_products_collection = collections['all'] %}
   {% for product in all_products_collection.products %}
-    {% if product.tags.size > 0 %}
+    {% if product.available and product.tags.size > 0 %}
       <div class="product-item"
         data-handle="{{ product.handle }}"
         data-tags="{{ product.tags | join: ',' }}">
