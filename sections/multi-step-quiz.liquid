@@ -315,18 +315,26 @@
 </section>
 
 <style>
-.quiz-banner-bg { min-height: 560px; }
-@media (max-width: 768px){ .quiz-banner-bg { min-height: 420px; } }
+ 
 
-/* Stop MainContent from stretching on the quiz page */
-body.page-quiz .content-for-layout {
-  flex: 0 0 auto !important;   /* no grow/shrink */
-  min-height: auto;
+ /* Stop the layout stretch on this page */
+#MainContent.content-for-layout { 
+  flex: 0 0 auto !important;
+  min-height: auto !important;
 }
 
+/* Force a taller banner */
+#quiz-banner-{{ section.id }} .quiz-banner-bg {
+  height: 620px;            /* pick your value */
+  min-height: 620px;
+}
+@media (max-width: 768px){
+  #quiz-banner-{{ section.id }} .quiz-banner-bg {
+    height: 440px;
+    min-height: 440px;
+  }
+}
 
-.quiz-banner-bg { min-height: 560px; }
-@media (max-width: 768px){ .quiz-banner-bg { min-height: 420px; } }
 
 
 }
