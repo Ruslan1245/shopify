@@ -491,10 +491,10 @@ p:empty {
   outline-offset: calc(var(--focus-outline-width) * -1);
 }
 
-/* Layout */
+/* Layout  
 .content-for-layout {
-  flex: 1;
-}
+  flex: 1; 
+}*/
 
 /* Set up page widths & margins */
 .page-width-wide,
