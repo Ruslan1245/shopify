@@ -317,23 +317,7 @@
 <style>
  
 
- /* Stop the layout stretch on this page */
-#MainContent.content-for-layout { 
-  flex: 0 0 auto !important;
-  min-height: auto !important;
-}
-
-/* Force a taller banner */
-#quiz-banner-{{ section.id }} .quiz-banner-bg {
-  height: 620px;            /* pick your value */
-  min-height: 620px;
-}
-@media (max-width: 768px){
-  #quiz-banner-{{ section.id }} .quiz-banner-bg {
-    height: 440px;
-    min-height: 440px;
-  }
-}
+ body.page-quiz #MainContent.content-for-layout { flex: 0 0 auto !important; }
 
 
 
