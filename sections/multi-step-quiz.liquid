@@ -315,6 +315,11 @@
 </section>
 
 <style>
+
+  /* Make banner taller */
+.quiz-banner-bg { min-height: 520px; }
+@media (max-width: 768px) { .quiz-banner-bg { min-height: 420px; } }
+
     /* (Keep your existing visual styles; I preserved all styles and responsiveness) */
     .quiz-step-2 .quiz-options { display:flex; justify-content:center; gap:20px; margin-bottom:20px; flex-wrap:wrap; }
     .quiz-step-2 .quiz-option { background:#2f86d1; border:none; border-radius:40px; padding:28px 26px; font-size:18px; cursor:pointer; transition:.18s; display:flex; flex-direction:column; align-items:center; gap:12px; color:#fff; width:270px; justify-content:center; box-shadow:none; }
