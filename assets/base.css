@@ -493,7 +493,7 @@ p:empty {
 
 /* Layout */
 .content-for-layout {
-  flex: 1;
+  /*flex: 1;*/
 }
 
 /* Set up page widths & margins */
