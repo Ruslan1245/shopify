@@ -27,6 +27,24 @@
 {%- assign left_product  = all_products[left_handle] %}
 {%- assign right_product = all_products[right_handle] %}
 
+{% if cart.attributes.quiz_handle != blank %}
+  {% assign raw_handles = cart.attributes.quiz_handle 
+       | remove: '[' 
+       | remove: ']' 
+       | remove: '"' %}
+  {% assign quiz_handles = raw_handles | split: ',' %}
+  {% assign quiz_handles_rest = quiz_handles | slice: 1, quiz_handles.size %}
+
+  {% for handle in quiz_handles_rest %}
+    {% assign product = all_products[handle] %}
+    {% if product %}
+      {% assign quiz_product = product %}
+      {{ quiz_product.title }}<br>
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
+
 <section class="alt-formulas">
   <div class="container">
     <h2 class="alt-heading">{{ section.settings.heading }}</h2>
