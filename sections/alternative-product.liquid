@@ -38,7 +38,14 @@
     {% assign product = all_products[handle] %}
     {% if product %}
       {% assign quiz_product = product %}
-      {{ quiz_product.title }}<br>
+      {% if quiz_handles_rest.size > 0 %}
+        {% if forloop.first %}
+          {%- assign left_product = product %}
+        {% endif %}
+        {% if quiz_handles_rest.size > 1 %}
+          {%- assign right_product = product %}
+        {% endif %}
+      {% endif %}
     {% endif %}
   {% endfor %}
 {% endif %}
@@ -54,8 +61,7 @@
   {% for handle in quiz_handles_rest %}
     {% assign product = all_products[handle] %}
     {% if product %}
-      {% assign quiz_product = product %}
-      {{ quiz_product.title }}<br>
+      
     {% endif %}
   {% endfor %}
 {% endif %}
