@@ -28,12 +28,12 @@
 {%- assign right_product = all_products[right_handle] %}
 
 {% if cart.attributes.quiz_handle != blank %}
-  {{ cart.attributes.quiz_handle }}
   {% assign raw_handles = cart.attributes.quiz_handle 
        | remove: '[' 
        | remove: ']' 
        | remove: '"' %}
   {% assign quiz_handles = raw_handles | split: ',' %}
+   {% assign quiz_handles = 's1-nutram-sound,s1-nutram-sound,s1-nutram-sound' %}
   {% assign quiz_handles_rest = quiz_handles | slice: 1, quiz_handles.size %}
   {% for handle in quiz_handles_rest %}
     {% assign product = all_products[handle] %}
