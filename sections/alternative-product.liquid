@@ -34,21 +34,20 @@
        | remove: '"' %}
   {% assign quiz_handles = raw_handles | split: ',' %}
   {% assign quiz_handles_rest = quiz_handles | slice: 1, quiz_handles.size %}
+
   {% for handle in quiz_handles_rest %}
     {% assign product = all_products[handle] %}
     {% if product %}
-      {% assign quiz_product = product %}
-      {% if quiz_handles_rest.size > 0 %}
-        {% if forloop.first %}
-          {%- assign left_product = product %}
-        {% endif %}
-        {% if quiz_handles_rest.size > 1 %}
-          {%- assign right_product = product %}
-        {% endif %}
+      {% if forloop.first %}
+        {% assign left_product = product %}
+      {% endif %}
+      {% if forloop.last %}
+        {% assign right_product = product %}
       {% endif %}
     {% endif %}
   {% endfor %}
 {% endif %}
+
 
 {% if cart.attributes.quiz_handle != blank %}
   {% assign raw_handles = cart.attributes.quiz_handle 
