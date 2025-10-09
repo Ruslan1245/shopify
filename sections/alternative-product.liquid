@@ -35,17 +35,21 @@
   {% assign quiz_handles = raw_handles | split: ',' %}
   {% assign quiz_handles_rest = quiz_handles | slice: 1, quiz_handles.size %}
 
-  {% for handle in quiz_handles_rest %}
-    {% assign product = all_products[handle] %}
-    {% if product %}
-      {% if forloop.first %}
-        {% assign left_product = product %}
+  {% if quiz_handles_rest.size == 1 %}
+    {% assign left_product = all_products[quiz_handles_rest.first] %}
+  {% elsif quiz_handles_rest.size > 1 %}
+    {% for handle in quiz_handles_rest %}
+      {% assign product = all_products[handle] %}
+      {% if product %}
+        {% if forloop.first %}
+          {% assign left_product = product %}
+        {% endif %}
+        {% if forloop.last %}
+          {% assign right_product = product %}
+        {% endif %}
       {% endif %}
-      {% if forloop.last %}
-        {% assign right_product = product %}
-      {% endif %}
-    {% endif %}
-  {% endfor %}
+    {% endfor %}
+  {% endif %}
 {% endif %}
 
 
